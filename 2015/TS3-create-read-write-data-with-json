@@ -1,0 +1,1131 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Trigger," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言 &amp;#160; &amp;#160; &amp;#160; &amp;#160;上一篇其实已经说完了这个游戏里的重要部分了，所以接下来开始写代码了。先从解析json文件开始，配置环境啥的就不写了，网上一搜大把的教程（感觉这部分其实都不用写，也有类似读取json文件的教程= =）">
+<meta name="keywords" content="Trigger">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trigger第三篇：创建、读取和写入json文件">
+<meta property="og:url" content="https://lfeng1420.github.io/blog/2015/TS3-create-read-write-data-with-json">
+<meta property="og:site_name" content="lfeng">
+<meta property="og:description" content="前言 &amp;#160; &amp;#160; &amp;#160; &amp;#160;上一篇其实已经说完了这个游戏里的重要部分了，所以接下来开始写代码了。先从解析json文件开始，配置环境啥的就不写了，网上一搜大把的教程（感觉这部分其实都不用写，也有类似读取json文件的教程= =）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://lfeng1420.github.io/blog/images/Trigger/rapidjson.png">
+<meta property="og:updated_time" content="2018-01-21T06:58:36.467Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Trigger第三篇：创建、读取和写入json文件">
+<meta name="twitter:description" content="前言 &amp;#160; &amp;#160; &amp;#160; &amp;#160;上一篇其实已经说完了这个游戏里的重要部分了，所以接下来开始写代码了。先从解析json文件开始，配置环境啥的就不写了，网上一搜大把的教程（感觉这部分其实都不用写，也有类似读取json文件的教程= =）">
+<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/Trigger/rapidjson.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lfeng1420.github.io/blog/2015/TS3-create-read-write-data-with-json"/>
+
+
+
+
+
+  <title>Trigger第三篇：创建、读取和写入json文件 | lfeng</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101911100-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lfeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://lfeng1420.github.io/blog/blog/2015/TS3-create-read-write-data-with-json">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lfeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lfeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Trigger第三篇：创建、读取和写入json文件</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-22T23:02:59+08:00">
+                2015-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Trigger/" itemprop="url" rel="index">
+                    <span itemprop="name">Trigger</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<p>&#160; &#160; &#160; &#160;上一篇其实已经说完了这个游戏里的重要部分了，所以接下来开始写代码了。先从解析json文件开始，配置环境啥的就不写了，网上一搜大把的教程（感觉这部分其实都不用写，也有类似读取json文件的教程= =）<a id="more"></a></p>
+<h1 id="地图数据json"><a href="#地图数据json" class="headerlink" title="地图数据json"></a>地图数据json</h1><hr>
+<p>&#160; &#160; &#160; &#160;这里使用rapidjson读取json文件。以3.2版本为例，rapidjson头文件在项目目录\cocos2d\external\json下，如下图所示：<br><img src="../images/Trigger/rapidjson.png" alt="rapidjson"><br>&#160; &#160; &#160; &#160;在使用rapidjson前，需要引入以下头文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include "json/rapidjson.h"</span></span><br><span class="line"><span class="comment">#include "json/writer.h"</span></span><br><span class="line"><span class="comment">#include "json/document.h"</span></span><br><span class="line"><span class="comment">#include "json/prettywriter.h"</span></span><br><span class="line"><span class="comment">#include "json/stringbuffer.h"</span></span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;接下来上地图配置加载的代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">//加载json并解析</span><br><span class="line">bool CDataManager::LoadMapData()</span><br><span class="line">&#123;</span><br><span class="line">	string strContent = FileUtils::getInstance()-&gt;getStringFromFile(MAP_FILE_PATH);</span><br><span class="line"></span><br><span class="line">	rapidjson::Document oDoc;</span><br><span class="line">	oDoc.Parse&lt;0&gt;(strContent.c_str());</span><br><span class="line">	<span class="keyword">if</span> (oDoc.HasParseError())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"Parse Error: %s\n"</span>, oDoc.GetParseError());</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (oDoc.IsNull() || !oDoc.IsArray())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; oDoc.Size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		MapInfo mapInfo;</span><br><span class="line"></span><br><span class="line">		//color</span><br><span class="line">		<span class="keyword">if</span> (oDoc[i][<span class="string">"color"</span>].IsNull())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		mapInfo.iColor = oDoc[i][<span class="string">"color"</span>].GetInt();</span><br><span class="line"></span><br><span class="line">		//id</span><br><span class="line">		<span class="keyword">if</span> (oDoc[i][<span class="string">"id"</span>].IsNull())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		mapInfo.iID = oDoc[i][<span class="string">"id"</span>].GetInt();</span><br><span class="line"></span><br><span class="line">		//beat</span><br><span class="line">		<span class="keyword">if</span> (oDoc[i][<span class="string">"beat"</span>].IsNull())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		mapInfo.iBeat = oDoc[i][<span class="string">"beat"</span>].GetInt();</span><br><span class="line"></span><br><span class="line">		//map</span><br><span class="line">		<span class="keyword">if</span> (oDoc[i][<span class="string">"map"</span>].IsNull() || (!oDoc[i][<span class="string">"map"</span>].IsArray()))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//每行数据</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; oDoc[i][<span class="string">"map"</span>].Size(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (oDoc[i][<span class="string">"map"</span>][j].IsNull() </span><br><span class="line">				|| (!oDoc[i][<span class="string">"map"</span>][j].IsArray()))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (int k = 0; k &lt; oDoc[i][<span class="string">"map"</span>][j].Size(); k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (oDoc[i][<span class="string">"map"</span>][j][k].IsNull())</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				int iValue = oDoc[i][<span class="string">"map"</span>][j][k].GetInt();</span><br><span class="line">				//每行数据存入vecMap中</span><br><span class="line">				mapInfo.vecMap.push_back(iValue);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//mapitem</span><br><span class="line">		<span class="keyword">if</span> (oDoc[i][<span class="string">"mapitem"</span>].IsNull() </span><br><span class="line">			|| (!oDoc[i][<span class="string">"mapitem"</span>].IsArray()))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; oDoc[i][<span class="string">"mapitem"</span>].Size(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (oDoc[i][<span class="string">"mapitem"</span>][j].IsNull())</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			string strMapItem = oDoc[i][<span class="string">"mapitem"</span>][j].GetString();</span><br><span class="line"></span><br><span class="line">			int iArrow[3] = &#123;0, 0, 0&#125;;</span><br><span class="line">			SplitString(strMapItem, <span class="string">'_'</span>, iArrow);</span><br><span class="line"></span><br><span class="line">			ArrowInfo arrowInfo;</span><br><span class="line">			//X和Y位置互换</span><br><span class="line">			arrowInfo.iY = iArrow[0];</span><br><span class="line">			arrowInfo.iX = iArrow[1];</span><br><span class="line">			arrowInfo.iType = iArrow[2];</span><br><span class="line"></span><br><span class="line">			//存入vecMapItem中</span><br><span class="line">			mapInfo.vecMapItem.push_back(arrowInfo);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//useritem</span><br><span class="line">		<span class="keyword">if</span> (oDoc[i][<span class="string">"useritem"</span>].IsNull() </span><br><span class="line">			|| (!oDoc[i][<span class="string">"useritem"</span>].IsArray()))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; oDoc[i][<span class="string">"useritem"</span>].Size(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (oDoc[i][<span class="string">"useritem"</span>][j].IsNull())</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			int iNum = oDoc[i][<span class="string">"useritem"</span>][j].GetInt();</span><br><span class="line"></span><br><span class="line">			mapInfo.vecUserItem.push_back(iNum);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		m_oMapVec.push_back(mapInfo);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;以上代码涉及到了两个结构体，MapInfo和ArrowInfo，对应定义如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//箭头信息</span><br><span class="line">struct ArrowInfo</span><br><span class="line">&#123;</span><br><span class="line">	int iX;		//横向位置索引</span><br><span class="line"></span><br><span class="line">	int iY;		//纵向位置索引</span><br><span class="line"></span><br><span class="line">	int iType;	//箭头类型</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct MapInfo</span><br><span class="line">&#123;</span><br><span class="line">	int iColor;	//颜色序号，也是主题序号</span><br><span class="line"></span><br><span class="line">	int iID;	//关卡ID</span><br><span class="line"></span><br><span class="line">	int iBeat;	//可点击次数</span><br><span class="line"></span><br><span class="line">	vector&lt;int&gt; vecMap;	//六边形行列分布序列</span><br><span class="line"></span><br><span class="line">	vector&lt;ArrowInfo&gt; vecMapItem;	//地图中箭头分布</span><br><span class="line"></span><br><span class="line">	vector&lt;int&gt; vecUserItem;	//可用箭头数据</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;另外还有一个函数SplitString，其负责解析出字符串中的三个数值，代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//移除string中所有位置出现过的某个字符</span><br><span class="line">void CDataManager::SplitString(string &amp;srcStr, char chTarget, int* pArray)</span><br><span class="line">&#123;</span><br><span class="line">	int iPos = srcStr.find_first_of(<span class="string">'_'</span>);</span><br><span class="line">	string strTemp = srcStr.substr(0, iPos);</span><br><span class="line">	pArray[0] = atoi(strTemp.c_str());</span><br><span class="line"></span><br><span class="line">	int iNewPos = srcStr.find_first_of(<span class="string">'_'</span>, iPos + 1);</span><br><span class="line">	strTemp = srcStr.substr(iPos + 1, iNewPos - iPos - 1);</span><br><span class="line">	pArray[1] = atoi(strTemp.c_str());</span><br><span class="line"></span><br><span class="line">	iPos = srcStr.find_first_of(<span class="string">'_'</span>, iNewPos + 1);</span><br><span class="line">	strTemp = srcStr.substr(iNewPos + 1, iPos - iNewPos - 1);</span><br><span class="line">	pArray[2] = atoi(strTemp.c_str());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="进度数据json"><a href="#进度数据json" class="headerlink" title="进度数据json"></a>进度数据json</h1><hr>
+<p>&#160; &#160; &#160; &#160;现在需要考虑一个问题，游戏的进度该如何保存？使用UserDefault类？很显然是不行的，因为需要记录每个关卡的分数情况，200个关卡用UserDefault去存储的话显然够呛，所以这里可以考虑使用json文件保存游戏进度数据（当然，用xml也是可以的）。进度数据文件格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"score"</span>:600,<span class="string">"level"</span>:200,<span class="string">"data"</span>:[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;先写个创建进度数据文件的函数。因为第一次打开游戏时，进度是木有的，所以需要先建好进度数据文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">void CDataManager::InitUserData(const char* pName)</span><br><span class="line">&#123;</span><br><span class="line">	rapidjson::Document oWriteDoc;</span><br><span class="line">	oWriteDoc.SetObject();</span><br><span class="line">	rapidjson::Document::AllocatorType&amp; allocator = oWriteDoc.GetAllocator();</span><br><span class="line">	rapidjson::Value oArray(rapidjson::kArrayType);</span><br><span class="line"></span><br><span class="line">	oWriteDoc.AddMember(<span class="string">"score"</span>, 0, allocator);</span><br><span class="line">	oWriteDoc.AddMember(<span class="string">"level"</span>, 0, allocator);</span><br><span class="line"></span><br><span class="line">	//初始化数据</span><br><span class="line">	m_stUserInfo.iLevel = 0;</span><br><span class="line">	m_stUserInfo.iScore = 0;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; TOTAL_LEVEL_NUM; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		m_stUserInfo.vecData.push_back(0);</span><br><span class="line">		oArray.PushBack(0, allocator);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	oWriteDoc.AddMember(<span class="string">"data"</span>, oArray, allocator);</span><br><span class="line"></span><br><span class="line">	rapidjson::StringBuffer oBuffer;</span><br><span class="line">	rapidjson::Writer&lt;rapidjson::StringBuffer&gt; oWriter(oBuffer);</span><br><span class="line">	oWriteDoc.Accept(oWriter);</span><br><span class="line"></span><br><span class="line">	//写入</span><br><span class="line">	FILE* pFile = fopen(pName, <span class="string">"wb+"</span>);</span><br><span class="line">	<span class="keyword">if</span> (pFile == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"Open File '%s' Failed."</span>, pName);</span><br><span class="line">		<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fputs(oBuffer.GetString(), pFile);</span><br><span class="line">	fclose(pFile);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;这里传入参数pName即要写入的进度数据文件路径，由于创建时没有进度，所以score和level都是0，各个关卡分数记录也是0。<br>&#160; &#160; &#160; &#160;接下来写加载进度数据文件的函数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//加载用户数据</span><br><span class="line">bool CDataManager::LoadUserData()</span><br><span class="line">&#123;</span><br><span class="line">	string strPath = FileUtils::getInstance()-&gt;getWritablePath() + string(SAVE_DATA_PATH);</span><br><span class="line"></span><br><span class="line"><span class="comment">#ifdef _DEBUG_</span></span><br><span class="line">	<span class="built_in">log</span>(<span class="string">"UserData Path:%s\n"</span>, strPath.c_str());</span><br><span class="line"><span class="comment">#endif</span></span><br><span class="line"></span><br><span class="line">	string strContent = FileUtils::getInstance()-&gt;getStringFromFile(strPath);</span><br><span class="line">	rapidjson::Document oDoc;</span><br><span class="line">	oDoc.Parse&lt;0&gt;(strContent.c_str());</span><br><span class="line">	<span class="keyword">if</span> (oDoc.HasParseError() || oDoc.IsNull())</span><br><span class="line">	&#123;</span><br><span class="line">		//<span class="built_in">log</span>(<span class="string">"CDataManager::LoadUserData Load 'oDoc' Error."</span>);</span><br><span class="line">		InitUserData(strPath.c_str());</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//当前获得的分数</span><br><span class="line">	<span class="keyword">if</span> (oDoc[<span class="string">"score"</span>].IsNull())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"CDataManager::LoadUserData Load 'score' Error."</span>);</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	m_stUserInfo.iScore = oDoc[<span class="string">"score"</span>].GetInt();</span><br><span class="line"></span><br><span class="line">	//已通过关卡数量，因为不可能跨关卡，所以也表示当前通过的最后一关</span><br><span class="line">	<span class="keyword">if</span> (oDoc[<span class="string">"level"</span>].IsNull())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"CDataManager::LoadUserData Load 'level' Error."</span>);</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	m_stUserInfo.iLevel = oDoc[<span class="string">"level"</span>].GetInt();</span><br><span class="line"></span><br><span class="line">	//所有关卡当前信息</span><br><span class="line">	<span class="keyword">if</span> (oDoc[<span class="string">"data"</span>].IsNull() || (!oDoc[<span class="string">"data"</span>].IsArray()))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"CDataManager::LoadUserData Load 'data' Error."</span>);</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; oDoc[<span class="string">"data"</span>].Size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (oDoc[<span class="string">"data"</span>][i].IsNull())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">log</span>(<span class="string">"CDataManager::LoadUserData Load 'oDoc[data][%d]' Error."</span>, i);</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		int iValue = oDoc[<span class="string">"data"</span>][i].GetInt();</span><br><span class="line">		m_stUserInfo.vecData.push_back(iValue);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;需要注意的是，默认当进度数据json文件读取失败时，说明json文件不存在，需要重新建立，即调用InitUserData函数创建进度数据文件。m_stUserInfo中保存了读取的进度数据，其类型是UserInfo结构体类型，UserInfo定义如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">struct UserInfo</span><br><span class="line">&#123;</span><br><span class="line">	int iScore;		//分数</span><br><span class="line"></span><br><span class="line">	int iLevel;		//当前通过关卡数</span><br><span class="line"></span><br><span class="line">	vector&lt;int&gt; vecData;	//关卡得分数据</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;有了读取函数当然少不了写入函数，进度数据保存函数如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">//用户数据写入到指定文件中</span><br><span class="line">bool CDataManager::SaveUserData()</span><br><span class="line">&#123;</span><br><span class="line">	string strPath = FileUtils::getInstance()-&gt;getWritablePath() + string(SAVE_DATA_PATH);</span><br><span class="line">	string strContent = FileUtils::getInstance()-&gt;getStringFromFile(strPath);</span><br><span class="line">	rapidjson::Document oDoc;</span><br><span class="line">	oDoc.Parse&lt;0&gt;(strContent.c_str());</span><br><span class="line">	<span class="keyword">if</span> (oDoc.HasParseError())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"Parse Error: %s\n"</span>, oDoc.GetParseError());</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (oDoc.IsNull())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//更新分数</span><br><span class="line">	<span class="keyword">if</span> (oDoc[<span class="string">"score"</span>].IsNull())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	oDoc[<span class="string">"score"</span>].SetInt(m_stUserInfo.iScore);</span><br><span class="line"></span><br><span class="line">	//更新通过的关卡数量</span><br><span class="line">	<span class="keyword">if</span> (oDoc[<span class="string">"level"</span>].IsNull())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	oDoc[<span class="string">"level"</span>].SetInt(m_stUserInfo.iLevel);</span><br><span class="line"></span><br><span class="line">	//更新关卡当前信息</span><br><span class="line">	<span class="keyword">if</span> (oDoc[<span class="string">"data"</span>].IsNull() || !oDoc[<span class="string">"data"</span>].IsArray())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	int iVecSize = m_stUserInfo.vecData.size();</span><br><span class="line">	int iJsonSize = oDoc[<span class="string">"data"</span>].Size();</span><br><span class="line">	<span class="keyword">if</span> (iVecSize != iJsonSize)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"Error: %d(iVecSize) != %d(iJsonSize)\n"</span>, iVecSize, iJsonSize);</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (rapidjson::SizeType i = 0; i &lt; oDoc[<span class="string">"data"</span>].Capacity(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (oDoc[<span class="string">"data"</span>][i].IsNull())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		oDoc[<span class="string">"data"</span>][i].SetInt(m_stUserInfo.vecData[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//准备写入数据</span><br><span class="line">	rapidjson::StringBuffer oBuffer;</span><br><span class="line">	rapidjson::Writer&lt;rapidjson::StringBuffer&gt; oWriter(oBuffer);</span><br><span class="line">	oDoc.Accept(oWriter);</span><br><span class="line"></span><br><span class="line">	FILE* pFile = fopen(strPath.c_str(), <span class="string">"wb+"</span>);</span><br><span class="line">	<span class="keyword">if</span> (pFile == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">log</span>(<span class="string">"Error: Open File '%s' Failed.\n"</span>, strPath.c_str());</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fputs(oBuffer.GetString(), pFile);</span><br><span class="line">	fclose(pFile);</span><br><span class="line"></span><br><span class="line"><span class="comment">#ifdef _DEBUG_</span></span><br><span class="line">	<span class="built_in">log</span>(<span class="string">"UserDataPath:%s"</span>, strPath.c_str());</span><br><span class="line"><span class="comment">#endif</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&#160; &#160; &#160; &#160;好了，json文件创建、读取和写入部分先说到这，如果有什么不明白的地方可以联系我。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      lfeng
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lfeng1420.github.io/blog/2015/TS3-create-read-write-data-with-json" title="Trigger第三篇：创建、读取和写入json文件">https://lfeng1420.github.io/blog/2015/TS3-create-read-write-data-with-json</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Trigger/" rel="tag"># Trigger</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2015/TS2-map-layout" rel="next" title="Trigger第二篇：关卡布局">
+                <i class="fa fa-chevron-left"></i> Trigger第二篇：关卡布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/Build-cocos2dx-3_2-project-with-VS2015" rel="prev" title="使用VS2015编译Cocos2dx-3.2项目">
+                使用VS2015编译Cocos2dx-3.2项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/avatar.gif"
+               alt="lfeng" />
+          <p class="site-author-name" itemprop="name">lfeng</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lfeng1420" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lfeng1420" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#地图数据json"><span class="nav-number">2.</span> <span class="nav-text">地图数据json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进度数据json"><span class="nav-number">3.</span> <span class="nav-text">进度数据json</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lfeng</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
