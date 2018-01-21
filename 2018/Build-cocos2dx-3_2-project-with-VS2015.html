@@ -77,7 +77,7 @@
 <link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Cocos2dx,VS2015," />
 
 
 
@@ -93,19 +93,21 @@
 
 
 
-<meta name="description" content="测试测试测试测试测试测试测试测试测试测试测试测试测试">
+<meta name="description" content="前言 &amp;emsp;&amp;emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小（之前有试过好像是1.5M左右），重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。">
+<meta name="keywords" content="Cocos2dx,VS2015">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新的开始">
-<meta property="og:url" content="https://lfeng1420.github.io/blog/2015/new-beginning">
+<meta property="og:title" content="使用VS2015编译Cocos2dx-3.2项目">
+<meta property="og:url" content="https://lfeng1420.github.io/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html">
 <meta property="og:site_name" content="lfeng">
-<meta property="og:description" content="测试测试测试测试测试测试测试测试测试测试测试测试测试">
+<meta property="og:description" content="前言 &amp;emsp;&amp;emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小（之前有试过好像是1.5M左右），重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/Visual%20Studio.png">
-<meta property="og:updated_time" content="2018-01-21T06:51:04.597Z">
+<meta property="og:image" content="https://lfeng1420.github.io/blog/images/Cocos2dx/builderror.png">
+<meta property="og:image" content="https://lfeng1420.github.io/blog/images/Cocos2dx/add_stdio_definitions_lib.png">
+<meta property="og:updated_time" content="2018-01-21T11:11:45.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新的开始">
-<meta name="twitter:description" content="测试测试测试测试测试测试测试测试测试测试测试测试测试">
-<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/Visual%20Studio.png">
+<meta name="twitter:title" content="使用VS2015编译Cocos2dx-3.2项目">
+<meta name="twitter:description" content="前言 &amp;emsp;&amp;emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小（之前有试过好像是1.5M左右），重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。">
+<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/Cocos2dx/builderror.png">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://lfeng1420.github.io/blog/2015/new-beginning"/>
+  <link rel="canonical" href="https://lfeng1420.github.io/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html"/>
 
 
 
 
 
-  <title>新的开始 | lfeng</title>
+  <title>使用VS2015编译Cocos2dx-3.2项目 | lfeng</title>
   
 
 
@@ -321,7 +323,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://lfeng1420.github.io/blog/blog/2015/new-beginning">
+    <link itemprop="mainEntityOfPage" href="https://lfeng1420.github.io/blog/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lfeng">
@@ -338,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">新的开始</h1>
+          <h1 class="post-title" itemprop="name headline">使用VS2015编译Cocos2dx-3.2项目</h1>
         
 
         <div class="post-meta">
@@ -350,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-08T10:55:17+08:00">
-                2015-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-21T15:08:27+08:00">
+                2018-01-21
               </time>
             
 
@@ -373,8 +375,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/blog/categories/Cocos2dx/" itemprop="url" rel="index">
+                    <span itemprop="name">Cocos2dx</span>
                   </a>
                 </span>
 
@@ -407,17 +409,25 @@
       
 
       
-        <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试测试测试测试测试测试测试测试测试测试测试测试<a id="more"></a></p>
-<p>代码测试：</p>
-<pre><code class="bash"><span class="comment">#include &lt;iostream&gt;</span>
-using namespace std;　　
-int main()　　
-{　　
-    cout &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; endl;　　
-    <span class="built_in">return</span> 0;　
-}
-</code></pre>
-<p>图片测试：<br><img src="../images/Visual Studio.png" alt="Visual Studio"></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<p>&emsp;&emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小（之前有试过好像是1.5M左右），重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。<a id="more"></a></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><hr>
+<p>&emsp;&emsp;用cocos2dx3.2创建一个项目（以下用<code>YourProject</code>表示项目路径），创建成功后用VS2015打开<code>proj.win32</code>下的sln文件，打开时会弹出一个升级VC编译器和库的提示，点确认即可。之后编译整个解决方案，不出意外的话会看到这些报错：<br><img src="../images/Cocos2dx/builderror.png" alt=""></p>
+<h1 id="解决错误"><a href="#解决错误" class="headerlink" title="解决错误"></a>解决错误</h1><hr>
+<p>&emsp;&emsp;接下来解决这些编译报错，双击报错信息可以定位到所在文件以及行。</p>
+<h2 id="无效文本后缀XSTR"><a href="#无效文本后缀XSTR" class="headerlink" title="无效文本后缀XSTR"></a>无效文本后缀<code>XSTR</code></h2><p>&emsp;&emsp;报错文件为<code>YourProject\cocos2d\external\chipmunk\src\chipmunk.c(48)</code>。查找报错信息发现，VS2015新增了用户定义文本支持，详细见<a href="https://msdn.microsoft.com/zh-cn/library/dn919277.aspx" target="_blank" rel="noopener"><strong>MSDN:用户定义的文本</strong></a>，这里<code>XSTR(CP_VERSION_MAJOR)&quot;.&quot;XSTR(CP_VERSION_MINOR)&quot;.&quot;XSTR(CP_VERSION_RELEASE)</code>后面两个XSTR由于没有空格隔开，所以被认为是用户定义的文本，但实际上没有XSTR这个定义，所以报错。解决办法就是在分别在后面两个<code>XSTR</code>前面加上空格，即：<code>XSTR(CP_VERSION_MAJOR)&quot;.&quot; XSTR(CP_VERSION_MINOR)&quot;.&quot; XSTR(CP_VERSION_RELEASE)</code>。</p>
+<h2 id="snprintf宏定义冲突"><a href="#snprintf宏定义冲突" class="headerlink" title="snprintf宏定义冲突"></a><code>snprintf</code>宏定义冲突</h2><p>&emsp;&emsp;Macro definition of snprintf conflicts with Standard Library function declaration这条报错信息的意思是<code>snprintf</code>宏定义和标准库定义冲突，说明cocos2dx在内部定义了<code>snprintf</code>宏。查看输出可以发现在这条报错信息前面还有一条警告信息，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1&gt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1925): warning C4005: \<span class="string">'snprintf\'</span>: macro redefinition (compiling <span class="built_in">source</span> file ..\base\atitc.cpp)</span><br><span class="line">1&gt;  YourProject\cocos2d\cocos\platform\win32\CCStdC.h(53): note: see previous definition of \<span class="string">'snprintf\'</span> (compiling <span class="built_in">source</span> file ..\base\atitc.cpp)</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;定位到CCStdC.h文件53行，可以看到snprintf宏的定义，解决办法就是把<code>#define snprintf _snprintf</code>注释掉。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for math.h on win32 platform</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __MINGW32__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> !defined(_USE_MATH_DEFINES)</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> _USE_MATH_DEFINES       <span class="comment">// make M_PI can be use</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> !defined(isnan)</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> isnan   _isnan</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> snprintf</span></span><br><span class="line"><span class="comment">//#define snprintf _snprintf    // 注释掉这一行即可</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// __MINGW32__</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="无法解析的外部符号"><a href="#无法解析的外部符号" class="headerlink" title="无法解析的外部符号"></a>无法解析的外部符号</h2><p>&emsp;&emsp;编译错误解决了之后，重新编译发现有链接错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3&gt;libpng.lib(pngerror.obj) : error LNK2019: unresolved external symbol __imp____iob_func referenced <span class="keyword">in</span> <span class="keyword">function</span> _png_default_error</span><br><span class="line">3&gt;libtiff.lib(tif_unix.obj) : error LNK2001: unresolved external symbol __imp____iob_func</span><br><span class="line">3&gt;libjpeg.lib(jerror.obj) : error LNK2019: unresolved external symbol ___iob_func referenced <span class="keyword">in</span> <span class="keyword">function</span> _output_message</span><br><span class="line">3&gt;MSVCRTD.lib(vsnprintf.obj) : error LNK2001: unresolved external symbol __imp___vsnprintf</span><br></pre></td></tr></table></figure></p>
+<h3 id="iob-func"><a href="#iob-func" class="headerlink" title="__iob_func"></a><code>__iob_func</code></h3><p>&emsp;&emsp;出现<code>__iob_func</code>链接错误的原因是早期VS版本是用<code>__iob_func</code>来定义<code>stdin</code>、<code>stdout</code>和<code>stderr</code>宏的，而VS2015是用<code>__acrt_iob_func</code>定义（以SDK 10240版本为例，三个宏定义在<code>c:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_wstdio.h</code>）。有以下两种解决办法：</p>
+<ol>
+<li>自行编译libpng、libtiff和libjpeg生成VS2015版本的lib文件；</li>
+<li>从cocos2dx最新版本中拷贝libpng、libtiff和libjpeg的win32版本lib文件及头文件到cocos2dx3.2对应目录<code>YourProject\cocos2d\external</code>（<strong>不希望下载cocos2dx最新版本？查看结束部分下载我提供的附件</strong>）；<br>拷贝完成之后修改<code>YourProject\cocos2d\cocos\platform\win32\CCPlatformDefine.h</code>，在<code>#endif // CC_TARGET_PLATFORM == CC_PLATFORM_WIN32</code>之前加上如下代码：  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> _MSC_VER &gt;= 1900</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libpng-2015.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libjpeg-2015.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libtiff-2015.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libpng.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libjpeg.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libtiff.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="vsnprintf"><a href="#vsnprintf" class="headerlink" title="__vsnprintf"></a><code>__vsnprintf</code></h3><p></p><p>&emsp;&emsp;出现这个问题的原因参考<a href="https://social.msdn.microsoft.com/Forums/en-US/5150eeec-4427-440f-ab19-aecb26113d31/updated-to-vs-2015-and-now-get-unresolved-external-errors?forum=vcgeneral" target="_blank" rel="noopener"><strong>MSDN Social：Updated to VS 2015 and now get Unresolved External Errors</strong></a>，解决办法是在启动项目属性中的链接器-&gt;输入-&gt;附加依赖项中加上<code>legacy_stdio_definitions.lib</code>。</p><br><img src="../images/Cocos2dx/add_stdio_definitions_lib.png" alt=""><p></p>
+<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><hr>
+<p>&emsp;&emsp;到这里所有问题都已经解决，可以用VS2015愉快的写代码了😘<br>&emsp;&emsp;最后附上cocos2dx3.14.1版本的libpng、libtiff和libjpeg库相关文件，包含三个库的win32版本include和prebuilt目录，下载地址<a href="../attachments/cocos2d.zip"><strong>点这里</strong></a>，下载之后直接替换你的项目下的cocos2d目录即可。</p>
 
       
     </div>
@@ -446,7 +456,7 @@ int main()　　
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lfeng1420.github.io/blog/2015/new-beginning" title="新的开始">https://lfeng1420.github.io/blog/2015/new-beginning</a>
+      <a href="https://lfeng1420.github.io/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html" title="使用VS2015编译Cocos2dx-3.2项目">https://lfeng1420.github.io/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -460,6 +470,14 @@ int main()　　
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Cocos2dx/" rel="tag"># Cocos2dx</a>
+          
+            <a href="/blog/tags/VS2015/" rel="tag"># VS2015</a>
+          
+        </div>
+      
 
       
       
@@ -469,15 +487,15 @@ int main()　　
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/2015/TS3-create-read-write-data-with-json.html" rel="next" title="Trigger第三篇：创建、读取和写入json文件">
+                <i class="fa fa-chevron-left"></i> Trigger第三篇：创建、读取和写入json文件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2015/TS1-resources-analyze" rel="prev" title="Trigger第一篇：简介以及资源分析">
-                Trigger第一篇：简介以及资源分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -625,7 +643,7 @@ int main()　　
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决错误"><span class="nav-number">3.</span> <span class="nav-text">解决错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#无效文本后缀XSTR"><span class="nav-number">3.1.</span> <span class="nav-text">无效文本后缀XSTR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#snprintf宏定义冲突"><span class="nav-number">3.2.</span> <span class="nav-text">snprintf宏定义冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无法解析的外部符号"><span class="nav-number">3.3.</span> <span class="nav-text">无法解析的外部符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iob-func"><span class="nav-number">3.3.1.</span> <span class="nav-text">__iob_func</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vsnprintf"><span class="nav-number">3.3.2.</span> <span class="nav-text">__vsnprintf</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">4.</span> <span class="nav-text">结束</span></a></li></ol></div>
             
 
           </div>
