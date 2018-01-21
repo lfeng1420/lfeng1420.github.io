@@ -6,7 +6,7 @@
       <title><![CDATA[使用VS2015编译Cocos2dx-3.2项目]]></title>
       <url>/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
-<p>&emsp;&emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小（之前有试过好像是1.5M左右），重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。<a id="more"></a></p>
+<p>&emsp;&emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小，重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。<a id="more"></a></p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><hr>
 <p>&emsp;&emsp;用cocos2dx3.2创建一个项目（以下用<code>YourProject</code>表示项目路径），创建成功后用VS2015打开<code>proj.win32</code>下的sln文件，打开时会弹出一个升级VC编译器和库的提示，点确认即可。之后编译整个解决方案，不出意外的话会看到这些报错：<br><img src="../images/Cocos2dx/builderror.png" alt=""></p>
 <h1 id="解决错误"><a href="#解决错误" class="headerlink" title="解决错误"></a>解决错误</h1><hr>
