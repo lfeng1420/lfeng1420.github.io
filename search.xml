@@ -48,10 +48,10 @@
 <h3 id="条件类节点"><a href="#条件类节点" class="headerlink" title="条件类节点"></a>条件类节点</h3><p>&emsp;&emsp;条件节点对左右参数进行比较，根据比较结果返回成功或失败，但永远不会返回正在执行（Running）。通常左参数是Agent的某个属性或某个有返回值的方法，用户可以从下拉列表里选择，右参数是相应类型的常数、Agent的某个属性或某个有返回值的方法，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/13.png" alt="条件类节点"></div>
 
-<p>&emsp;&emsp;与（And）节点接受两个以上的条件子节点，执行逻辑&quot;与（&amp;&amp;）&quot;操作，如下图：</p>
+<p>&emsp;&emsp;与节点接受两个以上的条件子节点，执行逻辑&quot;与（&amp;&amp;）&quot;操作，如下图：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/14.png" alt="条件与节点"></div>
 
-<p>&emsp;&emsp;或（Or）节点接受两个以上的条件子节点，执行逻辑&quot;或（||）&quot;操作，如下图：</p>
+<p>&emsp;&emsp;或节点接受两个以上的条件子节点，执行逻辑&quot;或（||）&quot;操作，如下图：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/15.png" alt="条件或节点"></div>
 
 <h3 id="动作类节点"><a href="#动作类节点" class="headerlink" title="动作类节点"></a>动作类节点</h3><h4 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h4><p>&emsp;&emsp;等待节点在指定的数值内（单位根据自己的使用场景来定）持续保持为运行（Running）状态，数值到达之后则返回成功，如下图：</p>
@@ -68,7 +68,7 @@
 <h4 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h4><p>&emsp;&emsp;动作节点是比较常用的节点，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/19.png" alt="动作节点"></div>
 
-<p>&emsp;&emsp;动作节点通常对应Agent的某个方法（Method），可以从下拉列表里为其选择方法：</p>
+<p>&emsp;&emsp;动作节点通常对应Agent的某个方法，可以从下拉列表里为其选择方法：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/20.png" alt="动作节点属性"></div>
 
 <p>&emsp;&emsp;在设置其方法后，需进一步设置其&quot;决定状态的选项&quot;或&quot;决定状态的函数&quot;，如上图所示。如果没有正确配置，则视为错误不能被导出。<br>&emsp;&emsp;<strong>决定状态的选项</strong>：不管动作的方法的返回值是什么，都强制返回设定的EBTStatus值（即Success、Failure或Running）。<br>&emsp;&emsp;<strong>决定状态的函数</strong>：将动作的方法的返回值从不是EBTStatus类型，转换为执行行为树所需要的EBTStatus值（即Success、Failure或Running）。<br>&emsp;&emsp;有三种设置来决定每次执行动作节点后的状态（Success、Failure或Running）：<br>&emsp;&emsp;1、如果动作节点的方法返回EBTStatus值，那么该值就直接作为动作节点的状态，&quot;决定状态的选项&quot;和&quot;决定状态的函数&quot;将被禁用无需设置。<br>&emsp;&emsp;2、否则，需要设置&quot;决定状态的选项&quot;：当选择Invalid值时，表明需要进一步设置&quot;决定状态的函数&quot;，否则禁用&quot;决定状态的函数&quot;项，并直接使用&quot;决定状态的选项&quot;所选择的值（Success、Failure或Running），表示该方法执行完毕后，动作节点将返回这个设置的值。<br>&emsp;&emsp;3、在&quot;决定状态的函数&quot;项中选择的函数，其返回值必然是EBTStatus，作为动作节点的状态。该函数只有一个或者没有参数，当动作节点的方法无返回值时，该函数没有参数，当动作节点的方法有返回值时，该函数唯一参数的类型为动作节点方法的返回值类型。也即：<br>&emsp;&emsp;当方法的原型是void Method(…)的时候，&quot;决定状态的函数&quot;的原型为：EBTStatus StatusFunctor()。<br>&emsp;&emsp;当方法的原型是ReturnType Method(…)的时候，&quot;决定状态的函数&quot;的原型为：EBTStatus StatusFunctor(ReturnType param)。</p>
@@ -145,7 +145,7 @@
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/41.png" alt="序列节点属性"></div>
 
 <p>&emsp;&emsp;序列节点可以添加&#39;中断条件&#39;作为终止执行的条件。上图中序列节点右上角的箭头就是可选的&#39;中断条件&#39;，该&#39;中断条件&#39;在每处理下一个子节点的时候被检查，当为true时，则不再继续，返回失败（Failure）。</p>
-<h4 id="随机序列"><a href="#随机序列" class="headerlink" title="随机序列"></a>随机序列</h4><p>&emsp;&emsp;类似序列（Sequence）节点，随机序列节点也是从子节点中顺序执行，但不像序列节点每次都是按照排列的先后顺序，随机序列节点每次执行子节点时随机的决定其执行顺序，如下图所示：</p>
+<h4 id="随机序列"><a href="#随机序列" class="headerlink" title="随机序列"></a>随机序列</h4><p>&emsp;&emsp;类似序列节点，随机序列节点也是从子节点中顺序执行，但不像序列节点每次都是按照排列的先后顺序，随机序列节点每次执行子节点时随机的决定其执行顺序，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/42.png" alt="随机序列节点"></div>
 
 <p>&emsp;&emsp;与随机选择节点相同的是，随机序列节点也有随机数生成器可以配置，该随机数生成器是一个返回值为0.0到1.0之间的float类型的函数，一般设为空即可，表示采用系统的缺省实现，也可以使用自己提供的函数。如下图所示：</p>
@@ -154,7 +154,7 @@
 <h4 id="条件执行"><a href="#条件执行" class="headerlink" title="条件执行"></a>条件执行</h4><p>&emsp;&emsp;条件执行节点与IfElse流程相似，其必须要有3个子节点，第一个子节点是条件分支，第二个子节点是&quot;真时执行&quot;分支，第三个子节点是&quot;假时执行&quot;分支。如果条件为真，那么执行&quot;真时执行&quot;分支；否则，执行&quot;假时执行&quot;分支。如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/44.png" alt="条件执行节点"></div>
 
-<p>&emsp;&emsp;如果不使用条件执行节点，也可以用序列（Sequence）和选择（Selector）节点来实现相同的功能，只不过没有条件执行节点简洁。另外，条件执行节点的&quot;条件&quot;分支，还可以挂上动作节点甚至是一棵子树。比如挂上动作节点时，如果该动作节点返回Running，则条件执行节点也返回Running，并且该条件一直持续执行，直到动作节点返回Success或Failure，则继续相应的执行&quot;真时执行&quot;或&quot;假时执行&quot;分支。</p>
+<p>&emsp;&emsp;如果不使用条件执行节点，也可以用序列和选择节点来实现相同的功能，只不过没有条件执行节点简洁。另外，条件执行节点的&quot;条件&quot;分支，还可以挂上动作节点甚至是一棵子树。比如挂上动作节点时，如果该动作节点返回Running，则条件执行节点也返回Running，并且该条件一直持续执行，直到动作节点返回Success或Failure，则继续相应的执行&quot;真时执行&quot;或&quot;假时执行&quot;分支。</p>
 <h4 id="等待信号"><a href="#等待信号" class="headerlink" title="等待信号"></a>等待信号</h4><p>&emsp;&emsp;等待信号节点模拟了等待某个条件的&quot;阻塞&quot;过程。等待信号节点返回Running，直到它上面附加的条件是true的时候：<br>&emsp;&emsp;1、如果有子节点，则执行其子节点，并当子节点结束时，返回该子节点的返回值；<br>&emsp;&emsp;2、如果没有子节点，则直接返回成功。<br>&emsp;&emsp;在下图中，等待信号节点在<code>m_bFlag</code>为true之前一直返回running，当<code>m_bFlag</code>为true时，结束阻塞，执行之后的<code>m_nVal=11</code>赋值节点：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/45.png" alt="等待信号节点"></div>
 
@@ -164,10 +164,10 @@
 <h4 id="选择监测"><a href="#选择监测" class="headerlink" title="选择监测"></a>选择监测</h4><p>&emsp;&emsp;选择监测节点和监测分支节点作为对传统行为树的扩展，可以很自然的处理事件和状态的改变，类似于程序语言中的&quot;switch…case&quot;语句，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/47.png" alt="选择监测节点"></div>
 
-<p>&emsp;&emsp;需要注意以下几点：<br>&emsp;&emsp;1、选择监测和监测分支节点只能配对使用，即选择监测节点只能添加监测分支节点作为它的子节点，监测分支节点也只能作为选择监测节点的子节点被添加；<br>&emsp;&emsp;2、监测分支节点有条件分支子树和动作分支子树。只有条件分支子树返回成功的时候，动作分支子树才能够被执行；<br>&emsp;&emsp;3、选择监测节点是一个动态的选择节点，与选择节点（Selector）相同的是，它选择第一个返回成功的子节点，但不同的是，它不是只选择一次，而是每次执行时都对其子节点重新评估后再进行选择；<br>&emsp;&emsp;4、选择检测节点的实现很像并行节点，每帧都要重新执行所有的子树，大量使用的时候请注意其性能。<br>&emsp;&emsp;默认情况下，上一次得到执行的动作分支，如果在下一次其条件分支也返回成功，那么这个动作分支会继续执行上次返回正在运行的节点。例如，假设上图中上一次执行行为树的时候，ID为28的条件节点返回成功，并且已经执行到ID为30的动作节点（31节点返回成功，30节点返回running），那么，当下一次执行该选择检测节点时，如果发现ID为28的条件节点还是返回成功，ID为30的动作节点就会直接得到执行，而不是先执行ID为31的动作节点。<br>&emsp;&emsp;但有的时候，可能需要在条件分支再次得到满足时，其动作分支需要重新执行，而不是默认情况下的从上次返回正在执行的节点继续执行。例如，对于上面的例子，当ID为28的条件节点再次返回成功时，需要重新执行其动作分支，即重新开始执行ID为31的动作节点，这时候，需要勾选上选择检测节点的属性&quot;重置子节点&quot;，如下图所示：</p>
+<p>&emsp;&emsp;需要注意以下几点：<br>&emsp;&emsp;1、选择监测和监测分支节点只能配对使用，即选择监测节点只能添加监测分支节点作为它的子节点，监测分支节点也只能作为选择监测节点的子节点被添加；<br>&emsp;&emsp;2、监测分支节点有条件分支子树和动作分支子树。只有条件分支子树返回成功的时候，动作分支子树才能够被执行；<br>&emsp;&emsp;3、选择监测节点是一个动态的选择节点，与选择节点相同的是，它选择第一个返回成功的子节点，但不同的是，它不是只选择一次，而是每次执行时都对其子节点重新评估后再进行选择；<br>&emsp;&emsp;4、选择检测节点的实现很像并行节点，每帧都要重新执行所有的子树，大量使用的时候请注意其性能。<br>&emsp;&emsp;默认情况下，上一次得到执行的动作分支，如果在下一次其条件分支也返回成功，那么这个动作分支会继续执行上次返回正在运行的节点。例如，假设上图中上一次执行行为树的时候，ID为28的条件节点返回成功，并且已经执行到ID为30的动作节点（31节点返回成功，30节点返回running），那么，当下一次执行该选择检测节点时，如果发现ID为28的条件节点还是返回成功，ID为30的动作节点就会直接得到执行，而不是先执行ID为31的动作节点。<br>&emsp;&emsp;但有的时候，可能需要在条件分支再次得到满足时，其动作分支需要重新执行，而不是默认情况下的从上次返回正在执行的节点继续执行。例如，对于上面的例子，当ID为28的条件节点再次返回成功时，需要重新执行其动作分支，即重新开始执行ID为31的动作节点，这时候，需要勾选上选择检测节点的属性&quot;重置子节点&quot;，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/48.png" alt="选择监测节点属性"></div>
 
-<p>&emsp;&emsp;另外，执行行为树的过程中，当状态、条件发生变化或发生事件（Event）时如何响应或打断当前的执行是个重要的问题。<br>&emsp;&emsp;目前behaviac组件支持三种方式来处理状态变化或事件发生：并行节点、选择监测节点、事件附件等。简而言之，并行和选择监测节点的工作方式是采用&quot;轮询&quot;的方式，每次执行时需要重新评估所有子节点，而不是像其他节点会保留上一次正在执行的子节点以便在下一次执行时继续执行。事件附件是在游戏逻辑（程序端）发出事件时，才按需得到响应。</p>
+<p>&emsp;&emsp;另外，执行行为树的过程中，当状态、条件发生变化或发生事件时如何响应或打断当前的执行是个重要的问题。<br>&emsp;&emsp;目前behaviac组件支持三种方式来处理状态变化或事件发生：并行节点、选择监测节点、事件附件等。简而言之，并行和选择监测节点的工作方式是采用&quot;轮询&quot;的方式，每次执行时需要重新评估所有子节点，而不是像其他节点会保留上一次正在执行的子节点以便在下一次执行时继续执行。事件附件是在游戏逻辑（程序端）发出事件时，才按需得到响应。</p>
 <h4 id="任务-1"><a href="#任务-1" class="headerlink" title="任务"></a>任务</h4><p>&emsp;&emsp;任务节点用于描述一个接口，该接口的入口参数为当前的行为树提供了局部变量，这些局部变量可以根据需要用于该行为树所有子节点，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/49.png" alt="任务节点"></div>
 
@@ -186,7 +186,7 @@
 <p>&emsp;&emsp;4、之后为该事件设置参数：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/54.png" alt="为事件设置参数"></div>
 
-<p>&emsp;&emsp;其中，&quot;触发一次&quot;表示该事件是否只触发一次就不再起作用。&quot;触发模式&quot;控制该事件触发后对当前行为树的影响以及被触发的子树结束时应该如何恢复，有转移（Transfer）和返回（Return）两个选项：<br>&emsp;&emsp;转移：当子树结束时，当前行为树被中断和重置，该子树将被设置为当前行为树。<br>&emsp;&emsp;返回：当子树结束时，返回控制到之前打断的地方继续执行。当前行为树直接&quot;压&quot;到执行堆栈上而不被中断和重置，该子树被设置为当前行为树，当该子树结束时，原本的那棵行为树从执行堆栈上&quot;弹出&quot;，并从当初的节点恢复执行。<br>&emsp;&emsp;5、最后在代码中通过如下代码将事件<code>event_task</code>发出，并指定所需参数：</p>
+<p>&emsp;&emsp;其中，&quot;触发一次&quot;表示该事件是否只触发一次就不再起作用。&quot;触发模式&quot;控制该事件触发后对当前行为树的影响以及被触发的子树结束时应该如何恢复，有转移和返回两个选项：<br>&emsp;&emsp;转移：当子树结束时，当前行为树被中断和重置，该子树将被设置为当前行为树。<br>&emsp;&emsp;返回：当子树结束时，返回控制到之前打断的地方继续执行。当前行为树直接&quot;压&quot;到执行堆栈上而不被中断和重置，该子树被设置为当前行为树，当该子树结束时，原本的那棵行为树从执行堆栈上&quot;弹出&quot;，并从当初的节点恢复执行。<br>&emsp;&emsp;5、最后在代码中通过如下代码将事件<code>event_task</code>发出，并指定所需参数：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g_pFirstAgent-&gt;FireEvent(<span class="string">"event_task"</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;这样，在执行行为树<code>5_Combine_2</code>时，如果接收到事件<code>event_task</code>，那么行为树中的事件附件将得到响应和处理，行为树的执行就会从当前的<code>5_Combine_2</code>跳转到<code>4_Combine_Task</code>。<br>&emsp;&emsp;调用FireEvent的时候，只有处于running状态的节点才响应事件，这样设计是为了允许不同的分支不同的时机同样的事件可以触发不同的行为。比如同样是BeingHit，受伤的时候，或者逃跑的时候可以对应不同的行为。如果不需要根据不同的节点相应不同的行为，只是需要响应事件，可以把事件配置在根节点上（根节点同样需要是running状态，非running状态的节点没有机会响应事件）。<br>&emsp;&emsp;另外需要补充说明的是，虽然行为树<code>4_Combine_Task</code>带有任务节点，但也可以直接将该行为树拖拽到行为树<code>5_Combine_2</code>中，如下图：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/55.png" alt="直接使用任务行为树"></div>
@@ -194,7 +194,7 @@
 <p>&emsp;&emsp;选中该任务子树后，可直接配置所需参数，如下图：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/56.png" alt="配置参数"></div>
 
-<h3 id="装饰器类节点"><a href="#装饰器类节点" class="headerlink" title="装饰器类节点"></a>装饰器类节点</h3><p>&emsp;&emsp;装饰器类节点作为控制分支节点，必须且只接受一个子节点。装饰器类节点首先从子节点开始执行，并根据自身的控制逻辑以及子节点的返回结果决定自身的状态。装饰节点都有&quot;子节点结束时作用（DecorateChildEnds）&quot;属性配置，如果该值配置为真，则仅当子节点结束（成功或失败）的时候，装饰节点的装饰逻辑才起作用。</p>
+<h3 id="装饰器类节点"><a href="#装饰器类节点" class="headerlink" title="装饰器类节点"></a>装饰器类节点</h3><p>&emsp;&emsp;装饰器类节点作为控制分支节点，必须且只接受一个子节点。装饰器类节点首先从子节点开始执行，并根据自身的控制逻辑以及子节点的返回结果决定自身的状态。装饰节点都有&quot;子节点结束时作用&quot;属性配置，如果该值配置为真，则仅当子节点结束（成功或失败）的时候，装饰节点的装饰逻辑才起作用。</p>
 <h4 id="非"><a href="#非" class="headerlink" title="非"></a>非</h4><p>&emsp;&emsp;非节点将子节点的返回值取反，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/57.png" alt="非节点"></div>
 
@@ -239,7 +239,7 @@
 
 <p>&emsp;&emsp;在上图中，并行节点下的两个条件必定有一个返回失败，那么并行也将返回失败，由于前面有总是成功节点，所以最终仍然返回成功。</p>
 <h4 id="返回成功直到-返回失败直到"><a href="#返回成功直到-返回失败直到" class="headerlink" title="返回成功直到/返回失败直到"></a>返回成功直到/返回失败直到</h4><p>&emsp;&emsp;返回成功直到节点在指定的次数到达前返回成功，指定的次数到达后返回失败。如果指定的次数小于0，则总是返回成功；返回失败直到节点在指定的次数到达前返回失败，指定的次数到达后返回成功。如果指定的次数小于0，则总是返回失败。</p>
-<h3 id="状态机类节点"><a href="#状态机类节点" class="headerlink" title="状态机类节点"></a>状态机类节点</h3><p>&emsp;&emsp;behaviac组件不仅支持行为树，也支持有限状态机（FSM），并且支持行为树跟状态机的相互嵌套调用。<br>&emsp;&emsp;behaviac组件中的状态机主要用到了状态（State）、等待状态（WaitState）和等待帧数状态（WaitFramesState）三种节点，以及条件转换（Transition）和总是转换（AlwaysTransition）两种附件。</p>
+<h3 id="状态机类节点"><a href="#状态机类节点" class="headerlink" title="状态机类节点"></a>状态机类节点</h3><p>&emsp;&emsp;behaviac组件不仅支持行为树，也支持有限状态机（FSM），并且支持行为树跟状态机的相互嵌套调用。<br>&emsp;&emsp;behaviac组件中的状态机主要用到了状态、等待状态和等待帧数状态三种节点，以及条件转换和总是转换两种附件。</p>
 <h4 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h4><p>&emsp;&emsp;状态节点是状态机中的基本组成部分之一，可以在状态节点上添加前置、后置以及转换等附件，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/70.png" alt="状态节点"></div>
 
@@ -263,10 +263,10 @@
 <p>&emsp;&emsp;其中<code>m_nVal == 2</code>为切换到等待状态的条件。条件转换的属性如下图，其中效果属性为转换附件执行完之后需要执行的额外操作：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/76.png" alt="条件转换附件属性"></div>
 
-<h4 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h4><p>&emsp;&emsp;状态转换附件（StatusTransition）是一种特殊的转换附件，根据它的配置，转换时机会有不同（ <strong>验证发现无法添加子树作为当前节点，2、3、4可能已不支持</strong> ）：<br>&emsp;&emsp;1、总跳转，表示无条件从所在的状态切换到另一个状态，如下图所示；<br>&emsp;&emsp;2、成功时，表示当所在节点是子树并且成功的时候转换；<br>&emsp;&emsp;3、失败时，表示当所在节点是子树并且失败的时候转换；<br>&emsp;&emsp;4、结束时，表示当所在节点是子树并且结束（成功或失败）的时候转换。</p>
+<h4 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h4><p>&emsp;&emsp;状态转换附件是一种特殊的转换附件，根据它的配置，转换时机会有不同（ <strong>验证发现无法添加子树作为当前节点，2、3、4可能已不支持</strong> ）：<br>&emsp;&emsp;1、总跳转，表示无条件从所在的状态切换到另一个状态，如下图所示；<br>&emsp;&emsp;2、成功时，表示当所在节点是子树并且成功的时候转换；<br>&emsp;&emsp;3、失败时，表示当所在节点是子树并且失败的时候转换；<br>&emsp;&emsp;4、结束时，表示当所在节点是子树并且结束（成功或失败）的时候转换。</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/77.png" alt="状态转换附件"></div>
 
-<h2 id="预制"><a href="#预制" class="headerlink" title="预制"></a>预制</h2><p>&emsp;&emsp;预制（Prefab）可以用来复用和实例化已有的行为树，如果只是直接复用行为树，预制跟引用子树的功能是一样的。但是预制还可以用来定制个别节点的配置，称之为对预制的实例化。也即，如果一棵行为树用到了一棵预制行为树，那么可以局部修改某些节点，这些修改的节点不会跟着预制行为树的更新而同步更新。</p>
+<h2 id="预制"><a href="#预制" class="headerlink" title="预制"></a>预制</h2><p>&emsp;&emsp;预制可以用来复用和实例化已有的行为树，如果只是直接复用行为树，预制跟引用子树的功能是一样的。但是预制还可以用来定制个别节点的配置，称之为对预制的实例化。也即，如果一棵行为树用到了一棵预制行为树，那么可以局部修改某些节点，这些修改的节点不会跟着预制行为树的更新而同步更新。</p>
 <h3 id="添加预制"><a href="#添加预制" class="headerlink" title="添加预制"></a>添加预制</h3><p>&emsp;&emsp;打开示例中的任意一棵行为树，这里选中某一个节点之后右键，在弹出的菜单框中选择另存为预制行为树。这里以<code>2_Condition</code>行为树中的第一个或节点为例，如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/78.png" alt="行为树"></div>
 
