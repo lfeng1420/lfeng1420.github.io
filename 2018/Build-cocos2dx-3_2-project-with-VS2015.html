@@ -101,13 +101,13 @@
 <meta property="og:site_name" content="lfeng">
 <meta property="og:description" content="前言 &amp;emsp;&amp;emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小，重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/Cocos2dx/builderror.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/Cocos2dx/add_stdio_definitions_lib.png">
-<meta property="og:updated_time" content="2018-01-21T16:26:12.550Z">
+<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2018/Build-cocos2dx-3_2-project-with-VS2015/builderror.png">
+<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2018/Build-cocos2dx-3_2-project-with-VS2015/add_stdio_definitions_lib.png">
+<meta property="og:updated_time" content="2018-03-23T15:03:54.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用VS2015编译Cocos2dx-3.2项目">
 <meta name="twitter:description" content="前言 &amp;emsp;&amp;emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小，重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。">
-<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/Cocos2dx/builderror.png">
+<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/2018/Build-cocos2dx-3_2-project-with-VS2015/builderror.png">
 
 
 
@@ -412,7 +412,7 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <p>&emsp;&emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小，重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。<a id="more"></a></p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><hr>
-<p>&emsp;&emsp;用cocos2dx3.2创建一个项目（以下用<code>YourProject</code>表示项目路径），创建成功后用VS2015打开<code>proj.win32</code>下的sln文件，打开时会弹出一个升级VC编译器和库的提示，点确认即可。之后编译整个解决方案，不出意外的话会看到这些报错：<br><img src="../images/Cocos2dx/builderror.png" alt=""></p>
+<p>&emsp;&emsp;用cocos2dx3.2创建一个项目（以下用<code>YourProject</code>表示项目路径），创建成功后用VS2015打开<code>proj.win32</code>下的sln文件，打开时会弹出一个升级VC编译器和库的提示，点确认即可。之后编译整个解决方案，不出意外的话会看到这些报错：<br><img src="../images/2018/Build-cocos2dx-3_2-project-with-VS2015/builderror.png" alt=""></p>
 <h1 id="解决错误"><a href="#解决错误" class="headerlink" title="解决错误"></a>解决错误</h1><hr>
 <p>&emsp;&emsp;接下来解决这些编译报错，双击报错信息可以定位到所在文件以及行。</p>
 <h2 id="无效文本后缀XSTR"><a href="#无效文本后缀XSTR" class="headerlink" title="无效文本后缀XSTR"></a>无效文本后缀<code>XSTR</code></h2><p>&emsp;&emsp;报错文件为<code>YourProject\cocos2d\external\chipmunk\src\chipmunk.c(48)</code>。查找报错信息发现，VS2015新增了用户定义文本支持，详细见<a href="https://msdn.microsoft.com/zh-cn/library/dn919277.aspx" target="_blank" rel="noopener"><strong>MSDN:用户定义的文本</strong></a>，这里<code>XSTR(CP_VERSION_MAJOR)&quot;.&quot;XSTR(CP_VERSION_MINOR)&quot;.&quot;XSTR(CP_VERSION_RELEASE)</code>后面两个XSTR由于没有空格隔开，所以被认为是用户定义的文本，但实际上没有XSTR这个定义，所以报错。解决办法就是在分别在后面两个<code>XSTR</code>前面加上空格，即：<code>XSTR(CP_VERSION_MAJOR)&quot;.&quot; XSTR(CP_VERSION_MINOR)&quot;.&quot; XSTR(CP_VERSION_RELEASE)</code>。</p>
@@ -425,7 +425,7 @@
 <li>从cocos2dx最新版本中拷贝libpng、libtiff和libjpeg的win32版本lib文件及头文件到cocos2dx3.2对应目录<code>YourProject\cocos2d\external</code>（<strong>不希望下载cocos2dx最新版本？查看结束部分下载我提供的附件</strong>）；<br>拷贝完成之后修改<code>YourProject\cocos2d\cocos\platform\win32\CCPlatformDefine.h</code>，在<code>#endif // CC_TARGET_PLATFORM == CC_PLATFORM_WIN32</code>之前加上如下代码：  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> _MSC_VER &gt;= 1900</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libpng-2015.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libjpeg-2015.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libtiff-2015.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libpng.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libjpeg.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"libtiff.lib"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="vsnprintf"><a href="#vsnprintf" class="headerlink" title="__vsnprintf"></a><code>__vsnprintf</code></h3><p></p><p>&emsp;&emsp;出现这个问题的原因参考<a href="https://social.msdn.microsoft.com/Forums/en-US/5150eeec-4427-440f-ab19-aecb26113d31/updated-to-vs-2015-and-now-get-unresolved-external-errors?forum=vcgeneral" target="_blank" rel="noopener"><strong>MSDN Social：Updated to VS 2015 and now get Unresolved External Errors</strong></a>，解决办法是在启动项目属性中的链接器-&gt;输入-&gt;附加依赖项中加上<code>legacy_stdio_definitions.lib</code>。</p><br><img src="../images/Cocos2dx/add_stdio_definitions_lib.png" alt=""><p></p>
+<h3 id="vsnprintf"><a href="#vsnprintf" class="headerlink" title="__vsnprintf"></a><code>__vsnprintf</code></h3><p></p><p>&emsp;&emsp;出现这个问题的原因参考<a href="https://social.msdn.microsoft.com/Forums/en-US/5150eeec-4427-440f-ab19-aecb26113d31/updated-to-vs-2015-and-now-get-unresolved-external-errors?forum=vcgeneral" target="_blank" rel="noopener"><strong>MSDN Social：Updated to VS 2015 and now get Unresolved External Errors</strong></a>，解决办法是在启动项目属性中的链接器-&gt;输入-&gt;附加依赖项中加上<code>legacy_stdio_definitions.lib</code>。</p><br><img src="../images/2018/Build-cocos2dx-3_2-project-with-VS2015/add_stdio_definitions_lib.png" alt=""><p></p>
 <h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><hr>
 <p>&emsp;&emsp;到这里所有问题都已经解决，可以用VS2015愉快的写代码了😘<br>&emsp;&emsp;最后附上cocos2dx3.14.1版本的libpng、libtiff和libjpeg库相关文件，包含三个库的win32版本include和prebuilt目录，下载地址<a href="../attachments/cocos2d.zip"><strong>点这里</strong></a>，下载之后直接替换你的项目下的cocos2d目录即可。</p>
 
@@ -497,7 +497,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/Simple-Introduction-of-behaviac.html" rel="prev" title="Behaviac简单介绍">
+              <a href="/blog/2018/Simple-introduction-of-behaviac.html" rel="prev" title="Behaviac简单介绍">
                 Behaviac简单介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
