@@ -3,6 +3,374 @@
   
     
     <entry>
+      <title><![CDATA[Behaviac简单介绍]]></title>
+      <url>/blog/2018/Simple-introduction-of-behaviac.html</url>
+      <content type="html"><![CDATA[<p>&emsp;&emsp;behaviac是游戏AI的开发框架组件，也是游戏原型的快速设计工具，支持全平台，适用于客户端和服务器，详细可查看： <a href="http://www.behaviac.com/language/zh/overview/" target="_blank" rel="noopener"><strong>behaviac概述</strong></a><br>&emsp;&emsp;exe安装包下载地址： <a href="https://github.com/Tencent/behaviac/releases/download/3.6.39/BehaviacSetup_3.6.39.exe" target="_blank" rel="noopener"><strong>3.6.39版</strong></a><br>&emsp;&emsp;behaviac项目源代码： <a href="https://github.com/Tencent/behaviac/archive/3.6.39.zip" target="_blank" rel="noopener"><strong>3.6.39版</strong></a><br>&emsp;&emsp;以下内容中大部分来自behaviac官方文档，详细可查看： <a href="http://www.behaviac.com/language/zh/category/%E6%96%87%E6%A1%A3/" target="_blank" rel="noopener"><strong>文档页面</strong></a><br><a id="more"></a></p>
+<h2 id="工作原理和流程"><a href="#工作原理和流程" class="headerlink" title="工作原理和流程"></a>工作原理和流程</h2><p>&emsp;&emsp;behaviac整套组件分为编辑器和运行时库，编辑器是独立运行的程序，运行时库需要整合到自己的项目中，各模块的关系如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/1.png" alt="各模块关系"></div><br>&emsp;&emsp;其中：工作区用于管理整个项目，包括类型信息和行为树文件等；类型信息包括Agent类及其成员属性、成员方法和实例等，以及枚举和结构体类型；行为树描述了指定的Agent类型的行为，利用各种节点和类型信息来创建行为树；运行时端根据编辑器导出的类型信息，执行导出的行为树。整个组件工作流程：<br><div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/2.png" alt="组件工作流程"></div>
+
+<p>&emsp;&emsp;其中，&quot;胶水&quot;代码是指编辑器自动生成的代码文件，用于注册类型信息，可用于程序端执行时通过名字或ID调用类的成员属性或方法。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>&emsp;&emsp;点击下载示例项目文件：<a href="../attachments/BehaviacTest.zip"><strong>示例下载</strong></a><br>&emsp;&emsp;以下内容中的截图大部分来自示例项目，自行解压缩之后使用编辑器打开HelloTest文件夹下的HelloTest.workspace.xml即可。</p>
+<h2 id="类型信息"><a href="#类型信息" class="headerlink" title="类型信息"></a>类型信息</h2><p>&emsp;&emsp;通过菜单项&quot;视图&quot;-&gt;&quot;类型信息&quot;（或快捷键<code>Ctrl+M</code>），打开类型信息面板，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/3.png" alt="类型信息面板"></div>
+
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>&emsp;&emsp;类型分为三种：Agent、Struct和Enum，在新加一个类型的时候，可以相应的选择，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/4.png" alt="类型"></div><br>&emsp;&emsp;在类型信息面板左侧的&quot;类型列表&quot;中选择所要编辑的Agent子类，在右侧的&quot;类型&quot;属性框中，可以修改相关的参数，如下图所示：<br><div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/5.png" alt="类型属性"></div>
+
+<p>&emsp;&emsp;&quot;类型&quot;框中的各个参数说明如下：<br>&emsp;&emsp;<strong>生成代码</strong>：表示该类型是否需要在点击右下方的&quot;应用&quot;按钮时，生成源代码文件；<br>&emsp;&emsp;<strong>名称</strong>：该类型的名字，跟C++/C#的变量命名要求一致，不能输入非法字符；<br>&emsp;&emsp;<strong>命名空间</strong>：该类型的命名空间，跟C++/C#的命名空间一致；<br>&emsp;&emsp;<strong>基类</strong>：该类型的基类；<br>&emsp;&emsp;<strong>引用类型</strong>：该类型是否为引用类型，主要提供给结构体类型使用。若是引用类型，则表示在编辑器中使用时，只能作为引用或指针使用，不能展开配置其成员属性。Agent子类都是引用类型，结构体类型可以选择为引用或非引用类型，枚举类型都是非引用类型；<br>&emsp;&emsp;<strong>生成位置</strong>：一般不用设置，默认会统一使用工作区中配置的&quot;代码生成位置&quot;。但如果设置了该参数，表示当前类型会生成在指定的目录；<br>&emsp;&emsp;<strong>显示名</strong>：用于在编辑器中显示该类型的名字，可以用中文；<br>&emsp;&emsp;<strong>描述</strong>：用于在编辑器中显示该类型的描述内容，可以用中文。<br>&emsp;&emsp;右上方的按钮说明如下：<br>&emsp;&emsp;<strong>新增</strong>：用于添加一个新的类型；<br>&emsp;&emsp;<strong>删除</strong>：用于删除选中的类型；<br>&emsp;&emsp;<strong>预览原型代码</strong>：用于预览生成的代码内容。如果没有勾选上述&quot;类型&quot;框中的&quot;生成代码&quot;选项，可以点击该按钮打开原型代码文件后，复制相关的内容到自己的代码中；<br>&emsp;&emsp;<strong>设置头文件</strong>：在编辑器自动生成的代码中，可能需要包含项目中的头文件，这时就需要点击该按钮，弹出&quot;C++导出设置&quot;窗口添加需要的头文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>&emsp;&emsp;在类型信息面板中部位置的&quot;实例名称&quot;列表中，列举了当前选中的Agent子类的所有全局实例名。在其右侧的&quot;新增&quot;按钮用于添加一个实例名，&quot;删除&quot;按钮用于删除当前选中的实例名，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/6.png" alt="实例"></div>
+
+<p>&emsp;&emsp;实例的详细使用说明可查看： <a href="http://www.behaviac.com/tutorial_3_agent_instance/" target="_blank" rel="noopener"><strong>教程三：Agent实例</strong></a></p>
+<h3 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h3><p>&emsp;&emsp;在类型信息面板中下部位置的&quot;成员类型&quot;分为Property（成员属性）、Method（成员方法）和Task（任务，用于定义子树调用的接口原型）。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>&emsp;&emsp;成员列表&quot;根据上面选择的&quot;成员类型&quot;，列出了所有的成员；&quot;筛选字符&quot;用于列举自己指定字符的所有成员，即快速检索自己所需的成员，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/7.png" alt="属性列表"></div>
+
+<p>&emsp;&emsp;选择某个属性后，即可在下方&quot;属性&quot;框中查看该属性的各个参数：<br>&emsp;&emsp;<strong>名字</strong>：该属性的名字，跟C++/C#的变量命名要求一致，不能输入非法字符；<br>&emsp;&emsp;<strong>类型</strong>：该属性的类型。如果勾选了后面的&quot;数组？&quot;，则表示该类型为数组类型；<br>&emsp;&emsp;<strong>公开</strong>：该属性是否为public，跟C++/C#中的概念一致；<br>&emsp;&emsp;<strong>静态</strong>：该属性是否为static，跟C++/C#中的概念一致；<br>&emsp;&emsp;<strong>只读</strong>：该属性是否只读。如果为只读，那么在赋值节点中，不能作为左值被赋值，只能读取该值；<br>&emsp;&emsp;<strong>局部变量</strong>：表示该属性是否为局部变量。如果是局部变量，那么只在当前打开的行为树中使用，否则，是普通的成员属性，隶属于当前Agent子类，可用于任何行为树；<br>&emsp;&emsp;<strong>默认值</strong>：该属性的默认初始值，会自动生成在类型的构造函数中；<br>&emsp;&emsp;<strong>显示名</strong>：用于在编辑器中显示该属性的名字，可以用中文；<br>&emsp;&emsp;<strong>描述</strong>：用于在编辑器中显示该属性的描述内容，可以用中文。<br>&emsp;&emsp;右侧的&quot;新增&quot;按钮用于添加新的属性，&quot;删除&quot;按钮用于删除选中的属性，&quot;往上&quot;和&quot;往下&quot;按钮用于调整选中属性的相对位置。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>&emsp;&emsp;在类型信息面板中，将&quot;成员类型&quot;选择为&quot;Method&quot;，则在&quot;成员列表&quot;中列出了所有的成员方法，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/8.png" alt="方法列表"></div>
+
+<p>&emsp;&emsp;选择某个方法后，即可在下方&quot;属性&quot;框中查看该方法的各个参数：<br>&emsp;&emsp;<strong>名字</strong>：该方法的名字，跟C++/C#的变量命名要求一致，不能输入非法字符；<br>&emsp;&emsp;<strong>返回值类型</strong>：该方法的返回值类型。如果勾选了后面的&quot;数组？&quot;，则表示该类型为数组类型；<br>&emsp;&emsp;<strong>公开</strong>：该方法是否为public，跟C++/C#中的概念一致；<br>&emsp;&emsp;<strong>静态</strong>：该方法是否为static，跟C++/C#中的概念一致；<br>&emsp;&emsp;<strong>显示名</strong>：用于在编辑器中显示该方法的名字，可以用中文；<br>&emsp;&emsp;<strong>描述</strong>：用于在编辑器中显示该方法的描述内容，可以用中文；<br>&emsp;&emsp;<strong>参数</strong>：该方法的参数列表，可以添加和删除。</p>
+<h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><p>&emsp;&emsp;在类型信息面板中，将&quot;成员类型&quot;选择为&quot;Task&quot;，则在&quot;成员列表&quot;中列出了所有的任务，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/9.png" alt="任务列表"></div>
+
+<p>&emsp;&emsp;任务的编辑跟成员方法的编辑相同，任务只是定义了一个接口原型，用于事件的参数传递。</p>
+<h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h3><p>&emsp;&emsp;编辑类型信息的过程中，不要忘记点击右下方的&quot;应用&quot;按钮，保存和生成类型信息。</p>
+<h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>&emsp;&emsp;behaviac有以下节点类型：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/10.png" alt="节点类型"></div>
+
+<p>&emsp;&emsp;接下来以以下几个行为树为例，说明各个节点的功能：<br>&emsp;&emsp;<code>1_Attach</code>&emsp;附件类节点<br>&emsp;&emsp;<code>2_Condition</code>&emsp;条件类节点<br>&emsp;&emsp;<code>3_Action</code>&emsp;动作类节点<br>&emsp;&emsp;<code>4_Combine</code>&emsp;组合类节点<br>&emsp;&emsp;<code>5_Combine_2</code>&emsp;组合类节点（等待信号和子树）<br>&emsp;&emsp;<code>6_Adorner</code>&emsp;装饰器类节点<br>&emsp;&emsp;<code>7_StateMachine</code>&emsp;状态机类节点</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/11.png" alt="行为树列表"></div>
+
+<h3 id="附件类节点"><a href="#附件类节点" class="headerlink" title="附件类节点"></a>附件类节点</h3><p>&emsp;&emsp;附件类节点包含前置和后置节点，可以添加到任何一个节点作为前置和后置。前置往往是作为前提条件来使用，而后置往往是当节点结束的时候施加效果，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/12.png" alt="附件类节点"></div>
+
+<h3 id="条件类节点"><a href="#条件类节点" class="headerlink" title="条件类节点"></a>条件类节点</h3><p>&emsp;&emsp;条件节点对左右参数进行比较，根据比较结果返回成功或失败，但永远不会返回正在执行（Running）。通常左参数是Agent的某个属性或某个有返回值的方法，用户可以从下拉列表里选择，右参数是相应类型的常数、Agent的某个属性或某个有返回值的方法，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/13.png" alt="条件类节点"></div>
+
+<p>&emsp;&emsp;与节点接受两个以上的条件子节点，执行逻辑&quot;与（&amp;&amp;）&quot;操作，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/14.png" alt="条件与节点"></div>
+
+<p>&emsp;&emsp;或节点接受两个以上的条件子节点，执行逻辑&quot;或（||）&quot;操作，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/15.png" alt="条件或节点"></div>
+
+<h3 id="动作类节点"><a href="#动作类节点" class="headerlink" title="动作类节点"></a>动作类节点</h3><h4 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h4><p>&emsp;&emsp;等待节点在指定的数值内（单位根据自己的使用场景来定）持续保持为运行（Running）状态，数值到达之后则返回成功，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/16.png" alt="等待节点"></div>
+
+<p>&emsp;&emsp;需要配置&quot;持续时间&quot;，可以是常数、属性或方法的返回值（支持double和int类型），如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/17.png" alt="等待节点配置"></div>
+
+<p>&emsp;&emsp;在工作区配置窗口中，可以勾选左下角的&quot;使用整数值&quot;来表示是否使用整数值，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/18.png" alt="等待节点配置"></div>
+
+<p>&emsp;&emsp;等待节点的更新逻辑如下，需要注意的是，使用等待节点需在游戏更新代码中调用SetIntValueSinceStartup或SetDoubleValueSinceStartup设置总时间。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">EBTStatus WaitTask::update(Agent* pAgent, EBTStatus childStatus) </span><br><span class="line">&#123;</span><br><span class="line">    BEHAVIAC_UNUSED_VAR(pAgent);</span><br><span class="line">    BEHAVIAC_UNUSED_VAR(childStatus);</span><br><span class="line">    <span class="keyword">bool</span> bUseIntValue = Workspace::GetInstance()-&gt;GetUseIntValue();</span><br><span class="line">    <span class="keyword">if</span> (bUseIntValue) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> time = Workspace::GetInstance()-&gt;GetIntValueSinceStartup();</span><br><span class="line">        <span class="keyword">if</span> (time - <span class="keyword">this</span>-&gt;m_intStart &gt;= <span class="keyword">this</span>-&gt;m_intTime) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> BT_SUCCESS;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> time = Workspace::GetInstance()-&gt;GetDoubleValueSinceStartup();</span><br><span class="line">        <span class="keyword">if</span> (time - <span class="keyword">this</span>-&gt;m_start &gt;= <span class="keyword">this</span>-&gt;m_time) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> BT_SUCCESS;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> BT_RUNNING;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h4><p>&emsp;&emsp;动作节点是比较常用的节点，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/19.png" alt="动作节点"></div>
+
+<p>&emsp;&emsp;动作节点通常对应Agent的某个方法，可以从下拉列表里为其选择方法：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/20.png" alt="动作节点属性"></div>
+
+<p>&emsp;&emsp;在设置其方法后，需进一步设置其&quot;决定状态的选项&quot;或&quot;决定状态的函数&quot;，如上图所示。如果没有正确配置，则视为错误不能被导出。<br>&emsp;&emsp;<strong>决定状态的选项</strong>：不管动作的方法的返回值是什么，都强制返回设定的EBTStatus值（即Success、Failure或Running）。<br>&emsp;&emsp;<strong>决定状态的函数</strong>：将动作的方法的返回值从不是EBTStatus类型，转换为执行行为树所需要的EBTStatus值（即Success、Failure或Running）。<br>&emsp;&emsp;有三种设置来决定每次执行动作节点后的状态（Success、Failure或Running）：<br>&emsp;&emsp;1、如果动作节点的方法返回EBTStatus值，那么该值就直接作为动作节点的状态，&quot;决定状态的选项&quot;和&quot;决定状态的函数&quot;将被禁用无需设置。<br>&emsp;&emsp;2、否则，需要设置&quot;决定状态的选项&quot;：当选择Invalid值时，表明需要进一步设置&quot;决定状态的函数&quot;，否则禁用&quot;决定状态的函数&quot;项，并直接使用&quot;决定状态的选项&quot;所选择的值（Success、Failure或Running），表示该方法执行完毕后，动作节点将返回这个设置的值。<br>&emsp;&emsp;3、在&quot;决定状态的函数&quot;项中选择的函数，其返回值必然是EBTStatus，作为动作节点的状态。该函数只有一个或者没有参数，当动作节点的方法无返回值时，该函数没有参数，当动作节点的方法有返回值时，该函数唯一参数的类型为动作节点方法的返回值类型。也即：<br>&emsp;&emsp;当方法的原型是void Method(…)的时候，&quot;决定状态的函数&quot;的原型为：EBTStatus StatusFunctor()。<br>&emsp;&emsp;当方法的原型是ReturnType Method(…)的时候，&quot;决定状态的函数&quot;的原型为：EBTStatus StatusFunctor(ReturnType param)。</p>
+<h4 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h4><p>&emsp;&emsp;赋值节点实现了赋值的操作，可以把右边的值赋值给左侧的参数，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/21.png" alt="赋值节点"></div>
+
+<p>&emsp;&emsp;其中，左参数是某个Agent实例的属性，右参数可以是常数、Agent实例的属性或者方法调用的返回值，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/22.png" alt="赋值节点属性"></div>
+
+<p>&emsp;&emsp;当属性&#39;类型转换&#39;没有选中的时候，赋值节点只允许相同的类型进行赋值，也就是说右参数的下拉列表中仅列出与左参数相同类型的参数；而&#39;类型转换&#39;选中的时候，赋值节点允许较为宽松的类型。分为以下两种情况：<br>&emsp;&emsp;1、当左参数是数据类型（int，short，byte，float等）的时候，右参数也将是数据类型，不需要完全一致。<br>&emsp;&emsp;2、当左参数是指针类型（对于C#是引用类型）的时候，右参数将是左参数类型的同类或子类。</p>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><p>&emsp;&emsp;计算节点对常数、属性或函数的返回值做加减乘除的运算，把结果赋值给某个属性，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/23.png" alt="计算节点"></div>
+
+<p>&emsp;&emsp;其中，左参数是某个Agent实例的属性，参数1和参数2可以是常数、Agent实例的属性或者方法调用的返回值，操作符可以是&quot;+, -, *, /&quot;，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/24.png" alt="计算节点属性"></div>
+
+<p>&emsp;&emsp;需要注意的是，这些操作的&quot;粒度&quot;过小，大量这种小粒度的操作可能对性能造成影响。复杂的计算建议使用动作节点调用相应的函数实现修改或计算。</p>
+<h4 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h4><p>&emsp;&emsp;结束节点可以使用于行为树执行过程中的强制返回，即终止该行为树的全部执行，整个行为树直接返回当前结束节点所配置的&quot;结束状态&quot;值，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/25.png" alt="结束节点"></div>
+
+<p>&emsp;&emsp;在上图中，当执行到结束节点时，行为树直接返回Success，不再执行下面ID为10的动作节点。<br>&emsp;&emsp;可以为结束节点配置&quot;结束状态&quot;属性，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/26.png" alt="结束节点属性"></div>
+
+<p>&emsp;&emsp;上面的&quot;结束状态&quot;可以是一个常量，也可以是成员属性或方法的返回值，表示行为树执行到结束节点时，强制返回&quot;结束状态&quot;所配置的当前值。<br>&emsp;&emsp;注意：只有&quot;结束状态&quot;的当前值是Success或Failure时，行为树才会结束并返回该值；为Invalid或Running时，该结束节点不起作用，行为树接着执行。<br>&emsp;&emsp;此外，还有一个属性&quot;结束外层树&quot;，该属性用于表示在子树中的结束节点返回时，是否需要返回该子树所在的父树。</p>
+<h4 id="空操作"><a href="#空操作" class="headerlink" title="空操作"></a>空操作</h4><p>&emsp;&emsp;空操作也就是什么都不做，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/27.png" alt="空操作节点"></div>
+
+<h4 id="等待帧数"><a href="#等待帧数" class="headerlink" title="等待帧数"></a>等待帧数</h4><p>&emsp;&emsp;等待帧数节点顾名思义就是等待指定的帧数后返回成功，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/28.png" alt="等待帧数节点"></div>
+
+<p>&emsp;&emsp;等待帧数节点的更新逻辑如下，需要在游戏更函数中调用SetFrameSinceStartup设置帧数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">EBTStatus WaitTask::update(Agent* pAgent, EBTStatus childStatus) </span><br><span class="line">&#123;</span><br><span class="line">    BEHAVIAC_UNUSED_VAR(pAgent);</span><br><span class="line">    BEHAVIAC_UNUSED_VAR(childStatus);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> bUseIntValue = Workspace::GetInstance()-&gt;GetUseIntValue();</span><br><span class="line">    <span class="keyword">if</span> (bUseIntValue) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> time = Workspace::GetInstance()-&gt;GetIntValueSinceStartup();</span><br><span class="line">        <span class="keyword">if</span> (time - <span class="keyword">this</span>-&gt;m_intStart &gt;= <span class="keyword">this</span>-&gt;m_intTime) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> BT_SUCCESS;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> time = Workspace::GetInstance()-&gt;GetDoubleValueSinceStartup();</span><br><span class="line">        <span class="keyword">if</span> (time - <span class="keyword">this</span>-&gt;m_start &gt;= <span class="keyword">this</span>-&gt;m_time) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> BT_SUCCESS;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> BT_RUNNING;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="组合类节点"><a href="#组合类节点" class="headerlink" title="组合类节点"></a>组合类节点</h3><h4 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h4><p>&emsp;&emsp;并行节点在逻辑上是&quot;同时&quot;并行的执行所有子节点（但实际也是从上往下依次执行），然后根据所有子节点的状态决定本身的状态，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/29.png" alt="并行节点"></div>
+
+<p>&emsp;&emsp;并行节点有几个重要属性可以配置，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/30.png" alt="并行节点属性"></div>
+
+<p>&emsp;&emsp;<strong>失败条件</strong>：决定并行节点在什么条件下是失败的；<br>&emsp;&emsp;<strong>成功条件</strong>：决定并行节点在什么条件下是成功的；<br>&emsp;&emsp;<strong>子节点结束继续条件</strong>：子节点结束后是重新再循环执行，还是结束后不再执行；<br>&emsp;&emsp;<strong>退出行为</strong>：当并行节点的成功或失败条件满足并返回成功或失败后，是否需要终止掉其他还在运行的子节点。<br>&emsp;&emsp;当子节点执行状态既不满足失败条件，也不满足成功条件，且无Running状态子节点时，并行节点将直接返回Failure。</p>
+<h4 id="子树"><a href="#子树" class="headerlink" title="子树"></a>子树</h4><p>&emsp;&emsp;通过子树节点，一个行为树可以作为另一个行为树的子树。作为子树的那个行为树被&quot;调用&quot;。如同一个动作节点一样，子树节点根据子树的执行结果也会返回执行结果（成功、失败或运行。），其父节点按照自己的控制逻辑来控制接下来的运行。</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/31.png" alt="子树节点"></div>
+
+<p>&emsp;&emsp;子树节点属性如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/32.png" alt="子树节点属性"></div>
+
+<p>&emsp;&emsp;引用文件名，作为被调用的子树的行为树的相对路径。该属性不允许为空，需要是有效的路径。没有提供有效路径会导致报错并且该树不允许被导出。引用文件名可以是const常量，可以是变量(其值是行为树的相对路径)，或函数（其返回值需要是字符串，是行为树的相对路径）。<br>&emsp;&emsp;任务，如果子树的根节点是任务节点，这里会出现该任务，并且允许提供参数。如在最上的图中，8号节点travel(x, ax)，4号节点travel(ay, y)。如果子树的根节点不是任务节点，或者引用文件名不是常量，任务属性就是空的。</p>
+<h5 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h5><p>&emsp;&emsp;一个行为树可以&quot;调用&quot;自己，这么做的时候形成递归，形成递归的时候需要注意不要造成死循环，这可以通过变量的使用来避免。<br>&emsp;&emsp;如下图所示，利用<code>testVar_0</code>来避免死循环：第一次进入的时候<code>testVar_0 == 0</code>，所以可以执行下面的序列，先把<code>testVar_0</code>赋值为1，那么在下面的递归重入的时候由于<code>testVar_0 == 1</code>，所以<code>testVar_0 == 0</code>的条件不满足，所以下面的序列不会进入从而避免了死循环。</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/33.png" alt="递归避免死循环"></div>
+
+<h5 id="添加子树节点"><a href="#添加子树节点" class="headerlink" title="添加子树节点"></a>添加子树节点</h5><p>&emsp;&emsp;在编辑器中，可以通过鼠标拖拽一棵行为树到另一棵行为树中生成子树节点，被拖拽的行为树的路径被设置到引用文件名。需要指出的是，并非任意一个行为树都可以作为另外一个行为树的子树。作为子树的行为树的Agent类型需要是&quot;父树&quot;的Agent类型的子类或同类。也可以像添加其他节点那样，在节点列表中选取子树，拖拽其到相应的位置，然后配置引用文件名或任务。<br>&emsp;&emsp;如果手工配置的子树的路径是空的，或无效的则会报错，该树不允许被导出。如果配置的是变量或函数，编辑器中无法知道其是否有效，只有在运行时发现值无效才会报运行时错误。</p>
+<h4 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h4><p>&emsp;&emsp;选择节点以给定的顺序依次调用其子节点，直到其中一个成功返回，那么该节点也返回成功。如果所有的子节点都失败，那么该节点也失败。</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/34.png" alt="选择节点"></div>
+
+<p>&emsp;&emsp;选择节点可以添加&#39;中断条件&#39;作为终止执行的条件。下图中红框中的箭头就是可选的&#39;中断条件&#39;。该&#39;中断条件&#39;在每处理下一个子节点的时候被检查，当为true时，则不再继续，返回失败（Failure）。</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/35.png" alt="选择节点"></div>
+
+<h4 id="概率选择"><a href="#概率选择" class="headerlink" title="概率选择"></a>概率选择</h4><p>&emsp;&emsp;类似选择节点，概率选择节点也是从子节点中选择执行一个，但不像选择节点每次都是按照排列的先后顺序选择，概率选择节点每次选择的时候根据子节点的&quot;概率权值&quot;进行选择，权值越大，被选到的机会越大，权值为0，则其分支不会被执行，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/36.png" alt="概率选择节点"></div>
+
+<p>&emsp;&emsp;概率选择节点根据概率&quot;直接&quot;选择并执行某个子节点，无论其返回成功还是失败，概率选择节点也将返回同样的结果。如果该子节点返回失败，概率选择也返回失败，它不会像选择节点那样会继续执行接下来的子节点。<br>&emsp;&emsp;概率选择节点有随机数生成器可以配置，该随机数生成器是一个返回值为0.0到1.0之间的float类型的函数，一般设为空即可，表示采用系统的缺省实现，也可以使用自己提供的函数。如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/37.png" alt="概率选择节点属性"></div>
+
+<p>&emsp;&emsp;概率选择节点的子节点只能是权值的子节点，在添加子节点时，该权值节点会被系统自动添加。所有权值子节点的相加之和不需要是100，执行时会进行归一化操作，子节点的概率是该子节点的权值/总和。<br>&emsp;&emsp;概率选择节点的选择算法是基于概率区间的，比如上图中的2个子节点的权值都为1，归一化后的概率为0.5，那么对应的概率区间分别是[0.0, 0.5)、[0.5, 1)。概率选择节点的随机数生成器随机产生一个[0.0, 1.0)之间的随机数，看这个随机数落在哪个区间，则执行第几个子节点。例如，随机数为0.45，落在第一个区间[0.0, 0.5)，则选择执行第一个子节点。</p>
+<h4 id="随机选择"><a href="#随机选择" class="headerlink" title="随机选择"></a>随机选择</h4><p>&emsp;&emsp;类似选择节点，随机选择节点也是从子节点中选择执行一个，但不像选择节点每次都是按照排列的先后顺序选择，随机选择节点每次选择的时候随机的决定执行顺序，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/38.png" alt="随机选择节点"></div>
+
+<p>&emsp;&emsp;随机选择节点有随机数生成器可以配置，该随机数生成器是一个返回值为0.0到1.0之间的float类型的函数，一般设为空即可，表示采用系统的缺省实现，也可以使用自己提供的函数。如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/39.png" alt="随机选择节点属性"></div>
+
+<h4 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h4><p>&emsp;&emsp;序列以给定的顺序依次执行其子节点，直到所有子节点成功返回，该节点也返回成功。只要其中某个子节点失败，那么该节点也失败。如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/40.png" alt="序列节点"></div>
+
+<p>&emsp;&emsp;序列节点不仅可以管理&#39;动作&#39;子节点，也可以管理&#39;条件&#39;子节点，如下图（FirstBT），由于假节点必定返回false，即失败，那么后面的Print(&quot;Failure&quot;)将不再执行：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/41.png" alt="序列节点属性"></div>
+
+<p>&emsp;&emsp;序列节点可以添加&#39;中断条件&#39;作为终止执行的条件。上图中序列节点右上角的箭头就是可选的&#39;中断条件&#39;，该&#39;中断条件&#39;在每处理下一个子节点的时候被检查，当为true时，则不再继续，返回失败（Failure）。</p>
+<h4 id="随机序列"><a href="#随机序列" class="headerlink" title="随机序列"></a>随机序列</h4><p>&emsp;&emsp;类似序列节点，随机序列节点也是从子节点中顺序执行，但不像序列节点每次都是按照排列的先后顺序，随机序列节点每次执行子节点时随机的决定其执行顺序，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/42.png" alt="随机序列节点"></div>
+
+<p>&emsp;&emsp;与随机选择节点相同的是，随机序列节点也有随机数生成器可以配置，该随机数生成器是一个返回值为0.0到1.0之间的float类型的函数，一般设为空即可，表示采用系统的缺省实现，也可以使用自己提供的函数。如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/43.png" alt="随机序列节点属性"></div>
+
+<h4 id="条件执行"><a href="#条件执行" class="headerlink" title="条件执行"></a>条件执行</h4><p>&emsp;&emsp;条件执行节点与IfElse流程相似，其必须要有3个子节点，第一个子节点是条件分支，第二个子节点是&quot;真时执行&quot;分支，第三个子节点是&quot;假时执行&quot;分支。如果条件为真，那么执行&quot;真时执行&quot;分支；否则，执行&quot;假时执行&quot;分支。如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/44.png" alt="条件执行节点"></div>
+
+<p>&emsp;&emsp;如果不使用条件执行节点，也可以用序列和选择节点来实现相同的功能，只不过没有条件执行节点简洁。另外，条件执行节点的&quot;条件&quot;分支，还可以挂上动作节点甚至是一棵子树。比如挂上动作节点时，如果该动作节点返回Running，则条件执行节点也返回Running，并且该条件一直持续执行，直到动作节点返回Success或Failure，则继续相应的执行&quot;真时执行&quot;或&quot;假时执行&quot;分支。</p>
+<h4 id="等待信号"><a href="#等待信号" class="headerlink" title="等待信号"></a>等待信号</h4><p>&emsp;&emsp;等待信号节点模拟了等待某个条件的&quot;阻塞&quot;过程。等待信号节点返回Running，直到它上面附加的条件是true的时候：<br>&emsp;&emsp;1、如果有子节点，则执行其子节点，并当子节点结束时，返回该子节点的返回值；<br>&emsp;&emsp;2、如果没有子节点，则直接返回成功。<br>&emsp;&emsp;在下图中，等待信号节点在<code>m_bFlag</code>为true之前一直返回running，当<code>m_bFlag</code>为true时，结束阻塞，执行之后的<code>m_nVal=11</code>赋值节点：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/45.png" alt="等待信号节点"></div>
+
+<p>&emsp;&emsp;等待信号节点还可以附加子节点，如下图，在这种情况下，<code>testVar_0</code>为0时先执行<code>testVar_1 =1</code>赋值节点，之后执行后续的节点：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/46.png" alt="附加子节点的等待信号节点"></div>
+
+<h4 id="选择监测"><a href="#选择监测" class="headerlink" title="选择监测"></a>选择监测</h4><p>&emsp;&emsp;选择监测节点和监测分支节点作为对传统行为树的扩展，可以很自然的处理事件和状态的改变，类似于程序语言中的&quot;switch…case&quot;语句，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/47.png" alt="选择监测节点"></div>
+
+<p>&emsp;&emsp;需要注意以下几点：<br>&emsp;&emsp;1、选择监测和监测分支节点只能配对使用，即选择监测节点只能添加监测分支节点作为它的子节点，监测分支节点也只能作为选择监测节点的子节点被添加；<br>&emsp;&emsp;2、监测分支节点有条件分支子树和动作分支子树。只有条件分支子树返回成功的时候，动作分支子树才能够被执行；<br>&emsp;&emsp;3、选择监测节点是一个动态的选择节点，与选择节点相同的是，它选择第一个返回成功的子节点，但不同的是，它不是只选择一次，而是每次执行时都对其子节点重新评估后再进行选择；<br>&emsp;&emsp;4、选择检测节点的实现很像并行节点，每帧都要重新执行所有的子树，大量使用的时候请注意其性能。<br>&emsp;&emsp;默认情况下，上一次得到执行的动作分支，如果在下一次其条件分支也返回成功，那么这个动作分支会继续执行上次返回正在运行的节点。例如，假设上图中上一次执行行为树的时候，ID为28的条件节点返回成功，并且已经执行到ID为30的动作节点（31节点返回成功，30节点返回running），那么，当下一次执行该选择检测节点时，如果发现ID为28的条件节点还是返回成功，ID为30的动作节点就会直接得到执行，而不是先执行ID为31的动作节点。<br>&emsp;&emsp;但有的时候，可能需要在条件分支再次得到满足时，其动作分支需要重新执行，而不是默认情况下的从上次返回正在执行的节点继续执行。例如，对于上面的例子，当ID为28的条件节点再次返回成功时，需要重新执行其动作分支，即重新开始执行ID为31的动作节点，这时候，需要勾选上选择检测节点的属性&quot;重置子节点&quot;，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/48.png" alt="选择监测节点属性"></div>
+
+<p>&emsp;&emsp;另外，执行行为树的过程中，当状态、条件发生变化或发生事件时如何响应或打断当前的执行是个重要的问题。<br>&emsp;&emsp;目前behaviac组件支持三种方式来处理状态变化或事件发生：并行节点、选择监测节点、事件附件等。简而言之，并行和选择监测节点的工作方式是采用&quot;轮询&quot;的方式，每次执行时需要重新评估所有子节点，而不是像其他节点会保留上一次正在执行的子节点以便在下一次执行时继续执行。事件附件是在游戏逻辑（程序端）发出事件时，才按需得到响应。</p>
+<h4 id="任务-1"><a href="#任务-1" class="headerlink" title="任务"></a>任务</h4><p>&emsp;&emsp;任务节点用于描述一个接口，该接口的入口参数为当前的行为树提供了局部变量，这些局部变量可以根据需要用于该行为树所有子节点，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/49.png" alt="任务节点"></div>
+
+<p>&emsp;&emsp;注意，任务节点只能作为行为树的第一个子节点存在，在任务节点上可以添加其他子节点。<br>&emsp;&emsp;在任务节点的任务属性中需要选择在类型信息面板中创建的事件，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/50.png" alt="任务节点属性"></div>
+
+<p>&emsp;&emsp;带有任务节点的行为树主要用于事件的处理，事件则主要用于在游戏逻辑发出事件时，得到响应后打断当前正在执行的行为树，并切换到所设置的另一个行为树。以<code>4_Combine_Task</code>和<code>5_Combine_2</code>为例，操作步骤如下：<br>&emsp;&emsp;1、首先为FirstAgent添加一个任务<code>event_task</code>，接受一个int参数nVal：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/51.png" alt="添加任务属性"></div>
+
+<p>&emsp;&emsp;2、新建一个任务行为树<code>4_Combine_Task</code>，添加任务节点，在属性框中选择<code>event_task</code>任务，之后添加一系列的节点：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/52.png" alt="选任务行为树"></div>
+
+<p>&emsp;&emsp;3、新建一个用于模拟主逻辑的行为树<code>5_Combine_2</code>，拖动<code>4_Combine_Task</code>行为树到<code>5_Combine_2</code>的第一个序列节点上，这样该序列节点就有了一个事件的附件：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/53.png" alt="主行为树"></div>
+
+<p>&emsp;&emsp;4、之后为该事件设置参数：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/54.png" alt="为事件设置参数"></div>
+
+<p>&emsp;&emsp;其中，&quot;触发一次&quot;表示该事件是否只触发一次就不再起作用。&quot;触发模式&quot;控制该事件触发后对当前行为树的影响以及被触发的子树结束时应该如何恢复，有转移和返回两个选项：<br>&emsp;&emsp;转移：当子树结束时，当前行为树被中断和重置，该子树将被设置为当前行为树。<br>&emsp;&emsp;返回：当子树结束时，返回控制到之前打断的地方继续执行。当前行为树直接&quot;压&quot;到执行堆栈上而不被中断和重置，该子树被设置为当前行为树，当该子树结束时，原本的那棵行为树从执行堆栈上&quot;弹出&quot;，并从当初的节点恢复执行。<br>&emsp;&emsp;5、最后在代码中通过如下代码将事件<code>event_task</code>发出，并指定所需参数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g_pFirstAgent-&gt;FireEvent(<span class="string">"event_task"</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;这样，在执行行为树<code>5_Combine_2</code>时，如果接收到事件<code>event_task</code>，那么行为树中的事件附件将得到响应和处理，行为树的执行就会从当前的<code>5_Combine_2</code>跳转到<code>4_Combine_Task</code>。<br>&emsp;&emsp;调用FireEvent的时候，只有处于running状态的节点才响应事件，这样设计是为了允许不同的分支不同的时机同样的事件可以触发不同的行为。比如同样是BeingHit，受伤的时候，或者逃跑的时候可以对应不同的行为。如果不需要根据不同的节点相应不同的行为，只是需要响应事件，可以把事件配置在根节点上（根节点同样需要是running状态，非running状态的节点没有机会响应事件）。<br>&emsp;&emsp;另外需要补充说明的是，虽然行为树<code>4_Combine_Task</code>带有任务节点，但也可以直接将该行为树拖拽到行为树<code>5_Combine_2</code>中，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/55.png" alt="直接使用任务行为树"></div>
+
+<p>&emsp;&emsp;选中该任务子树后，可直接配置所需参数，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/56.png" alt="配置参数"></div>
+
+<h3 id="装饰器类节点"><a href="#装饰器类节点" class="headerlink" title="装饰器类节点"></a>装饰器类节点</h3><p>&emsp;&emsp;装饰器类节点作为控制分支节点，必须且只接受一个子节点。装饰器类节点首先从子节点开始执行，并根据自身的控制逻辑以及子节点的返回结果决定自身的状态。装饰节点都有&quot;子节点结束时作用&quot;属性配置，如果该值配置为真，则仅当子节点结束（成功或失败）的时候，装饰节点的装饰逻辑才起作用。</p>
+<h4 id="非"><a href="#非" class="headerlink" title="非"></a>非</h4><p>&emsp;&emsp;非节点将子节点的返回值取反，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/57.png" alt="非节点"></div>
+
+<p>&emsp;&emsp;类似于逻辑&quot;非&quot;操作，非节点对子节点的返回值执行如下操作：<br>&emsp;&emsp;1、如果子节点失败，那么此节点返回成功；<br>&emsp;&emsp;2、如果子节点成功，那么此节点返回失败；<br>&emsp;&emsp;3、如果子节点返回正在执行，则同样返回正在执行。</p>
+<h4 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h4><p>&emsp;&emsp;时间节点用于在指定的时间内，持续调用其子节点，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/58.png" alt="时间节点"></div>
+
+<p>&emsp;&emsp;时间节点可以配置其属性&quot;时间&quot;，该属性是float或double类型，可以配置一个常量、成员属性或方法的返回值，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/59.png" alt="时间节点属性"></div>
+
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p>&emsp;&emsp;循环节点循环执行子节点指定的次数，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/60.png" alt="循环节点"></div>
+
+<p>&emsp;&emsp;循环节点配置如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/61.png" alt="循环节点属性"></div>
+
+<p>&emsp;&emsp;<strong>次数</strong>：如果次数配置为-1，则视为无限循环，总是返回运行。否则循环执行子节点指定的次数然后返回成功，在指定次数之前则返回运行。此循环次数可以是常数，也可以是变量，当是变量的时候，每次enter的时候此循环次数被赋值，也就是每次enter的时候，循环的次数就被确定了。之后再更改该变量的值在本次循环内将不起作用，但是exit后再enter的时候会起作用；<br>&emsp;&emsp;<strong>一帧内结束</strong>：如果选择了&#39;一帧内结束&#39;，次数不可以配置为-1，节点阻塞，直到子节点在一帧内执行指定的次数后返回成功；然而如果子节点失败了，不会执行指定次数就直接返回失败；如果子节点一直返回运行，则本节点一直阻塞。但如果&quot;子节点结束时作用&quot;不为真，则不会阻塞；在&#39;一帧内结束&#39;的情况下，本节点只能成功或失败，不会返回运行。</p>
+<h4 id="帧数"><a href="#帧数" class="headerlink" title="帧数"></a>帧数</h4><p>&emsp;&emsp;帧数节点用于在指定的帧数内，持续调用其子节点，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/62.png" alt="帧数节点"></div>
+
+<p>&emsp;&emsp;帧数节点可以配置其属性&quot;帧数&quot;，该属性是int类型，可以配置一个常量、成员属性或方法的返回值，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/63.png" alt="帧数节点属性"></div>
+
+<h4 id="计数限制"><a href="#计数限制" class="headerlink" title="计数限制"></a>计数限制</h4><p>&emsp;&emsp;计数限制节点不同于循环节点，它在 <strong>指定的循环次数到达前</strong> 返回子节点返回的状态，无论成功、失败还是正在执行，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/64.png" alt="计数限制节点"></div>
+
+<p>&emsp;&emsp;计数限制节点在指定的循环次数到达后不再执行。如果指定的循环次数小于0，则表示只执行一次子节点并且返回子节点的返回值。<br>&emsp;&emsp;此外，计数限制节点上还可以添加中断条件作为重新开始条件，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/65.png" alt="计数限制节点中断条件"></div>
+
+<h4 id="输出消息"><a href="#输出消息" class="headerlink" title="输出消息"></a>输出消息</h4><p>&emsp;&emsp;输出消息节点作为调试的辅助工具，执行完子节点后，输出配置的消息，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/66.png" alt="输出消息节点"></div>
+
+<h4 id="循环直到"><a href="#循环直到" class="headerlink" title="循环直到"></a>循环直到</h4><p>&emsp;&emsp;循环直到节点在指定的次数到达后返回成功，在指定的次数到达前一直返回正在执行。如果指定的次数小于0，则表示无限循环，总是返回正在执行。如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/67.png" alt="循环直到节点"></div>
+
+<p>&emsp;&emsp;循环直到节点除了像循环节点可以配置循环的次数，还有一个属性&quot;直到子树&quot;需要配置，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/68.png" alt="循环直到节点属性"></div>
+
+<p>&emsp;&emsp;循环直到节点有两个结束条件，指定的&quot;循环次数&quot;到达或者子树的返回值与配置的&quot;直到子树&quot;值一样时：<br>&emsp;&emsp;1、指定的&quot;循环次数&quot;到达的时候，则返回成功；<br>&emsp;&emsp;2、指定的&quot;循环次数&quot;小于0的时候，则是无限循环，等同于只检查子树的返回值是否满足。<br>&emsp;&emsp;子树的返回值满足的时候：<br>&emsp;&emsp;1、如果&quot;直到子树&quot;设置为真，意味着直到子树返回成功，也返回成功；<br>&emsp;&emsp;2、如果&quot;直到子树&quot;设置为假，意味着直到子树返回失败，也返回失败。</p>
+<h4 id="总是成功-总是失败-总是运行"><a href="#总是成功-总是失败-总是运行" class="headerlink" title="总是成功/总是失败/总是运行"></a>总是成功/总是失败/总是运行</h4><p>&emsp;&emsp;总是成功/总是失败/总是运行将忽略子节点返回的结果，返回成功/失败/正在运行，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/69.png" alt="总是成功节点"></div>
+
+<p>&emsp;&emsp;在上图中，并行节点下的两个条件必定有一个返回失败，那么并行也将返回失败，由于前面有总是成功节点，所以最终仍然返回成功。</p>
+<h4 id="返回成功直到-返回失败直到"><a href="#返回成功直到-返回失败直到" class="headerlink" title="返回成功直到/返回失败直到"></a>返回成功直到/返回失败直到</h4><p>&emsp;&emsp;返回成功直到节点在指定的次数到达前返回成功，指定的次数到达后返回失败。如果指定的次数小于0，则总是返回成功；返回失败直到节点在指定的次数到达前返回失败，指定的次数到达后返回成功。如果指定的次数小于0，则总是返回失败。</p>
+<h3 id="状态机类节点"><a href="#状态机类节点" class="headerlink" title="状态机类节点"></a>状态机类节点</h3><p>&emsp;&emsp;behaviac组件不仅支持行为树，也支持有限状态机（FSM），并且支持行为树跟状态机的相互嵌套调用。<br>&emsp;&emsp;behaviac组件中的状态机主要用到了状态、等待状态和等待帧数状态三种节点，以及条件转换和总是转换两种附件。</p>
+<h4 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h4><p>&emsp;&emsp;状态节点是状态机中的基本组成部分之一，可以在状态节点上添加前置、后置以及转换等附件，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/70.png" alt="状态节点"></div>
+
+<p>&emsp;&emsp;在状态节点上添加的前置：表明进入该状态节点时，需要执行的操作。<br>&emsp;&emsp;在状态节点上添加的后置：表明退出该状态节点时，需要执行的操作。<br>&emsp;&emsp;在状态节点上添加的转换：表明满足该转换所表示的条件时，由当前状态切换到转换所指向的下一个状态。<br>&emsp;&emsp;状态节点相关属性如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/71.png" alt="状态节点属性"></div>
+
+<p>&emsp;&emsp;<strong>名字</strong>：为状态节点指定一个有意义的名字，以便区分其他状态节点。<br>&emsp;&emsp;<strong>方法</strong>：表示该状态节点需要执行的操作。<br>&emsp;&emsp;<strong>结束状态</strong>：如果勾选，表示该状态作为结束状态，即在执行完该状态节点之后，整个状态机也直接结束。该节点形状也将显示为圆角矩形，以示区别。</p>
+<h4 id="等待状态"><a href="#等待状态" class="headerlink" title="等待状态"></a>等待状态</h4><p>&emsp;&emsp;等待状态节点是一种特殊的状态节点，可以在状态节点上添加前置、后置以及等待转换等附件。添加等待状态节点时，会自动的生成唯一的等待转换附件，不接受添加其他类型的转换附件。如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/72.png" alt="等待状态节点"></div>
+
+<p>&emsp;&emsp;等待状态节点相关属性如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/73.png" alt="等待状态节点属性"></div>
+
+<p>&emsp;&emsp;相比状态节点的属性，等待状态节点少了&quot;方法&quot;属性，但多出了一个&quot;持续时间&quot;属性，用来指定需要等待多长时间，可以是常数、属性或方法的返回值。</p>
+<h4 id="等待帧数状态"><a href="#等待帧数状态" class="headerlink" title="等待帧数状态"></a>等待帧数状态</h4><p>&emsp;&emsp;等待帧数状态节点与等待状态节点相似，只是持续时间属性变为帧数属性，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/74.png" alt="等待帧数状态节点"></div>
+
+<h4 id="条件转换"><a href="#条件转换" class="headerlink" title="条件转换"></a>条件转换</h4><p>&emsp;&emsp;条件转换附件是状态机中的基本组成部分之一，它表示一个条件，当这个条件满足时，由所在的状态切换到另一个状态，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/75.png" alt="条件转换附件"></div>
+
+<p>&emsp;&emsp;其中<code>m_nVal == 2</code>为切换到等待状态的条件。条件转换的属性如下图，其中效果属性为转换附件执行完之后需要执行的额外操作：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/76.png" alt="条件转换附件属性"></div>
+
+<h4 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h4><p>&emsp;&emsp;状态转换附件是一种特殊的转换附件，根据它的配置，转换时机会有不同（ <strong>验证发现无法添加子树作为当前节点，2、3、4可能已不支持</strong> ）：<br>&emsp;&emsp;1、总跳转，表示无条件从所在的状态切换到另一个状态，如下图所示；<br>&emsp;&emsp;2、成功时，表示当所在节点是子树并且成功的时候转换；<br>&emsp;&emsp;3、失败时，表示当所在节点是子树并且失败的时候转换；<br>&emsp;&emsp;4、结束时，表示当所在节点是子树并且结束（成功或失败）的时候转换。</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/77.png" alt="状态转换附件"></div>
+
+<h2 id="预制"><a href="#预制" class="headerlink" title="预制"></a>预制</h2><p>&emsp;&emsp;预制可以用来复用和实例化已有的行为树，如果只是直接复用行为树，预制跟引用子树的功能是一样的。但是预制还可以用来定制个别节点的配置，称之为对预制的实例化。也即，如果一棵行为树用到了一棵预制行为树，那么可以局部修改某些节点，这些修改的节点不会跟着预制行为树的更新而同步更新。</p>
+<h3 id="添加预制"><a href="#添加预制" class="headerlink" title="添加预制"></a>添加预制</h3><p>&emsp;&emsp;打开示例中的任意一棵行为树，这里选中某一个节点之后右键，在弹出的菜单框中选择另存为预制行为树。这里以<code>2_Condition</code>行为树中的第一个或节点为例，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/78.png" alt="行为树"></div>
+
+<p>&emsp;&emsp;在弹出的&quot;另存为预制&quot;窗口中，可以为当前的预制改名，然后点击&quot;确认&quot;按钮，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/79.png" alt="另存为预制"></div>
+
+<p>&emsp;&emsp;在编辑器左侧的行为树列表中，可以看到多了<code>pf_Or</code>节点，这就是刚刚保存出来的预制行为树，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/80.png" alt="Prefabs"></div>
+
+<p>&emsp;&emsp;在Prefabs标签下的所有预制行为树都可以直接拖拽到主视口中打开的行为树中使用，不过需要保证预制行为树跟主视口中打开的行为树的Agent类型保持兼容，也即要么类型相同，要么预制行为树的Agent类型是主视口中打开的行为树的Agent类型的基类。<br>&emsp;&emsp;双击打开预制行为树<code>pf_Or</code>，可以看到该树自动添加了根节点及其Agent类型FirstAgent，其他节点跟原有的情况保持一致，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/81.png" alt="预制行为树"></div>
+
+<p>&emsp;&emsp;而在行为树<code>2_Condition</code>中，可以看到原来的或节点已被预制行为树<code>pf_Or</code>替代，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/82.png" alt="预制行为树已替换"></div>
+
+<p>&emsp;&emsp;修改了预制行为树<code>pf_Or</code>中的节点，所有引用到该预制行为树的行为树都会保持相同的更新，除非在行为树中有对预制行为树的节点属性有自己的修改或定制。</p>
+<h3 id="应用预制"><a href="#应用预制" class="headerlink" title="应用预制"></a>应用预制</h3><p>&emsp;&emsp;为行为树<code>2_Condition</code>拖拽一个预制行为树<code>pf_Or</code>，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/83.png" alt="使用预制行为树"></div>
+
+<p>&emsp;&emsp;修改第二个预制<code>pf_Or</code>中ID为15的节点右值为2，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/84.png" alt="修改值"></div>
+
+<p>&emsp;&emsp;可以看到上图ID为13和16的两个节点都变为了虚线框，表示这是预制实例化（定制）后的节点及其父节点。此时如果修改预制<code>pf_Or</code>中的或节点的第二个条件节点<code>m_nVal == 1</code>为<code>m_nVal == 3</code>，那么行为树<code>2_Condition</code>中的ID为3的条件节点右值也将更新为3，而ID为15的节点将不更新，如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/85.png" alt="定制预制行为树"></div>
+
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>&emsp;&emsp;注意：示例压缩包中已经包含了BehaviacTest项目文件，其中的代码无需进行以下修改。</p>
+<h3 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h3><p>&emsp;&emsp;编辑器中选择视图-&gt;类型信息选项，打开类型信息对话框，点击底下的应用按钮导出最新的&quot;胶水&quot;代码，通过左下角打开代码生成位置可以定位到&quot;胶水&quot;代码所在路径（工作区目录下的<code>exported\behaviac_generated\types</code>），一般在类型信息新增或有变更时才需要重新导出。</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/86.png" alt="导出代码"></div>
+
+<p>&emsp;&emsp;之后新建一个VS项目，拷贝编辑器生成的&quot;胶水&quot;代码到项目中：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/87.png" alt="胶水代码"></div>
+
+<p>&emsp;&emsp;添加&quot;胶水&quot;代码之后的项目如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/88.png" alt="拷贝胶水代码"></div>
+
+<h3 id="添加逻辑代码"><a href="#添加逻辑代码" class="headerlink" title="添加逻辑代码"></a>添加逻辑代码</h3><p>&emsp;&emsp;打开上图中的FirstAgent.cpp文件，为FirstAgent的Print/PrintInt/SetInt方法添加逻辑代码，注意逻辑代码只能添加在注释&quot;///&lt;&lt;&lt; BEGIN WRITING YOUR CODE&quot;和&quot;///&lt;&lt;&lt; END WRITING YOUR CODE&quot;之间。如下代码所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> FirstAgent::Print(behaviac::<span class="built_in">string</span>&amp; strText)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">///&lt;&lt;&lt; BEGIN WRITING YOUR CODE Print</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, strText.c_str());</span><br><span class="line"><span class="comment">///&lt;&lt;&lt; END WRITING YOUR CODE</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> FirstAgent::PrintInt()</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">///&lt;&lt;&lt; BEGIN WRITING YOUR CODE PrintInt</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"m_nVal=%d\n"</span>, m_nVal);</span><br><span class="line"><span class="comment">///&lt;&lt;&lt; END WRITING YOUR CODE</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> FirstAgent::SetInt(<span class="keyword">int</span> nVal)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">///&lt;&lt;&lt; BEGIN WRITING YOUR CODE SetInt</span></span><br><span class="line">	m_nVal = nVal;</span><br><span class="line"><span class="comment">///&lt;&lt;&lt; END WRITING YOUR CODE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="修改项目属性"><a href="#修改项目属性" class="headerlink" title="修改项目属性"></a>修改项目属性</h3><p>&emsp;&emsp;右键项目选择项目属性，在C/C++下的General（常规）选项中添加behaviac库的inc目录（位于behaviac源码压缩包的最顶级）为附加引入目录；在Linker下的General（常规）选项中添加behaviac库生成的lib文件所在目录为附加库目录，添加该lib文件为附加依赖项。如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/90.png" alt="附加引入目录"></div>
+
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/91.png" alt="附加库目录"></div>
+
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/92.png" alt="依赖项"></div>
+
+<h3 id="添加Behaviac逻辑"><a href="#添加Behaviac逻辑" class="headerlink" title="添加Behaviac逻辑"></a>添加Behaviac逻辑</h3><p>&emsp;&emsp;1、首先，在InitBehaviac()方法中初始化behaviac的加载目录和文件格式等，如下代码所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InitBehaviac</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, __FUNCTION__);</span><br><span class="line">	behaviac::Workspace::GetInstance()-&gt;SetFilePath(<span class="string">"../res"</span>);	<span class="comment">// 用于设置加载编辑器导出的行为树所在的目录</span></span><br><span class="line">	behaviac::Workspace::GetInstance()-&gt;SetFileFormat(behaviac::Workspace::EFF_xml);		<span class="comment">// 用于设置加载的行为树格式，这里用的是xml格式</span></span><br><span class="line">	behaviac::Config::SetLogging(<span class="literal">true</span>);</span><br><span class="line">	behaviac::Config::SetSocketBlocking(<span class="literal">true</span>);	<span class="comment">// 等待编辑器连接上才往后继续执行</span></span><br><span class="line">	<span class="comment">//behaviac::Config::SetSocketPort(60636);	// 如果需要修改端口号，需要添加此代码</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;2、接着，创建Agent子类FirstAgent的实例，并加载指定的行为树，如下代码所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InitPlayer</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>* szPath = g_arrBTPath[g_nBTIndex].c_str();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, __FUNCTION__);</span><br><span class="line">	g_pFirstAgent = behaviac::Agent::Create&lt;FirstAgent&gt;();	<span class="comment">//Create()用于创建Agent子类的实例</span></span><br><span class="line">	<span class="keyword">if</span> (g_pFirstAgent == <span class="literal">nullptr</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">bool</span> bRet = g_pFirstAgent-&gt;btload(szPath);	<span class="comment">//用于加载行为树，入口参数是行为树的名字，不需要加后缀</span></span><br><span class="line">	<span class="keyword">if</span> (bRet)</span><br><span class="line">	&#123;</span><br><span class="line">		g_pFirstAgent-&gt;btsetcurrent(szPath);		<span class="comment">//用于指定当前准备执行的行为树</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> bRet;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;3、其次，开始执行行为树，如下代码所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UpdateLoop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, __FUNCTION__);</span><br><span class="line">	<span class="keyword">int</span> frames = <span class="number">0</span>;</span><br><span class="line">	behaviac::EBTStatus enStatus = behaviac::BT_RUNNING;</span><br><span class="line">	<span class="keyword">while</span> (enStatus == behaviac::BT_RUNNING)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"frame %d:\n"</span>, frames);</span><br><span class="line">		behaviac::Workspace::GetInstance()-&gt;DebugUpdate();</span><br><span class="line">		enStatus = g_pFirstAgent-&gt;btexec();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;4、之后，对创建的Agent实例进行销毁释放，并清理整个工作区，如下代码所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CleanPlayer</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, __FUNCTION__);</span><br><span class="line">	behaviac::Agent::Destroy(g_pFirstAgent);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CleanBehaviac</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, __FUNCTION__);</span><br><span class="line">	behaviac::Workspace::GetInstance()-&gt;Cleanup();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;5、最后，在main函数中依次调用1-4中所写的函数，编译并运行程序即可。</p>
+<h3 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h3><h4 id="编译behaviac运行时库"><a href="#编译behaviac运行时库" class="headerlink" title="编译behaviac运行时库"></a>编译behaviac运行时库</h4><p>&emsp;&emsp;behaviac源代码压缩包中包含了VS2013的项目文件，解压缩后打开projects/vs2013目录下的sln文件，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/93.png" alt="behaviac项目文件"></div>
+
+<p>&emsp;&emsp;打开之后按需选择<code>DebugStatic</code>/<code>DebugDLL</code>/<code>ReleaseDLL</code>/<code>ReleaseStatic</code>编译即可，生成的lib或dll文件在源代码根目录下的bin目录：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/94.png" alt="生成文件目录"></div>
+
+<h4 id="逻辑代码更新问题"><a href="#逻辑代码更新问题" class="headerlink" title="逻辑代码更新问题"></a>逻辑代码更新问题</h4><p>&emsp;&emsp;当类型信息中建立好的类已添加了逻辑代码时，为避免下一次修改类型信息导致类的逻辑代码被覆盖，添加好逻辑代码之后将修改的类cpp和h文件覆盖到工作区目录下的<code>exported\behaviac_generated\types\internal</code>目录，这样在编辑器下一次生成&quot;胶水&quot;代码不会覆盖掉已有的逻辑代码。</p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><h3 id="连调"><a href="#连调" class="headerlink" title="连调"></a>连调</h3><p>&emsp;&emsp;连调功能是指在游戏运行的时候，编辑器可以连上游戏，实时的查看树的运行情况，变量的当前值，可以设断点等。而离线调试实际上是回放运行时产生的log。<br>&emsp;&emsp;连调需要游戏是开发版本（即宏<code>BEHAVIAC_RELEASE</code>没有被定义），发布版本下没有连调的功能。<br>&emsp;&emsp;连调流程说明如下（以文档中提供的示例BehaviacTest.zip包为例，假设已安装好Behaviac编辑器）：<br>&emsp;&emsp;1、解压缩BehaviacTest.zip，打开Project下的BehaviacTest.sln，直接编译运行。运行时，可以看到如下图所示：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/95.png" alt="运行结果"></div>
+
+<p>&emsp;&emsp;2、使用编辑器打开HelloTest下的<code>HelloTest.workspace.xml</code>，左上角双击<code>5_Combine_2</code>和<code>4_Combine_Task</code>打开这两个行为树，并在任意节点上打断点，选中某个节点之后右键选择断点-&gt;添加进入/退出断点或按F9添加断点即可；<br>&emsp;&emsp;3、点击左上角当前工作区下的连接游戏图标，如下图：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/96.png" alt="连接游戏图标"></div>
+
+<p>&emsp;&emsp;之后弹出连接游戏对话框，按情况勾选使用本机IP及填写IP和端口：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/97.png" alt="连接游戏面板"></div>
+
+<p>&emsp;&emsp;连接成功后，如果已命中断点，则会以黄色框显示当前断住的节点，如下图，此时按F5可以继续执行：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/98.png" alt="调试界面"></div>
+
+<h3 id="离线调试"><a href="#离线调试" class="headerlink" title="离线调试"></a>离线调试</h3><p>&emsp;&emsp;离线调试功能是指在编辑器里加载运行时产生的<code>_behaviac_$_.log</code>文件，如下图，可以加载<code>_behaviac_$_.log</code>文件：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/99.png" alt="分析文件"></div>
+
+<p>&emsp;&emsp;<code>_behaviac_$_.log</code>是运行游戏时产生的log文件。一般都是产生在exe所在的目录，对于Unity，是产生在Assets的同级目录。以C++项目为例为例，调试时，log文件在项目vcxproj同级目录下：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/100.png" alt="log文件路径"></div>
+
+<p>&emsp;&emsp;单独运行exe时，则在exe同级目录下：</p>
+<div align="center"><img src="../images/2018/Simple-Introduction-of-behaviac/101.png" alt="log文件路径"></div>
+
+<p>&emsp;&emsp;在离线调试里，可以模拟游戏的运行，甚至可以设断点，然后查看变量的当前值，可以查看树的执行情况。需要注意，文件<code>_behaviac_$_.log</code>只在开发版本下产生，或是<code>Config::IsLogging</code>为true时产生。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> behaviac </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> behaviac </tag>
+            
+            <tag> FSM </tag>
+            
+            <tag> Game-AI </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用VS2015编译Cocos2dx-3.2项目]]></title>
       <url>/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
@@ -148,6 +516,31 @@
             <tag> Trigger </tag>
             
         </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[新的开始]]></title>
+      <url>/blog/2015/New-beginning.html</url>
+      <content type="html"><![CDATA[<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试测试测试测试测试测试测试测试测试测试测试测试<a id="more"></a></p>
+<p>代码测试：</p>
+<pre><code class="bash"><span class="comment">#include &lt;iostream&gt;</span>
+using namespace std;　　
+int main()　　
+{　　
+    cout &lt;&lt; <span class="string">"hello world!"</span> &lt;&lt; endl;　　
+    <span class="built_in">return</span> 0;　
+}
+</code></pre>
+<p>图片测试：<br><img src="../images/2015/New-beginning/Visual Studio.png" alt="Visual Studio"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
         
     </entry>
     
