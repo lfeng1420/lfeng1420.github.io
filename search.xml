@@ -3,9 +3,10 @@
   
     
     <entry>
-      <title><![CDATA[Build-personal-blog-with-github-and-hexo]]></title>
+      <title><![CDATA[使用Github和hexo搭建个人博客]]></title>
       <url>/blog/2018/Build-personal-blog-with-github-and-hexo.html</url>
-      <content type="html"><![CDATA[<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><hr>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>待补充<a id="more"></a></p>
+<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><hr>
 <p>&emsp;&emsp;下载地址：<a href="https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/Git-2.16.3-64-bit.exe" target="_blank" rel="noopener">Git (2.16.3, x64)</a><br>&emsp;&emsp;下载完成后，打开exe进行安装。第一步是阅读GNU普通公共许可证，直接点击Next进行下一步：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_0.png" alt=""></p>
 <p>&emsp;&emsp;第二步，选择安装目录，没什么说的：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_1.png" alt=""></p>
 <p>&emsp;&emsp;第三步，选择组件，根据个人需要勾选，也可以都保持默认直接点Next：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_2.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Additional icons(On the Desktop)：在桌面创建快捷方式，其实有右键菜单就够了；<br>&emsp;&emsp;Windows Explorer intergration：即右键菜单集成，由于不常用GUI，所以这里不选Git GUI Here；<br>&emsp;&emsp;Git LFS：大文件支持；<br>&emsp;&emsp;Associate .git* configuration files with the default text editor：使.git文件与默认文本编辑器关联，即用默认文本编辑器打开.sh文件；<br>&emsp;&emsp;Associate .sh files to be run with Bash：使用Git Bash关联执行.sh文件；<br>&emsp;&emsp;Use a TrueType font in all console windows：在所有命令行窗口中使用TrueType字体，推荐勾选；<br>&emsp;&emsp;Check daily for Git for Windows updates：每天检查Git更新；<br>&emsp;&emsp;第四步，开始菜单，没啥说的，不想它创建可以勾选左下角的Don’t create a Start Menu folder:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_3.png" alt=""></p>
