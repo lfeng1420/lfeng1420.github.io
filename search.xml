@@ -7,26 +7,47 @@
       <url>/blog/2018/Build-personal-blog-with-github-and-hexo.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>待补充<a id="more"></a></p>
 <h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><hr>
-<p>&emsp;&emsp;下载地址：<a href="https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/Git-2.16.3-64-bit.exe" target="_blank" rel="noopener">Git (2.16.3, x64)</a><br>&emsp;&emsp;下载完成后，打开exe进行安装。第一步是阅读GNU普通公共许可证，直接点击Next进行下一步：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_0.png" alt=""></p>
-<p>&emsp;&emsp;第二步，选择安装目录，没什么说的：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_1.png" alt=""></p>
-<p>&emsp;&emsp;第三步，选择组件，根据个人需要勾选，也可以都保持默认直接点Next：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_2.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Additional icons(On the Desktop)：在桌面创建快捷方式，其实有右键菜单就够了；<br>&emsp;&emsp;Windows Explorer intergration：即右键菜单集成，由于不常用GUI，所以这里不选Git GUI Here；<br>&emsp;&emsp;Git LFS：大文件支持；<br>&emsp;&emsp;Associate .git* configuration files with the default text editor：使.git文件与默认文本编辑器关联，即用默认文本编辑器打开.sh文件；<br>&emsp;&emsp;Associate .sh files to be run with Bash：使用Git Bash关联执行.sh文件；<br>&emsp;&emsp;Use a TrueType font in all console windows：在所有命令行窗口中使用TrueType字体，推荐勾选；<br>&emsp;&emsp;Check daily for Git for Windows updates：每天检查Git更新；<br>&emsp;&emsp;第四步，开始菜单，没啥说的，不想它创建可以勾选左下角的Don’t create a Start Menu folder:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_3.png" alt=""></p>
-<p>&emsp;&emsp;第五步，选择Git使用的默认编辑器，这里可以选Vim、Notepad++，VS Code等，可以根据自己的喜好选择，这里保持默认:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_4.png" alt=""></p>
-<p>&emsp;&emsp;第六步，调整环境变量，建议保持默认，即选择第二个选项:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_5.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Use Git from Git Bash only：只能在Git Bash中使用Git命令；<br>&emsp;&emsp;Use Git from the Windows Command Prompt：可以在Git Bash和Windows命令提示符中使用Git；<br>&emsp;&emsp;Use Git and optional Unix tools from the Windows Command Prompt：Git命令和部分Unix命令将添加到环境变量中，这将覆盖部分cmd命令，例如<code>find</code>和<code>sort</code>等；</p>
-<p>&emsp;&emsp;第七步，选择HTTPS传输后端库，使用默认选项即可:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_6.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Use the OpenSSL library：使用OpenSSL库，将使用ca-bundle.crt进行服务器验证；<br>&emsp;&emsp;Use the native Windows Secure Channel library：使用Windows本地安全验证库，将使用Windows证书存储进行服务器验证，允许使用公司的CA根证书通过活动目录域服务分发；</p>
-<p>&emsp;&emsp;第八步，换行符转换选择，使用默认选项即可:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_7.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Checkout Windows-style, commit Unix-style line endings：Git在拉取文本文件时将自动把换行符LF转换为CRLF；提交文本文件时，将自动把换行符CRLF转换为LF。如果时跨平台项目，推荐选择该选项；<br>&emsp;&emsp;Checkout as-is, commit Unix-style line endings：Git在拉取文本文件时将不做任何转换，提交文本文件时，将自动把换行符CRLF转换为LF；<br>&emsp;&emsp;Checkout as-is, commit as-is：Git在拉取文本文件和提交文本文件时将不做任何转换。</p>
-<p>&emsp;&emsp;第九步，Git Bash终端配置，推荐使用默认选项，即使用MinTTY:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_8.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Use MinTTY(hte default terminal of MSYS2)：使用MinTTY终端，窗口大小可调整，支持自由选择文本和Unicode字符集；<br>&emsp;&emsp;Use Windows’ default console window：使用windows命令提示符，滚动受限，要正确显示非ASCII字符时还需配置为支持Unicode字符集的字体，在Windows 10之前，窗口无法自由调整大小，且只能矩形框选文本。</p>
-<p>&emsp;&emsp;最后一步，配置其他选项，保持默认选择即可:<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_9.png" alt=""><br>&emsp;&emsp;其中：<br>&emsp;&emsp;Enable file system caching：开启文件系统缓存，文件数据将被批量读取并缓存在内存中以进行某些操作，将带来显著的性能提升；<br>&emsp;&emsp;Enable Git Credential Manager：开启Git凭据管理器，为windows提供安全的Git凭据存储, 特别时对VS团队服务和Github的多因素身份验证支持；<br>&emsp;&emsp;Enable symbolic links：开启符号链接，要求有SeCreateSymbolicLink权限，已存在的仓库不受该设置影响。</p>
-<p>&emsp;&emsp;之后，等待安装完成。</p>
+<p>&emsp;&emsp;下载地址：<a href="https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/Git-2.16.3-64-bit.exe" target="_blank" rel="noopener">Git (2.16.3, x64)</a><br>&emsp;&emsp;下载完成后，打开exe进行安装。第一步是阅读GNU普通公共许可证，直接点击Next进行下一步：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_0.png" alt=""></div>
+
+<p>&emsp;&emsp;第二步，选择安装目录，没什么说的：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_1.png" alt=""></div>
+
+<p>&emsp;&emsp;第三步，选择组件，根据个人需要勾选，也可以都保持默认直接点Next：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_2.png" alt=""></div><br>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Additional icons(On the Desktop)</strong>：在桌面创建快捷方式，其实有右键菜单就够了；<br>&emsp;&emsp;<strong>Windows Explorer intergration</strong>：即右键菜单集成，由于不常用GUI，所以这里不选Git GUI Here；<br>&emsp;&emsp;<strong>Git LFS</strong>：大文件支持；<br>&emsp;&emsp;<strong>Associate .git* configuration files with the default text editor</strong>：使.git文件与默认文本编辑器关联，即用默认文本编辑器打开.sh文件；<br>&emsp;&emsp;<strong>Associate .sh files to be run with Bash</strong>：使用Git Bash关联执行.sh文件；<br>&emsp;&emsp;<strong>Use a TrueType font in all console windows</strong>：在所有命令行窗口中使用TrueType字体，推荐勾选；<br>&emsp;&emsp;<strong>Check daily for Git for Windows updates</strong>：每天检查Git更新；<br>&emsp;&emsp;第四步，开始菜单，没啥说的，不想它创建可以勾选左下角的Don’t create a Start Menu folder:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_3.png" alt=""></div>
+
+<p>&emsp;&emsp;第五步，选择Git使用的默认编辑器，这里可以选Vim、Notepad++，VS Code等，可以根据自己的喜好选择，这里保持默认:</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_4.png" alt=""></div>
+
+<p>&emsp;&emsp;第六步，调整环境变量，建议保持默认，即选择第二个选项:</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_5.png" alt=""></div><br>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Use Git from Git Bash only</strong>：只能在Git Bash中使用Git命令；<br>&emsp;&emsp;<strong>Use Git from the Windows Command Prompt</strong>：可以在Git Bash和Windows命令提示符中使用Git；<br>&emsp;&emsp;<strong>Use Git and optional Unix tools from the Windows Command Prompt</strong>：Git命令和部分Unix命令将添加到环境变量中，这将覆盖部分cmd命令，例如<code>find</code>和<code>sort</code>等；<br><br>&emsp;&emsp;第七步，选择HTTPS传输后端库，使用默认选项即可:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_6.png" alt=""></div><br>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Use the OpenSSL library</strong>：使用OpenSSL库，将使用ca-bundle.crt进行服务器验证；<br>&emsp;&emsp;<strong>Use the native Windows Secure Channel library</strong>：使用Windows本地安全验证库，将使用Windows证书存储进行服务器验证，允许使用公司的CA根证书通过活动目录域服务分发；<br><br>&emsp;&emsp;第八步，换行符转换选择，使用默认选项即可:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_7.png" alt=""></div><br>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Checkout Windows-style, commit Unix-style line endings</strong>：Git在拉取文本文件时将自动把换行符LF转换为CRLF；提交文本文件时，将自动把换行符CRLF转换为LF。如果时跨平台项目，推荐选择该选项；<br>&emsp;&emsp;<strong>Checkout as-is, commit Unix-style line endings</strong>：Git在拉取文本文件时将不做任何转换，提交文本文件时，将自动把换行符CRLF转换为LF；<br>&emsp;&emsp;<strong>Checkout as-is, commit as-is</strong>：Git在拉取文本文件和提交文本文件时将不做任何转换。<br><br>&emsp;&emsp;第九步，Git Bash终端配置，推荐使用默认选项，即使用MinTTY:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_8.png" alt=""></div><br>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Use MinTTY(hte default terminal of MSYS2)</strong>：使用MinTTY终端，窗口大小可调整，支持自由选择文本和Unicode字符集；<br>&emsp;&emsp;<strong>Use Windows’ default console window</strong>：使用windows命令提示符，滚动受限，要正确显示非ASCII字符时还需配置为支持Unicode字符集的字体，在Windows 10之前，窗口无法自由调整大小，且只能矩形框选文本。<br><br>&emsp;&emsp;最后一步，配置其他选项，保持默认选择即可:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_9.png" alt=""></div>
+
+<p>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Enable file system caching</strong>：开启文件系统缓存，文件数据将被批量读取并缓存在内存中以进行某些操作，将带来显著的性能提升；<br>&emsp;&emsp;<strong>Enable Git Credential Manager</strong>：开启Git凭据管理器，为windows提供安全的Git凭据存储, 特别时对VS团队服务和Github的多因素身份验证支持；<br>&emsp;&emsp;<strong>Enable symbolic links</strong>：开启符号链接，要求有SeCreateSymbolicLink权限，已存在的仓库不受该设置影响。<br>&emsp;&emsp;之后，等待安装完成。</p>
 <h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><hr>
-<p>&emsp;&emsp;下载地址：<a href="https://nodejs.org/dist/v8.10.0/node-v8.10.0-x64.msi" target="_blank" rel="noopener">Node.js (8.10.0 LTS, x64)</a><br>&emsp;&emsp;安装Node.js相对简单很多，安装路径自己分配，选择组件时保持默认（即全部安装）即可。<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/nodejs_0.png" alt=""><br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/nodejs_1.png" alt=""></p>
+<p>&emsp;&emsp;下载地址：<a href="https://nodejs.org/dist/v8.10.0/node-v8.10.0-x64.msi" target="_blank" rel="noopener">Node.js (8.10.0 LTS, x64)</a><br>&emsp;&emsp;安装Node.js相对简单很多，安装路径自己分配，选择组件时保持默认（即全部安装）即可。</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/nodejs_0.png" alt=""></div><br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/nodejs_1.png" alt=""></div>
+
 <h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><hr>
-<p>&emsp;&emsp;自定义一个用于存放博客文件的目录，这里以<code>C:/Project/</code>目录为例，在该目录下右键选择<code>Git Bash Here</code>选项打开Git命令窗口：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_0.png" alt=""></p>
-<p>&emsp;&emsp;打开命令窗口后需要稍等片刻，等到窗口中出现<code>MINGW64 /c/Project</code>类似该提示时即可进行下一步操作：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_1.png" alt=""></p>
-<p>&emsp;&emsp;右键点击窗口标题，选择<code>Options</code>可自行调整命令窗口选项：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_2.png" alt=""></p>
-<p>&emsp;&emsp;由于默认窗口字体比较小，这里调整下字体大小，左侧点击<code>Text</code>标签，在右侧点击<code>Font</code>右边的<code>Select</code>打开字体窗口：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_3.png" alt=""></p>
-<p>&emsp;&emsp;根据自己的喜好选择字体和字体大小，点击确定按钮更改，之后点击下方的<code>Save</code>保存更改：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_4.png" alt=""></p>
-<p>&emsp;&emsp;调整完成之后，输入<code>npm install -g hexo</code>开始全局安装hexo，安装时间可能比较长，耐心等待即可：<br><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_5.png" alt=""></p>
-<h2 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="#注册Github账号"></a>#注册Github账号</h2><p>&emsp;&emsp;未完待续</p>
+<p>&emsp;&emsp;自定义一个用于存放博客文件的目录，这里以<code>C:/Project</code>目录为例，在该目录下右键选择<code>Git Bash Here</code>选项打开Git命令窗口：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_0.png" alt=""></div>
+
+<p>&emsp;&emsp;打开命令窗口后需要稍等片刻，等到窗口中出现<code>MINGW64 /c/Project</code>类似该提示时即可进行下一步操作：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_1.png" alt=""></div>
+
+<p>&emsp;&emsp;右键点击窗口标题，选择<code>Options</code>可自行调整命令窗口选项：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_2.png" alt=""></div>
+
+<p>&emsp;&emsp;由于默认窗口字体比较小，这里调整下字体大小，左侧点击<code>Text</code>标签，在右侧点击<code>Font</code>右边的<code>Select</code>打开字体窗口：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_3.png" alt=""></div>
+
+<p>&emsp;&emsp;根据自己的喜好选择字体和字体大小，点击确定按钮更改，之后点击下方的<code>Save</code>保存更改：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_4.png" alt=""></div>
+
+<p>&emsp;&emsp;调整完成之后，输入<code>npm install -g hexo</code>开始全局安装hexo，安装时间可能比较长，耐心等待即可：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_5.png" alt=""></div>
+
+<h1 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h1><hr>
+<p>&emsp;&emsp;未完待续</p>
 ]]></content>
       
         <categories>
