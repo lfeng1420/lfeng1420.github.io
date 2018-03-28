@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[使用Github和hexo搭建个人博客（多图）]]></title>
       <url>/blog/2018/Build-personal-blog-with-github-and-hexo.html</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>待补充<a id="more"></a></p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果希望阅读简洁的版本，请前往hexo官方查阅文档，戳<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener"><strong>这里</strong></a><a id="more"></a></p>
 <h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><hr>
 <p>&emsp;&emsp;下载地址：<a href="https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/Git-2.16.3-64-bit.exe" target="_blank" rel="noopener">Git (2.16.3, x64)</a><br>&emsp;&emsp;下载完成后，打开exe进行安装。第一步是阅读GNU普通公共许可证，直接点击Next进行下一步：</p>
 <div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_0.png" alt=""></div>
