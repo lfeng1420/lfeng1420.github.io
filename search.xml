@@ -83,7 +83,7 @@
 <p>&emsp;&emsp;执行效果如下截图：</p>
 <div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_22.png" alt=""></div>
 
-<p>&emsp;&emsp;之后，输入<code>ssh-keygen -t rsa -C &quot;youremail&quot;</code>生成SSH密钥，生成SSH密钥用于GitHub授权，避免每次提交代码都需要输入账号密码，期间会有三次询问：<br>&emsp;&emsp;1、<code>Enter file in which to save the key (/c/Users/lfeng/.ssh/id_rsa):</code> 输入存放key的路径，默认为<code>c:/Users/lfeng/.ssh/id_rsa</code>；<br>&emsp;&emsp;2、<code>Enter passphrase (empty for no passphrase):</code> 输入密码；<br>&emsp;&emsp;3、<code>Enter same passphrase again:</code> 重复上一次输入的密码；<br>&emsp;&emsp;这里按三次回车键，即key文件放在默认位置且不设置密码：</p>
+<p>&emsp;&emsp;之后，输入<code>ssh-keygen -t rsa -C &quot;youremail&quot;</code>生成SSH密钥（<code>youremail</code>替换为你的邮箱），生成SSH密钥用于GitHub授权，避免每次提交代码都需要输入账号密码，期间会有三次询问：<br>&emsp;&emsp;1、<code>Enter file in which to save the key (/c/Users/lfeng/.ssh/id_rsa):</code> 输入存放key的路径，默认为<code>c:/Users/lfeng/.ssh/id_rsa</code>；<br>&emsp;&emsp;2、<code>Enter passphrase (empty for no passphrase):</code> 输入密码；<br>&emsp;&emsp;3、<code>Enter same passphrase again:</code> 重复上一次输入的密码；<br>&emsp;&emsp;这里按三次回车键，即key文件放在默认位置且不设置密码：</p>
 <div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_26.png" alt=""></div>
 
 <p>&emsp;&emsp;打开<code>c:/Users/yourname/.ssh/</code>（<code>yourname</code>为你的电脑用户名），找到<code>id_rsa.pub</code>文件并打开，复制文件里的内容：</p>
