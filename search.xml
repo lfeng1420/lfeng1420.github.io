@@ -17,7 +17,13 @@
 <div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_2.png" alt=""></div>
 
 <p>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Additional icons(On the Desktop)</strong>：在桌面创建快捷方式，其实有右键菜单就够了；<br>&emsp;&emsp;<strong>Windows Explorer intergration</strong>：即右键菜单集成，由于不常用GUI，所以这里不选Git GUI Here；<br>&emsp;&emsp;<strong>Git LFS</strong>：大文件支持；<br>&emsp;&emsp;<strong>Associate .git* configuration files with the default text editor</strong>：使.git文件与默认文本编辑器关联，即用默认文本编辑器打开.sh文件；<br>&emsp;&emsp;<strong>Associate .sh files to be run with Bash</strong>：使用Git Bash关联执行.sh文件；<br>&emsp;&emsp;<strong>Use a TrueType font in all console windows</strong>：在所有命令行窗口中使用TrueType字体，推荐勾选；<br>&emsp;&emsp;<strong>Check daily for Git for Windows updates</strong>：每天检查Git更新；<br>&emsp;&emsp;第四步，开始菜单，没啥说的，不想它创建可以勾选左下角的Don’t create a Start Menu folder:</p>
-<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_3.png" alt=""></div><br>&emsp;&emsp;第五步，选择Git使用的默认编辑器，这里可以选Vim、Notepad++，VS Code等，可以根据自己的喜好选择，这里保持默认:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_4.png" alt=""></div><br>&emsp;&emsp;第六步，调整环境变量，建议保持默认，即选择第二个选项:<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_5.png" alt=""></div>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_3.png" alt=""></div>
+
+<p>&emsp;&emsp;第五步，选择Git使用的默认编辑器，这里可以选Vim、Notepad++，VS Code等，可以根据自己的喜好选择，这里保持默认:</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_4.png" alt=""></div>
+
+<p>&emsp;&emsp;第六步，调整环境变量，建议保持默认，即选择第二个选项:</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_5.png" alt=""></div>
 
 <p>&emsp;&emsp;其中：<br>&emsp;&emsp;<strong>Use Git from Git Bash only</strong>：只能在Git Bash中使用Git命令；<br>&emsp;&emsp;<strong>Use Git from the Windows Command Prompt</strong>：可以在Git Bash和Windows命令提示符中使用Git；<br>&emsp;&emsp;<strong>Use Git and optional Unix tools from the Windows Command Prompt</strong>：Git命令和部分Unix命令将添加到环境变量中，这将覆盖部分cmd命令，例如<code>find</code>和<code>sort</code>等；<br>&emsp;&emsp;第七步，选择HTTPS传输后端库，保持默认选项（使用OpenSSL库）即可:</p>
 <div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/git_6.png" alt=""></div>
@@ -38,18 +44,88 @@
 
 <h1 id="Github账号注册和配置"><a href="#Github账号注册和配置" class="headerlink" title="Github账号注册和配置"></a>Github账号注册和配置</h1><hr>
 <p>&emsp;&emsp;浏览器访问<code>https://github.com</code>，在右侧注册一个GitHub账号，在下图三个输入框中分别输入用户名、邮箱和密码，输入完成后点<code>Sign up for GitHub</code>：</p>
-<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_6.png" alt=""></div><br>&emsp;&emsp;注册成功后，登录自己的邮箱，找到Github发送的注册确认邮件，确认注册。确认邮件内容类似如下截图：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_7.png" alt=""></div><br>&emsp;&emsp;重新登录后，点击右上角头像左侧的“+”图标，选择<code>New repository</code>进入创建代码仓库节目界面：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_8.png" alt=""></div><br>&emsp;&emsp;在<code>Repository name</code>中填写<code>yourname.github.io</code>，这里用户名是<code>MKeyo</code>，所以填写<code>mkeyo.github.io</code>，<code>Description</code>下填写描述相关内容，不填写也可以，之后点击<code>Create repository</code>：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_9.png" alt=""></div><br>&emsp;&emsp;创建成功后，将看到如下界面：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_10.png" alt=""></div><br>&emsp;&emsp;接下来开启仓库的gh-pages功能，点击右侧<code>Settings</code>（<code>Unwatch</code>下方），打开仓库的设置界面，之后下拉页面到<code>GitHub Pages</code>标签或<code>Ctrl+F</code>搜索<code>GitHub Pages</code>，点击<code>Choose a theme</code>按钮：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_11.png" alt=""></div><br>&emsp;&emsp;根据自己的喜好选择一个主题，点击右侧的<code>Select theme</code>按钮应用主题：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_12.png" alt=""></div><br>&emsp;&emsp;点击按钮后将打开<code>index.md</code>提交页，直接下拉到页面底部点击<code>Commit changes</code>提交即可：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_13.png" alt=""></div><br>&emsp;&emsp;提交成功后在浏览器中访问代码仓库的名字URL验证是否可以访问，能正常访问说明<code>GitHub Pages</code>已经搭建成功：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_14.png" alt=""></div>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_6.png" alt=""></div>
 
-<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><hr>
-<p>&emsp;&emsp;自定义一个用于存放博客文件的目录，这里以<code>C:/Project</code>目录为例，在该目录下右键选择<code>Git Bash Here</code>选项打开Git命令窗口：</p>
-<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_0.png" alt=""></div><br>&emsp;&emsp;打开命令窗口后需要稍等片刻，等到窗口中出现<code>MINGW64 /c/Project</code>类似提示时即可进行下一步操作：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_1.png" alt=""></div><br>&emsp;&emsp;右键点击窗口标题，选择<code>Options</code>可自行调整命令窗口选项：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_2.png" alt=""></div><br>&emsp;&emsp;由于默认窗口字体比较小，这里调整下字体大小，左侧点击<code>Text</code>标签，在右侧点击<code>Font</code>右边的<code>Select</code>打开字体窗口：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_3.png" alt=""></div><br>&emsp;&emsp;根据自己的喜好选择字体和字体大小，点击确定按钮更改，之后点击下方的<code>Save</code>保存更改：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_4.png" alt=""></div><br>&emsp;&emsp;调整完成之后，输入<code>npm install -g hexo</code>开始全局安装hexo，安装时间可能比较长，耐心等待即可：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_5.png" alt=""></div><br>&emsp;&emsp;安装完成之后，继续输入<code>npm install -g hexo-cli</code>开始全局安装hexo-cli，安装期间可能会有警告出现，忽略即可：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_15.png" alt=""></div>
+<p>&emsp;&emsp;注册成功后，登录自己的邮箱，找到Github发送的注册确认邮件，确认注册。确认邮件内容类似如下截图：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_7.png" alt=""></div>
+
+<p>&emsp;&emsp;重新登录后，点击右上角头像左侧的“+”图标，选择<code>New repository</code>进入创建代码仓库节目界面：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_8.png" alt=""></div><br>&emsp;&emsp;在<code>Repository name</code>中填写<code>yourname.github.io</code>，这里用户名是<code>MKeyo</code>，所以填写<code>mkeyo.github.io</code>，<code>Description</code>下填写描述相关内容，不填写也可以，之后点击<code>Create repository</code>：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_9.png" alt=""></div>
+
+<p>&emsp;&emsp;创建成功后，将看到如下界面：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_10.png" alt=""></div>
+
+<p>&emsp;&emsp;接下来开启仓库的gh-pages功能，点击右侧<code>Settings</code>（<code>Unwatch</code>下方），打开仓库的设置界面，之后下拉页面到<code>GitHub Pages</code>标签或<code>Ctrl+F</code>搜索<code>GitHub Pages</code>，点击<code>Choose a theme</code>按钮：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_11.png" alt=""></div>
+
+<p>&emsp;&emsp;根据自己的喜好选择一个主题，点击右侧的<code>Select theme</code>按钮应用主题：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_12.png" alt=""></div>
+
+<p>&emsp;&emsp;点击按钮后将打开<code>index.md</code>提交页，直接下拉到页面底部点击<code>Commit changes</code>提交即可：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_13.png" alt=""></div><br>&emsp;&emsp;提交成功后在浏览器中访问代码仓库的名字URL验证是否可以访问，能正常访问说明<code>GitHub Pages</code>已经搭建成功：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_14.png" alt=""></div>
+
+<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><p>&emsp;&emsp;首先，在桌面或任意盘符目录下右键选择<code>Git Bash Here</code>打开Git命令窗口，也可以通过开始菜单找到<code>Git Bash</code>打开：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_0.png" alt=""></div>
+
+<p>&emsp;&emsp;打开命令窗口后需要稍等片刻，等到窗口中出现<code>MINGW64 xxx</code>类似提示时即可进行下一步操作：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_1.png" alt=""></div>
+
+<p>&emsp;&emsp;右键点击窗口标题，选择<code>Options</code>可自行调整命令窗口选项：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_2.png" alt=""></div>
+
+<p>&emsp;&emsp;由于默认窗口字体比较小，这里调整下字体大小，左侧点击<code>Text</code>标签，在右侧点击<code>Font</code>右边的<code>Select</code>打开字体窗口：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_3.png" alt=""></div>
+
+<p>&emsp;&emsp;根据自己的喜好选择字体和字体大小，点击确定按钮更改，之后点击下方的<code>Save</code>保存更改：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_4.png" alt=""></div>
+
+<p>&emsp;&emsp;调整完成后，回到命令窗口，输入以下两条命令设置git邮箱和用户名，输入时请自行替换双引号内的内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"youremail@xxx.com"</span></span><br><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;执行效果如下截图：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_22.png" alt=""></div>
+
+<p>&emsp;&emsp;之后，输入<code>ssh-keygen -t rsa -C &quot;youremail&quot;</code>生成SSH密钥，生成SSH密钥用于GitHub授权，避免每次提交代码都需要输入账号密码，期间会有三次询问：<br>&emsp;&emsp;1、<code>Enter file in which to save the key (/c/Users/lfeng/.ssh/id_rsa):</code> 输入存放key的路径，默认为<code>c:/Users/lfeng/.ssh/id_rsa</code>；<br>&emsp;&emsp;2、<code>Enter passphrase (empty for no passphrase):</code> 输入密码；<br>&emsp;&emsp;3、<code>Enter same passphrase again:</code> 重复上一次输入的密码；<br>&emsp;&emsp;这里按三次回车键，即key文件放在默认位置且不设置密码：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_26.png" alt=""></div>
+
+<p>&emsp;&emsp;打开<code>c:/Users/yourname/.ssh/</code>（<code>yourname</code>为你的电脑用户名），找到<code>id_rsa.pub</code>文件并打开，复制文件里的内容：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_27.png" alt=""></div>
+
+<p>&emsp;&emsp;回到个人主页（如果关闭了网页，则访问<code>https://github.com/yourname</code>，其中<code>yourname</code>替换为你的GitHub昵称），在GitHub个人主页中点击右上角的头像，在弹出的菜单中选择<code>Settings</code>，打开设置页面：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_23.png" alt=""></div>
+
+<p>&emsp;&emsp;点击左侧<code>SSH and GPG Key</code>标签，在右侧页面中点击<code>New SSH Key</code>按钮：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_24.png" alt=""></div>
+
+<p>&emsp;&emsp;输入刚刚复制的<code>id_rsa.pub</code>文件里的内容，标题任意填写，完成后点击添加即可：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_25.png" alt=""></div>
 
 <h1 id="首次体验hexo"><a href="#首次体验hexo" class="headerlink" title="首次体验hexo"></a>首次体验hexo</h1><hr>
-<p>&emsp;&emsp;接着上一节的操作，在打开的<code>Git Bash</code>窗口中输入<code>hexo init</code>初始化hexo：</p>
-<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_16.png" alt=""></div><br>&emsp;&emsp;之后输入<code>npm install</code>安装所需的组件，等待其安装完成后进行下一步：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_17.png" alt=""></div><br>&emsp;&emsp;继续输入<code>hexo g</code>生成网站文件，之后输入<code>hexo s</code>开启本地服务器：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_18.png" alt=""></div><br>&emsp;&emsp;在浏览器中打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，将会看到搭建好的博客页面：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_19.png" alt=""></div>
+<p>&emsp;&emsp;自定义一个用于存放博客文件的目录，这里以<code>C:/Project</code>目录为例，在该目录下右键选择<code>Git Bash Here</code>选项打开Git命令窗口，输入<code>npm install -g hexo</code>开始全局安装hexo，安装时间可能比较长，耐心等待即可：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_5.png" alt=""></div>
+
+<p>&emsp;&emsp;安装完成之后，继续输入<code>npm install -g hexo-cli</code>开始全局安装hexo-cli，安装期间可能会有警告出现，忽略即可：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_15.png" alt=""></div>
+
+<p>&emsp;&emsp;继续输入<code>hexo init</code>初始化hexo：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_16.png" alt=""></div>
+
+<p>&emsp;&emsp;之后输入<code>npm install</code>安装所需的组件，等待其安装完成后进行下一步：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_17.png" alt=""></div>
+
+<p>&emsp;&emsp;继续输入<code>hexo g</code>生成网站文件，之后输入<code>hexo s</code>开启本地服务器：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_18.png" alt=""></div>
+
+<p>&emsp;&emsp;在浏览器中打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，将会看到搭建好的博客页面：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_19.png" alt=""></div>
 
 <h1 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h1><p>&emsp;&emsp;打开目录下的<code>_config.yml</code>，编辑其中的配置：</p>
-<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_20.png" alt=""></div><br>&emsp;&emsp;首先修改<code>Site</code>网站部分的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line"># 网站标题</span><br><span class="line">title: mkeyo</span><br><span class="line"># 网站副标题</span><br><span class="line">subtitle:</span><br><span class="line"># 网站描述</span><br><span class="line">description:</span><br><span class="line"># 关键字</span><br><span class="line">keywords:</span><br><span class="line"># 您的名字</span><br><span class="line">author: MKeyo</span><br><span class="line"># 网站使用的语言，默认为英语，设置简体汉语zh-Hans</span><br><span class="line">language: zh-Hans</span><br><span class="line"># 网站时区。Hexo 默认使用电脑的时区。</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure><br><br>&emsp;&emsp;接下来是<code>Site</code>网站部分的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line"># 网址，如果网站存放在子目录中，例如：http://yoursite.com/blog，则把url设为http://yoursite.com/blog并把root设为 /blog/。</span><br><span class="line">url: https://mkeyo.github.io</span><br><span class="line"># 网站根目录</span><br><span class="line">root: /</span><br><span class="line"># 文章的永久链接格式</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line"># 永久链接中各部分的默认值</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure><br><br>&emsp;&emsp;最后是<code>Deployment</code>部署部分的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  #类型，这里填git</span><br><span class="line">  type: git</span><br><span class="line">  # 代码仓库地址，格式为：git@github.com:yourname/repositoryname.git，其中yourname为你的GitHub昵称，repositoryname为代码仓库名称</span><br><span class="line">  repo: git@github.com:MKeyo/mkeyo.github.io.git</span><br><span class="line">  # 分支，这里填master，即主干</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><br><br>&emsp;&emsp;其他部分配置这里不做修改，保持默认即可，配置详细说明可以参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener"><strong>官方文档</strong></a>，配置完成后保存文件。<br><br><br># 部署到GitHub<br>&emsp;&emsp;在存放博客文件的目录下打开Git命令窗口，输入<code>npm install hexo-deployer-git --save</code>安装hexo发布到git组件，等待安装完成后进行下一步：<br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_21.png" alt=""></div><br>&emsp;&emsp;接下来，输入以下两条命令设置git邮箱和用户名，输入时请自行替换双引号内的内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"youremail@xxx.com"</span></span><br><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br></pre></td></tr></table></figure><br><br><div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_22.png" alt=""></div>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_20.png" alt=""></div>
+
+<p>&emsp;&emsp;首先修改<code>Site</code>网站部分的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line"># 网站标题</span><br><span class="line">title: mkeyo</span><br><span class="line"># 网站副标题</span><br><span class="line">subtitle:</span><br><span class="line"># 网站描述</span><br><span class="line">description:</span><br><span class="line"># 关键字</span><br><span class="line">keywords:</span><br><span class="line"># 您的名字</span><br><span class="line">author: MKeyo</span><br><span class="line"># 网站使用的语言，默认为英语，设置简体汉语zh-Hans</span><br><span class="line">language: zh-Hans</span><br><span class="line"># 网站时区。Hexo 默认使用电脑的时区。</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;接下来是<code>Site</code>网站部分的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line"># 网址，如果网站存放在子目录中，例如：http://yoursite.com/blog，则把url设为http://yoursite.com/blog并把root设为 /blog/。</span><br><span class="line">url: https://mkeyo.github.io</span><br><span class="line"># 网站根目录</span><br><span class="line">root: /</span><br><span class="line"># 文章的永久链接格式</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line"># 永久链接中各部分的默认值</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;最后是<code>Deployment</code>部署部分的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  #类型，这里填git</span><br><span class="line">  type: git</span><br><span class="line">  # 代码仓库地址，格式为：git@github.com:yourname/repositoryname.git，其中yourname为你的GitHub昵称，repositoryname为代码仓库名称</span><br><span class="line">  repo: git@github.com:MKeyo/mkeyo.github.io.git</span><br><span class="line">  # 分支，这里填master，即主干</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;其他部分配置这里不做修改，保持默认即可，配置详细说明可以参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener"><strong>官方文档</strong></a>，配置完成后保存文件。</p>
+<h1 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h1><p>&emsp;&emsp;在存放博客文件的目录下打开Git命令窗口，输入<code>npm install hexo-deployer-git --save</code>安装hexo发布到git组件，等待安装完成后进行下一步：</p>
+<div align="center"><img src="../images/2018/Build-personal-blog-with-github-and-hexo/op_21.png" alt=""></div>
 ]]></content>
       
         <categories>
