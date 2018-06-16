@@ -77,7 +77,7 @@
 <link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Trigger," />
+  <meta name="keywords" content="Cocos2dx," />
 
 
 
@@ -93,28 +93,20 @@
 
 
 
-<meta name="description" content="前言 &amp;#160; &amp;#160; &amp;#160; &amp;#160;原本打算写如何把json转换为plist文件，但是后来发现有些问题，所以暂时先不写了，等以后有时间补上。这一篇写写最主要的部分：关卡的布局。">
-<meta name="keywords" content="Trigger">
+<meta name="description" content="准备工作 Cocos2dx 3.x以上版本（以3.4版本为例） protobuf 2.6.1（release页）  提取protobuf-lite源文件&amp;emsp;&amp;emsp;protobuf源代码包中包含VS项目文件（protobuf-2.6.1\vsprojects\），可以通过打开protobuf.sln查看libprotobuf-lite依赖的文件，也可以用文本编辑器打开libprotob">
+<meta name="keywords" content="Cocos2dx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Trigger第二篇：关卡布局">
-<meta property="og:url" content="https://lfeng1420.github.io/blog/2015/TS2-map-layout.html">
+<meta property="og:title" content="为cocos2dx添加protobuf-lite支持">
+<meta property="og:url" content="https://lfeng1420.github.io/blog/2018/Add-protobuf-lite-for-cocos2dx.html">
 <meta property="og:site_name" content="lfeng">
-<meta property="og:description" content="前言 &amp;#160; &amp;#160; &amp;#160; &amp;#160;原本打算写如何把json转换为plist文件，但是后来发现有些问题，所以暂时先不写了，等以后有时间补上。这一篇写写最主要的部分：关卡的布局。">
+<meta property="og:description" content="准备工作 Cocos2dx 3.x以上版本（以3.4版本为例） protobuf 2.6.1（release页）  提取protobuf-lite源文件&amp;emsp;&amp;emsp;protobuf源代码包中包含VS项目文件（protobuf-2.6.1\vsprojects\），可以通过打开protobuf.sln查看libprotobuf-lite依赖的文件，也可以用文本编辑器打开libprotob">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map1.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map2.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map3.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map4-6.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map3-5.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/arrow3.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/arrow2.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/arrow4.png">
-<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map3-10.png">
-<meta property="og:updated_time" content="2018-03-23T15:06:47.365Z">
+<meta property="og:image" content="https://lfeng1420.github.io/blog/images/2018/Add-protobuf-lite-for-cocos2dx/1.png">
+<meta property="og:updated_time" content="2018-06-16T15:10:36.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Trigger第二篇：关卡布局">
-<meta name="twitter:description" content="前言 &amp;#160; &amp;#160; &amp;#160; &amp;#160;原本打算写如何把json转换为plist文件，但是后来发现有些问题，所以暂时先不写了，等以后有时间补上。这一篇写写最主要的部分：关卡的布局。">
-<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/2015/Trigger/map1.png">
+<meta name="twitter:title" content="为cocos2dx添加protobuf-lite支持">
+<meta name="twitter:description" content="准备工作 Cocos2dx 3.x以上版本（以3.4版本为例） protobuf 2.6.1（release页）  提取protobuf-lite源文件&amp;emsp;&amp;emsp;protobuf源代码包中包含VS项目文件（protobuf-2.6.1\vsprojects\），可以通过打开protobuf.sln查看libprotobuf-lite依赖的文件，也可以用文本编辑器打开libprotob">
+<meta name="twitter:image" content="https://lfeng1420.github.io/blog/images/2018/Add-protobuf-lite-for-cocos2dx/1.png">
 
 
 
@@ -142,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://lfeng1420.github.io/blog/2015/TS2-map-layout.html"/>
+  <link rel="canonical" href="https://lfeng1420.github.io/blog/2018/Add-protobuf-lite-for-cocos2dx.html"/>
 
 
 
 
 
-  <title>Trigger第二篇：关卡布局 | lfeng</title>
+  <title>为cocos2dx添加protobuf-lite支持 | lfeng</title>
   
 
 
@@ -330,7 +322,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://lfeng1420.github.io/blog/blog/2015/TS2-map-layout.html">
+    <link itemprop="mainEntityOfPage" href="https://lfeng1420.github.io/blog/blog/2018/Add-protobuf-lite-for-cocos2dx.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lfeng">
@@ -347,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Trigger第二篇：关卡布局</h1>
+          <h1 class="post-title" itemprop="name headline">为cocos2dx添加protobuf-lite支持</h1>
         
 
         <div class="post-meta">
@@ -359,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-15T17:47:35+08:00">
-                2015-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-16T21:46:54+08:00">
+                2018-06-16
               </time>
             
 
@@ -382,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Trigger/" itemprop="url" rel="index">
-                    <span itemprop="name">Trigger</span>
+                  <a href="/blog/categories/Cocos2dx/" itemprop="url" rel="index">
+                    <span itemprop="name">Cocos2dx</span>
                   </a>
                 </span>
 
@@ -399,7 +391,7 @@
 
           
           
-             <span id="/blog/2015/TS2-map-layout.html" class="leancloud_visitors" data-flag-title="Trigger第二篇：关卡布局">
+             <span id="/blog/2018/Add-protobuf-lite-for-cocos2dx.html" class="leancloud_visitors" data-flag-title="为cocos2dx添加protobuf-lite支持">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,308
+                  1,216
                 </span>
               
 
@@ -446,25 +438,16 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
-<p>&#160; &#160; &#160; &#160;原本打算写如何把json转换为plist文件，但是后来发现有些问题，所以暂时先不写了，等以后有时间补上。这一篇写写最主要的部分：关卡的布局。<a id="more"></a></p>
-<h1 id="关卡地图"><a href="#关卡地图" class="headerlink" title="关卡地图"></a>关卡地图</h1><hr>
-<p>&#160; &#160; &#160; &#160;第一篇里简单的说明了下地图文件levelmap.json里的数据，每一关都有一个多个六边形的组成的地图（暂且称之为地图吧），奇数行包含7个数字，偶数行包含6个数字，之所以这么安排是为了使整个地图可以居中对齐。<br>&#160; &#160; &#160; &#160;以第一个主题（即大关卡，暂且称之为主题）第1个关卡地图为例，其地图数据如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"color"</span>:0,  <span class="string">"id"</span>:1</span><br><span class="line">...</span><br><span class="line">[0,1,1,1,0,0,0],</span><br><span class="line">[1,2,2,1,0,0],</span><br><span class="line">[1,2,2,2,1,0,0],</span><br><span class="line">[1,2,2,1,0,0],</span><br><span class="line">[0,1,1,1,0,0,0],</span><br><span class="line">[0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0,0]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>&#160; &#160; &#160; &#160;其中0表示该位置无六边形，1表示白色六边形，2表示主题色六边形，主题色序号即关卡属性中的color字段。先试着把整个地图画出来（忽略每行两个六边形之间的间距）：<br><img src="../images/2015/Trigger/map1.png" alt="初步的地图"><br>&#160; &#160; &#160; &#160;发现问题了没，嗯，没有六边形的位置实际上也是需要空出来的，再试着重新画一次：<br><img src="../images/2015/Trigger/map2.png" alt="保留了空白位置"><br>&#160; &#160; &#160; &#160;这回好像和目标地图有那么点像了，但是还是不太对，试着把每行居中调整一下：<br><img src="../images/2015/Trigger/map3.png" alt="每行居中"><br>&#160; &#160; &#160; &#160;这回和目标地图有八分相似了，然而还是有些问题，两行之间的间距太大，需要再稍微调整一下。嗯，这些是细节问题，可以后续在写代码时去控制。说到这，地图细节这一块就差不多了，好像很简单吧，然而我在写的时候调试了好久，才总算弄出来了= =</p>
-<h1 id="数字和箭头"><a href="#数字和箭头" class="headerlink" title="数字和箭头"></a>数字和箭头</h1><hr>
-<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><hr>
-<p>&#160; &#160; &#160; &#160;从第四个主题第1关开始，之后的部分关卡就有了数字，分为以下两种情况：<br>&#160; &#160; &#160; &#160;1、单个位置数值&lt;10：该六边形颜色为主题色，数字为白色，数字值为该位置数值-2。例如：某个位置数值为5，那么这个位置是一个主题色的六边形，包含了一个白色的数字3。<br>&#160; &#160; &#160; &#160;2、单个位置数值&gt;20：该六边形颜色为白色，数字为主题色，数字值为该位置数值最后一位-1。例如：某个位置数值为22，那么这个位置是一个白色的六边形，包含了一个主题色的数字1。<br>&#160; &#160; &#160; &#160;以第四个主题第6关为例，该地图包含6个有数字的六边形，六边形都是白色，数字都是主题色。其地图数据如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"color"</span>:3,  <span class="string">"id"</span>:6</span><br><span class="line">...</span><br><span class="line">[0,22,1,22,0,0,0],</span><br><span class="line">[2,1,1,2,0,0],</span><br><span class="line">[22,1,2,1,22,0,0],</span><br><span class="line">[1,1,1,1,0,0],</span><br><span class="line">[0,22,2,22,0,0,0],</span><br><span class="line">[0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0,0]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>&#160; &#160; &#160; &#160;第四个主题第6关关卡截图：<br><img src="../images/2015/Trigger/map4-6.png" alt="第四个主题第6关地图"></p>
-<h2 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h2><hr>
-<p>&#160; &#160; &#160; &#160;从第三个主题第5关开始，之后的部分关卡就有了箭头，箭头对应的是mapitem数组中的配置，每个箭头数据配置如下形式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"y_x_arrow"</span></span><br></pre></td></tr></table></figure></p>
-<p>&#160; &#160; &#160; &#160;是的，没有看错，这里x和y的位置索引是反过来的。后面的arrow数值表示箭头的序号，第一篇中已经说明了。以第三个主题第5关为例，关卡包含的箭头配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"color"</span>:2,  <span class="string">"id"</span>:5</span><br><span class="line">...</span><br><span class="line"><span class="string">"mapitem"</span>:[<span class="string">"0_1_3"</span>,<span class="string">"3_1_2"</span>,<span class="string">"2_2_4"</span>,<span class="string">"2_4_1"</span>]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>&#160; &#160; &#160; &#160;来看看第三个主题第5关的关卡截图：<br><img src="../images/2015/Trigger/map3-5.png" alt="第三个主题第5关地图"><br>&#160; &#160; &#160; &#160;第三个主题第5关的地图数据：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"color"</span>:2,  <span class="string">"id"</span>:5</span><br><span class="line">...</span><br><span class="line">[0,2,1,2,0,0,0],</span><br><span class="line">[2,1,1,2,0,0],</span><br><span class="line">[2,1,2,1,2,0,0],</span><br><span class="line">[1,1,1,1,0,0],</span><br><span class="line">[0,2,2,2,0,0,0],</span><br><span class="line">[0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0],</span><br><span class="line">[0,0,0,0,0,0,0]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>&#160; &#160; &#160; &#160;和第一个主题第1关地图类似，只是有些位置颜色发生了变化。先来看看左边的箭头，左边的箭头对应的是mapitem里的第一个字符串，也就是”0_1_3”：1也就是第1行（从0开始），0也就是第0列，也就是说箭头是在第2行第一个数字对应的六边形位置，它的颜色正好是主题色……后面的我想应该都可以看出来了。</p>
-<h2 id="可用箭头"><a href="#可用箭头" class="headerlink" title="可用箭头"></a>可用箭头</h2><hr>
-<p>&#160; &#160; &#160; &#160;从第三个主题第9关开始，之后的部分关卡就有了可用箭头，可用箭头在下方5个六边形中，配置对应关卡配置中的useritem数组。以第三个主题第10关为例，该关卡中有3个可用箭头：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"color"</span>:2,  <span class="string">"id"</span>:10</span><br><span class="line">...</span><br><span class="line"><span class="string">"useritem"</span>:[3,2,4]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>&#160; &#160; &#160; &#160;数字3、2、4表示箭头序号，分别对应<img src="../images/2015/Trigger/arrow3.png" alt="">、<img src="../images/2015/Trigger/arrow2.png" alt="">和<img src="../images/2015/Trigger/arrow4.png" alt="">三个箭头。再来看看关卡截图：<br><img src="../images/2015/Trigger/map3-10.png" alt="第三个主题第10关"></p>
-<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><hr>
-<p>&#160; &#160; &#160; &#160;关卡布局这一块先说到这，下一篇说说在cocos2d-x中读取json文件的那些事。</p>
+        <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>Cocos2dx 3.x以上版本（以3.4版本为例）</li>
+<li>protobuf 2.6.1（<a href="https://github.com/google/protobuf/releases/tag/v2.6.1" target="_blank" rel="noopener"><strong>release页</strong></a>）</li>
+</ul>
+<h1 id="提取protobuf-lite源文件"><a href="#提取protobuf-lite源文件" class="headerlink" title="提取protobuf-lite源文件"></a>提取protobuf-lite源文件</h1><p>&emsp;&emsp;protobuf源代码包中包含VS项目文件（<code>protobuf-2.6.1\vsprojects\</code>），可以通过打开<code>protobuf.sln</code>查看<code>libprotobuf-lite</code>依赖的文件，也可以用文本编辑器打开<code>libprotobuf-lite.vcxproj</code>查看，如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\extension_set.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\generated_message_util.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\coded_stream.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\coded_stream_inl.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\zero_copy_stream.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\zero_copy_stream_impl_lite.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\message_lite.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\repeated_field.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\atomicops.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\atomicops_internals_x86_msvc.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\common.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\hash.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\map-util.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\once.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\platform_macros.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\stl_util.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\stringprintf.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\template_util.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\type_traits.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\wire_format_lite.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\wire_format_lite_inl.h"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClInclude</span> <span class="attr">Include</span>=<span class="string">"config.h"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\extension_set.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\generated_message_util.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\coded_stream.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\zero_copy_stream.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\io\zero_copy_stream_impl_lite.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\message_lite.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\repeated_field.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\atomicops_internals_x86_msvc.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\common.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\once.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\stubs\stringprintf.cc"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ClCompile</span> <span class="attr">Include</span>=<span class="string">"..\src\google\protobuf\wire_format_lite.cc"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;接下来将以上列出的文件拷贝到创建好的cocos2dx项目下的Classes目录，另外还需要拷贝<code>vsprojects</code>目录下的<code>config.h</code>到<code>Classes</code>目录，拷贝时注意保留文件夹层次结构。拷贝之后Classes文件夹下的文件层次结构如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">─protobuf-lite  &lt;- 上层文件夹名称可以自定</span><br><span class="line">│  │  config.h  &lt;- protobuf-2.6.1/vsprojects/config.h</span><br><span class="line">│  │</span><br><span class="line">│  └─google</span><br><span class="line">│      └─protobuf</span><br><span class="line">│          │  extension_set.cc</span><br><span class="line">│          │  extension_set.h</span><br><span class="line">│          │  generated_message_util.cc</span><br><span class="line">│          │  generated_message_util.h</span><br><span class="line">│          │  message_lite.cc</span><br><span class="line">│          │  message_lite.h</span><br><span class="line">│          │  repeated_field.cc</span><br><span class="line">│          │  repeated_field.h</span><br><span class="line">│          │  wire_format_lite.cc</span><br><span class="line">│          │  wire_format_lite.h</span><br><span class="line">│          │  wire_format_lite_inl.h</span><br><span class="line">│          │</span><br><span class="line">│          ├─io</span><br><span class="line">│          │      coded_stream.cc</span><br><span class="line">│          │      coded_stream.h</span><br><span class="line">│          │      coded_stream_inl.h</span><br><span class="line">│          │      zero_copy_stream.cc</span><br><span class="line">│          │      zero_copy_stream.h</span><br><span class="line">│          │      zero_copy_stream_impl.h</span><br><span class="line">│          │      zero_copy_stream_impl_lite.cc</span><br><span class="line">│          │      zero_copy_stream_impl_lite.h</span><br><span class="line">│          │</span><br><span class="line">│          └─stubs</span><br><span class="line">│                  atomicops.h</span><br><span class="line">│                  atomicops_internals_arm_gcc.h</span><br><span class="line">│                  atomicops_internals_atomicword_compat.h</span><br><span class="line">│                  atomicops_internals_generic_gcc.h</span><br><span class="line">│                  atomicops_internals_macosx.h</span><br><span class="line">│                  atomicops_internals_x86_gcc.cc</span><br><span class="line">│                  atomicops_internals_x86_gcc.h</span><br><span class="line">│                  atomicops_internals_x86_msvc.cc</span><br><span class="line">│                  atomicops_internals_x86_msvc.h</span><br><span class="line">│                  common.cc</span><br><span class="line">│                  common.h</span><br><span class="line">│                  hash.h</span><br><span class="line">│                  map_util.h</span><br><span class="line">│                  once.cc</span><br><span class="line">│                  once.h</span><br><span class="line">│                  platform_macros.h</span><br><span class="line">│                  stl_util.h</span><br><span class="line">│                  stringprintf.cc</span><br><span class="line">│                  stringprintf.h</span><br><span class="line">│                  template_util.h</span><br><span class="line">│                  type_traits.h</span><br></pre></td></tr></table></figure></p>
+<h1 id="一些修改"><a href="#一些修改" class="headerlink" title="一些修改"></a>一些修改</h1><h2 id="win32项目"><a href="#win32项目" class="headerlink" title="win32项目"></a>win32项目</h2><p>&emsp;&emsp;用VS打开<code>proj.win32</code>下的sln文件，添加刚刚拷贝的<code>protobuf-lite</code>源文件到项目中（tip：可以直接在资源管理器中将<code>protobuf-lite</code>文件夹拖放到筛选器上，VS会自动将文件夹以及子文件夹下的所有文件添加到筛选器）。之后修改项目属性，添加<code>protobuf-lite</code>文件夹相对路径到附加包含目录，如下图：<br><img src="../images/2018/Add-protobuf-lite-for-cocos2dx/1.png" alt=""><br>&emsp;&emsp;现在可以开始编译了，坐和放宽。</p>
+<h2 id="wp8项目"><a href="#wp8项目" class="headerlink" title="wp8项目"></a>wp8项目</h2><p>&emsp;&emsp;用VS打开<code>proj.wp8</code>下的sln文件，将拷贝的<code>protobuf-lite</code>源文件添加到项目中。之后添加<code>protobuf-lite</code>文件夹相对路径到附加包含目录，添加完成后先尝试编译，会发现有一系列的报错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">2&gt;  extension_set.cc</span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(312): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(313): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(314): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(315): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(316): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(317): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(318): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(405): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(418): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(427): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(434): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(449): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(465): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(479): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(488): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(495): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(509): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(524): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(551): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(581): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(599): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(620): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(627): error C2059: syntax error : <span class="string">')'</span></span><br><span class="line">2&gt;..\..\Classes\protobuf-lite\google\protobuf\extension_set.cc(642): error C2059: syntax error : <span class="string">')'</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;报错的原因是<code>OPTIONAL</code>在<code>c:\Program Files (x86)\Windows Phone Kits\8.0\Include\minwin\minwindef.h</code>中已有宏定义，解决这些报错的办法是在<code>OPTIONAL</code>枚举定义前面添加以下代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined(WP8) || defined(WINRT)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> OPTIONAL</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> OPTIONAL</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="android项目"><a href="#android项目" class="headerlink" title="android项目"></a>android项目</h2><p>&emsp;&emsp;待后面补充</p>
 
       
     </div>
@@ -493,7 +476,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lfeng1420.github.io/blog/2015/TS2-map-layout.html" title="Trigger第二篇：关卡布局">https://lfeng1420.github.io/blog/2015/TS2-map-layout.html</a>
+      <a href="https://lfeng1420.github.io/blog/2018/Add-protobuf-lite-for-cocos2dx.html" title="为cocos2dx添加protobuf-lite支持">https://lfeng1420.github.io/blog/2018/Add-protobuf-lite-for-cocos2dx.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -509,7 +492,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Trigger/" rel="tag"><i class="fa fa-tag"></i> Trigger</a>
+            <a href="/blog/tags/Cocos2dx/" rel="tag"><i class="fa fa-tag"></i> Cocos2dx</a>
           
         </div>
       
@@ -522,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2015/TS1-resources-analyze.html" rel="next" title="Trigger第一篇：简介以及资源分析">
-                <i class="fa fa-chevron-left"></i> Trigger第一篇：简介以及资源分析
+              <a href="/blog/2018/Analyze-CLR-application-dump-with-windbg.html" rel="next" title="使用Windbg简单分析托管程序dump">
+                <i class="fa fa-chevron-left"></i> 使用Windbg简单分析托管程序dump
               </a>
             
           </div>
@@ -531,10 +514,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2015/TS3-create-read-write-data-with-json.html" rel="prev" title="Trigger第三篇：创建、读取和写入json文件">
-                Trigger第三篇：创建、读取和写入json文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关卡地图"><span class="nav-number">2.</span> <span class="nav-text">关卡地图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数字和箭头"><span class="nav-number">3.</span> <span class="nav-text">数字和箭头</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字"><span class="nav-number">3.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头"><span class="nav-number">3.2.</span> <span class="nav-text">箭头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可用箭头"><span class="nav-number">3.3.</span> <span class="nav-text">可用箭头</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">4.</span> <span class="nav-text">结束</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提取protobuf-lite源文件"><span class="nav-number">2.</span> <span class="nav-text">提取protobuf-lite源文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些修改"><span class="nav-number">3.</span> <span class="nav-text">一些修改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#win32项目"><span class="nav-number">3.1.</span> <span class="nav-text">win32项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wp8项目"><span class="nav-number">3.2.</span> <span class="nav-text">wp8项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android项目"><span class="nav-number">3.3.</span> <span class="nav-text">android项目</span></a></li></ol></li></ol></div>
             
 
           </div>
