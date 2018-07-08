@@ -14,7 +14,7 @@
 <h2 id="解决编译错误"><a href="#解决编译错误" class="headerlink" title="解决编译错误"></a>解决编译错误</h2><p><strong>nullptr was not declared in this scope</strong><br>&emsp;&emsp;<code>Properties</code>-&gt;<code>C/C++ Build</code>-&gt;<code>Settings</code>-&gt;<code>GCC C++ Compiler</code>-&gt;<code>Dialect</code>，修改<code>Language standard</code>选项为<code>IOS C++ 11(-std=c++0x)</code><br><img src="../images/2018/Create-and-use-dynamic-library-in-Ubuntu/2.png" alt=""></p>
 <p><strong>undefined reference to ‘dlopen’</strong><br>&emsp;&emsp;<code>Properties</code>-&gt;<code>C/C++ Build</code>-&gt;<code>Settings</code>-&gt;<code>C/C++ Build</code>-&gt;<code>Settins</code>-&gt;<code>GNU C++ Linker</code>-&gt;<code>Libraries</code>，在<code>Libraries(-l)</code>框中添加<code>dl</code>。<br><img src="../images/2018/Create-and-use-dynamic-library-in-Ubuntu/3.png" alt=""></p>
 <h1 id="参考源"><a href="#参考源" class="headerlink" title="参考源"></a>参考源</h1><ul>
-<li>(<strong>Getting undefined symbol error while dynamic loading of shared library</strong>)[<a href="https://stackoverflow.com/questions/9837009/getting-undefined-symbol-error-while-dynamic-loading-of-shared-library" target="_blank" rel="noopener">https://stackoverflow.com/questions/9837009/getting-undefined-symbol-error-while-dynamic-loading-of-shared-library</a>]</li>
+<li><a href="https://stackoverflow.com/questions/9837009/getting-undefined-symbol-error-while-dynamic-loading-of-shared-library" target="_blank" rel="noopener"><strong>Getting undefined symbol error while dynamic loading of shared library</strong></a></li>
 </ul>
 ]]></content>
       
