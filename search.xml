@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Ubuntu环境下创建和使用动态库]]></title>
-      <url>/blog/2018/Create-and-use-dynamic-library-in-Ubuntu.html</url>
+      <url>/2018/Create-and-use-dynamic-library-in-Ubuntu.html</url>
       <content type="html"><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="安装java"><a href="#安装java" class="headerlink" title="安装java"></a>安装<code>java</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install oracle-java8-installer</span><br><span class="line">sudo apt-get install oracle-java8-set-default</span><br></pre></td></tr></table></figure>
 <h2 id="安装eclipse"><a href="#安装eclipse" class="headerlink" title="安装eclipse"></a>安装<code>eclipse</code></h2><p>&emsp;&emsp;从<code>eclipse</code>官网下载<code>Eclipse IDE for C/C++ Developers</code>（<a href="http://ftp.jaist.ac.jp/pub/eclipse/technology/epp/downloads/release/photon/R/eclipse-cpp-photon-R-linux-gtk-x86_64.tar.gz" target="_blank" rel="noopener"><strong>下载链接</strong></a>），解压到自定义目录，要启动<code>eclipse</code>，双击自定义目录下的<code>eclipse</code>可执行文件即可。<br><a id="more"></a></p>
 <h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>&emsp;&emsp;通过<code>File</code>-&gt;<code>New C/C++ Project</code>打开项目创建界面，选择<code>C++ Managed Build</code>；<br><img src="../images/2018/Create-and-use-dynamic-library-in-Ubuntu/0.png" alt=""><br>&emsp;&emsp;点击<code>Next</code>，在<code>Project Name</code>中输入项目名称，<code>Project Type</code>中展开<code>Shared Library</code>，选择<code>Emtpy Project</code>，<code>ToolChains</code>选择<code>Linux GCC</code>，点<code>Finish</code>创建项目。<br><img src="../images/2018/Create-and-use-dynamic-library-in-Ubuntu/1.png" alt=""></p>
@@ -32,7 +32,7 @@
     
     <entry>
       <title><![CDATA[为cocos2dx添加protobuf-lite支持]]></title>
-      <url>/blog/2018/Add-protobuf-lite-for-cocos2dx.html</url>
+      <url>/2018/Add-protobuf-lite-for-cocos2dx.html</url>
       <content type="html"><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
 <li>Cocos2dx 3.x以上版本（以3.4版本为例）</li>
 <li>protobuf 2.6.1（<a href="https://github.com/google/protobuf/releases/tag/v2.6.1" target="_blank" rel="noopener"><strong>release页</strong></a>）<a id="more"></a></li>
@@ -75,7 +75,7 @@
     
     <entry>
       <title><![CDATA[使用Windbg简单分析托管程序dump]]></title>
-      <url>/blog/2018/Analyze-CLR-application-dump-with-windbg.html</url>
+      <url>/2018/Analyze-CLR-application-dump-with-windbg.html</url>
       <content type="html"><![CDATA[<p>&emsp; &emsp;分析dump之前，需要先从微软符号服务器下载分析所需的pdb。打开Windbg，选择<code>File-&gt;Symbol File Path</code>，在弹出的符号路径设置窗口中输入以下内容并点击<code>OK</code>，也可以使用<code>.sympath+</code>命令（需要先打开dump）：<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SRV*F:\SymbolCache*http://symbols.mozilla.org/firefox;SRV*F:\SymbolCache*http://msdl.microsoft.com/download/symbols;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp; &emsp;其中，<code>F:\SymbolCache</code>替换为要存放pdb的路径，这里也可以预先在后面加上项目的pdb所在路径。</p>
 <p><div align="center"><img src="../images/2018/Analyze-CLR-application-dump-with-windbg/1.png" alt=""></div><br>&emsp; &emsp;通过<code>File-&gt;Open Crash Dump</code>打开dump文件，添加项目的符号路径（<code>.sympath+</code>命令或<code>File-&gt; Symbol File Path</code>，如果已经预先添加过了则忽略），之后输入<code>.reload /f</code>强制重新加载符号，如果之前没有下载过符号，则需要等待比较长的时间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">0:004&gt; .reload /f</span><br><span class="line">.*** WARNING: Unable to verify checksum for AppFrame.exe</span><br><span class="line">.............................*** WARNING: Unable to verify checksum for DLog.dll</span><br><span class="line">.*** ERROR: Symbol file could not be found.  Defaulted to export symbols for SocketSystem2012.dll - </span><br><span class="line">...*** WARNING: Unable to verify checksum for SceneServer.dll</span><br><span class="line">..........*** WARNING: Unable to verify checksum for Base_d.dll</span><br><span class="line">..................*** WARNING: Unable to verify checksum for ZoneServerLogic.DLL</span><br><span class="line">..</span><br><span class="line">.......*** WARNING: Unable to verify checksum for CenterServer_d.dll</span><br><span class="line">*** ERROR: Symbol file could not be found.  Defaulted to export symbols for CenterServer_d.dll - </span><br><span class="line">.*** WARNING: Unable to verify checksum for GatewayServer_d.dll</span><br><span class="line">*** ERROR: Symbol file could not be found.  Defaulted to export symbols for GatewayServer_d.dll - </span><br><span class="line">.*** ERROR: Symbol file could not be found.  Defaulted to export symbols for basetoolsA.dll - </span><br><span class="line">.*** ERROR: Symbol file could not be found.  Defaulted to export symbols for DataCenter.dll - </span><br><span class="line">.*** WARNING: Unable to verify checksum for EnterManager.DLL</span><br><span class="line">.*** WARNING: Unable to verify checksum for RoomServer.DLL</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Press ctrl-c (cdb, kd, ntsd) or ctrl-break (windbg) to abort symbol loads that take too long.</span><br><span class="line">Run !sym noisy before .reload to track down problems loading symbols.</span><br><span class="line"></span><br><span class="line">.*** WARNING: Unable to verify checksum for BattleModuleWrapper.DLL</span><br><span class="line">.....*** WARNING: Unable to verify checksum for mscorlib.ni.dll</span><br><span class="line">...*** WARNING: Unable to verify checksum for System.ni.dll</span><br><span class="line">.*** WARNING: Unable to verify checksum for System.Xml.ni.dll</span><br><span class="line">..*** WARNING: Unable to verify checksum for System.Core.ni.dll</span><br><span class="line">....</span><br><span class="line">Loading unloaded module list</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
@@ -101,7 +101,7 @@
     
     <entry>
       <title><![CDATA[使用Github和hexo搭建个人博客（多图）]]></title>
-      <url>/blog/2018/Build-personal-blog-with-github-and-hexo.html</url>
+      <url>/2018/Build-personal-blog-with-github-and-hexo.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果希望阅读简洁的版本，请前往hexo官方查阅文档，戳<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener"><strong>这里</strong></a><a id="more"></a></p>
 <h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><hr>
 <p>&emsp;&emsp;下载地址：<a href="https://github.com/git-for-windows/git/releases/download/v2.16.3.windows.1/Git-2.16.3-64-bit.exe" target="_blank" rel="noopener">Git (2.16.3, x64)</a><br>&emsp;&emsp;下载完成后，打开exe进行安装。第一步是阅读GNU普通公共许可证，直接点击Next进行下一步：</p>
@@ -244,7 +244,7 @@
     
     <entry>
       <title><![CDATA[Behaviac简单介绍]]></title>
-      <url>/blog/2018/Simple-introduction-of-behaviac.html</url>
+      <url>/2018/Simple-introduction-of-behaviac.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;behaviac是游戏AI的开发框架组件，也是游戏原型的快速设计工具，支持全平台，适用于客户端和服务器，详细可查看： <a href="http://www.behaviac.com/language/zh/overview/" target="_blank" rel="noopener"><strong>behaviac概述</strong></a><br>&emsp;&emsp;exe安装包下载地址： <a href="https://github.com/Tencent/behaviac/releases/download/3.6.39/BehaviacSetup_3.6.39.exe" target="_blank" rel="noopener"><strong>3.6.39版</strong></a><br>&emsp;&emsp;behaviac项目源代码： <a href="https://github.com/Tencent/behaviac/archive/3.6.39.zip" target="_blank" rel="noopener"><strong>3.6.39版</strong></a><br>&emsp;&emsp;以下内容中大部分来自behaviac官方文档，详细可查看： <a href="http://www.behaviac.com/language/zh/category/%E6%96%87%E6%A1%A3/" target="_blank" rel="noopener"><strong>文档页面</strong></a><br><a id="more"></a></p>
 <h2 id="工作原理和流程"><a href="#工作原理和流程" class="headerlink" title="工作原理和流程"></a>工作原理和流程</h2><p>&emsp;&emsp;behaviac整套组件分为编辑器和运行时库，编辑器是独立运行的程序，运行时库需要整合到自己的项目中，各模块的关系如下图所示：</p>
 <div align="center"><img src="../images/2018/Simple-introduction-of-behaviac/1.png" alt="各模块关系"></div><br>&emsp;&emsp;其中：工作区用于管理整个项目，包括类型信息和行为树文件等；类型信息包括Agent类及其成员属性、成员方法和实例等，以及枚举和结构体类型；行为树描述了指定的Agent类型的行为，利用各种节点和类型信息来创建行为树；运行时端根据编辑器导出的类型信息，执行导出的行为树。整个组件工作流程：<br><div align="center"><img src="../images/2018/Simple-introduction-of-behaviac/2.png" alt="组件工作流程"></div>
@@ -612,7 +612,7 @@
     
     <entry>
       <title><![CDATA[使用VS2015编译Cocos2dx-3.2项目]]></title>
-      <url>/blog/2018/Build-cocos2dx-3_2-project-with-VS2015.html</url>
+      <url>/2018/Build-cocos2dx-3_2-project-with-VS2015.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <p>&emsp;&emsp;cocos2dx3.2应该算是大家比较熟知的一个版本了，相比后续的版本，这个版本生成的apk比较小，重点是支持WP8（软粉一枚(ง •_•)ง），然而这个版本生成的项目在VS2015上编译不过。接下来介绍如何修改使VS2015能够顺利编译项目。<a id="more"></a></p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><hr>
@@ -653,7 +653,7 @@
     
     <entry>
       <title><![CDATA[Trigger第三篇：创建、读取和写入json文件]]></title>
-      <url>/blog/2015/TS3-create-read-write-data-with-json.html</url>
+      <url>/2015/TS3-create-read-write-data-with-json.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <p>&#160; &#160; &#160; &#160;上一篇其实已经说完了这个游戏里的重要部分了，所以接下来开始写代码了。先从解析json文件开始，配置环境啥的就不写了，网上一搜大把的教程（感觉这部分其实都不用写，也有类似读取json文件的教程= =）<a id="more"></a></p>
 <h1 id="地图数据json"><a href="#地图数据json" class="headerlink" title="地图数据json"></a>地图数据json</h1><hr>
@@ -687,7 +687,7 @@
     
     <entry>
       <title><![CDATA[Trigger第二篇：关卡布局]]></title>
-      <url>/blog/2015/TS2-map-layout.html</url>
+      <url>/2015/TS2-map-layout.html</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <p>&#160; &#160; &#160; &#160;原本打算写如何把json转换为plist文件，但是后来发现有些问题，所以暂时先不写了，等以后有时间补上。这一篇写写最主要的部分：关卡的布局。<a id="more"></a></p>
 <h1 id="关卡地图"><a href="#关卡地图" class="headerlink" title="关卡地图"></a>关卡地图</h1><hr>
@@ -726,7 +726,7 @@
     
     <entry>
       <title><![CDATA[Trigger第一篇：简介以及资源分析]]></title>
-      <url>/blog/2015/TS1-resources-analyze.html</url>
+      <url>/2015/TS1-resources-analyze.html</url>
       <content type="html"><![CDATA[<h1 id="开篇之前"><a href="#开篇之前" class="headerlink" title="开篇之前"></a>开篇之前</h1><hr>
 <p>&#160; &#160; &#160; &#160;想想学Cocos2d-x还是在大四上学期开始的，从那时到现在，一直想做一个自己的游戏，可能是因为自己创意不够吧，一直没这个机会，另外，和自己的水平也有很大关系。这次做的Trigger，依然是仿照写的（也就是资源是拿来的，仅仅是代码是我写的= =）。不过还好，感觉这次做的也还行，大部分功能都做好了，除了一些帮助没做（估计也没多少人会玩，所以帮助就不打算做了）。另外，也是第一次发布了WP版，捣鼓了两天弄出来了，期间也遇到了各种问题……扯得有点远了。<a id="more"></a></p>
 <h1 id="Trigger介绍"><a href="#Trigger介绍" class="headerlink" title="Trigger介绍"></a>Trigger介绍</h1><hr>
@@ -761,7 +761,7 @@
     
     <entry>
       <title><![CDATA[新的开始]]></title>
-      <url>/blog/2015/New-beginning.html</url>
+      <url>/2015/New-beginning.html</url>
       <content type="html"><![CDATA[<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试测试测试测试测试测试测试测试测试测试测试测试<a id="more"></a></p>
 <p>代码测试：</p>
 <pre><code class="bash"><span class="comment">#include &lt;iostream&gt;</span>
