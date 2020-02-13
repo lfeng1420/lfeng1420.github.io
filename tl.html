@@ -98,7 +98,6 @@
 
 <body>
 <div class="cs">
-    <img src="./images/l.txt" id="logo">
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <script>
@@ -106,7 +105,7 @@
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-            S.UI.simulate("|#countdown 3|四莉|爱你哟");
+            S.UI.simulate("|#countdown 3|none|none");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
