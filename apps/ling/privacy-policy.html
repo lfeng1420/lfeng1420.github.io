@@ -12,14 +12,6 @@
             padding: 2rem;
         }
 
-        .privacy-section {
-            margin-bottom: 2rem;
-        }
-
-        .privacy-section:last-child {
-            margin-bottom: 0;
-        }
-
         /* 核心承诺高亮框 */
         .promise-box {
             background: linear-gradient(135deg, var(--accent-soft), rgba(59, 130, 246, 0.05));
@@ -102,15 +94,6 @@
         }
 
         @media (max-width: 640px) {
-            .section-title {
-                font-size: 1.1rem;
-            }
-            .section-title span {
-                font-size: 1.2rem;
-            }
-            .section-content {
-                font-size: 0.9rem;
-            }
             .promise-box p {
                 font-size: 0.9rem;
             }
@@ -141,7 +124,7 @@
             <div class="page-content">
 
                 <!-- 核心承诺 -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="promise-box">
                         <div class="promise-icon">🔒</div>
                         <p><strong>我们不会收集您的任何个人信息</strong></p>
@@ -153,7 +136,7 @@
                 </div>
 
                 <!-- 数据存储（本地） -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="section-title">
                         <span>💾</span> 数据存储
                     </div>
@@ -172,7 +155,7 @@
                 </div>
 
                 <!-- 例外情况：用户主动触发的插件功能 -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="section-title">
                         <span>🔌</span> 例外情况（插件功能）
                     </div>
@@ -203,7 +186,7 @@
                 </div>
 
                 <!-- 第三方链接 -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="section-title">
                         <span>🔗</span> 第三方链接
                     </div>
@@ -219,7 +202,7 @@
                 </div>
 
                 <!-- 儿童隐私 -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="section-title">
                         <span>🧒</span> 儿童隐私
                     </div>
@@ -229,7 +212,7 @@
                 </div>
 
                 <!-- 隐私协议更新 -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="section-title">
                         <span>📝</span> 隐私协议更新
                     </div>
@@ -240,7 +223,7 @@
                 </div>
 
                 <!-- 联系我们 -->
-                <div class="privacy-section">
+                <div class="section-container">
                     <div class="section-title">
                         <span>📧</span> 联系我们
                     </div>

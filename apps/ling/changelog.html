@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>轻灵音乐 更新日志</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <style>
+        /* ========== 更新日志页面专属样式 ========== */
+        .version-entry {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .version-entry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* 版本头部信息 */
+        .version-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .version-number {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .version-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--accent-soft);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        /* 版本标签（稳定版/Beta/Alpha） */
+        .version-tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .tag-stable {
+            background: #22c55e20;
+            color: #22c55e;
+        }
+
+        .tag-beta {
+            background: #f59e0b20;
+            color: #f59e0b;
+        }
+
+        .tag-alpha {
+            background: #ef444420;
+            color: #ef4444;
+        }
+
+        /* 更新分类容器 - 复用 .feature-section 样式已在 common.css 中定义 */
+        /* 这里只定义间距和分类标题 */
+        .update-category {
+            margin: 1rem 0 0.75rem 0;
+        }
+
+        /* 分类标题（新增功能/问题修复/性能优化） */
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* 更新列表 - 复用 .feature-list 样式需微调 */
+        .update-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .update-list li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .update-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* 更新类型标签颜色 */
+        .update-list .type-new {
+            color: #22c55e;
+        }
+
+        .update-list .type-fix {
+            color: #f59e0b;
+        }
+
+        .update-list .type-opt {
+            color: var(--accent);
+        }
+
+        /* RSS 订阅提示 */
+        .rss-note {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* 响应式调整（仅针对版本条目特有样式） */
+        @media (max-width: 640px) {
+            .version-number {
+                font-size: 1.2rem;
+            }
+            .version-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .update-list li {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <div class="logo">
+                <h1>LFENG</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式">
+                <span class="theme-icon light-icon">☀️</span>
+                <span class="theme-icon dark-icon">🌙</span>
+                <span class="toggle-knob"></span>
+            </button>
+        </div>
+
+        <a href="index.html" class="back-link back-link-sm">← 返回应用详情</a>
+
+        <div class="content-card">
+            <div class="page-header">
+                <h1>📋 更新日志</h1>
+                <p>记录轻灵音乐的每一次迭代</p>
+            </div>
+            <div class="page-content">
+                <div class="version-entry">
+                    <div class="version-header">
+                        <div class="version-badge">
+                            <span class="version-number">0.0.1.0</span>
+                            <span class="version-date">即将推出</span>
+                            <span class="version-tag tag-alpha">首个版本</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="version-entry">
+                    <div class="version-header">
+                        <div class="version-badge">
+                            <span class="version-number">v2.5.0</span>
+                            <span class="version-date">2026-03-15</span>
+                            <span class="version-tag tag-stable">稳定版</span>
+                        </div>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">✨ 新增功能</div>
+                        <ul class="update-list">
+                            <li>新增 <span class="type-new">分组随机播放</span> 功能，支持按文件夹/专辑/艺术家分组</li>
+                            <li>新增 <span class="type-new">Steam 成就系统</span>，首批 15 个成就上线</li>
+                            <li>新增 <span class="type-new">透明毛玻璃效果</span>，支持自定义背景图片</li>
+                            <li>新增 <span class="type-new">CUE 分轨文件智能解析</span></li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">🔧 问题修复</div>
+                        <ul class="update-list">
+                            <li>修复 <span class="type-fix">FLAC 文件封面显示异常</span> 的问题</li>
+                            <li>修复 <span class="type-fix">某些 DSD 格式无法播放</span> 的兼容性问题</li>
+                            <li>修复 <span class="type-fix">深色模式下频谱颜色显示异常</span></li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">⚡ 性能优化</div>
+                        <ul class="update-list">
+                            <li>优化 <span class="type-opt">音频解码器性能</span>，减少 CPU 占用率</li>
+                            <li>优化 <span class="type-opt">大型播放列表加载速度</span>（提升约 40%）</li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">🚀 计划中的功能</div>
+                        <ul class="update-list">
+                            <li>支持 <span class="type-new">DLNA / UPnP 投屏</span></li>
+                            <li>支持 <span class="type-new">跨设备播放进度同步（Steam 云存档）</span></li>
+                            <li>新增 <span class="type-new">Android Auto / CarPlay 支持</span></li>
+                            <li>新增 <span class="type-new">均衡器（EQ）</span> 调节功能</li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div class="rss-note">
+                    📡 可以通过 <a href="https://github.com/lfeng1420/LingPlayer/releases" target="_blank" rel="noopener noreferrer">GitHub Releases</a> 获取更新通知
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 LFENG · 轻灵音乐
+        </footer>
+    </div>
+
+    <script src="../../js/common.js"></script>
+</body>
+
+</html>

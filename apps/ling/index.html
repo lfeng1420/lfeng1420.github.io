@@ -8,44 +8,6 @@
     <link rel="stylesheet" href="../../css/common.css">
     <style>
         /* ========== 详情页专属样式 ========== */
-        .back-bar {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--accent-soft);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            border: 1px solid var(--border-color);
-        }
-
-        .back-btn:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateX(-4px);
-        }
-
-        .content-card {
-            background: var(--bg-card);
-            border-radius: 2rem;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
         .detail-content {
             display: flex;
             flex-direction: column;
@@ -168,37 +130,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .download-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .detail-screenshot-img {
-            max-width: 100%;
-            max-height: 480px;
-            width: auto;
-            height: auto;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
-            border: 1px solid var(--border-color);
-            background: var(--bg-card);
-            object-fit: contain;
-        }
-
-        .detail-screenshot-img[data-type="portrait"] {
-            max-height: 550px;
-            width: auto;
-            max-width: 320px;
-        }
-
-        .detail-screenshot-img[data-type="landscape"] {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-        }
-
         /* 系统要求卡片 */
         .requirements-card {
             background: var(--bg-card);
@@ -290,9 +221,7 @@
                 <span class="toggle-knob"></span>
             </button>
         </div>
-        <div class="back-bar">
-            <a href="../../index.html" class="back-link back-link-sm">← 返回首页</a>
-        </div>
+        <a href="../../index.html" class="back-link back-link-sm">← 返回首页</a>
 
         <!-- 详情页主卡片 -->
         <div class="content-card">
@@ -328,15 +257,11 @@
                             <li>Steam 丰富状态显示</li>
                         </ul>
                     </div>
-                    <div class="download-buttons">
-                        <a href="https://store.steampowered.com/app/4496780/" class="btn"><span class="icon icon-md icon-steam"></span> Steam</a>
-                        <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
-
-                    </div>
+                    <a href="https://store.steampowered.com/app/4496780/" class="btn"><span class="icon icon-md icon-steam"></span> Steam</a>
+                    <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
                 </div>
-                <div class="detail-screenshot">
-                    <img class="detail-screenshot-img" data-type="landscape" src="../../images/app_ling_player.png"
-                        alt="轻灵音乐">
+                <div class="screenshot-area">
+                    <img class="single-screenshot" data-type="portrait" src="../../images/app_ling_player.png" alt="轻灵音乐截图">
                 </div>
             </div>
         </div>
@@ -425,18 +350,17 @@
                 <div class="link-card-icon">📄</div>
                 <div class="link-card-title">开源软件许可</div>
             </a>
-            <a href="update-log.html" class="link-card" target="_blank" rel="noopener noreferrer">
+            <a href="changelog.html" class="link-card" target="_blank" rel="noopener noreferrer">
                 <div class="link-card-icon">📋</div>
                 <div class="link-card-title">更新日志</div>
             </a>
         </div>
         <footer>
-            © 2026 LFENG · 轻灵音乐 · 让音乐更纯粹
+            © 2026 LFENG · 轻灵音乐
         </footer>
     </div>
 
     <script src="../../js/common.js"></script>
     <script src="../../js/carousel.js"></script>
 </body>
-
 </html>

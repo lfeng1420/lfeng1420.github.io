@@ -508,6 +508,14 @@ footer {
 }
 
 /* ========== 通用标题样式 ========== */
+.section-container {
+    margin-bottom: 2rem;
+}
+
+.section-container:last-child {
+    margin-bottom: 0;
+}
+
 .section-title {
     display: flex;
     align-items: center;
@@ -714,6 +722,18 @@ footer {
 
     .carousel-slide img {
         max-height: 350px;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .section-title span {
+        font-size: 1.2rem;
+    }
+
+    .section-content {
+        font-size: 0.9rem;
     }
 }
 
