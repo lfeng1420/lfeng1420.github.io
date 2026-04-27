@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>轻灵音乐 - 详情页</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <style>
+        /* ========== 详情页专属样式 ========== */
+        .back-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .back-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateX(-4px);
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            padding: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .detail-content {
+                flex-direction: row;
+                gap: 4rem;
+            }
+            .detail-info {
+                flex: 1.1;
+            }
+            .detail-screenshot {
+                flex: 0.9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .app-icon-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #fff5f5, #f5bfd2);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .app-title-info h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .app-title-info .version {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .feature-section {
+            margin: 1.5rem 0;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .detail-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-screenshot-img {
+            max-width: 100%;
+            max-height: 480px;
+            width: auto;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            object-fit: contain;
+        }
+
+        .detail-screenshot-img[data-type="portrait"] {
+            max-height: 550px;
+            width: auto;
+            max-width: 320px;
+        }
+
+        .detail-screenshot-img[data-type="landscape"] {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 系统要求卡片 */
+        .requirements-card {
+            background: var(--bg-card);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .requirements-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .requirements-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .platform-req {
+            padding: 0.75rem 0;
+        }
+
+        .platform-name {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .req-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .req-item .req-values {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.25rem;
+        }
+
+        .req-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .req-value {
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-align: right;
+        }
+
+        @media (max-width: 640px) {
+            .detail-content {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+            .app-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 2rem;
+            }
+            .app-title-info h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <div class="logo">
+                <h1>LFENG</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon light-icon">☀️</span>
+                <span class="theme-icon dark-icon">🌙</span>
+                <span class="toggle-knob"></span>
+            </button>
+        </div>
+        <div class="back-bar">
+            <a href="../../index.html" class="back-link back-link-sm">← 返回首页</a>
+        </div>
+
+        <!-- 详情页主卡片 -->
+        <div class="content-card">
+            <div class="detail-content">
+                <div class="detail-info">
+                    <div class="app-icon-area">
+                        <div class="app-icon"><img src="../../icons/ling.png" alt="图标"></div>
+                        <div class="app-title-info">
+                            <h1>轻灵音乐 Ling Player</h1>
+                            <div class="version">版本 0.0.1.0 · 即将发布</div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                    </div>
+                    <div class="tags">
+                        <span class="tag">🎵 丰富格式支持</span>
+                        <span class="tag">🎨 可视化频谱</span>
+                        <span class="tag">✨ 透明效果</span>
+                        <span class="tag">💻 多平台</span>
+                    </div>
+                    <div class="detail-description">
+                        <p>轻灵音乐是一款本地音乐播放器，支持 FLAC、APE、DSD、MP3、AAC 等常见音频格式，支持 CUE
+                            分轨解析、分组随机播放。配合实时渲染的可视化频谱，以及透明效果与自定义背景的界面设计，带来丰富的个性化体验。</p>
+                    </div>
+                    <div class="feature-section">
+                        <div class="feature-title">✨ 核心功能</div>
+                        <ul class="feature-list">
+                            <li>支持 FLAC/APE/DSD/MP3/AAC 等数十种音频格式</li>
+                            <li>CUE 分轨文件智能解析</li>
+                            <li>实时渲染的可视化频谱效果</li>
+                            <li>透明毛玻璃效果 + 自定义背景图片</li>
+                            <li>分组随机播放</li>
+                            <li>Steam 丰富状态显示</li>
+                        </ul>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="https://store.steampowered.com/app/4496780/" class="btn"><span class="icon icon-md icon-steam"></span> Steam</a>
+                        <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
+
+                    </div>
+                </div>
+                <div class="detail-screenshot">
+                    <img class="detail-screenshot-img" data-type="landscape" src="../../images/app_ling_player.png"
+                        alt="轻灵音乐">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel 轮播图卡片 -->
+        <div class="carousel-card">
+            <div class="carousel-title">📸 应用截图预览</div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img src="../../images/screenshots/ling/1.png" alt="截图1"></div>
+                    <div class="carousel-slide"><img src="../../images/screenshots/ling/2.png" alt="截图2"></div>
+                    <div class="carousel-slide"><img src="../../images/screenshots/ling/3.png" alt="截图3"></div>
+                    <div class="carousel-slide"><img src="../../images/screenshots/ling/4.png" alt="截图4"></div>
+                    <div class="carousel-slide"><img src="../../images/screenshots/ling/5.png" alt="截图5"></div>
+                </div>
+                <button class="carousel-btn prev" id="prevBtn">‹</button>
+                <button class="carousel-btn next" id="nextBtn">›</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
+        <!-- 系统要求 -->
+        <div class="requirements-card">
+            <div class="requirements-title">💻 系统要求</div>
+            <div class="requirements-list">
+                <div class="platform-req">
+                    <div class="platform-name"><span>🪟</span> Windows</div>
+                    <div class="req-item">
+                        <span class="req-label">操作系统</span>
+                        <div class="req-values">
+                            <span class="req-value">Windows 10 版本 20H2 或更高版本（x64 架构）</span>
+                            <span class="req-value">Windows 11 21H2 或更高版本（x64 架构）</span>
+                        </div>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">内存</span>
+                        <span class="req-value">400MB RAM</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">存储空间</span>
+                        <span class="req-value">需要 100 MB 可用空间</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">网络</span>
+                        <span class="req-value">部分插件要求网络连接</span>
+                    </div>
+                </div>
+                <div class="platform-req">
+                    <div class="platform-name"><span>🐧</span> Linux</div>
+                    <div class="req-item">
+                        <span class="req-label">操作系统</span>
+                        <div class="req-values">
+                            <span class="req-value">Ubuntu 20.04 LTS 或更高版本</span>
+                            <span class="req-value">Debian 11 或更高版本</span>
+                            <span class="req-value">Fedora 38 或更高版本</span>
+                        </div>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">内存</span>
+                        <span class="req-value">400MB RAM</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">存储空间</span>
+                        <span class="req-value">需要 100 MB 可用空间</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">网络</span>
+                        <span class="req-value">部分插件要求网络连接</span>
+                    </div>
+                </div>
+                <div class="platform-req">
+                    <div class="platform-name"><span>🤖</span> Android</div>
+                    <div class="req-item">
+                        <span class="req-label">操作系统</span>
+                        <span class="req-value">Android 8.0 (API 26) 或更高版本</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="links-grid">
+            <a href="privacy-policy.html" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-card-icon">🔒</div>
+                <div class="link-card-title">隐私协议</div>
+            </a>
+            <a href="open-source-licenses.html" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-card-icon">📄</div>
+                <div class="link-card-title">开源软件许可</div>
+            </a>
+            <a href="update-log.html" class="link-card" target="_blank" rel="noopener noreferrer">
+                <div class="link-card-icon">📋</div>
+                <div class="link-card-title">更新日志</div>
+            </a>
+        </div>
+        <footer>
+            © 2026 LFENG · 轻灵音乐 · 让音乐更纯粹
+        </footer>
+    </div>
+
+    <script src="../../js/common.js"></script>
+    <script src="../../js/carousel.js"></script>
+</body>
+
+</html>

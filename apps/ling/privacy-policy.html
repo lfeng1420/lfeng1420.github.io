@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>轻灵音乐 隐私协议</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <style>
+        /* 隐私协议页面专属样式 */
+        .privacy-content {
+            padding: 2rem;
+        }
+
+        .privacy-section {
+            margin-bottom: 2rem;
+        }
+
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 核心承诺高亮框 */
+        .promise-box {
+            background: linear-gradient(135deg, var(--accent-soft), rgba(59, 130, 246, 0.05));
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin: 1.25rem 0;
+            text-align: center;
+        }
+
+        .promise-box .promise-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .promise-box p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .promise-box .promise-sub {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* 例外情况卡片 */
+        .exception-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .exception-card .exception-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .exception-card p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-card {
+            background: var(--accent-soft);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .contact-card p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0.5rem 0;
+        }
+
+        .contact-card .contact-label {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 70px;
+        }
+
+        .contact-card a {
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-muted);
+        }
+
+        .contact-card a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 1.1rem;
+            }
+            .section-title span {
+                font-size: 1.2rem;
+            }
+            .section-content {
+                font-size: 0.9rem;
+            }
+            .promise-box p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <div class="logo">
+                <h1>LFENG</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式">
+                <span class="theme-icon light-icon">☀️</span>
+                <span class="theme-icon dark-icon">🌙</span>
+                <span class="toggle-knob"></span>
+            </button>
+        </div>
+
+        <a href="index.html" class="back-link back-link-sm">← 返回应用详情</a>
+
+        <div class="content-card">
+            <div class="page-header">
+                <h1>🎵 隐私协议</h1>
+                <p>📅 最后更新：2026年4月27日</p>
+            </div>
+            <div class="page-content">
+
+                <!-- 核心承诺 -->
+                <div class="privacy-section">
+                    <div class="promise-box">
+                        <div class="promise-icon">🔒</div>
+                        <p><strong>我们不会收集您的任何个人信息</strong></p>
+                        <p class="promise-sub">所有数据均存储在您的本地设备中，我们不会上传到任何服务器</p>
+                    </div>
+                    <div class="section-content">
+                        <p>轻灵音乐是一款<strong>本地音乐播放器</strong>，应用本身<strong>不会收集、上传或分析</strong>您的任何使用数据、设备信息或个人身份信息。所有播放记录、播放列表、应用设置等数据均仅保存在您的设备本地。</p>
+                    </div>
+                </div>
+
+                <!-- 数据存储（本地） -->
+                <div class="privacy-section">
+                    <div class="section-title">
+                        <span>💾</span> 数据存储
+                    </div>
+                    <div class="section-content">
+                        <p>轻灵音乐在您的设备上存储以下本地数据：</p>
+                        <ul>
+                            <li><strong>歌曲</strong>：包括歌曲、专辑、艺术家和文件夹信息</li>
+                            <li><strong>统计</strong>：播放次数和播放时间统计</li>
+                            <li><strong>歌单</strong>：您创建的歌单和收藏的歌曲列表</li>
+                            <li><strong>设置</strong>：主题、歌词、频谱等个性化配置</li>
+                        </ul>
+                        <p>✅ 上述数据<strong>仅保存在您的设备本地</strong>，我们无法访问。<br>
+                        ❌ 应用<strong>不会</strong>收集设备型号、操作系统版本、IP地址等任何设备信息。<br>
+                        ❌ 应用<strong>不会</strong>上传您的音乐文件或播放记录到任何服务器。</p>
+                    </div>
+                </div>
+
+                <!-- 例外情况：用户主动触发的插件功能 -->
+                <div class="privacy-section">
+                    <div class="section-title">
+                        <span>🔌</span> 例外情况（插件功能）
+                    </div>
+                    <div class="section-content">
+                        <p>以下情况涉及数据上传，但<strong>完全由您主动触发</strong>，且数据均上传到<strong>您指定的云服务</strong>：</p>
+
+                        <div class="exception-card">
+                            <div class="exception-title">
+                                <span class="icon icon-md icon-onedrive"></span> OneDrive 插件
+                            </div>
+                            <p>如果您选择使用 OneDrive 插件，您可以主动将本地音乐文件或播放列表备份到<strong>您自己的 OneDrive 云空间</strong>。该过程需要您授权登录 OneDrive 账户，数据将直接传输到 Microsoft 服务器，遵循 <a href="https://privacy.microsoft.com/zh-cn/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 隐私声明</a>。我们不会访问或存储您的 OneDrive 凭证。</p>
+                        </div>
+
+                        <div class="exception-card">
+                            <div class="exception-title">
+                                <span class="icon icon-md icon-steam"></span> Steam 插件
+                            </div>
+                            <p>如果您通过 Steam 平台使用轻灵音乐，Steam 插件会：</p>
+                            <ul style="margin-top: 0.5rem;">
+                                <li><strong>同步成就数据</strong>：您在使用过程中产生的统计数据将上传至 Steam，用于解锁 Steam 成就；</li>
+                                <li><strong>Steam 云存档</strong>：您的播放列表和应用设置可选择同步到 Steam 云端，以便在不同设备间恢复数据。</li>
+                            </ul>
+                            <p>这些数据遵循 <a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener noreferrer">Steam 隐私政策</a>。您可以在 Steam插件 设置中随时关闭云存档功能。</p>
+                        </div>
+
+                        <p style="margin-top: 1rem;">⚠️ 以上插件功能均为<strong>可选功能</strong>，您可以选择不使用。在未主动使用这些插件的情况下，没有任何数据会离开您的设备。</p>
+                    </div>
+                </div>
+
+                <!-- 第三方链接 -->
+                <div class="privacy-section">
+                    <div class="section-title">
+                        <span>🔗</span> 第三方链接
+                    </div>
+                    <div class="section-content">
+                        <p>应用内可能包含指向以下第三方服务的链接，这些服务有其独立的隐私政策：</p>
+                        <ul>
+                            <li><a href="https://privacy.microsoft.com/zh-cn/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft 隐私声明</a>（OneDrive 插件相关）</li>
+                            <li><a href="https://store.steampowered.com/privacy_agreement/" target="_blank" rel="noopener noreferrer">Steam 隐私政策</a>（Steam 插件相关）</li>
+                            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 隐私政策</a>（Google Play 分发相关）</li>
+                        </ul>
+                        <p>建议您查阅上述服务的隐私政策以了解其数据实践。</p>
+                    </div>
+                </div>
+
+                <!-- 儿童隐私 -->
+                <div class="privacy-section">
+                    <div class="section-title">
+                        <span>🧒</span> 儿童隐私
+                    </div>
+                    <div class="section-content">
+                        <p>本应用不针对13岁以下儿童设计，也不会收集任何用户的年龄信息。由于本应用不收集个人信息，因此不存在儿童信息被收集的风险。</p>
+                    </div>
+                </div>
+
+                <!-- 隐私协议更新 -->
+                <div class="privacy-section">
+                    <div class="section-title">
+                        <span>📝</span> 隐私协议更新
+                    </div>
+                    <div class="section-content">
+                        <p>我们可能不时更新本隐私协议以反映应用功能变化或法律法规要求。更新后的版本将在本页面发布，并更新页面顶部的“最后更新”日期。建议您定期查阅本页面。</p>
+                        <p>对于重大变更，我们会通过应用内更新日志或 Steam 公告等方式通知您。</p>
+                    </div>
+                </div>
+
+                <!-- 联系我们 -->
+                <div class="privacy-section">
+                    <div class="section-title">
+                        <span>📧</span> 联系我们
+                    </div>
+                    <div class="section-content">
+                        <p>如果您对本隐私协议有任何疑问，或希望删除您通过 Steam 云存档同步的数据，请通过以下方式联系我们：</p>
+                        <div class="contact-card">
+                            <p><span class="contact-label">📧 邮箱</span> <a href="mailto:lfeng1420@live.com">lfeng1420@live.com</a></p>
+                            <p><span class="contact-label">🌐 博客</span> <a href="https://blog.lfengs.com" target="_blank" rel="noopener noreferrer">blog.lfengs.com</a></p>
+                            <p><span class="contact-label">🐙 GitHub</span> <a href="https://github.com/lfeng1420" target="_blank" rel="noopener noreferrer">github.com/lfeng1420</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            © 2026 LFENG · 轻灵音乐
+        </footer>
+    </div>
+
+    <script src="../../js/common.js"></script>
+</body>
+
+</html>

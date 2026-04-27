@@ -1,0 +1,743 @@
+/* ========== 全局变量 - 浅色模式（默认） ========== */
+:root {
+    --bg-body: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 25px 30px -12px rgba(0, 0, 0, 0.1);
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-soft: rgba(59, 130, 246, 0.1);
+    --toggle-bg: #e2e8f0;
+    --toggle-knob: #ffffff;
+}
+
+/* ========== 深色模式 - 通过 .dark 类切换 ========== */
+body.dark {
+    --bg-body: #0a0f14;
+    --bg-card: #1a1f2a;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #2d3a4a;
+    --shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 25px 30px -12px rgba(0, 0, 0, 0.4);
+    --accent: #60a5fa;
+    --accent-hover: #3b82f6;
+    --accent-soft: rgba(96, 165, 250, 0.15);
+    --toggle-bg: #334155;
+    --toggle-knob: #60a5fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-body);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.2s ease;
+    padding: 2rem 2rem;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+/* 尺寸变体 */
+.icon-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.icon-md {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon-lg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon-xl {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.icon-github {
+    background-image: url('../icons/github.svg');
+}
+
+.icon-android {
+    background-image: url('../icons/android.svg');
+}
+
+.icon-steam {
+    background-image: url('../icons/steam.svg');
+}
+
+.icon-microsoft {
+    background-image: url('../icons/microsoft.svg');
+}
+
+.icon-google {
+    background-image: url('../icons/google.svg');
+}
+
+.icon-onedrive {
+    background-image: url('../icons/onedrive.svg');
+}
+
+.icon-nuget {
+    background-image: url('../icons/nuget.svg');
+}
+
+
+/* ========== 顶部栏 ========== */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--accent), #a855f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ========== 深色模式切换按钮 ========== */
+.theme-toggle {
+    background: var(--toggle-bg);
+    border: none;
+    border-radius: 60px;
+    width: 68px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.toggle-knob {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: var(--toggle-knob);
+    border-radius: 50%;
+    left: 3px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .toggle-knob {
+    transform: translateX(34px);
+}
+
+.theme-icon {
+    font-size: 15px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.light-icon {
+    opacity: 0.7;
+}
+
+.dark-icon {
+    opacity: 0.7;
+}
+
+body.dark .light-icon {
+    opacity: 0.4;
+}
+
+body.dark .dark-icon {
+    opacity: 1;
+}
+
+/* ========== 首页卡片样式 ========== */
+.app-card {
+    background: var(--bg-card);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2.5rem;
+}
+
+.app-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .card-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .desc-area {
+        flex: 1;
+    }
+
+    .screenshot-area {
+        flex: 1.2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .app-card:nth-child(even) .card-content {
+        flex-direction: row-reverse;
+    }
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    background: linear-gradient(135deg, var(--accent), #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.app-subtitle {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+}
+
+.tag {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(2px);
+}
+
+/* ========== 按钮 ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.btn:last-child {
+    margin-right: 0;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ========== 截图样式 ========== */
+.screenshot-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-screenshot {
+    max-width: 100%;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-color);
+    transition: transform 0.25s ease;
+    background: var(--bg-card);
+}
+
+.single-screenshot:hover {
+    transform: scale(1.02);
+}
+
+.single-screenshot[data-type="portrait"] {
+    max-height: 550px;
+    width: auto;
+    max-width: 320px;
+}
+
+.single-screenshot[data-type="landscape"] {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+}
+
+/* ========== 标签图标 ========== */
+.tag-uwp {
+    background-image: url('../icons/uwp.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    padding-left: 32px;
+}
+
+.tag-linux {
+    background-image: url('../icons/linux.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    padding-left: 32px;
+}
+
+.tag-android {
+    background-image: url('../icons/android.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    padding-left: 32px;
+}
+
+/* ========== 底部链接卡片 ========== */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.link-card {
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+.link-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+}
+
+.link-card-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    margin: 0 auto;
+    fill: currentColor;
+}
+
+body.dark .link-card-icon svg {
+    fill: var(--text-primary);
+}
+
+.link-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.link-card-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ========== 页脚 ========== */
+footer {
+    text-align: center;
+    padding: 2rem 0 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2.5rem;
+}
+
+/* ========== 返回按钮样式 ========== */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.back-link:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateX(-4px);
+}
+
+.back-link.back-link-sm {
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ========== 通用卡片样式 ========== */
+.content-card {
+    background: var(--bg-card);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+/* ========== 通用头部样式 ========== */
+.page-header {
+    padding: 2rem 2rem 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #a855f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ========== 通用内容区域样式 ========== */
+.page-content {
+    padding: 2rem;
+}
+
+/* ========== 通用标题样式 ========== */
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-soft);
+}
+
+.section-title span {
+    font-size: 1.4rem;
+}
+
+.section-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.section-content p {
+    margin-bottom: 0.75rem;
+}
+
+.section-content ul {
+    padding-left: 1.5rem;
+    margin: 0.75rem 0;
+}
+
+.section-content li {
+    margin-bottom: 0.5rem;
+}
+
+.section-content strong {
+    color: var(--text-primary);
+}
+
+/* ==== Carousel 轮播图样式 ==== */
+.carousel-card {
+    background: var(--bg-card);
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.carousel-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    cursor: grab;
+}
+
+.carousel-track:active {
+    cursor: grabbing;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 960px;
+    width: auto;
+    height: auto;
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    object-fit: contain;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.carousel-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.carousel-btn.prev {
+    left: 16px;
+}
+
+.carousel-btn.next {
+    right: 16px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--accent);
+}
+
+.dot:hover {
+    background: var(--accent);
+    opacity: 0.7;
+}
+
+
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .app-title {
+        font-size: 1.6rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+
+    .single-screenshot[data-type="portrait"] {
+        max-height: 420px;
+        max-width: 260px;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .link-card {
+        padding: 1rem;
+    }
+
+    .link-card-icon {
+        font-size: 1.8rem;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-slide img {
+        max-height: 350px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .card-content {
+        padding: 3rem;
+        gap: 4rem;
+    }
+
+    .desc-area {
+        padding-right: 1rem;
+    }
+
+    .app-card:nth-child(even) .desc-area {
+        padding-right: 0;
+        padding-left: 1rem;
+    }
+
+    .single-screenshot[data-type="landscape"] {
+        max-width: 100%;
+    }
+
+    .single-screenshot[data-type="portrait"] {
+        max-height: 600px;
+        max-width: 360px;
+    }
+}

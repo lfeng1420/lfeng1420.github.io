@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>轻灵音乐 开源软件许可</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <style>
+        /* 分类区块 */
+        .license-category {
+            margin-bottom: 2rem;
+        }
+
+        .license-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-soft);
+        }
+
+        .category-title span {
+            font-size: 1.5rem;
+        }
+
+        /* 项目列表网格 */
+        .license-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .license-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0.8rem;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .license-item:hover {
+            transform: translateX(4px);
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .license-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .license-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            word-break: break-all;
+            flex: 1;
+        }
+
+        .license-link:hover {
+            color: var(--accent);
+        }
+
+        .license-arrow {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            opacity: 0.5;
+        }
+
+        .license-item:hover .license-arrow {
+            opacity: 1;
+            color: var(--accent);
+            transform: translateX(2px);
+            transition: all 0.2s;
+        }
+
+        /* 移动端调整 */
+        @media (max-width: 640px) {
+            .license-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .license-item {
+                padding: 0.5rem 0.7rem;
+            }
+            .license-link {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <div class="logo">
+                <h1>LFENG</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式">
+                <span class="theme-icon light-icon">☀️</span>
+                <span class="theme-icon dark-icon">🌙</span>
+                <span class="toggle-knob"></span>
+            </button>
+        </div>
+
+        <a href="index.html" class="back-link back-link-sm">← 返回应用详情</a>
+
+        <div class="content-card">
+            <div class="page-header">
+                <h1>📜 开源许可</h1>
+                <p>轻灵音乐使用了以下开源项目：</p>
+            </div>
+            <div class="page-content">
+
+                <!-- UI 框架 -->
+                <div class="license-category">
+                    <div class="section-title">
+                        <span>🎨</span> UI 框架
+                    </div>
+                    <div class="license-grid">
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-nuget"></span></span>
+                            <a href="https://github.com/AvaloniaUI/Avalonia" class="license-link" target="_blank" rel="noopener noreferrer">AvaloniaUI/Avalonia (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-nuget"></span></span>
+                            <a href="https://github.com/amwx/FluentAvalonia" class="license-link" target="_blank" rel="noopener noreferrer">amwx/FluentAvaloniaUI (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/AvaloniaUtils/DialogHost.Avalonia" class="license-link" target="_blank" rel="noopener noreferrer">AvaloniaUtils/DialogHost.Avalonia (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-nuget"></span></span>
+                            <a href="https://github.com/CommunityToolkit/dotnet/" class="license-link" target="_blank" rel="noopener noreferrer">Microsoft/CommunityToolkit.Mvvm (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-nuget"></span></span>
+                            <a href="https://github.com/mono/SkiaSharp" class="license-link" target="_blank" rel="noopener noreferrer">mono/SkiaSharp (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 数据库 -->
+                <div class="license-category">
+                    <div class="section-title">
+                        <span>💾</span> 数据库
+                    </div>
+                    <div class="license-grid">
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-nuget"></span></span>
+                            <a href="https://github.com/dotnet/efcore" class="license-link" target="_blank" rel="noopener noreferrer">Microsoft/Microsoft.Data.Sqlite (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 音频处理 -->
+                <div class="license-category">
+                    <div class="section-title">
+                        <span>🎵</span> 音频处理
+                    </div>
+                    <div class="license-grid">
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/mackron/miniaudio" class="license-link" target="_blank" rel="noopener noreferrer">mackron/miniaudio (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/japajoe/MiniAudioExNET" class="license-link" target="_blank" rel="noopener noreferrer">japajoe/MiniAudioExNET (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/FFmpeg/FFmpeg" class="license-link" target="_blank" rel="noopener noreferrer">FFmpeg/FFmpeg (LGPLv3)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 歌曲/歌词解析 -->
+                <div class="license-category">
+                    <div class="section-title">
+                        <span>📝</span> 歌曲/歌词解析
+                    </div>
+                    <div class="license-grid">
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/Zeugma440/atldotnet" class="license-link" target="_blank" rel="noopener noreferrer">Zeugma440/atldotnet (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/WXRIW/Lyricify-Lyrics-Helper" class="license-link" target="_blank" rel="noopener noreferrer">WXRIW/Lyricify-Lyrics-Helper (Apache-2.0)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 插件集成 -->
+                <div class="license-category">
+                    <div class="section-title">
+                        <span>🔌</span> 插件集成
+                    </div>
+                    <div class="license-grid">
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-github"></span></span>
+                            <a href="https://github.com/Facepunch/Facepunch.Steamworks" class="license-link" target="_blank" rel="noopener noreferrer">Facepunch/Facepunch.Steamworks (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 其他 -->
+                <div class="license-category">
+                    <div class="section-title">
+                        <span>🛠️</span> 其他
+                    </div>
+                    <div class="license-grid">
+                        <div class="license-item">
+                            <span class="license-icon"><span class="icon icon-md icon-nuget"></span></span>
+                            <a href="https://github.com/securifybv/ShellLink" class="license-link" target="_blank" rel="noopener noreferrer">securifybv/ShellLink (MIT)</a>
+                            <span class="license-arrow">→</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            © 2026 LFENG · 轻灵音乐
+        </footer>
+    </div>
+
+    <script src="../../js/common.js"></script>
+</body>
+
+</html>
