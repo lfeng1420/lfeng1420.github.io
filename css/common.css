@@ -253,7 +253,7 @@ body.dark .link-card-icon svg {
     padding: 2.5rem;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
     .card-content {
         flex-direction: row;
         align-items: center;
