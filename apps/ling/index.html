@@ -20,9 +20,11 @@
                 flex-direction: row;
                 gap: 4rem;
             }
+
             .detail-info {
                 flex: 1.1;
             }
+
             .detail-screenshot {
                 flex: 0.9;
                 display: flex;
@@ -192,16 +194,30 @@
             text-align: right;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .detail-content {
+                flex-direction: column !important;
                 padding: 1.5rem;
-                gap: 1.5rem;
+                gap: 2rem;
             }
+
+            .detail-info {
+                order: 1;
+            }
+
+            .detail-screenshot {
+                order: 0;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 0.5rem;
+            }
+
             .app-icon {
                 width: 56px;
                 height: 56px;
                 font-size: 2rem;
             }
+
             .app-title-info h1 {
                 font-size: 1.5rem;
             }
