@@ -719,6 +719,24 @@ footer {
     opacity: 0.7;
 }
 
+/* ========== 全局链接样式 ========== */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.page-content a,
+.section-content a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: none;  /* 移除下边框 */
+}
 
 
 /* ========== 响应式调整 ========== */
