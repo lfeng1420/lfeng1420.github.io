@@ -125,7 +125,7 @@ body {
 
 .logo h1 {
     font-size: 2rem;
-    background: linear-gradient(135deg, var(--accent), #a855f7);
+    background: linear-gradient(135deg, var(--accent), #c2134d);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
