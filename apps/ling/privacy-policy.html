@@ -5,15 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>轻灵音乐 隐私协议</title>
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme');
-            const isDark = theme === 'dark' || (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-            }
-        })();
-    </script>
     <link rel="stylesheet" href="../../css/common.css">
     <style>
         /* 隐私协议页面专属样式 */
@@ -99,6 +90,19 @@
 
         .contact-card a:hover {
             color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .section-content a,
+        .exception-card a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-soft);
+        }
+
+        .section-content a:hover,
+        .exception-card a:hover {
+            color: var(--accent-hover);
             border-bottom-color: var(--accent);
         }
 
