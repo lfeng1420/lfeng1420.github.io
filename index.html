@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>轻灵音乐</title>
     <script>
-        (function() {
+        (function () {
             const theme = localStorage.getItem('theme');
             const isDark = theme === 'dark' || (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
             if (isDark) {
@@ -31,30 +31,34 @@
             </button>
         </div>
 
-        <a href="apps/ling/index.html" style="text-decoration: none; display: block;">
-            <div class="app-card">
-                <div class="card-content">
-                    <div class="desc-area">
-                        <div class="app-title">轻灵音乐 Ling Player</div>
-                        <div class="app-subtitle">🧿 应用 · 音乐播放器</div>
-                        <p class="description">
-                            轻灵音乐是一款本地音乐播放器，支持 FLAC、APE、DSD、MP3、AAC 等常见音频格式。支持 CUE
-                            分轨解析、分组随机播放。配合实时渲染的可视化频谱，以及透明效果与自定义背景的界面设计，带来丰富的个性化体验。
-                        </p>
-                        <div class="tags">
-                            <span class="tag tag-uwp">Windows</span>
-                            <span class="tag tag-linux">Linux</span>
-                            <span class="tag tag-android">Android</span>
-                        </div>
-                        <a href="https://store.steampowered.com/app/4496780/" class="btn"><span class="icon icon-md icon-steam"></span> Steam</a>
-                        <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
+        <div class="app-card" data-href="apps/ling/index.html">
+            <div class="card-content">
+                <div class="desc-area">
+                    <div class="app-title">轻灵音乐 Ling Player</div>
+                    <div class="app-subtitle">🧿 应用 · 音乐播放器</div>
+                    <p class="description">
+                        轻灵音乐是一款本地音乐播放器，支持 FLAC、APE、DSD、MP3、AAC 等常见音频格式。支持 CUE
+                        分轨解析、分组随机播放。配合实时渲染的可视化频谱，以及透明效果与自定义背景的界面设计，带来丰富的个性化体验。
+                    </p>
+                    <div class="tags">
+                        <span class="tag tag-uwp">Windows</span>
+                        <span class="tag tag-linux">Linux</span>
+                        <span class="tag tag-android">Android</span>
                     </div>
-                    <div class="screenshot-area">
-                        <img class="single-screenshot" data-type="landscape" src="images/app_ling_player.png" alt="桌面横屏截图">
+                    <div class="btn-group" onclick="event.stopPropagation();">
+                        <a href="https://store.steampowered.com/app/4496780/" class="btn" target="_blank" rel="noopener noreferrer">
+                            <span class="icon icon-md icon-steam"></span> Steam
+                        </a>
+                        <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn" target="_blank" rel="noopener noreferrer">
+                            <span class="icon icon-md icon-microsoft"></span> Microsoft Store
+                        </a>
                     </div>
                 </div>
+                <div class="screenshot-area">
+                    <img class="single-screenshot" data-type="landscape" src="images/app_ling_player.png" alt="桌面横屏截图">
+                </div>
             </div>
-        </a>
+        </div>
 
         <div class="app-card">
             <div class="card-content">
@@ -67,8 +71,7 @@
                     <div class="tags">
                         <span class="tag tag-uwp">UWP</span>
                     </div>
-                    <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge"
-                        class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
+                    <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
                 </div>
                 <div class="screenshot-area">
                     <img class="single-screenshot" data-type="portrait" src="images/app_rename_tool.png" alt="重命名截图">
@@ -89,9 +92,12 @@
                         <span class="tag tag-uwp">UWP</span>
                         <span class="tag tag-android">Android</span>
                     </div>
-                    <a href="https://www.microsoft.com/store/apps/9NBLGGH5H3FK?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
-                    <a href="https://play.google.com/store/apps/details?id=lfeng.bg&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-                        class="btn"><span class="icon icon-md icon-google"></span> Google Play</a>
+                    <a href="https://www.microsoft.com/store/apps/9NBLGGH5H3FK?ocid=badge" class="btn">
+                        <span class="icon icon-md icon-microsoft"></span> Microsoft Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=lfeng.bg&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" class="btn">
+                        <span class="icon icon-md icon-google"></span> Google Play
+                    </a>
                 </div>
                 <div class="screenshot-area">
                     <img class="single-screenshot" data-type="portrait" src="images/app_brick_game.png" alt="方块游戏截图">
@@ -110,7 +116,9 @@
                     <div class="tags">
                         <span class="tag tag-uwp">Windows Phone</span>
                     </div>
-                    <a href="https://www.microsoft.com/store/apps/9NBLGGH68ZQ3?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
+                    <a href="https://www.microsoft.com/store/apps/9NBLGGH68ZQ3?ocid=badge" class="btn">
+                        <span class="icon icon-md icon-microsoft"></span> Microsoft Store
+                    </a>
                 </div>
                 <div class="screenshot-area">
                     <img class="single-screenshot" data-type="portrait" src="images/app_trigger.png" alt="连锁反应截图">

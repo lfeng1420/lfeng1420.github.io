@@ -322,6 +322,13 @@ body.dark .link-card-icon svg {
     color: var(--accent);
 }
 
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
 /* ========== 截图样式 ========== */
 .screenshot-area {
     display: flex;

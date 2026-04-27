@@ -43,3 +43,19 @@ if (document.readyState === 'loading') {
 } else {
     initScreenshotAutoType();
 }
+
+(function() {
+    document.querySelectorAll('.app-card[data-href]').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            // 如果点击的是按钮区域或按钮内的元素，不跳转
+            if (e.target.closest('.btn, .btn-group, a, button')) {
+                return;
+            }
+            const href = card.dataset.href;
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    });
+})();
