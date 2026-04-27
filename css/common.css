@@ -194,6 +194,42 @@ body.dark .link-card-icon svg {
     opacity: 0.7;
 }
 
+/* ========== 回到顶部按钮 ========== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+
+
 /* ========== 首页卡片样式 ========== */
 .app-card {
     background: var(--bg-card);
@@ -689,6 +725,14 @@ footer {
 @media (max-width: 640px) {
     body {
         padding: 1rem;
+    }
+
+    .scroll-top-btn {
+        bottom: 1rem;
+        right: 1rem;
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
     }
 
     .card-content {

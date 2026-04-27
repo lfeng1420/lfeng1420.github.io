@@ -44,6 +44,40 @@ if (document.readyState === 'loading') {
     initScreenshotAutoType();
 }
 
+// ========== 回到顶部按钮 ==========
+(function() {
+    // 创建按钮元素
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-top-btn';
+    scrollBtn.innerHTML = '↑';
+    scrollBtn.setAttribute('aria-label', '回到顶部');
+    document.body.appendChild(scrollBtn);
+
+    // 监听滚动事件
+    function checkScroll() {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }
+
+    // 点击回到顶部
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    scrollBtn.addEventListener('click', scrollToTop);
+    
+    // 初始检查
+    checkScroll();
+})();
+
+// ========== 卡片点击跳转（排除按钮区域） ==========
 (function() {
     document.querySelectorAll('.app-card[data-href]').forEach(card => {
         card.style.cursor = 'pointer';
