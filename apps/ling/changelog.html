@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>轻灵音乐 更新日志</title>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            const isDark = theme === 'dark' || (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="../../css/common.css">
     <style>
         /* ========== 更新日志页面专属样式 ========== */
