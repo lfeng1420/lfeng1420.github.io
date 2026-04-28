@@ -534,11 +534,24 @@ footer {
 .page-header h1 {
     font-size: 1.8rem;
     font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-header h1 .emoji {
+    color: inherit;
+    background: none;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+}
+
+.page-header h1:not(:has(.emoji)) {
     background: linear-gradient(135deg, var(--accent), #a855f7);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    margin-bottom: 0.5rem;
 }
 
 .page-header p {
