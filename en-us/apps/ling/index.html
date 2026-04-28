@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ling Player</title>
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/apps/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <div class="logo">
+                <a href="../../../index.html"><h1>LFENG</h1></a>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon light-icon">☀️</span>
+                <span class="theme-icon dark-icon">🌙</span>
+                <span class="toggle-knob"></span>
+            </button>
+        </div>
+        <a href="../../../index.html" class="back-link back-link-sm">← Back to Home</a>
+
+        <!-- Detail Page Main Card -->
+        <div class="content-card">
+            <div class="detail-content">
+                <div class="detail-info">
+                    <div class="app-icon-area">
+                        <div class="app-icon"><img src="../../../icons/ling.png" alt="Icon"></div>
+                        <div class="app-title-info">
+                            <h1>Ling Player</h1>
+                            <div class="version">Version 0.0.1.0 · Coming Soon</div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <a href="privacy-policy.html">🛡️ Privacy Policy</a>
+                        </div>
+                        <div class="stat-item">
+                            <a href="changelog.html">🚀 Changelog</a>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">🎵 Rich Format Support</span>
+                        <span class="tag">🎨 Visualizer</span>
+                        <span class="tag">✨ Transparent Effects</span>
+                        <span class="tag">💻 Cross-Platform</span>
+                    </div>
+                    <div class="detail-description">
+                        <p>Ling Player is a local music player supporting FLAC, APE, DSD, MP3, AAC, and other common audio formats. It features CUE sheet parsing, grouped shuffle playback, real-time visualizer, and customizable transparent UI with background images for a personalized experience.</p>
+                    </div>
+                    <div class="feature-section">
+                        <div class="feature-title">✨ Core Features</div>
+                        <ul class="feature-list">
+                            <li>Support for FLAC/APE/DSD/MP3/AAC and dozens of other audio formats</li>
+                            <li>Intelligent CUE sheet parsing</li>
+                            <li>Real-time visualizer effects</li>
+                            <li>Transparent glass effect + custom background images</li>
+                            <li>Grouped shuffle playback</li>
+                            <li>Steam Rich Presence</li>
+                        </ul>
+                    </div>
+                    <a href="https://store.steampowered.com/app/4496780/" class="btn"><span class="icon icon-md icon-steam"></span> Steam</a>
+                    <a href="https://www.microsoft.com/store/apps/9NJF38Q5PW4M?ocid=badge" class="btn"><span class="icon icon-md icon-microsoft"></span> Microsoft Store</a>
+                </div>
+                <div class="screenshot-area">
+                    <img class="single-screenshot" data-type="portrait" src="../../../images/app_ling_player.png" alt="Ling Player Screenshot">
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Gallery -->
+        <div class="carousel-card">
+            <div class="carousel-title">📸 Screenshot Gallery</div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img src="../../../images/screenshots/ling/1.png" alt="Screenshot 1"></div>
+                    <div class="carousel-slide"><img src="../../../images/screenshots/ling/2.png" alt="Screenshot 2"></div>
+                    <div class="carousel-slide"><img src="../../../images/screenshots/ling/3.png" alt="Screenshot 3"></div>
+                    <div class="carousel-slide"><img src="../../../images/screenshots/ling/4.png" alt="Screenshot 4"></div>
+                    <div class="carousel-slide"><img src="../../../images/screenshots/ling/5.png" alt="Screenshot 5"></div>
+                </div>
+                <button class="carousel-btn prev" id="prevBtn">‹</button>
+                <button class="carousel-btn next" id="nextBtn">›</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
+        <!-- System Requirements -->
+        <div class="requirements-card">
+            <div class="requirements-title">💻 System Requirements</div>
+            <div class="requirements-list">
+                <div class="platform-req">
+                    <div class="platform-name"><span>🪟</span> Windows</div>
+                    <div class="req-item">
+                        <span class="req-label">OS</span>
+                        <div class="req-values">
+                            <span class="req-value">Windows 10 version 20H2 or higher (x64)</span>
+                            <span class="req-value">Windows 11 21H2 or higher (x64)</span>
+                        </div>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">Memory</span>
+                        <span class="req-value">400MB RAM</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">Storage</span>
+                        <span class="req-value">100 MB available space</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">Network</span>
+                        <span class="req-value">Internet connection required for some plugins</span>
+                    </div>
+                </div>
+                <div class="platform-req">
+                    <div class="platform-name"><span>🐧</span> Linux</div>
+                    <div class="req-item">
+                        <span class="req-label">OS</span>
+                        <div class="req-values">
+                            <span class="req-value">Ubuntu 20.04 LTS or higher</span>
+                            <span class="req-value">Debian 11 or higher</span>
+                            <span class="req-value">Fedora 38 or higher</span>
+                        </div>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">Memory</span>
+                        <span class="req-value">400MB RAM</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">Storage</span>
+                        <span class="req-value">100 MB available space</span>
+                    </div>
+                    <div class="req-item">
+                        <span class="req-label">Network</span>
+                        <span class="req-value">Internet connection required for some plugins</span>
+                    </div>
+                </div>
+                <div class="platform-req">
+                    <div class="platform-name"><span>🤖</span> Android</div>
+                    <div class="req-item">
+                        <span class="req-label">OS</span>
+                        <span class="req-value">Android 8.0 (API 26) or higher</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            © 2026 LFENG · Ling Player
+        </footer>
+    </div>
+
+    <script src="../../../js/common.js"></script>
+    <script src="../../../js/carousel.js"></script>
+</body>
+</html>

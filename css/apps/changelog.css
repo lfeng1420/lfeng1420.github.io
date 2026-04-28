@@ -1,0 +1,141 @@
+.version-entry {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.version-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Version header info */
+.version-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.version-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.version-number {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.version-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--accent-soft);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
+
+/* Version tags (Stable/Beta/Alpha) */
+.version-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.tag-stable {
+    background: #22c55e20;
+    color: #22c55e;
+}
+
+.tag-beta {
+    background: #f59e0b20;
+    color: #f59e0b;
+}
+
+.tag-alpha {
+    background: #ef444420;
+    color: #ef4444;
+}
+
+/* Update category */
+.update-category {
+    margin: 1rem 0 0.75rem 0;
+}
+
+/* Category title (New Features/Bug Fixes/Performance) */
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Update list */
+.update-list {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.update-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.update-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Update type label colors */
+.update-list .type-new {
+    color: #22c55e;
+}
+
+.update-list .type-fix {
+    color: #f59e0b;
+}
+
+.update-list .type-opt {
+    color: var(--accent);
+}
+
+/* RSS Note */
+.rss-note {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .version-number {
+        font-size: 1.2rem;
+    }
+
+    .version-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .update-list li {
+        font-size: 0.85rem;
+    }
+}

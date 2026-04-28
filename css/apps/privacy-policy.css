@@ -1,0 +1,103 @@
+.privacy-content {
+    padding: 2rem;
+}
+
+/* Core promise highlight box */
+.promise-box {
+    background: linear-gradient(135deg, var(--accent-soft), rgba(59, 130, 246, 0.05));
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin: 1.25rem 0;
+    text-align: center;
+}
+
+.promise-box .promise-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.promise-box p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.promise-box .promise-sub {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+/* Exception card */
+.exception-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+}
+
+.exception-card .exception-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exception-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.contact-card {
+    background: var(--accent-soft);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-top: 1rem;
+}
+
+.contact-card p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.5rem 0;
+}
+
+.contact-card .contact-label {
+    font-weight: 600;
+    color: var(--accent);
+    min-width: 70px;
+}
+
+.contact-card a {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--text-muted);
+}
+
+.contact-card a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.section-content a,
+.exception-card a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft);
+}
+
+.section-content a:hover,
+.exception-card a:hover {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+    .promise-box p {
+        font-size: 0.9rem;
+    }
+}
