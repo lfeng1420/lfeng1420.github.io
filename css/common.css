@@ -745,6 +745,11 @@ a:hover {
     text-decoration: none;
 }
 
+/* 按钮内的链接不应用全局悬停颜色 */
+.btn a:hover {
+    color: inherit;
+}
+
 .page-content a,
 .section-content a {
     color: var(--accent);
