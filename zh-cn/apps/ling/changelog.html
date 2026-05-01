@@ -6,149 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>轻灵音乐 更新日志</title>
     <link rel="stylesheet" href="../../../css/common.css">
-    <style>
-        /* ========== 更新日志页面专属样式 ========== */
-        .version-entry {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .version-entry:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        /* 版本头部信息 */
-        .version-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .version-badge {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .version-number {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .version-date {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            background: var(--accent-soft);
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-        }
-
-        /* 版本标签（稳定版/Beta/Alpha） */
-        .version-tag {
-            font-size: 0.7rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .tag-stable {
-            background: #22c55e20;
-            color: #22c55e;
-        }
-
-        .tag-beta {
-            background: #f59e0b20;
-            color: #f59e0b;
-        }
-
-        .tag-alpha {
-            background: #ef444420;
-            color: #ef4444;
-        }
-
-        /* 更新分类容器 - 复用 .feature-section 样式已在 common.css 中定义 */
-        /* 这里只定义间距和分类标题 */
-        .update-category {
-            margin: 1rem 0 0.75rem 0;
-        }
-
-        /* 分类标题（新增功能/问题修复/性能优化） */
-        .category-title {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        /* 更新列表 - 复用 .feature-list 样式需微调 */
-        .update-list {
-            list-style: none;
-            padding-left: 1.5rem;
-        }
-
-        .update-list li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-
-        .update-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* 更新类型标签颜色 */
-        .update-list .type-new {
-            color: #22c55e;
-        }
-
-        .update-list .type-fix {
-            color: #f59e0b;
-        }
-
-        .update-list .type-opt {
-            color: var(--accent);
-        }
-
-        /* RSS 订阅提示 */
-        .rss-note {
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* 响应式调整（仅针对版本条目特有样式） */
-        @media (max-width: 640px) {
-            .version-number {
-                font-size: 1.2rem;
-            }
-            .version-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .update-list li {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../../css/apps/changelog.css">
 </head>
 
 <body>
@@ -175,10 +33,38 @@
                 <div class="version-entry">
                     <div class="version-header">
                         <div class="version-badge">
-                            <span class="version-number">0.0.1.0</span>
-                            <span class="version-date">即将推出</span>
-                            <span class="version-tag tag-alpha">首个版本</span>
+                            <span class="version-number">0.1.1.0</span>
+                            <span class="version-date">2026/05/01</span>
+                            <span class="version-tag tag-alpha">Alpha</span>
                         </div>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">⚡ 优化调整</div>
+                        <ul class="update-list">
+                            <li>“暂无歌词”提示应用歌曲封面主色</li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">🔧 问题修复</div>
+                        <ul class="update-list">
+                            <li>修复 <span class="type-fix">托盘菜单播放/暂停按钮状态不正确</span> 问题</li>
+                            <li>修复 <span class="type-fix">托盘菜单开启后无法关闭</span> 问题</li>
+                            <li>修复 <span class="type-fix">在歌曲点击动作为替换当前队列的情况下点击列表中的歌曲时必定播放第一首歌曲</span> 问题</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-entry">
+                    <div class="version-header">
+                        <div class="version-badge">
+                            <span class="version-number">0.0.1.0</span>
+                            <span class="version-date">2026/05/01</span>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                        </div>
+                    </div>
+                    <div class="update-category">
+                        <ul class="update-list">
+                            轻灵音乐第一个版本。
+                        </ul>
                     </div>
                 </div>
                 <!-- <div class="version-entry">
