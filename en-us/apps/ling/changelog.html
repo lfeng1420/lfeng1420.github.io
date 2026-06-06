@@ -33,6 +33,73 @@
                 <div class="version-entry">
                     <div class="version-header">
                         <div class="version-badge">
+                            <span class="version-number">0.9.0.0</span>
+                            <span class="version-date">2026-06-06</span>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                        </div>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">✨ New Features</div>
+                        <ul class="update-list">
+                            <li><span class="type-new">Track Metadata Editing</span>：Supports modifying track cover, title, artist, and year. Changes to track metadata will be written to the track file by default. Note that editing metadata for tracks from CUE files is currently not supported. Path: Right-click a track -> Select <b>Edit Metadata</b></li>
+                            <li><span class="type-new">Album Metadata Editing</span>：Supports modifying album title, artist, and year. You can choose to apply album title, artist, year, and cover to all tracks in the album (will be written to corresponding track files). Note that editing album metadata is not supported when the album contains tracks from CUE files. Path: Right-click an album -> Select <b>Edit Metadata</b></li>
+                            <li><span class="type-new">Full Scan Option</span>：When enabled, rescans all tracks to ensure track data is up to date. Path: <b>Settings -> Library -> Full scan</b></li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">⚡ Improvements</div>
+                        <ul class="update-list">
+                            <li><span class="type-opt">Included Folders</span>: When adding a new folder, if any subfolders of that folder already exist in the list, those subfolders are automatically removed.</li>
+                            <li><span class="type-opt">CUE File Parsing</span>: Removes possible double quotes attached to the genre field.</li>
+                            <li><span class="type-opt">Page Navigation</span>: After clicking a folder on the folder page, the page indicator stays on the folder menu instead of switching to the track menu; similar adjustments have been made for the playlist page.</li>
+                            <li><span class="type-opt">Thumbnail Generation</span>: Generates thumbnails with a uniform height of 200 pixels. No longer generates different thumbnail sizes for tracks, albums, and artists, reducing disk space usage.</li>
+                            <li><span class="type-opt">Artist/Genre Parsing</span>: Intelligently recognizes and preserves manually modified track artist, album artist, and genre information, preventing them from being overwritten by original tags.</li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">🔧 Bug Fixes</div>
+                        <ul class="update-list">
+                            <li>Fixed an issue where <span class="type-fix">the Add Playlist dialog was too small</span>.</li>
+                            <li>Fixed <span class="type-fix">a potential crash when right-clicking on the album page</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">clicking the "Library" button on the track page with no tracks present would incorrectly select the "Settings" menu after navigating</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">saving after deleting an artist while editing album metadata would incorrectly delete that artist</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">rescanning failed to update track information after modifying track metadata externally</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">in some cases, audio files associated with CUE files were incorrectly added to the library as regular track files</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">edited albums or artists could not be removed even when they met the removal conditions</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">incorrect scan results were displayed after dragging folders or multiple track files onto the track or playlist page</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">view settings were not correctly applied when switching to the album page for the first time</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-entry">
+                    <div class="version-header">
+                        <div class="version-badge">
+                            <span class="version-number">0.8.1.0</span>
+                            <span class="version-date">2026-05-24</span>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                        </div>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">⚡ Improvements</div>
+                        <ul class="update-list">
+                            <li><span class="type-new">Mini Window Playlist Operations</span>：Added a playlist operation page for the mini window. Click the playlist button in the bottom-right corner to open it. Supports switching tracks, removing tracks from the queue, clearing the queue, and more.</li>
+                            <li><span class="type-new">Mini Window Settings</span>：Added a settings page for the mini window. Click the settings button on the far right to open it. Currently includes the following settings: theme (synced with global settings), overlay opacity, and whether to show the mini window icon in the taskbar.</li>
+                            <li><span class="type-new">Removed Corner Radius from Mini Window Track Cover</span>：Removed the corner radius effect from the track cover in the mini window to avoid black or white areas appearing at the window corners.</li>
+                            <li><span class="type-new">Default Value Adjustment for Duration Filter</span>：The default value for the duration filter setting has been adjusted to 0 to avoid affecting scan results when scanning tracks for the first time.</li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">🔧 Bug Fixes</div>
+                        <ul class="update-list">
+                            <li>Fixed an issue where <span class="type-fix">content overflowed on the album details page when the description text was too long</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">content overflowed and the page could not scroll on the artist details page when the description text was too long</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">an image could not be set for an artist when the artist name contained special characters</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-entry">
+                    <div class="version-header">
+                        <div class="version-badge">
                             <span class="version-number">0.8.0.0</span>
                             <span class="version-date">2026-05-22</span>
                             <span class="version-tag tag-alpha">Alpha</span>
