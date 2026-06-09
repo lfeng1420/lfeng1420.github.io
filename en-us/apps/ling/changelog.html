@@ -41,6 +41,43 @@
                     <div class="update-category">
                         <div class="category-title">✨ New Features</div>
                         <ul class="update-list">
+                            <li><span class="type-new">UI Scale Option</span>：You can now adjust the size of interface elements. Path: <b>Settings -> UI</b></li>
+                            <li><span class="type-new">Navigation Bar Expanded Width Setting</span>：You can now adjust the expanded width of the left navigation bar within a range of [100,480]. Path: <b>Settings -> UI</b></li>
+                            <li><span class="type-new">New Language Support</span>：Added support for Traditional Chinese, English, Japanese, Korean, Russian, German, French, Portuguese (Brazil), Spanish, Polish, and Turkish. Translations for these languages may contain errors; feedback is welcome.</li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">⚡ Improvements</div>
+                        <ul class="update-list">
+                            <li><span class="type-opt">Lyric Line Switching</span>: Added fade-in/fade-out effect.</li>
+                            <li><span class="type-opt">Lyrics Font Size and Weight Adjustment</span>: Normal and highlighted lyric text now use the same font size and weight.</li>
+                        </ul>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">🔧 Bug Fixes</div>
+                        <ul class="update-list">
+                            <li>Fixed an issue where <span class="type-fix">artists could not be dragged in the album edit dialog</span>.</li>
+                            <li>Fixed <span class="type-fix">a potential crash when right-clicking on the album page</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">the close button became unresponsive after closing the window and reopening it via the taskbar button</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">the default icon was not shown when a track had no cover</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">the end of a track was being truncated</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">auto-scrolling after clicking a track in the playback queue caused the currently playing track to become invisible</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">the previous track's cover and lyrics were still displayed when a track file failed to load</span>.</li>
+                            <li>Fixed an issue where <span class="type-fix">existing lyrics were lost when saving track metadata</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-entry">
+                    <div class="version-header">
+                        <div class="version-badge">
+                            <span class="version-number">0.9.0.0</span>
+                            <span class="version-date">2026-06-06</span>
+                            <span class="version-tag tag-alpha">Alpha</span>
+                        </div>
+                    </div>
+                    <div class="update-category">
+                        <div class="category-title">✨ New Features</div>
+                        <ul class="update-list">
                             <li><span class="type-new">Track Metadata Editing</span>：Supports modifying track cover, title, artist, and year. Changes to track metadata will be written to the track file by default. Note that editing metadata for tracks from CUE files is currently not supported. Path: Right-click a track -> Select <b>Edit Metadata</b></li>
                             <li><span class="type-new">Album Metadata Editing</span>：Supports modifying album title, artist, and year. You can choose to apply album title, artist, year, and cover to all tracks in the album (will be written to corresponding track files). Note that editing album metadata is not supported when the album contains tracks from CUE files. Path: Right-click an album -> Select <b>Edit Metadata</b></li>
                             <li><span class="type-new">Full Scan Option</span>：When enabled, rescans all tracks to ensure track data is up to date. Path: <b>Settings -> Library -> Full scan</b></li>
