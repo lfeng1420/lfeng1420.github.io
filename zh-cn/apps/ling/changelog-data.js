@@ -2,6 +2,49 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.12.5.0",
+    "date": "2026-07-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">播放队列弹出层第二次打开时显示异常</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单页面和播放队列弹出层中列表项无法拖拽</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌曲、专辑和艺术家等多个页面中多选功能失效</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.12.3.0",
+    "date": "2026-07-06",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">高级设置页面</span>：新增“高级设置”页面，原有的垃圾回收选项已迁移至此页面，并新增“切换页面时触发垃圾回收”选项。路径：<b>设置 -> 高级设置</b>"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">文本调整</span>：移除部分文本中不必要的代词，使表述更加简洁"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">启动后首次切换到专辑/艺术家页面时视图切换按钮图标可能显示不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">在某些情况下动态频谱显示异常</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.2.0",
     "date": "2026-07-01",
     "tag": "Alpha",

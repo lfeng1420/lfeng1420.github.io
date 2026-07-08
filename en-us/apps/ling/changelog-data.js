@@ -2,6 +2,49 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.12.5.0",
+    "date": "2026-07-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the playing queue popup displayed abnormally when opened for the second time</span>.",
+          "Fixed an issue where <span class=\"type-fix\">list items in the playlist page and playing queue popup could not be dragged</span>.",
+          "Fixed an issue where <span class=\"type-fix\">multi-selection functionality was broken across multiple pages, including tracks, albums, and artists</span>."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.12.3.0",
+    "date": "2026-07-06",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Advanced Settings Page</span>: Added a new \"Advanced Settings\" page. The existing garbage collection options have been moved here, and a new \"Trigger garbage collection on page switch\" option has been added. Path: <b>Settings -> Advanced Settings</b>."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Text Adjustments</span>: Removed unnecessary pronouns in some UI text for more concise phrasing."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">view toggle button icons might not display correctly when first switching to the album/artist page after startup</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the dynamic spectrum displayed abnormally in some cases</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.2.0",
     "date": "2026-07-01",
     "tag": "Alpha",
