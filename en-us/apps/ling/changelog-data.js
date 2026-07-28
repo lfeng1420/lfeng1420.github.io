@@ -2,6 +2,33 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.12.8.0",
+    "date": "2026-07-28",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Album Details</span>: Tracks in the album details page no longer display their cover art."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue that <span class=\"type-fix\">could cause a crash when the spectrum was turned off</span>  (<b>Thanks @MAYHEM</b>).",
+          "Fixed an issue where <span class=\"type-fix\">the track list in the album details page displayed incorrectly when the album contained multiple discs</span>.",
+          "Fixed an issue where <span class=\"type-fix\">sliders jittered while dragging in several settings pages</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the \"Add to Playlist\" button was not shown in the playing queue popup</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the playing page would briefly show a white screen before transitioning to the gradient when switching to it with the dynamic gradient background enabled</span>.",
+          "Fixed an issue where <span class=\"type-fix\">wide cover images displayed at an incorrect size on the playing page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the count next to the page title did not update after deleting an album from the album list page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">certain characters in the jump bar could not be clicked properly.",
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.5.0",
     "date": "2026-07-08",
     "tag": "Alpha",

@@ -2,6 +2,33 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.12.8.0",
+    "date": "2026-07-28",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">专辑详情</span>：专辑详情页面中的歌曲不再显示歌曲封面"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">频谱关闭可能引发崩溃</span> 的问题（感谢 <b>@MAYHEM</b>）",
+          "修复了 <span class=\"type-fix\">专辑详情页面在包含多张CD时歌曲列表显示混乱</span> 的问题",
+          "修复了 <span class=\"type-fix\">多个设置页面中滑动条拖拽时抖动</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放队列弹框中“添加到歌单”按钮不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放页面背景设置为动态渐变后切换至播放页面时短暂白屏再变为渐变</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放页面中宽幅封面图片显示尺寸不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">在专辑列表页面删除专辑后页面上方标题右侧计数未更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">跳转栏中部分字符可能无法正常点击</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.5.0",
     "date": "2026-07-08",
     "tag": "Alpha",
