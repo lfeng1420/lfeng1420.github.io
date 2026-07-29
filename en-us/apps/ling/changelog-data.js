@@ -10,13 +10,14 @@ window.CHANGELOG_DATA = [
       {
         "type": "opt",
         "items": [
-          "<span class=\"type-opt\">Album Details</span>: Tracks in the album details page no longer display their cover art."
+          "<span class=\"type-opt\">Album Details</span>: Tracks in the album details page no longer display their cover art.",
+          "<span class=\"type-opt\">Volume Adjustment</span>: The volume adjustment popup now supports mouse wheel operation. Hover the mouse over the popup and scroll the wheel to adjust the volume."
         ]
       },
       {
         "type": "fix",
         "items": [
-          "Fixed an issue that <span class=\"type-fix\">could cause a crash when the spectrum was turned off</span>  (<b>Thanks @MAYHEM</b>).",
+          "Fixed <span class=\"type-fix\">a crash that could occur when closing the spectrum analyzer on the spectrum settings page</span> (<b>Thanks @MAYHEM</b>).",
           "Fixed an issue where <span class=\"type-fix\">the track list in the album details page displayed incorrectly when the album contained multiple discs</span>.",
           "Fixed an issue where <span class=\"type-fix\">sliders jittered while dragging in several settings pages</span>.",
           "Fixed an issue where <span class=\"type-fix\">the \"Add to Playlist\" button was not shown in the playing queue popup</span>.",

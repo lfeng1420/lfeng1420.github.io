@@ -10,13 +10,14 @@ window.CHANGELOG_DATA = [
       {
         "type": "opt",
         "items": [
-          "<span class=\"type-opt\">专辑详情</span>：专辑详情页面中的歌曲不再显示歌曲封面"
+          "<span class=\"type-opt\">专辑详情</span>：专辑详情页面中的歌曲不再显示歌曲封面",
+          "<span class=\"type-opt\">音量调节</span>：音量调节弹窗现已支持鼠标滚轮操作。将鼠标悬停在弹窗上滚动滚轮即可调节音量"
         ]
       },
       {
         "type": "fix",
         "items": [
-          "修复了 <span class=\"type-fix\">频谱关闭可能引发崩溃</span> 的问题（感谢 <b>@MAYHEM</b>）",
+          "修复了 <span class=\"type-fix\">在频谱设置页面关闭频谱时应用可能崩溃</span> 的问题（感谢 <b>@MAYHEM</b>）",
           "修复了 <span class=\"type-fix\">专辑详情页面在包含多张CD时歌曲列表显示混乱</span> 的问题",
           "修复了 <span class=\"type-fix\">多个设置页面中滑动条拖拽时抖动</span> 的问题",
           "修复了 <span class=\"type-fix\">播放队列弹框中“添加到歌单”按钮不显示</span> 的问题",
