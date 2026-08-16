@@ -17,7 +17,7 @@ window.CHANGELOG_DATA = [
       {
         "type": "fix",
         "items": [
-          "Fixed <span class=\"type-fix\">a crash that could occur when closing the spectrum analyzer on the spectrum settings page</span> (<b>Thanks @MAYHEM</b>).",
+          "Fixed <span class=\"type-fix\">a crash that could occur when closing the spectrum analyzer on the spectrum settings page</span> (<b>Thanks to @MAYHEM</b>).",
           "Fixed an issue where <span class=\"type-fix\">the track list in the album details page displayed incorrectly when the album contained multiple discs</span>.",
           "Fixed an issue where <span class=\"type-fix\">sliders jittered while dragging in several settings pages</span>.",
           "Fixed an issue where <span class=\"type-fix\">the \"Add to Playlist\" button was not shown in the playing queue popup</span>.",
