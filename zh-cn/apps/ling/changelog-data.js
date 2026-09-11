@@ -2,7 +2,49 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
-    "version": "0.12.8.0",
+    "version": "0.13.2.0",
+    "date": "2026-09-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">正在播放页面中歌曲封面和歌曲信息可能不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">正在播放页面中歌词行高亮时未垂直居中</span> 的问题",
+          "修复了 <span class=\"type-fix\">统计页面中歌曲质量标识（HQ/SQ/HR）可能不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">当艺术家或专辑艺术家只有一位时，点击艺术家不会关闭播放页面</span> 的问题",
+          "修复了 <span class=\"type-fix\">跳转至专辑详情或艺术家详情页面后，无法通过点击左侧专辑或艺术家菜单返回列表页</span> 的问题",
+          "修复了 <span class=\"type-fix\">点击歌词后播放页面跟随鼠标移动</span> 的问题",
+          "修复了 <span class=\"type-fix\">桌面歌词功能失效</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.13.0.0",
+    "date": "2026-09-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">睡眠定时</span>：新增睡眠定时功能，可设定倒计时时长，时间到达后自动暂停播放。路径：<b>右下角“...”按钮 -> 睡眠定时</b>",
+          "<span class=\"type-new\">频谱刷新间隔</span>：新增频谱刷新间隔设置选项，可自由调整刷新间隔（范围为 10–64 毫秒），原有的“刷新速度”选项已被移除"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">播放进度条</span>：播放进度条现已采用圆角设计",
+          "<span class=\"type-opt\">性能提升</span>：Avalonia 升级至 12.1.2，带来更好的性能表现"
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.12.10.0",
     "date": "2026-07-28",
     "tag": "Alpha",
     "tagClass": "tag-alpha",
@@ -17,7 +59,7 @@ window.CHANGELOG_DATA = [
       {
         "type": "fix",
         "items": [
-          "修复了 <span class=\"type-fix\">在频谱设置页面关闭频谱时应用可能崩溃</span> 的问题（感谢 <b>@MAYHEM</b>）",
+          "修复了 <span class=\"type-fix\">在频谱设置页面关闭频谱时应用可能崩溃</span> 的问题",
           "修复了 <span class=\"type-fix\">专辑详情页面在包含多张CD时歌曲列表显示混乱</span> 的问题",
           "修复了 <span class=\"type-fix\">多个设置页面中滑动条拖拽时抖动</span> 的问题",
           "修复了 <span class=\"type-fix\">播放队列弹框中“添加到歌单”按钮不显示</span> 的问题",

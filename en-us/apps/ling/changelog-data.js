@@ -2,7 +2,49 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
-    "version": "0.12.8.0",
+    "version": "0.13.2.0",
+    "date": "2026-09-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">track cover art and track info might not be displayed on the now playing page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">highlighted lyrics lines were not vertically centered on the now playing page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">track quality badges (HQ/SQ/HR) might not be displayed on the statistics page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">clicking the artist did not close the playing page when there was only one artist or album artist</span>.",
+          "Fixed an issue where <span class=\"type-fix\">after navigating to the album details or artist details page, it was not possible to return to the list page by clicking the album or artist menu on the left</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the playing page followed the mouse after clicking on the lyrics</span>.",
+          "Fixed an issue where <span class=\"type-fix\">desktop lyrics did not work</span>."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.13.0.0",
+    "date": "2026-09-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Sleep Timer</span>: Added a sleep timer function that automatically pauses playback after a set countdown. Path: <b>Bottom-right \"...\" button -> Sleep Timer</b>.",
+          "<span class=\"type-new\">Spectrum Refresh Interval</span>: Added a configurable spectrum refresh interval (range 10–64 ms). The old \"Refresh Speed\" option has been removed."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Playback Progress Bar</span>: The playback progress bar now features rounded corners.",
+          "<span class=\"type-opt\">Performance Improvements</span>: Avalonia has been upgraded to 12.1.2, bringing better performance."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.12.10.0",
     "date": "2026-07-28",
     "tag": "Alpha",
     "tagClass": "tag-alpha",
