@@ -2,6 +2,29 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.13.0.0",
+    "date": "2026-09-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Equalizer</span>: Added a 10-band equalizer with 16 built-in presets including Pop, Rock, and Electronic, along with support for custom configurations. Path: [b]Settings -> Effect[/b].",
+          "<span class=\"type-new\">Reverb</span>: Added reverb settings with 15 built-in presets including Room, Living Room, and Bathroom, along with support for custom configurations. Path: [b]Settings -> Effect[/b].",
+          "<span class=\"type-new\">Export Tracks from Playlist</span>: Added an \"Export track files\" option to the playlist context menu, allowing all tracks in the playlist to be exported to a selected path (a folder named after the playlist will be created automatically)."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Settings Page Adjustments</span>: Added width limits to all settings pages to align with the Windows settings page.",
+          "<span class=\"type-opt\">Android Playing Queue</span>: The playing queue is no longer shown as a Bottom Sheet but has been moved into the playing page. Switch to the playing queue by swiping right, or tap the playing queue button."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.13.2.0",
     "date": "2026-09-11",
     "tag": "Alpha",
