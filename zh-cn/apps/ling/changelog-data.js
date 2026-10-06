@@ -2,6 +2,44 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.14.3.0",
+    "date": "2026-10-07",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">缺少专辑艺术家时使用艺术家</span>：开启后，当歌曲专辑艺术家缺失时，则自动使用其艺术家作为专辑艺术家",
+          "<span class=\"type-new\">选取专辑艺术家数量</span>：当专辑艺术家缺失时，按各艺术家在该专辑歌曲中的出现次数由高到低排序，选取指定数量作为该专辑的艺术家；设置为 0 时，则选取全部艺术家",
+          "<span class=\"type-new\">歌曲年份不同时生成多张专辑</span>：开启后，若专辑内歌曲的年份不同，将按年份拆分为多张同名专辑",
+          "<span class=\"type-new\">扫描线程数</span>：扫描音乐文件时使用的线程数，数值越大扫描速度越快，但会占用更多 CPU 资源"
+        ]
+      },
+      {
+        "type": "plain",
+        "html": "需要注意，当调整了扫描线程数外的其他选项后，需要进行一次全量扫描（打开全量扫描开关后再点击开始扫描）以刷新音乐库。"
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">音乐库设置页面</span>：扫描改为按钮，并使用强调前景色",
+          "<span class=\"type-opt\">壁纸设置</span>：壁纸设置现已移至独立的设置页面",
+          "<span class=\"type-opt\">内存占用</span>：进行了一系列调整，降低了一些内存占用，后续仍将持续进行内存优化"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">当播放页面壁纸类型选择主窗口壁纸后切换到播放页面不显示壁纸</span> 的问题",
+          "修复了 <span class=\"type-fix\">Android 版本在专辑/艺术家详情页面切换横竖屏时没有切换布局</span> 的问题",
+          "修复了 <span class=\"type-fix\">统计艺术家页面中艺术家行之间过于紧密</span> 的问题",
+          "修复了 <span class=\"type-fix\">在 Android 端显示了用于桌面端的最小化到托盘/任务栏标题选项</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.14.0.0",
     "date": "2026-09-23",
     "tag": "Alpha",

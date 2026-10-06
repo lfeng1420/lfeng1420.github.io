@@ -2,6 +2,44 @@
 // To add a new version, just add a new entry at the beginning of the array.
 window.CHANGELOG_DATA = [
   {
+    "version": "0.14.3.0",
+    "date": "2026-10-07",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Use artist when album artist is missing</span>: When enabled, if a track's album artist is missing, its artist is automatically used as the album artist",
+          "<span class=\"type-new\">Number of album artists to select</span>: When the album artist is missing, artists are ranked by how often they appear on the album's tracks, from most to least frequent, and the specified number are selected as the album's artists. Set to 0 to select all artists",
+          "<span class=\"type-new\">Generate multiple albums when tracks have different years</span>: When enabled, if tracks in an album have different years, they are split into multiple albums with the same name by year",
+          "<span class=\"type-new\">Scan threads</span>: Number of threads used when scanning music files. Higher values scan faster but use more CPU"
+        ]
+      },
+      {
+        "type": "plain",
+        "html": "<b>Note that after adjusting options other than scan threads, a full scan is required (enable Full scan and then click Scan Now) to refresh the library.</b><br/><br/>"
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Library settings page</span>: Scan is now a button and uses the accent foreground colour",
+          "<span class=\"type-opt\">Wallpaper settings</span>: Wallpaper settings have been moved to a separate settings page",
+          "<span class=\"type-opt\">Memory usage</span>: A series of adjustments have been made to reduce some memory usage, and further optimizations will follow"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the wallpaper was not displayed when switching to the playing page after selecting the main window wallpaper as the playing page wallpaper type</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the Android version did not switch layouts when rotating between portrait and landscape on the album/artist details page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">artist rows were too tightly spaced on the artist statistics page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">desktop-only minimise to tray/taskbar title options were shown on Android</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.13.0.0",
     "date": "2026-09-08",
     "tag": "Alpha",
