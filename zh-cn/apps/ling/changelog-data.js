@@ -1,5 +1,6 @@
-// Ling Player Changelog Data (zh)
-// To add a new version, just add a new entry at the beginning of the array.
+// Ling Player Changelog Data (zh) - 主数据文件
+// 添加新版本：在数组开头新增一条，然后运行以下命令重新生成分页文件：
+//   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
     "version": "0.14.3.0",
@@ -799,5 +800,9 @@ window.CHANGELOG_LABELS = {
   improvements: "⚡ 优化调整",
   bugFixes: "🔧 问题修复",
   changelogTitle: "更新日志",
-  changelogDesc: "记录轻灵音乐的每一次迭代"
+  changelogDesc: "记录轻灵音乐的每一次迭代",
+  prevPage: "上一页",
+  nextPage: "下一页",
+  loading: "加载中…",
+  loadError: "加载失败，点击重试"
 };

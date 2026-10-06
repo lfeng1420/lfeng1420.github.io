@@ -1,5 +1,6 @@
-// Ling Player Changelog Data (en)
-// To add a new version, just add a new entry at the beginning of the array.
+// Ling Player Changelog Data (en) - master data file
+// To add a new version: add a new entry at the beginning of the array, then regenerate paginated files:
+//   node tools/split-changelog.js en-us/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
     "version": "0.14.3.0",
@@ -801,5 +802,9 @@ window.CHANGELOG_LABELS = {
   improvements: "⚡ Improvements",
   bugFixes: "🔧 Bug Fixes",
   changelogTitle: "Changelog",
-  changelogDesc: "Tracking every iteration of Ling Player"
+  changelogDesc: "Tracking every iteration of Ling Player",
+  prevPage: "Prev",
+  nextPage: "Next",
+  loading: "Loading…",
+  loadError: "Failed to load. Click to retry."
 };
