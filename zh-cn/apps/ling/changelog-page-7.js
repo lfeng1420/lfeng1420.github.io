@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.3.2.0",
+    "date": "2026-05-05",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "优化了 <span class=\"type-opt\">歌曲封面颜色提取算法</span>，颜色提取结果更精准",
+          "<span class=\"type-opt\">支持将已在队列中的歌曲设为\"下一首\"</span>，队列位置将自动调整"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">krc 和 qrc 格式的歌词文件无法正常加载解析</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.1.0",
     "date": "2026-05-04",
     "tag": "Alpha",
@@ -93,18 +114,6 @@ window.CHANGELOG_PAGES[7] = [
           "修复了 <span class=\"type-fix\">托盘菜单开启后无法关闭</span> 的问题",
           "修复了 <span class=\"type-fix\">在歌曲点击动作为替换当前队列的情况下点击列表中的歌曲时必定播放第一首歌曲</span> 的问题"
         ]
-      }
-    ]
-  },
-  {
-    "version": "0.0.1.0",
-    "date": "2026/05/01",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "plain",
-        "html": "轻灵音乐第一个版本。"
       }
     ]
   }

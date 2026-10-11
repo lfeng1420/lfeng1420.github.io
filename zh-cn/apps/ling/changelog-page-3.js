@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.11.2.0",
+    "date": "2026-06-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">单曲循环模式偶发中断</span> 的问题",
+          "修复了 <span class=\"type-fix\">Steam 插件文本在某些语言环境下显示异常</span> 的问题",
+          "修复了 <span class=\"type-fix\">Windows 版本启动后从迷你窗口切换至主窗口时任务栏缩略图按钮未能正常显示</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.11.0.0",
     "date": "2026-06-12",
     "tag": "Alpha",
@@ -112,27 +128,6 @@ window.CHANGELOG_PAGES[3] = [
           "修复了 <span class=\"type-fix\">专辑详情页面在介绍文本过长时内容溢出</span> 的问题",
           "修复了 <span class=\"type-fix\">艺术家详情页面在介绍文本过长时内容溢出且页面无法滚动</span> 的问题",
           "修复了 <span class=\"type-fix\">艺术家名称包含特殊字符时无法为其设置图片</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.8.0.0",
-    "date": "2026-05-22",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">渲染模式选项</span>：当遇到界面闪烁、显示异常等渲染问题时，可尝试切换渲染模式。路径：<b>设置</b> -> <b>用户界面</b> -> <b>渲染模式</b>",
-          "<span class=\"type-new\">日志文件自动清除</span>：应用启动时会自动删除 7 天前的日志文件。此外也可以随时在 <b>关于</b> 页面中，点击 <b>日志缓存</b> 下的 <b>清除缓存</b> 以删除所有日志文件"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">设置文件无效时应用无法启动</span> 的问题"
         ]
       }
     ]

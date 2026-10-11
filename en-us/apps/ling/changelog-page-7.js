@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.3.2.0",
+    "date": "2026-05-05",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Improved the album cover color extraction algorithm</span>, color results are now more accurate.",
+          "<span class=\"type-opt\">Songs already in the queue can now be set as \"Play Next\"</span>, the queue position will be adjusted automatically."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">krc and qrc format lyrics files could not be loaded or parsed correctly</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.1.0",
     "date": "2026-05-04",
     "tag": "Alpha",
@@ -93,18 +114,6 @@ window.CHANGELOG_PAGES[7] = [
           "Fixed an issue where <span class=\"type-fix\">tray menu could not be closed after opening</span>.",
           "Fixed an issue where <span class=\"type-fix\">clicking a song in the list would always play the first song when the action was set to replace the current queue</span>."
         ]
-      }
-    ]
-  },
-  {
-    "version": "0.0.1.0",
-    "date": "2026/05/01",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "plain",
-        "html": "First version of Ling Player."
       }
     ]
   }
