@@ -9,12 +9,27 @@ window.CHANGELOG_DATA = [
     "tagClass": "tag-alpha",
     "categories": [
       {
+        "version": "0.15.0.0",
+        "date": "2026-10-11",
+        "tag": "Alpha",
+        "tagClass": "tag-alpha",
+        "categories": [
+          {
+            "type": "new",
+            "items": [
+              "<span class=\"type-new\">Fade in/out</span>: Added fade in/out settings, with separate fade-in and fade-out durations for Play / Pause, Seek, and Manual track change.",
+              "<span class=\"type-new\">Replay Gain</span>: Added Replay Gain settings. Playback volume is automatically adjusted based on Replay Gain tags embedded in the audio files, and track gain (REPLAYGAIN_TRACK_GAIN) or album gain (REPLAYGAIN_ALBUM_GAIN) can be applied automatically according to the playing queue."
+            ]
+          }
+        ]
+      },
+      {
         "type": "new",
         "items": [
-          "<span class=\"type-new\">Use artist when album artist is missing</span>: When enabled, if a track's album artist is missing, its artist is automatically used as the album artist",
-          "<span class=\"type-new\">Number of album artists to select</span>: When the album artist is missing, artists are ranked by how often they appear on the album's tracks, from most to least frequent, and the specified number are selected as the album's artists. Set to 0 to select all artists",
-          "<span class=\"type-new\">Generate multiple albums when tracks have different years</span>: When enabled, if tracks in an album have different years, they are split into multiple albums with the same name by year",
-          "<span class=\"type-new\">Scan threads</span>: Number of threads used when scanning music files. Higher values scan faster but use more CPU"
+          "<span class=\"type-new\">Use artist when album artist is missing</span>: When enabled, if a track's album artist is missing, its artist is automatically used as the album artist.",
+          "<span class=\"type-new\">Number of album artists to select</span>: When the album artist is missing, artists are ranked by how often they appear on the album's tracks, from most to least frequent, and the specified number are selected as the album's artists. Set to 0 to select all artists.",
+          "<span class=\"type-new\">Generate multiple albums when tracks have different years</span>: When enabled, if tracks in an album have different years, they are split into multiple albums with the same name by year.",
+          "<span class=\"type-new\">Scan threads</span>: Number of threads used when scanning music files. Higher values scan faster but use more CPU."
         ]
       },
       {
@@ -24,9 +39,9 @@ window.CHANGELOG_DATA = [
       {
         "type": "opt",
         "items": [
-          "<span class=\"type-opt\">Library settings page</span>: Scan is now a button and uses the accent foreground colour",
-          "<span class=\"type-opt\">Wallpaper settings</span>: Wallpaper settings have been moved to a separate settings page",
-          "<span class=\"type-opt\">Memory usage</span>: A series of adjustments have been made to reduce some memory usage, and further optimizations will follow"
+          "<span class=\"type-opt\">Library settings page</span>: Scan is now a button and uses the accent foreground colour.",
+          "<span class=\"type-opt\">Wallpaper settings</span>: Wallpaper settings have been moved to a separate settings page.",
+          "<span class=\"type-opt\">Memory usage</span>: A series of adjustments have been made to reduce some memory usage, and further optimizations will follow."
         ]
       },
       {
