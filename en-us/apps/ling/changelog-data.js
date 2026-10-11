@@ -2,7 +2,22 @@
 // To add a new version: add a new entry at the beginning of the array, then regenerate paginated files:
 //   node tools/split-changelog.js en-us/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
-  {
+    {
+      "version": "0.15.0.0",
+      "date": "2026-10-11",
+      "tag": "Alpha",
+      "tagClass": "tag-alpha",
+      "categories": [
+        {
+          "type": "new",
+          "items": [
+            "<span class=\"type-new\">Fade in/out</span>: Supports Play / Pause, Seek, and Manual track change, with separate fade-in and fade-out durations for each",
+            "<span class=\"type-new\">Replay Gain</span>: Automatically adjusts playback volume based on Replay Gain tags embedded in the audio files, and can also automatically apply track gain (REPLAYGAIN_TRACK_GAIN) or album gain (REPLAYGAIN_ALBUM_GAIN) according to the playing queue"
+          ]
+        }
+      ]
+    },
+    {
     "version": "0.14.3.0",
     "date": "2026-10-07",
     "tag": "Alpha",

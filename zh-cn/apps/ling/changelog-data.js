@@ -3,26 +3,26 @@
 //   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.15.0.0",
+    "date": "2026-10-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">淡入淡出</span>：支持播放 / 暂停、跳转和手动切歌场景，每个场景的淡入淡出时长均可单独设置",
+          "<span class=\"type-new\">回放增益</span>：根据音频文件中内嵌的 Replay Gain 标签自动调整播放音量，还可根据播放队列自动应用音轨增益（REPLAYGAIN_TRACK_GAIN）或专辑增益（REPLAYGAIN_ALBUM_GAIN）"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.14.3.0",
     "date": "2026-10-07",
     "tag": "Alpha",
     "tagClass": "tag-alpha",
     "categories": [
-      {
-        "version": "0.15.0.0",
-        "date": "2026-10-11",
-        "tag": "Alpha",
-        "tagClass": "tag-alpha",
-        "categories": [
-          {
-            "type": "new",
-            "items": [
-              "<span class=\"type-new\">淡入淡出</span>：新增淡入淡出设置，可分别设置播放 / 暂停、跳转和手动切歌场景下的淡入淡出时长",
-              "<span class=\"type-new\">回放增益</span>：新增回放增益设置，可根据音频文件中内嵌的 Replay Gain 标签自动调整播放音量，还可根据播放队列自动应用音轨增益（REPLAYGAIN_TRACK_GAIN）或专辑增益（REPLAYGAIN_ALBUM_GAIN）"
-            ]
-          }
-        ]
-      },
       {
         "type": "new",
         "items": [
