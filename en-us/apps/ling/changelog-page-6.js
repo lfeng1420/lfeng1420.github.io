@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.6.0",
+    "date": "2026-05-13",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "The dominant color extracted from a track's cover art will now automatically <span class=\"type-opt\">skip colors that are too close to pure black or pure white</span>."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the maximize button displayed incorrectly after entering fullscreen while the window was maximized</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the left navigation menu and the right scrollbar were clipped after the window was maximized</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.5.0",
     "date": "2026-05-12",
     "tag": "Alpha",
@@ -81,22 +102,6 @@ window.CHANGELOG_PAGES[6] = [
           "Fixed an issue where <span class=\"type-fix\">the button spacing in the top-right corner of the playback queue panel was too wide</span>.",
           "Fixed an issue where <span class=\"type-fix\">the text and description of the \"Image Corner Strength\" option did not appear when using English language</span>.",
           "Fixed an issue where <span class=\"type-fix\">text in the plugin management page and its settings page did not update after switching languages</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.4.0",
-    "date": "2026-05-07",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">color extraction from grayscale album covers produced incorrect results</span>.",
-          "Fixed a UI issue where <span class=\"type-fix\">text labels on the vertical axis of the statistics chart could overlap</span>.",
-          "Fixed an issue where <span class=\"type-fix\">hour tracking in the time period statistics was incorrect</span>."
         ]
       }
     ]

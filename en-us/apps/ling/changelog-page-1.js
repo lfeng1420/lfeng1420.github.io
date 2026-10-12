@@ -2,6 +2,37 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.15.2.0",
+    "date": "2026-10-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "Removed the restriction that the album cover must be modified before using \"Apply album cover to all tracks\"",
+          "Text font weight is now consistently DemiBold, and text input styles have been adjusted"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">clicking \"Add to Queue\" in the album context menu incorrectly replaced the entire playing queue</span>.",
+          "Fixed an issue where <span class=\"type-fix\">playlists were lost after renaming</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the \"New Playlist\" dialog was incorrectly shown when renaming a playlist</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the file picker dialog occasionally did not appear when exporting a playlist list or files</span>.",
+          "Fixed an issue where <span class=\"type-fix\">sorting folders and playlists by title produced incorrect results</span>.",
+          "Fixed an issue where <span class=\"type-fix\">right-clicking a folder to play or add to a playlist retrieved an incorrect track list when the hierarchical view was enabled</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the UI did not update after editing track or album metadata</span>.",
+          "Fixed an issue where <span class=\"type-fix\">desktop lyrics still showed the previous track's lyrics when switching to a track without lyrics</span>.",
+          "Fixed an issue on Android where <span class=\"type-fix\">sliders were too thin to tap easily</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the cursor flickered when hovering over the playback progress bar</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the UI size of each option changed when switching between preamp attenuation modes</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.15.0.0",
     "date": "2026-10-11",
     "tag": "Alpha",
@@ -108,28 +139,6 @@ window.CHANGELOG_PAGES[1] = [
           "Fixed an issue where <span class=\"type-fix\">after navigating to the album details or artist details page, it was not possible to return to the list page by clicking the album or artist menu on the left</span>.",
           "Fixed an issue where <span class=\"type-fix\">the playing page followed the mouse after clicking on the lyrics</span>.",
           "Fixed an issue where <span class=\"type-fix\">desktop lyrics did not work</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.13.0.0",
-    "date": "2026-09-08",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Sleep Timer</span>: Added a sleep timer function that automatically pauses playback after a set countdown. Path: <b>Bottom-right \"...\" button -> Sleep Timer</b>.",
-          "<span class=\"type-new\">Spectrum Refresh Interval</span>: Added a configurable spectrum refresh interval (range 10–64 ms). The old \"Refresh Speed\" option has been removed."
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Playback Progress Bar</span>: The playback progress bar now features rounded corners.",
-          "<span class=\"type-opt\">Performance Improvements</span>: Avalonia has been upgraded to 12.1.2, bringing better performance."
         ]
       }
     ]

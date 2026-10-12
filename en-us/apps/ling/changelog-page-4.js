@@ -2,6 +2,31 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.8.1.0",
+    "date": "2026-05-24",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-new\">Mini Window Playlist Operations</span>: Added a playlist operation page for the mini window. Click the playlist button in the bottom-right corner to open it. Supports switching tracks, removing tracks from the queue, clearing the queue, and more.",
+          "<span class=\"type-new\">Mini Window Settings</span>: Added a settings page for the mini window. Click the settings button on the far right to open it. Currently includes the following settings: theme (synced with global settings), overlay opacity, and whether to show the mini window icon in the taskbar.",
+          "<span class=\"type-new\">Removed Corner Radius from Mini Window Track Cover</span>: Removed the corner radius effect from the track cover in the mini window to avoid black or white areas appearing at the window corners.",
+          "<span class=\"type-new\">Default Value Adjustment for Duration Filter</span>: The default value for the duration filter setting has been adjusted to 0 to avoid affecting scan results when scanning tracks for the first time."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">content overflowed on the album details page when the description text was too long</span>.",
+          "Fixed an issue where <span class=\"type-fix\">content overflowed and the page could not scroll on the artist details page when the description text was too long</span>.",
+          "Fixed an issue where <span class=\"type-fix\">an image could not be set for an artist when the artist name contained special characters</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.8.0.0",
     "date": "2026-05-22",
     "tag": "Alpha",
@@ -76,23 +101,6 @@ window.CHANGELOG_PAGES[4] = [
           "Fixed an issue where <span class=\"type-fix\">the start offset of tracks parsed from CUE files was incorrect in some cases</span>.",
           "Fixed an issue where <span class=\"type-fix\">the duration displayed incorrectly when playing a track corresponding to a CUE file</span>.",
           "Fixed an issue where <span class=\"type-fix\">playing a folder did not include tracks from subfolders</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.2.0",
-    "date": "2026-05-18",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">after switching to shuffle mode, clicking on any track did not play the expected track</span>.",
-          "Fixed an issue where <span class=\"type-fix\">m4a files could not be added to the library due to incorrect duration reading</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the corner radius of the left button on the bottom playback control panel did not match the corner radius of the track cover thumbnail</span>.",
-          "Fixed an issue where <span class=\"type-fix\">Steam plugin settings could not be saved</span>."
         ]
       }
     ]

@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.3.4.0",
+    "date": "2026-05-07",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">当歌曲封面是灰度图像时，颜色提取结果不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">统计页面中的时段统计图表纵坐标文本可能重叠</span> 的问题",
+          "修复了 <span class=\"type-fix\">时段统计中的小时记录不正确</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.2.0",
     "date": "2026-05-05",
     "tag": "Alpha",
@@ -91,28 +107,6 @@ window.CHANGELOG_PAGES[7] = [
           "修复了 <span class=\"type-fix\">被时长过滤规则排除的歌曲，在调整规则后重新扫描也无法入库</span> 问题（感谢 <b>@Nomstuff</b>）",
           "修复了 <span class=\"type-fix\">歌曲的艺术家/专辑艺术家属性可能出现重复同名条目</span> 的问题",
           "修复了 <span class=\"type-fix\">更换专辑或艺术家封面时，旧封面文件残留未清理</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.1.1.0",
-    "date": "2026/05/01",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "“暂无歌词”提示应用歌曲封面主色"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">托盘菜单播放/暂停按钮状态不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">托盘菜单开启后无法关闭</span> 的问题",
-          "修复了 <span class=\"type-fix\">在歌曲点击动作为替换当前队列的情况下点击列表中的歌曲时必定播放第一首歌曲</span> 的问题"
         ]
       }
     ]

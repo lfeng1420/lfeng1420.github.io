@@ -2,6 +2,31 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.8.1.0",
+    "date": "2026-05-24",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Mini 窗口播放列表操作</span>：新增 mini 窗口播放列表操作页面，点击右下角的列表按钮即可打开。支持切换歌曲、移除队列中的歌曲、清空队列等操作",
+          "<span class=\"type-opt\">Mini 窗口设置</span>：新增 mini 窗口设置页面，点击最右侧的设置按钮即可打开。目前包含以下设置：主题（与全局设置同步）、叠加层透明度，以及是否在任务栏显示 mini 窗口图标",
+          "<span class=\"type-opt\">Mini 窗口歌曲封面移除圆角</span>：移除了 mini 窗口中歌曲封面的圆角效果，避免在窗口四角出现黑色或白色区域",
+          "<span class=\"type-opt\">时长过滤设置项默认值调整</span>：时长过滤设置项的默认值现已调整为 0，避免影响初次扫描歌曲时的结果"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">专辑详情页面在介绍文本过长时内容溢出</span> 的问题",
+          "修复了 <span class=\"type-fix\">艺术家详情页面在介绍文本过长时内容溢出且页面无法滚动</span> 的问题",
+          "修复了 <span class=\"type-fix\">艺术家名称包含特殊字符时无法为其设置图片</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.8.0.0",
     "date": "2026-05-22",
     "tag": "Alpha",
@@ -76,23 +101,6 @@ window.CHANGELOG_PAGES[4] = [
           "修复了 <span class=\"type-fix\">在某些情况下CUE文件解析出的歌曲起始偏移量错误</span> 的问题",
           "修复了 <span class=\"type-fix\">播放 CUE 文件对应的歌曲时，时长显示不正确</span> 的问题",
           "修复了 <span class=\"type-fix\">播放文件夹时，未包含子文件夹中歌曲</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.2.0",
-    "date": "2026-05-18",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">切换到随机播放模式后，点击任意歌曲时未按预期播放该歌曲</span> 的问题",
-          "修复了 <span class=\"type-fix\">因时长读取错误导致 m4a 文件无法添加到曲库</span> 的问题",
-          "修复了 <span class=\"type-fix\">底部播放控制面板左侧按钮圆角与歌曲封面缩略图圆角不匹配</span> 的问题",
-          "修复了 <span class=\"type-fix\">Steam插件设置无法保存</span> 的问题"
         ]
       }
     ]

@@ -2,6 +2,23 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.2.0",
+    "date": "2026-05-18",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">after switching to shuffle mode, clicking on any track did not play the expected track</span>.",
+          "Fixed an issue where <span class=\"type-fix\">m4a files could not be added to the library due to incorrect duration reading</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the corner radius of the left button on the bottom playback control panel did not match the corner radius of the track cover thumbnail</span>.",
+          "Fixed an issue where <span class=\"type-fix\">Steam plugin settings could not be saved</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.0.0",
     "date": "2026-05-17",
     "tag": "Alpha",
@@ -74,27 +91,6 @@ window.CHANGELOG_PAGES[5] = [
           "Fixed an issue where <span class=\"type-fix\">removing a specific track would incorrectly remove other track</span>.",
           "Fixed an issue where <span class=\"type-fix\">dragging a folder that had already been added onto the track page would cause that folder to be removed</span>.",
           "Fixed an issue where <span class=\"type-fix\">the track count on the right side of the track page title did not update after removing a track</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.6.0",
-    "date": "2026-05-13",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "The dominant color extracted from a track's cover art will now automatically <span class=\"type-opt\">skip colors that are too close to pure black or pure white</span>."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the maximize button displayed incorrectly after entering fullscreen while the window was maximized</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the left navigation menu and the right scrollbar were clipped after the window was maximized</span>."
         ]
       }
     ]
