@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.8.0.0",
+    "date": "2026-05-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Rendering Mode Option</span>: When experiencing rendering issues such as flickering or display problems, you can try switching the rendering mode. Path: <b>Settings -> UI -> Rendering mode</b>.",
+          "<span class=\"type-new\">Automatic Log File Cleanup</span>: The application will automatically delete log files older than 7 days on startup. Additionally, you can click <b>Clear Cache</b> under <b>Log Cache</b> on the <b>About page</b> to delete all log files at any time."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the application failed to start when the settings file was invalid</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.8.0",
     "date": "2026-05-21",
     "tag": "Alpha",
@@ -72,35 +93,6 @@ window.CHANGELOG_PAGES[4] = [
           "Fixed an issue where <span class=\"type-fix\">m4a files could not be added to the library due to incorrect duration reading</span>.",
           "Fixed an issue where <span class=\"type-fix\">the corner radius of the left button on the bottom playback control panel did not match the corner radius of the track cover thumbnail</span>.",
           "Fixed an issue where <span class=\"type-fix\">Steam plugin settings could not be saved</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.0.0",
-    "date": "2026-05-17",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Track Page Supports Drag-and-Drop</span>: The track page now supports file drag-and-drop. You can drag one or more track files (or folders) onto the page for scanning, no longer limited to folders",
-          "<span class=\"type-new\">Playlists Support Drag-and-Drop to Add Tracks</span>: You can now directly drag one or more track files (or folders) onto a playlist. After the drag is complete, tracks will be automatically scanned and added to the playlist"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Dynamic Gradient Effect Adjustment</span>: Removed color mixing to avoid unexpected colors",
-          "<span class=\"type-opt\">Window Transparency Effect Adjustment</span>: On Windows 11, Mica effect is used by default; on Windows 10, Acrylic blur is used by default; in other cases, Blur effect is used by default."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the open source licenses page could not be opened</span>.",
-          "Fixed an issue where <span class=\"type-fix\">tracks with uppercase file extensions (e.g., .MP3, .FLAC) were not properly recognized</span>."
         ]
       }
     ]

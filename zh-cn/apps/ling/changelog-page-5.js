@@ -2,6 +2,35 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.0.0",
+    "date": "2026-05-17",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">歌曲页面支持拖拽歌曲文件</span>：歌曲页面现已支持文件拖拽操作。可以拖拽一个或多个歌曲文件（或文件夹）到页面中进行扫描，不再限制于文件夹",
+          "<span class=\"type-new\">歌单支持拖拽添加歌曲</span>：现在可以直接拖拽一个或多个歌曲文件（或文件夹）到歌单中。拖拽完成后，将自动扫描歌曲并将其添加到歌单"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">动态渐变效果调整</span>：移除了颜色混合，避免出现预期外的颜色",
+          "<span class=\"type-opt\">窗口透明效果调整</span>：Windows 11默认选择Mica效果，Windows 10默认选择Acrylic blur效果，其他情况下默认选择Blur效果"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">开源许可页面无法打开</span> 的问题",
+          "修复了 <span class=\"type-fix\">当文件后缀为全大写（例如：MP3、FLAC）时，歌曲无法被正常识别</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.6.0.0",
     "date": "2026-05-16",
     "tag": "Alpha",
@@ -66,20 +95,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "修复了 <span class=\"type-fix\">窗口最大化后再切换至全屏时，最大化按钮显示不正确</span> 的问题",
           "修复了 <span class=\"type-fix\">窗口最大化后，左侧导航菜单和右侧滚动条被裁剪</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.5.0",
-    "date": "2026-05-12",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">专辑合并规则调整</span>：新增艺术家严格匹配规则。专辑名相同但艺术家不同的歌曲，将不会合并到同一张专辑中"
         ]
       }
     ]

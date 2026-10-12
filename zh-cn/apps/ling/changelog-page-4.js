@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.8.0.0",
+    "date": "2026-05-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">渲染模式选项</span>：当遇到界面闪烁、显示异常等渲染问题时，可尝试切换渲染模式。路径：<b>设置</b> -> <b>用户界面</b> -> <b>渲染模式</b>",
+          "<span class=\"type-new\">日志文件自动清除</span>：应用启动时会自动删除 7 天前的日志文件。此外也可以随时在 <b>关于</b> 页面中，点击 <b>日志缓存</b> 下的 <b>清除缓存</b> 以删除所有日志文件"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">设置文件无效时应用无法启动</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.8.0",
     "date": "2026-05-21",
     "tag": "Alpha",
@@ -72,35 +93,6 @@ window.CHANGELOG_PAGES[4] = [
           "修复了 <span class=\"type-fix\">因时长读取错误导致 m4a 文件无法添加到曲库</span> 的问题",
           "修复了 <span class=\"type-fix\">底部播放控制面板左侧按钮圆角与歌曲封面缩略图圆角不匹配</span> 的问题",
           "修复了 <span class=\"type-fix\">Steam插件设置无法保存</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.0.0",
-    "date": "2026-05-17",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">歌曲页面支持拖拽歌曲文件</span>：歌曲页面现已支持文件拖拽操作。可以拖拽一个或多个歌曲文件（或文件夹）到页面中进行扫描，不再限制于文件夹",
-          "<span class=\"type-new\">歌单支持拖拽添加歌曲</span>：现在可以直接拖拽一个或多个歌曲文件（或文件夹）到歌单中。拖拽完成后，将自动扫描歌曲并将其添加到歌单"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">动态渐变效果调整</span>：移除了颜色混合，避免出现预期外的颜色",
-          "<span class=\"type-opt\">窗口透明效果调整</span>：Windows 11默认选择Mica效果，Windows 10默认选择Acrylic blur效果，其他情况下默认选择Blur效果"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">开源许可页面无法打开</span> 的问题",
-          "修复了 <span class=\"type-fix\">当文件后缀为全大写（例如：MP3、FLAC）时，歌曲无法被正常识别</span> 的问题"
         ]
       }
     ]

@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.12.10.0",
+    "date": "2026-07-28",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Album Details</span>: Tracks in the album details page no longer display their cover art.",
+          "<span class=\"type-opt\">Volume Adjustment</span>: The volume adjustment popup now supports mouse wheel operation. Hover the mouse over the popup and scroll the wheel to adjust the volume."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed <span class=\"type-fix\">a crash that could occur when closing the spectrum analyzer on the spectrum settings page</span> (<b>Thanks to @MAYHEM</b>).",
+          "Fixed an issue where <span class=\"type-fix\">the track list in the album details page displayed incorrectly when the album contained multiple discs</span>.",
+          "Fixed an issue where <span class=\"type-fix\">sliders jittered while dragging in several settings pages</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the \"Add to Playlist\" button was not shown in the playing queue popup</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the playing page would briefly show a white screen before transitioning to the gradient when switching to it with the dynamic gradient background enabled</span>.",
+          "Fixed an issue where <span class=\"type-fix\">wide cover images displayed at an incorrect size on the playing page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the count next to the page title did not update after deleting an album from the album list page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">certain characters in the jump bar could not be clicked properly."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.5.0",
     "date": "2026-07-08",
     "tag": "Alpha",
@@ -98,22 +126,6 @@ window.CHANGELOG_PAGES[2] = [
         "items": [
           "Fixed an issue where <span class=\"type-fix\">the process did not terminate properly when exiting the application</span>.",
           "Fixed an issue where <span class=\"type-fix\">track covers flickered when switching windows</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.11.2.0",
-    "date": "2026-06-22",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">single-track repeat mode would occasionally stop working</span>.",
-          "Fixed an issue where <span class=\"type-fix\">Steam plugin text displayed incorrectly in certain language environments</span>.",
-          "Fixed an issue where <span class=\"type-fix\">taskbar thumbnail buttons were not displayed when switching from mini window to main window after startup on Windows</span>."
         ]
       }
     ]

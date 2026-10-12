@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.11.2.0",
+    "date": "2026-06-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">single-track repeat mode would occasionally stop working</span>.",
+          "Fixed an issue where <span class=\"type-fix\">Steam plugin text displayed incorrectly in certain language environments</span>.",
+          "Fixed an issue where <span class=\"type-fix\">taskbar thumbnail buttons were not displayed when switching from mini window to main window after startup on Windows</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.11.0.0",
     "date": "2026-06-12",
     "tag": "Alpha",
@@ -113,27 +129,6 @@ window.CHANGELOG_PAGES[3] = [
           "Fixed an issue where <span class=\"type-fix\">content overflowed on the album details page when the description text was too long</span>.",
           "Fixed an issue where <span class=\"type-fix\">content overflowed and the page could not scroll on the artist details page when the description text was too long</span>.",
           "Fixed an issue where <span class=\"type-fix\">an image could not be set for an artist when the artist name contained special characters</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.8.0.0",
-    "date": "2026-05-22",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Rendering Mode Option</span>: When experiencing rendering issues such as flickering or display problems, you can try switching the rendering mode. Path: <b>Settings -> UI -> Rendering mode</b>.",
-          "<span class=\"type-new\">Automatic Log File Cleanup</span>: The application will automatically delete log files older than 7 days on startup. Additionally, you can click <b>Clear Cache</b> under <b>Log Cache</b> on the <b>About page</b> to delete all log files at any time."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the application failed to start when the settings file was invalid</span>."
         ]
       }
     ]

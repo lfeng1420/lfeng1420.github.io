@@ -2,6 +2,20 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.5.0",
+    "date": "2026-05-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">专辑合并规则调整</span>：新增艺术家严格匹配规则。专辑名相同但艺术家不同的歌曲，将不会合并到同一张专辑中"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.4.0",
     "date": "2026-05-12",
     "tag": "Alpha",
@@ -82,27 +96,6 @@ window.CHANGELOG_PAGES[6] = [
           "修复了 <span class=\"type-fix\">当歌曲封面是灰度图像时，颜色提取结果不正确</span> 的问题",
           "修复了 <span class=\"type-fix\">统计页面中的时段统计图表纵坐标文本可能重叠</span> 的问题",
           "修复了 <span class=\"type-fix\">时段统计中的小时记录不正确</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.2.0",
-    "date": "2026-05-05",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "优化了 <span class=\"type-opt\">歌曲封面颜色提取算法</span>，颜色提取结果更精准",
-          "<span class=\"type-opt\">支持将已在队列中的歌曲设为\"下一首\"</span>，队列位置将自动调整"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">krc 和 qrc 格式的歌词文件无法正常加载解析</span> 的问题"
         ]
       }
     ]

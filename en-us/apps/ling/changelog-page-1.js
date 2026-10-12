@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.15.0.0",
+    "date": "2026-10-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Fade in/out</span>: Supports Play / Pause, Seek, and Manual track change, with separate fade-in and fade-out durations for each",
+          "<span class=\"type-new\">Replay Gain</span>: Automatically adjusts playback volume based on Replay Gain tags embedded in the audio files, and can also automatically apply track gain (REPLAYGAIN_TRACK_GAIN) or album gain (REPLAYGAIN_ALBUM_GAIN) according to the playing queue"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.14.3.0",
     "date": "2026-10-07",
     "tag": "Alpha",
@@ -115,34 +130,6 @@ window.CHANGELOG_PAGES[1] = [
         "items": [
           "<span class=\"type-opt\">Playback Progress Bar</span>: The playback progress bar now features rounded corners.",
           "<span class=\"type-opt\">Performance Improvements</span>: Avalonia has been upgraded to 12.1.2, bringing better performance."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.10.0",
-    "date": "2026-07-28",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Album Details</span>: Tracks in the album details page no longer display their cover art.",
-          "<span class=\"type-opt\">Volume Adjustment</span>: The volume adjustment popup now supports mouse wheel operation. Hover the mouse over the popup and scroll the wheel to adjust the volume."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed <span class=\"type-fix\">a crash that could occur when closing the spectrum analyzer on the spectrum settings page</span> (<b>Thanks to @MAYHEM</b>).",
-          "Fixed an issue where <span class=\"type-fix\">the track list in the album details page displayed incorrectly when the album contained multiple discs</span>.",
-          "Fixed an issue where <span class=\"type-fix\">sliders jittered while dragging in several settings pages</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the \"Add to Playlist\" button was not shown in the playing queue popup</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the playing page would briefly show a white screen before transitioning to the gradient when switching to it with the dynamic gradient background enabled</span>.",
-          "Fixed an issue where <span class=\"type-fix\">wide cover images displayed at an incorrect size on the playing page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the count next to the page title did not update after deleting an album from the album list page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">certain characters in the jump bar could not be clicked properly."
         ]
       }
     ]

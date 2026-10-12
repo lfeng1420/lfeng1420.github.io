@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.5.0",
+    "date": "2026-05-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Album Merging Rule Adjustment</span>: A strict artist matching rule has been added. Tracks with the same album name but differing artists will not be merged into the same album.",
+          "Updated <span class=\"type-opt\">the icons in the sidebar statistics menu</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.4.0",
     "date": "2026-05-12",
     "tag": "Alpha",
@@ -82,27 +97,6 @@ window.CHANGELOG_PAGES[6] = [
           "Fixed an issue where <span class=\"type-fix\">color extraction from grayscale album covers produced incorrect results</span>.",
           "Fixed a UI issue where <span class=\"type-fix\">text labels on the vertical axis of the statistics chart could overlap</span>.",
           "Fixed an issue where <span class=\"type-fix\">hour tracking in the time period statistics was incorrect</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.2.0",
-    "date": "2026-05-05",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Improved the album cover color extraction algorithm</span>, color results are now more accurate.",
-          "<span class=\"type-opt\">Songs already in the queue can now be set as \"Play Next\"</span>, the queue position will be adjusted automatically."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">krc and qrc format lyrics files could not be loaded or parsed correctly</span>."
         ]
       }
     ]

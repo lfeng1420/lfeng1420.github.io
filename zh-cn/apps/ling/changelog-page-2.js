@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.12.10.0",
+    "date": "2026-07-28",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">专辑详情</span>：专辑详情页面中的歌曲不再显示歌曲封面",
+          "<span class=\"type-opt\">音量调节</span>：音量调节弹窗现已支持鼠标滚轮操作。将鼠标悬停在弹窗上滚动滚轮即可调节音量"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">在频谱设置页面关闭频谱时应用可能崩溃</span> 的问题",
+          "修复了 <span class=\"type-fix\">专辑详情页面在包含多张CD时歌曲列表显示混乱</span> 的问题",
+          "修复了 <span class=\"type-fix\">多个设置页面中滑动条拖拽时抖动</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放队列弹框中“添加到歌单”按钮不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放页面背景设置为动态渐变后切换至播放页面时短暂白屏再变为渐变</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放页面中宽幅封面图片显示尺寸不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">在专辑列表页面删除专辑后页面上方标题右侧计数未更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">跳转栏中部分字符可能无法正常点击</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.5.0",
     "date": "2026-07-08",
     "tag": "Alpha",
@@ -98,22 +126,6 @@ window.CHANGELOG_PAGES[2] = [
         "items": [
           "修复了 <span class=\"type-fix\">退出应用时进程未能正常结束</span> 的问题",
           "修复了 <span class=\"type-fix\">切换窗口时歌曲封面出现闪烁</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.11.2.0",
-    "date": "2026-06-22",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">单曲循环模式偶发中断</span> 的问题",
-          "修复了 <span class=\"type-fix\">Steam 插件文本在某些语言环境下显示异常</span> 的问题",
-          "修复了 <span class=\"type-fix\">Windows 版本启动后从迷你窗口切换至主窗口时任务栏缩略图按钮未能正常显示</span> 的问题"
         ]
       }
     ]

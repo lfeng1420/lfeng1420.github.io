@@ -2,26 +2,26 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.15.0.0",
+    "date": "2026-10-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">淡入淡出</span>：支持播放 / 暂停、跳转和手动切歌场景，每个场景的淡入淡出时长均可单独设置",
+          "<span class=\"type-new\">回放增益</span>：根据音频文件中内嵌的 Replay Gain 标签自动调整播放音量，还可根据播放队列自动应用音轨增益（REPLAYGAIN_TRACK_GAIN）或专辑增益（REPLAYGAIN_ALBUM_GAIN）"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.14.3.0",
     "date": "2026-10-07",
     "tag": "Alpha",
     "tagClass": "tag-alpha",
     "categories": [
-      {
-        "version": "0.15.0.0",
-        "date": "2026-10-11",
-        "tag": "Alpha",
-        "tagClass": "tag-alpha",
-        "categories": [
-          {
-            "type": "new",
-            "items": [
-              "<span class=\"type-new\">淡入淡出</span>：新增淡入淡出设置，可分别设置播放 / 暂停、跳转和手动切歌场景下的淡入淡出时长",
-              "<span class=\"type-new\">回放增益</span>：新增回放增益设置，可根据音频文件中内嵌的 Replay Gain 标签自动调整播放音量，还可根据播放队列自动应用音轨增益（REPLAYGAIN_TRACK_GAIN）或专辑增益（REPLAYGAIN_ALBUM_GAIN）"
-            ]
-          }
-        ]
-      },
       {
         "type": "new",
         "items": [
@@ -115,34 +115,6 @@ window.CHANGELOG_PAGES[1] = [
         "items": [
           "<span class=\"type-opt\">播放进度条</span>：播放进度条现已采用圆角设计",
           "<span class=\"type-opt\">性能提升</span>：Avalonia 升级至 12.1.2，带来更好的性能表现"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.10.0",
-    "date": "2026-07-28",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">专辑详情</span>：专辑详情页面中的歌曲不再显示歌曲封面",
-          "<span class=\"type-opt\">音量调节</span>：音量调节弹窗现已支持鼠标滚轮操作。将鼠标悬停在弹窗上滚动滚轮即可调节音量"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">在频谱设置页面关闭频谱时应用可能崩溃</span> 的问题",
-          "修复了 <span class=\"type-fix\">专辑详情页面在包含多张CD时歌曲列表显示混乱</span> 的问题",
-          "修复了 <span class=\"type-fix\">多个设置页面中滑动条拖拽时抖动</span> 的问题",
-          "修复了 <span class=\"type-fix\">播放队列弹框中“添加到歌单”按钮不显示</span> 的问题",
-          "修复了 <span class=\"type-fix\">播放页面背景设置为动态渐变后切换至播放页面时短暂白屏再变为渐变</span> 的问题",
-          "修复了 <span class=\"type-fix\">播放页面中宽幅封面图片显示尺寸不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">在专辑列表页面删除专辑后页面上方标题右侧计数未更新</span> 的问题",
-          "修复了 <span class=\"type-fix\">跳转栏中部分字符可能无法正常点击</span> 的问题"
         ]
       }
     ]
