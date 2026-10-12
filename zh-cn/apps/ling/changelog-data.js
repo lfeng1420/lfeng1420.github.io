@@ -3,6 +3,37 @@
 //   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.15.2.0",
+    "date": "2026-10-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "移除了“专辑封面应用到所有歌曲”必须先修改封面的限制",
+          "文本字重统一使用 DemiBold，并调整了文本输入框样式"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">在专辑右键菜单中点击“添加到队列”时错误替换整个播放队列</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单重命名后歌单丢失</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单重命名时错误显示“新建歌单”对话框</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单导出清单/文件时偶发的选择对话框不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">文件夹和歌单列表按标题排序时结果错误</span> 的问题",
+          "修复了 <span class=\"type-fix\">开启层级视图时，文件夹右键“播放/添加到歌单”获取歌曲列表不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌曲/专辑编辑元数据后 UI 没有更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">桌面歌词切换到无歌词歌曲时，仍显示上一首歌曲的歌词</span> 的问题",
+          "修复了 <span class=\"type-fix\">Android 端滑动条高度过小导致难以点击</span> 的问题",
+          "修复了 <span class=\"type-fix\">鼠标悬停在播放进度条上时指针闪烁</span> 的问题",
+          "修复了 <span class=\"type-fix\">前置衰减模式选项切换时各个选项 UI 大小变化</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.15.0.0",
     "date": "2026-10-11",
     "tag": "Alpha",
