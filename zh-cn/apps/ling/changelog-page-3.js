@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.12.0.0",
+    "date": "2026-06-27",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">跳转栏</span>：歌曲、专辑和艺术家页面左侧新增字符跳转栏。点击任意字符，列表将自动滚动到该字母开头的歌曲所在位置。<b>注意：该面板只在排序选项中的第一条件为“标题”或“名称”时显示</b>",
+          "<span class=\"type-new\">动态渐变背景颜色过渡</span>：为动态渐变背景增加了颜色过渡动画效果"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">俄语文本改进</span>：由 <b>@DanRug08 (MAYHEM)</b> 贡献，非常感谢"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">退出应用时进程未能正常结束</span> 的问题",
+          "修复了 <span class=\"type-fix\">切换窗口时歌曲封面出现闪烁</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.11.2.0",
     "date": "2026-06-22",
     "tag": "Alpha",
@@ -103,31 +131,6 @@ window.CHANGELOG_PAGES[3] = [
           "修复了 <span class=\"type-fix\">已编辑的专辑或艺术家在符合移除条件时仍无法被移除</span> 的问题",
           "修复了 <span class=\"type-fix\">拖拽文件夹或多个歌曲文件到歌曲或歌单页面进行扫描后显示的扫描结果不正确</span> 的问题",
           "修复了 <span class=\"type-fix\">首次切换到专辑页面时视图设置未正确应用</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.8.1.0",
-    "date": "2026-05-24",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Mini 窗口播放列表操作</span>：新增 mini 窗口播放列表操作页面，点击右下角的列表按钮即可打开。支持切换歌曲、移除队列中的歌曲、清空队列等操作",
-          "<span class=\"type-opt\">Mini 窗口设置</span>：新增 mini 窗口设置页面，点击最右侧的设置按钮即可打开。目前包含以下设置：主题（与全局设置同步）、叠加层透明度，以及是否在任务栏显示 mini 窗口图标",
-          "<span class=\"type-opt\">Mini 窗口歌曲封面移除圆角</span>：移除了 mini 窗口中歌曲封面的圆角效果，避免在窗口四角出现黑色或白色区域",
-          "<span class=\"type-opt\">时长过滤设置项默认值调整</span>：时长过滤设置项的默认值现已调整为 0，避免影响初次扫描歌曲时的结果"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">专辑详情页面在介绍文本过长时内容溢出</span> 的问题",
-          "修复了 <span class=\"type-fix\">艺术家详情页面在介绍文本过长时内容溢出且页面无法滚动</span> 的问题",
-          "修复了 <span class=\"type-fix\">艺术家名称包含特殊字符时无法为其设置图片</span> 的问题"
         ]
       }
     ]

@@ -2,6 +2,37 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.15.2.0",
+    "date": "2026-10-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "移除了“专辑封面应用到所有歌曲”必须先修改封面的限制",
+          "文本字重统一使用 DemiBold，并调整了文本输入框样式"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">在专辑右键菜单中点击“添加到队列”时错误替换整个播放队列</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单重命名后歌单丢失</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单重命名时错误显示“新建歌单”对话框</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单导出清单/文件时偶发的选择对话框不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">文件夹和歌单列表按标题排序时结果错误</span> 的问题",
+          "修复了 <span class=\"type-fix\">开启层级视图时，文件夹右键“播放/添加到歌单”获取歌曲列表不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌曲/专辑编辑元数据后 UI 没有更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">桌面歌词切换到无歌词歌曲时，仍显示上一首歌曲的歌词</span> 的问题",
+          "修复了 <span class=\"type-fix\">Android 端滑动条高度过小导致难以点击</span> 的问题",
+          "修复了 <span class=\"type-fix\">鼠标悬停在播放进度条上时指针闪烁</span> 的问题",
+          "修复了 <span class=\"type-fix\">前置衰减模式选项切换时各个选项 UI 大小变化</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.15.0.0",
     "date": "2026-10-11",
     "tag": "Alpha",
@@ -93,28 +124,6 @@ window.CHANGELOG_PAGES[1] = [
           "修复了 <span class=\"type-fix\">跳转至专辑详情或艺术家详情页面后，无法通过点击左侧专辑或艺术家菜单返回列表页</span> 的问题",
           "修复了 <span class=\"type-fix\">点击歌词后播放页面跟随鼠标移动</span> 的问题",
           "修复了 <span class=\"type-fix\">桌面歌词功能失效</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.13.0.0",
-    "date": "2026-09-08",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">睡眠定时</span>：新增睡眠定时功能，可设定倒计时时长，时间到达后自动暂停播放。路径：<b>右下角“...”按钮 -> 睡眠定时</b>",
-          "<span class=\"type-new\">频谱刷新间隔</span>：新增频谱刷新间隔设置选项，可自由调整刷新间隔（范围为 10–64 毫秒），原有的“刷新速度”选项已被移除"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">播放进度条</span>：播放进度条现已采用圆角设计",
-          "<span class=\"type-opt\">性能提升</span>：Avalonia 升级至 12.1.2，带来更好的性能表现"
         ]
       }
     ]

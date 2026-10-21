@@ -2,6 +2,28 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.13.0.0",
+    "date": "2026-09-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">睡眠定时</span>：新增睡眠定时功能，可设定倒计时时长，时间到达后自动暂停播放。路径：<b>右下角“...”按钮 -> 睡眠定时</b>",
+          "<span class=\"type-new\">频谱刷新间隔</span>：新增频谱刷新间隔设置选项，可自由调整刷新间隔（范围为 10–64 毫秒），原有的“刷新速度”选项已被移除"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">播放进度条</span>：播放进度条现已采用圆角设计",
+          "<span class=\"type-opt\">性能提升</span>：Avalonia 升级至 12.1.2，带来更好的性能表现"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.10.0",
     "date": "2026-07-28",
     "tag": "Alpha",
@@ -98,34 +120,6 @@ window.CHANGELOG_PAGES[2] = [
           "修复了 <span class=\"type-fix\">跳转栏在某些情况下跳转位置不符合预期</span> 的问题",
           "修复了 <span class=\"type-fix\">CUE 文件内容未发生变化时扫描仍会产生更新</span> 的问题",
           "修复了 <span class=\"type-fix\">Windows 下在任务栏上关闭主窗口时应用没有退出</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.0.0",
-    "date": "2026-06-27",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">跳转栏</span>：歌曲、专辑和艺术家页面左侧新增字符跳转栏。点击任意字符，列表将自动滚动到该字母开头的歌曲所在位置。<b>注意：该面板只在排序选项中的第一条件为“标题”或“名称”时显示</b>",
-          "<span class=\"type-new\">动态渐变背景颜色过渡</span>：为动态渐变背景增加了颜色过渡动画效果"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">俄语文本改进</span>：由 <b>@DanRug08 (MAYHEM)</b> 贡献，非常感谢"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">退出应用时进程未能正常结束</span> 的问题",
-          "修复了 <span class=\"type-fix\">切换窗口时歌曲封面出现闪烁</span> 的问题"
         ]
       }
     ]

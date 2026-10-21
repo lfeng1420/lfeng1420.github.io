@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.3.4.0",
+    "date": "2026-05-07",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">color extraction from grayscale album covers produced incorrect results</span>.",
+          "Fixed a UI issue where <span class=\"type-fix\">text labels on the vertical axis of the statistics chart could overlap</span>.",
+          "Fixed an issue where <span class=\"type-fix\">hour tracking in the time period statistics was incorrect</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.2.0",
     "date": "2026-05-05",
     "tag": "Alpha",
@@ -91,28 +107,6 @@ window.CHANGELOG_PAGES[7] = [
           "Fixed an issue where <span class=\"type-fix\">tracks excluded by the duration filter could not be re-added after adjusting the filter setting and rescanning</span>.(thanks to <b>@Nomstuff</b>)",
           "Fixed an issue where <span class=\"type-fix\">artist/album artist properties could contain duplicate identical names</span>.",
           "Fixed an issue where <span class=\"type-fix\">old cover files were not deleted when updating album or artist artwork</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.1.1.0",
-    "date": "2026/05/01",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "The \"\"No Lyrics\"\" text now applies track cover's main color."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed <span class=\"type-fix\">incorrect play/pause button state in tray menu</span>.",
-          "Fixed an issue where <span class=\"type-fix\">tray menu could not be closed after opening</span>.",
-          "Fixed an issue where <span class=\"type-fix\">clicking a song in the list would always play the first song when the action was set to replace the current queue</span>."
         ]
       }
     ]

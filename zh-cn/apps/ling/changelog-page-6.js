@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.6.0",
+    "date": "2026-05-13",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "从歌曲封面提取的主色调将<span class=\"type-opt\">自动跳过接近纯黑或纯白的颜色</span>"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">窗口最大化后再切换至全屏时，最大化按钮显示不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">窗口最大化后，左侧导航菜单和右侧滚动条被裁剪</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.5.0",
     "date": "2026-05-12",
     "tag": "Alpha",
@@ -80,22 +101,6 @@ window.CHANGELOG_PAGES[6] = [
           "修复了 <span class=\"type-fix\">播放队列面板右上角按钮间距过大</span> 的问题",
           "修复了 <span class=\"type-fix\">英文环境下“图片圆角强度”选项的文本和描述不显示</span> 的问题",
           "修复了 <span class=\"type-fix\">切换语言后插件管理页面及其设置页面上的文本没有同步切换</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.4.0",
-    "date": "2026-05-07",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">当歌曲封面是灰度图像时，颜色提取结果不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">统计页面中的时段统计图表纵坐标文本可能重叠</span> 的问题",
-          "修复了 <span class=\"type-fix\">时段统计中的小时记录不正确</span> 的问题"
         ]
       }
     ]

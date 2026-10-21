@@ -2,6 +2,23 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.2.0",
+    "date": "2026-05-18",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">切换到随机播放模式后，点击任意歌曲时未按预期播放该歌曲</span> 的问题",
+          "修复了 <span class=\"type-fix\">因时长读取错误导致 m4a 文件无法添加到曲库</span> 的问题",
+          "修复了 <span class=\"type-fix\">底部播放控制面板左侧按钮圆角与歌曲封面缩略图圆角不匹配</span> 的问题",
+          "修复了 <span class=\"type-fix\">Steam插件设置无法保存</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.0.0",
     "date": "2026-05-17",
     "tag": "Alpha",
@@ -74,27 +91,6 @@ window.CHANGELOG_PAGES[5] = [
           "修复了 <span class=\"type-fix\">移除指定歌曲时错误移除了其他歌曲</span> 的问题",
           "修复了 <span class=\"type-fix\">当已添加某个文件夹后，再次将该文件夹拖拽到歌曲页面会导致该文件夹被移除</span> 的问题",
           "修复了 <span class=\"type-fix\">移除歌曲后，歌曲页面标题右侧的歌曲数量未及时更新</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.6.0",
-    "date": "2026-05-13",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "从歌曲封面提取的主色调将<span class=\"type-opt\">自动跳过接近纯黑或纯白的颜色</span>"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">窗口最大化后再切换至全屏时，最大化按钮显示不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">窗口最大化后，左侧导航菜单和右侧滚动条被裁剪</span> 的问题"
         ]
       }
     ]

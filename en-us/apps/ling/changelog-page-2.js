@@ -2,6 +2,28 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.13.0.0",
+    "date": "2026-09-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Sleep Timer</span>: Added a sleep timer function that automatically pauses playback after a set countdown. Path: <b>Bottom-right \"...\" button -> Sleep Timer</b>.",
+          "<span class=\"type-new\">Spectrum Refresh Interval</span>: Added a configurable spectrum refresh interval (range 10–64 ms). The old \"Refresh Speed\" option has been removed."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Playback Progress Bar</span>: The playback progress bar now features rounded corners.",
+          "<span class=\"type-opt\">Performance Improvements</span>: Avalonia has been upgraded to 12.1.2, bringing better performance."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.10.0",
     "date": "2026-07-28",
     "tag": "Alpha",
@@ -98,34 +120,6 @@ window.CHANGELOG_PAGES[2] = [
           "Fixed an issue where <span class=\"type-fix\">the jump bar sometimes navigated to an unexpected position</span>.",
           "Fixed an issue where <span class=\"type-fix\">scanning a CUE file would still trigger an update even when its content had not changed</span>.",
           "Fixed an issue <span class=\"type-fix\">on Windows where the application did not exit when closing the main window via the taskbar</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.0.0",
-    "date": "2026-06-27",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Jump Bar</span>: A character jump bar has been added to the left side of the track, album, and artist pages. Click any character to automatically scroll the list to the first track starting with that letter. <b>Note: This panel is only shown when the primary sorting criterion is set to \"Title\" or \"Name\"</b>.",
-          "<span class=\"type-new\">Dynamic Gradient Background Color Transition</span>: Added color transition animation to the dynamic gradient background."
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Russian Text Improvements</span>: Contributed by @DanRug08 (MAYHEM), many thanks."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the process did not terminate properly when exiting the application</span>.",
-          "Fixed an issue where <span class=\"type-fix\">track covers flickered when switching windows</span>."
         ]
       }
     ]

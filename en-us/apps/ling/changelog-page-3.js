@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.12.0.0",
+    "date": "2026-06-27",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Jump Bar</span>: A character jump bar has been added to the left side of the track, album, and artist pages. Click any character to automatically scroll the list to the first track starting with that letter. <b>Note: This panel is only shown when the primary sorting criterion is set to \"Title\" or \"Name\"</b>.",
+          "<span class=\"type-new\">Dynamic Gradient Background Color Transition</span>: Added color transition animation to the dynamic gradient background."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Russian Text Improvements</span>: Contributed by @DanRug08 (MAYHEM), many thanks."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the process did not terminate properly when exiting the application</span>.",
+          "Fixed an issue where <span class=\"type-fix\">track covers flickered when switching windows</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.11.2.0",
     "date": "2026-06-22",
     "tag": "Alpha",
@@ -104,31 +132,6 @@ window.CHANGELOG_PAGES[3] = [
           "Fixed an issue where <span class=\"type-fix\">edited albums or artists could not be removed even when they met the removal conditions</span>.",
           "Fixed an issue where <span class=\"type-fix\">incorrect scan results were displayed after dragging folders or multiple track files onto the track or playlist page</span>.",
           "Fixed an issue where <span class=\"type-fix\">view settings were not correctly applied when switching to the album page for the first time</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.8.1.0",
-    "date": "2026-05-24",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-new\">Mini Window Playlist Operations</span>: Added a playlist operation page for the mini window. Click the playlist button in the bottom-right corner to open it. Supports switching tracks, removing tracks from the queue, clearing the queue, and more.",
-          "<span class=\"type-new\">Mini Window Settings</span>: Added a settings page for the mini window. Click the settings button on the far right to open it. Currently includes the following settings: theme (synced with global settings), overlay opacity, and whether to show the mini window icon in the taskbar.",
-          "<span class=\"type-new\">Removed Corner Radius from Mini Window Track Cover</span>: Removed the corner radius effect from the track cover in the mini window to avoid black or white areas appearing at the window corners.",
-          "<span class=\"type-new\">Default Value Adjustment for Duration Filter</span>: The default value for the duration filter setting has been adjusted to 0 to avoid affecting scan results when scanning tracks for the first time."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">content overflowed on the album details page when the description text was too long</span>.",
-          "Fixed an issue where <span class=\"type-fix\">content overflowed and the page could not scroll on the artist details page when the description text was too long</span>.",
-          "Fixed an issue where <span class=\"type-fix\">an image could not be set for an artist when the artist name contained special characters</span>."
         ]
       }
     ]

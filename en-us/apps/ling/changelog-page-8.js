@@ -2,6 +2,28 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.1.1.0",
+    "date": "2026/05/01",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "The \"\"No Lyrics\"\" text now applies track cover's main color."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed <span class=\"type-fix\">incorrect play/pause button state in tray menu</span>.",
+          "Fixed an issue where <span class=\"type-fix\">tray menu could not be closed after opening</span>.",
+          "Fixed an issue where <span class=\"type-fix\">clicking a song in the list would always play the first song when the action was set to replace the current queue</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.0.1.0",
     "date": "2026/05/01",
     "tag": "Alpha",

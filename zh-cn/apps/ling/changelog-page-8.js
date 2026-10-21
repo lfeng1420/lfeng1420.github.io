@@ -2,6 +2,28 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.1.1.0",
+    "date": "2026/05/01",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "“暂无歌词”提示应用歌曲封面主色"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">托盘菜单播放/暂停按钮状态不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">托盘菜单开启后无法关闭</span> 的问题",
+          "修复了 <span class=\"type-fix\">在歌曲点击动作为替换当前队列的情况下点击列表中的歌曲时必定播放第一首歌曲</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.0.1.0",
     "date": "2026/05/01",
     "tag": "Alpha",
