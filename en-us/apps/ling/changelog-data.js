@@ -2,53 +2,69 @@
 // To add a new version: add a new entry at the beginning of the array, then regenerate paginated files:
 //   node tools/split-changelog.js en-us/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
-    {
-      "version": "0.15.2.0",
-      "date": "2026-10-12",
-      "tag": "Alpha",
-      "tagClass": "tag-alpha",
-      "categories": [
-        {
-          "type": "opt",
-          "items": [
-            "Removed the restriction that the album cover must be modified before using \"Apply album cover to all tracks\"",
-            "Text font weight is now consistently DemiBold, and text input styles have been adjusted"
-          ]
-        },
-        {
-          "type": "fix",
-          "items": [
-            "Fixed an issue where <span class=\"type-fix\">clicking \"Add to Queue\" in the album context menu incorrectly replaced the entire playing queue</span>.",
-            "Fixed an issue where <span class=\"type-fix\">playlists were lost after renaming</span>.",
-            "Fixed an issue where <span class=\"type-fix\">the \"New Playlist\" dialog was incorrectly shown when renaming a playlist</span>.",
-            "Fixed an issue where <span class=\"type-fix\">the file picker dialog occasionally did not appear when exporting a playlist list or files</span>.",
-            "Fixed an issue where <span class=\"type-fix\">sorting folders and playlists by title produced incorrect results</span>.",
-            "Fixed an issue where <span class=\"type-fix\">right-clicking a folder to play or add to a playlist retrieved an incorrect track list when the hierarchical view was enabled</span>.",
-            "Fixed an issue where <span class=\"type-fix\">the UI did not update after editing track or album metadata</span>.",
-            "Fixed an issue where <span class=\"type-fix\">desktop lyrics still showed the previous track's lyrics when switching to a track without lyrics</span>.",
-            "Fixed an issue on Android where <span class=\"type-fix\">sliders were too thin to tap easily</span>.",
-            "Fixed an issue where <span class=\"type-fix\">the cursor flickered when hovering over the playback progress bar</span>.",
-            "Fixed an issue where <span class=\"type-fix\">the UI size of each option changed when switching between preamp attenuation modes</span>."
-          ]
-        }
-      ]
-    },
-    {
-      "version": "0.15.0.0",
-      "date": "2026-10-11",
-      "tag": "Alpha",
-      "tagClass": "tag-alpha",
-      "categories": [
-        {
-          "type": "new",
-          "items": [
-            "<span class=\"type-new\">Fade in/out</span>: Supports Play / Pause, Seek, and Manual track change, with separate fade-in and fade-out durations for each",
-            "<span class=\"type-new\">Replay Gain</span>: Automatically adjusts playback volume based on Replay Gain tags embedded in the audio files, and can also automatically apply track gain (REPLAYGAIN_TRACK_GAIN) or album gain (REPLAYGAIN_ALBUM_GAIN) according to the playing queue"
-          ]
-        }
-      ]
-    },
-    {
+  {
+    "version": "0.16.0.0",
+    "date": "2026-10-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Lyrics source</span>: Lyrics sources (Embedded, File and Network) can be enabled or disabled, and the lookup order can be adjusted by dragging, e.g. to search network lyrics first",
+          "<span class=\"type-new\">Network lyrics APIs</span>: Three built-in network lyrics APIs (KuGou, NetEase Cloud Music and LRCLIB), with support for adding and testing your own network APIs",
+          "<span class=\"type-new\">Lyrics search</span>: Click the \"Lyrics search\" button under the more options on the far right of the playback controls to trigger a network lyrics search. Enabled APIs will be used to search for lyrics, and the results are shown in a dialog"
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.15.2.0",
+    "date": "2026-10-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "Removed the restriction that the album cover must be modified before using \"Apply album cover to all tracks\"",
+          "Text font weight is now consistently DemiBold, and text input styles have been adjusted"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">clicking \"Add to Queue\" in the album context menu incorrectly replaced the entire playing queue</span>.",
+          "Fixed an issue where <span class=\"type-fix\">playlists were lost after renaming</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the \"New Playlist\" dialog was incorrectly shown when renaming a playlist</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the file picker dialog occasionally did not appear when exporting a playlist list or files</span>.",
+          "Fixed an issue where <span class=\"type-fix\">sorting folders and playlists by title produced incorrect results</span>.",
+          "Fixed an issue where <span class=\"type-fix\">right-clicking a folder to play or add to a playlist retrieved an incorrect track list when the hierarchical view was enabled</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the UI did not update after editing track or album metadata</span>.",
+          "Fixed an issue where <span class=\"type-fix\">desktop lyrics still showed the previous track's lyrics when switching to a track without lyrics</span>.",
+          "Fixed an issue on Android where <span class=\"type-fix\">sliders were too thin to tap easily</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the cursor flickered when hovering over the playback progress bar</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the UI size of each option changed when switching between preamp attenuation modes</span>."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.15.0.0",
+    "date": "2026-10-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Fade in/out</span>: Supports Play / Pause, Seek, and Manual track change, with separate fade-in and fade-out durations for each",
+          "<span class=\"type-new\">Replay Gain</span>: Automatically adjusts playback volume based on Replay Gain tags embedded in the audio files, and can also automatically apply track gain (REPLAYGAIN_TRACK_GAIN) or album gain (REPLAYGAIN_ALBUM_GAIN) according to the playing queue"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.14.3.0",
     "date": "2026-10-07",
     "tag": "Alpha",

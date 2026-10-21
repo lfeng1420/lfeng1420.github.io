@@ -3,6 +3,22 @@
 //   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.16.0.0",
+    "date": "2026-10-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">歌词源</span>：支持启用或禁用歌词源（包括内嵌、文件、网络），并可拖拽调整查找顺序，例如优先查找网络歌词",
+          "<span class=\"type-new\">网络歌词接口</span>：内置酷狗音乐、网易云音乐和 LRCLIB 三个网络歌词接口，支持自由添加其他网络接口并进行测试",
+          "<span class=\"type-new\">网络歌词搜索</span>：点击播放控件最右侧更多选项中的“歌词搜索”按钮即可触发网络歌词搜索，将调用已启用的接口搜索歌词，搜索结果以对话框形式呈现"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.15.2.0",
     "date": "2026-10-12",
     "tag": "Alpha",
