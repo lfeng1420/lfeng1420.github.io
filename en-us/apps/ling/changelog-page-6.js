@@ -2,6 +2,24 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.7.0",
+    "date": "2026-05-14",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the track information below the cover art was misaligned when the cover art was not square</span>.",
+          "Fixed an issue where <span class=\"type-fix\">empty albums (i.e., albums not associated with any tracks) could not be deleted</span>.",
+          "Fixed an issue where <span class=\"type-fix\">removing a specific track would incorrectly remove other track</span>.",
+          "Fixed an issue where <span class=\"type-fix\">dragging a folder that had already been added onto the track page would cause that folder to be removed</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the track count on the right side of the track page title did not update after removing a track</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.6.0",
     "date": "2026-05-13",
     "tag": "Alpha",
@@ -79,29 +97,6 @@ window.CHANGELOG_PAGES[6] = [
         "items": [
           "Fixed an issue where <span class=\"type-fix\">the popup notification displayed 0 as the song count when adding songs to the playback queue</span>.",
           "Fixed an issue where <span class=\"type-fix\">the outer visual effect of the album cover was being clipped in the playback interface</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.4.0.0",
-    "date": "2026-05-07",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Folder drag-and-drop support in the tracks page</span>: You can now drag a folder containing tracks directly from File Explorer onto the tracks page to add the folder and automatically start scanning for tracks.",
-          "<span class=\"type-new\">Scan progress dialog</span>: Scan progress is now displayed as a standalone dialog window."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the button spacing in the top-right corner of the playback queue panel was too wide</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the text and description of the \"Image Corner Strength\" option did not appear when using English language</span>.",
-          "Fixed an issue where <span class=\"type-fix\">text in the plugin management page and its settings page did not update after switching languages</span>."
         ]
       }
     ]

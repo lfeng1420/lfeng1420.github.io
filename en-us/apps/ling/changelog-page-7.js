@@ -2,6 +2,29 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.4.0.0",
+    "date": "2026-05-07",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Folder drag-and-drop support in the tracks page</span>: You can now drag a folder containing tracks directly from File Explorer onto the tracks page to add the folder and automatically start scanning for tracks.",
+          "<span class=\"type-new\">Scan progress dialog</span>: Scan progress is now displayed as a standalone dialog window."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the button spacing in the top-right corner of the playback queue panel was too wide</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the text and description of the \"Image Corner Strength\" option did not appear when using English language</span>.",
+          "Fixed an issue where <span class=\"type-fix\">text in the plugin management page and its settings page did not update after switching languages</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.4.0",
     "date": "2026-05-07",
     "tag": "Alpha",
@@ -76,37 +99,6 @@ window.CHANGELOG_PAGES[7] = [
         "type": "fix",
         "items": [
           "Fixed an issue where <span class=\"type-fix\">Steam Rich Presence would not display according to the format set in the Steam plugin when launching the application</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.2.1.0",
-    "date": "2026-05-02",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "Album list / album details page: <span class=\"type-new\">Added option to delete album</span>，only available when the album contains no songs.",
-          "Artist details page <span class=\"type-new\">Added option to delete artist</span>，only available when the artist has no albums and no songs."
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "Steam plugin is now <span class=\"type-opt\">enabled by default</span>.",
-          "<span class=\"type-opt\">Tracks shorter than 60 seconds no longer count toward achievements</span> — we want achievements to represent real listening habits."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed <span class=\"type-fix\">a crash on startup caused by strict disc/track number non-overlap requirements when multiple identical albums with the exact same artist list existed</span>.(thanks to <b>@FunkeymonkeyTTR</b>)",
-          "Fixed an issue where <span class=\"type-fix\">tracks excluded by the duration filter could not be re-added after adjusting the filter setting and rescanning</span>.(thanks to <b>@Nomstuff</b>)",
-          "Fixed an issue where <span class=\"type-fix\">artist/album artist properties could contain duplicate identical names</span>.",
-          "Fixed an issue where <span class=\"type-fix\">old cover files were not deleted when updating album or artist artwork</span>."
         ]
       }
     ]

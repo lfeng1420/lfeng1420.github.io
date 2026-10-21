@@ -2,6 +2,24 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.7.0",
+    "date": "2026-05-14",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">当歌曲封面不是正方形时，下方歌曲信息与封面未对齐</span> 的问题",
+          "修复了 <span class=\"type-fix\">空专辑（即没有关联任何歌曲的专辑）无法删除</span> 的问题",
+          "修复了 <span class=\"type-fix\">移除指定歌曲时错误移除了其他歌曲</span> 的问题",
+          "修复了 <span class=\"type-fix\">当已添加某个文件夹后，再次将该文件夹拖拽到歌曲页面会导致该文件夹被移除</span> 的问题",
+          "修复了 <span class=\"type-fix\">移除歌曲后，歌曲页面标题右侧的歌曲数量未及时更新</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.6.0",
     "date": "2026-05-13",
     "tag": "Alpha",
@@ -78,29 +96,6 @@ window.CHANGELOG_PAGES[6] = [
         "items": [
           "修复了 <span class=\"type-fix\">向播放队列添加歌曲时，弹出的提示中歌曲数量显示为 0</span> 的问题",
           "修复了 <span class=\"type-fix\">播放界面中封面图片外层视觉效果被意外裁剪</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.4.0.0",
-    "date": "2026-05-07",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">歌曲页面文件夹拖拽支持</span>：现在可以直接从文件资源管理器中拖拽包含歌曲的文件夹到歌曲页面，文件夹将被添加并自动开始扫描歌曲",
-          "<span class=\"type-new\">扫描进度对话框</span>：扫描进度现在以独立的对话框形式展示"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">播放队列面板右上角按钮间距过大</span> 的问题",
-          "修复了 <span class=\"type-fix\">英文环境下“图片圆角强度”选项的文本和描述不显示</span> 的问题",
-          "修复了 <span class=\"type-fix\">切换语言后插件管理页面及其设置页面上的文本没有同步切换</span> 的问题"
         ]
       }
     ]

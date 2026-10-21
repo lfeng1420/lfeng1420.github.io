@@ -2,6 +2,46 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.9.0.0",
+    "date": "2026-06-05",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Track Metadata Editing</span>: Supports modifying track cover, title, artist, and year. Changes to track metadata will be written to the track file by default. Note that editing metadata for tracks from CUE files is currently not supported. Path: Right-click a track -> Select <b>Edit Metadata</b>",
+          "<span class=\"type-new\">Album Metadata Editing</span>: Supports modifying album title, artist, and year. You can choose to apply album title, artist, year, and cover to all tracks in the album (will be written to corresponding track files). Note that editing album metadata is not supported when the album contains tracks from CUE files. Path: Right-click an album -> Select <b>Edit Metadata</b>",
+          "<span class=\"type-new\">Full Scan Option</span>: When enabled, rescans all tracks to ensure track data is up to date. Path: <b>Settings -> Library -> Full scan</b>"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Included Folders</span>: When adding a new folder, if any subfolders of that folder already exist in the list, those subfolders are automatically removed.",
+          "<span class=\"type-opt\">CUE File Parsing</span>: Removes possible double quotes attached to the genre field.",
+          "<span class=\"type-opt\">Page Navigation</span>: After clicking a folder on the folder page, the page indicator stays on the folder menu instead of switching to the track menu; similar adjustments have been made for the playlist page.",
+          "<span class=\"type-opt\">Thumbnail Generation</span>: Generates thumbnails with a uniform height of 200 pixels. No longer generates different thumbnail sizes for tracks, albums, and artists, reducing disk space usage.",
+          "<span class=\"type-opt\">Artist/Genre Parsing</span>: Intelligently recognizes and preserves manually modified track artist, album artist, and genre information, preventing them from being overwritten by original tags."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the Add Playlist dialog was too small</span>.",
+          "Fixed <span class=\"type-fix\">a potential crash when right-clicking on the album page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">clicking the \"Library\" button on the track page with no tracks present would incorrectly select the \"Settings\" menu after navigating</span>.",
+          "Fixed an issue where <span class=\"type-fix\">saving after deleting an artist while editing album metadata would incorrectly delete that artist</span>.",
+          "Fixed an issue where <span class=\"type-fix\">rescanning failed to update track information after modifying track metadata externally</span>.",
+          "Fixed an issue where <span class=\"type-fix\">in some cases, audio files associated with CUE files were incorrectly added to the library as regular track files</span>.",
+          "Fixed an issue where <span class=\"type-fix\">edited albums or artists could not be removed even when they met the removal conditions</span>.",
+          "Fixed an issue where <span class=\"type-fix\">incorrect scan results were displayed after dragging folders or multiple track files onto the track or playlist page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">view settings were not correctly applied when switching to the album page for the first time</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.8.1.0",
     "date": "2026-05-24",
     "tag": "Alpha",
@@ -77,30 +117,6 @@ window.CHANGELOG_PAGES[4] = [
           "Fixed an issue where <span class=\"type-fix\">tracks that no longer existed were displayed incorrectly in the statistics page track list</span>.",
           "Fixed an issue where <span class=\"type-fix\">the menu icon for \"\"Add to next\"\" was displaying incorrectly</span>.",
           "Fixed an issue where <span class=\"type-fix\">generated thumbnails could not be read when the album name or artist name contained characters not supported in filenames</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.4.0",
-    "date": "2026-05-19",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Track cover art now supports searching up to 3 levels of parent folders</span>. When no cover image is found in the track's folder, the player will search upward through parent directories for up to 3 levels"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">rapidly changing search keywords on the search page could display results from the previous keyword</span>.",
-          "Fixed an issue where <span class=\"type-fix\">entering a keyword that would never return any results still displayed all tracks on the search page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the start offset of tracks parsed from CUE files was incorrect in some cases</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the duration displayed incorrectly when playing a track corresponding to a CUE file</span>.",
-          "Fixed an issue where <span class=\"type-fix\">playing a folder did not include tracks from subfolders</span>."
         ]
       }
     ]

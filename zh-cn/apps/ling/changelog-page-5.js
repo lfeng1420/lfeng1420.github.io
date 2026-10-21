@@ -2,6 +2,30 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.4.0",
+    "date": "2026-05-19",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">歌曲封面图片现在支持向上查找最多3层父级文件夹</span>：当歌曲所在文件夹中没有封面图片时，将依次向上级目录查找，最多查找3层"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">在搜索页面短时间内多次更改搜索关键词时，可能显示的是上一个关键词的搜索结果</span> 的问题",
+          "修复了 <span class=\"type-fix\">在搜索页面输入必定无法搜到结果的关键词时仍然显示了全部歌曲</span> 的问题",
+          "修复了 <span class=\"type-fix\">在某些情况下CUE文件解析出的歌曲起始偏移量错误</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放 CUE 文件对应的歌曲时，时长显示不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放文件夹时，未包含子文件夹中歌曲</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.2.0",
     "date": "2026-05-18",
     "tag": "Alpha",
@@ -73,24 +97,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "修复了 <span class=\"type-fix\">当设置文件无效时应用无法启动</span> 的问题",
           "修复了 <span class=\"type-fix\">在某些情况下从歌曲封面提取的主色调依然为接近纯白或纯黑色</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.7.0",
-    "date": "2026-05-14",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">当歌曲封面不是正方形时，下方歌曲信息与封面未对齐</span> 的问题",
-          "修复了 <span class=\"type-fix\">空专辑（即没有关联任何歌曲的专辑）无法删除</span> 的问题",
-          "修复了 <span class=\"type-fix\">移除指定歌曲时错误移除了其他歌曲</span> 的问题",
-          "修复了 <span class=\"type-fix\">当已添加某个文件夹后，再次将该文件夹拖拽到歌曲页面会导致该文件夹被移除</span> 的问题",
-          "修复了 <span class=\"type-fix\">移除歌曲后，歌曲页面标题右侧的歌曲数量未及时更新</span> 的问题"
         ]
       }
     ]
