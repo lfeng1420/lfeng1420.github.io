@@ -2,6 +2,30 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.4.0",
+    "date": "2026-05-19",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Track cover art now supports searching up to 3 levels of parent folders</span>. When no cover image is found in the track's folder, the player will search upward through parent directories for up to 3 levels"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">rapidly changing search keywords on the search page could display results from the previous keyword</span>.",
+          "Fixed an issue where <span class=\"type-fix\">entering a keyword that would never return any results still displayed all tracks on the search page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the start offset of tracks parsed from CUE files was incorrect in some cases</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the duration displayed incorrectly when playing a track corresponding to a CUE file</span>.",
+          "Fixed an issue where <span class=\"type-fix\">playing a folder did not include tracks from subfolders</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.2.0",
     "date": "2026-05-18",
     "tag": "Alpha",
@@ -73,24 +97,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "Fixed an issue where <span class=\"type-fix\">the application failed to start when the settings file was invalid</span>.",
           "Fixed an issue where <span class=\"type-fix\">in some cases the dominant color extracted from a track's cover art was still too close to pure white or pure black</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.7.0",
-    "date": "2026-05-14",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the track information below the cover art was misaligned when the cover art was not square</span>.",
-          "Fixed an issue where <span class=\"type-fix\">empty albums (i.e., albums not associated with any tracks) could not be deleted</span>.",
-          "Fixed an issue where <span class=\"type-fix\">removing a specific track would incorrectly remove other track</span>.",
-          "Fixed an issue where <span class=\"type-fix\">dragging a folder that had already been added onto the track page would cause that folder to be removed</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the track count on the right side of the track page title did not update after removing a track</span>."
         ]
       }
     ]

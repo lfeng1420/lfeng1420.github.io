@@ -2,6 +2,26 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.13.2.0",
+    "date": "2026-09-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">track cover art and track info might not be displayed on the now playing page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">highlighted lyrics lines were not vertically centered on the now playing page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">track quality badges (HQ/SQ/HR) might not be displayed on the statistics page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">clicking the artist did not close the playing page when there was only one artist or album artist</span>.",
+          "Fixed an issue where <span class=\"type-fix\">after navigating to the album details or artist details page, it was not possible to return to the list page by clicking the album or artist menu on the left</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the playing page followed the mouse after clicking on the lyrics</span>.",
+          "Fixed an issue where <span class=\"type-fix\">desktop lyrics did not work</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.13.0.0",
     "date": "2026-09-08",
     "tag": "Alpha",
@@ -90,36 +110,6 @@ window.CHANGELOG_PAGES[2] = [
         "items": [
           "Fixed an issue where <span class=\"type-fix\">view toggle button icons might not display correctly when first switching to the album/artist page after startup</span>.",
           "Fixed an issue where <span class=\"type-fix\">the dynamic spectrum displayed abnormally in some cases</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.2.0",
-    "date": "2026-07-01",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Jump Bar Opacity</span>: Added an opacity setting for the jump bar (adapts to light/dark themes). Path: <b>Settings -> UI -> Jump bar overlay opacity</b>."
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Jump Bar</span>: Removed the border; when jumping, the first entry corresponding to the target character will now scroll to the top of the list by default.",
-          "<span class=\"type-opt\">List Scrolling</span>: Improved the smoothness of list scrolling."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the jump bar was clipped when the window size was too small</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the jump bar sometimes navigated to an unexpected position</span>.",
-          "Fixed an issue where <span class=\"type-fix\">scanning a CUE file would still trigger an update even when its content had not changed</span>.",
-          "Fixed an issue <span class=\"type-fix\">on Windows where the application did not exit when closing the main window via the taskbar</span>."
         ]
       }
     ]

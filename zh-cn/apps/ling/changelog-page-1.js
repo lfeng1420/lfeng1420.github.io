@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.16.0.0",
+    "date": "2026-10-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">歌词源</span>：支持启用或禁用歌词源（包括内嵌、文件、网络），并可拖拽调整查找顺序，例如优先查找网络歌词",
+          "<span class=\"type-new\">网络歌词接口</span>：内置酷狗音乐、网易云音乐和 LRCLIB 三个网络歌词接口，支持自由添加其他网络接口并进行测试",
+          "<span class=\"type-new\">网络歌词搜索</span>：点击播放控件最右侧更多选项中的“歌词搜索”按钮即可触发网络歌词搜索，将调用已启用的接口搜索歌词，搜索结果以对话框形式呈现"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.15.2.0",
     "date": "2026-10-12",
     "tag": "Alpha",
@@ -104,26 +120,6 @@ window.CHANGELOG_PAGES[1] = [
         "items": [
           "<span class=\"type-opt\">设置页面调整</span>：为所有设置页面添加宽度限制，与 Windows 设置页面保持一致",
           "<span class=\"type-opt\">Android 播放队列</span>：播放队列不再以底部动作条形式展现，而是移入播放页面，可通过右滑切换至播放队列，或点击播放队列按钮打开"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.13.2.0",
-    "date": "2026-09-11",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">正在播放页面中歌曲封面和歌曲信息可能不显示</span> 的问题",
-          "修复了 <span class=\"type-fix\">正在播放页面中歌词行高亮时未垂直居中</span> 的问题",
-          "修复了 <span class=\"type-fix\">统计页面中歌曲质量标识（HQ/SQ/HR）可能不显示</span> 的问题",
-          "修复了 <span class=\"type-fix\">当艺术家或专辑艺术家只有一位时，点击艺术家不会关闭播放页面</span> 的问题",
-          "修复了 <span class=\"type-fix\">跳转至专辑详情或艺术家详情页面后，无法通过点击左侧专辑或艺术家菜单返回列表页</span> 的问题",
-          "修复了 <span class=\"type-fix\">点击歌词后播放页面跟随鼠标移动</span> 的问题",
-          "修复了 <span class=\"type-fix\">桌面歌词功能失效</span> 的问题"
         ]
       }
     ]

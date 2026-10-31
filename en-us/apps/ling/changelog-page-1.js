@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.16.0.0",
+    "date": "2026-10-22",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Lyrics source</span>: Lyrics sources (Embedded, File and Network) can be enabled or disabled, and the lookup order can be adjusted by dragging, e.g. to search network lyrics first",
+          "<span class=\"type-new\">Network lyrics APIs</span>: Three built-in network lyrics APIs (KuGou, NetEase Cloud Music and LRCLIB), with support for adding and testing your own network APIs",
+          "<span class=\"type-new\">Lyrics search</span>: Click the \"Lyrics search\" button under the more options on the far right of the playback controls to trigger a network lyrics search. Enabled APIs will be used to search for lyrics, and the results are shown in a dialog"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.15.2.0",
     "date": "2026-10-12",
     "tag": "Alpha",
@@ -119,26 +135,6 @@ window.CHANGELOG_PAGES[1] = [
         "items": [
           "<span class=\"type-opt\">Settings Page Adjustments</span>: Added width limits to all settings pages to align with the Windows settings page.",
           "<span class=\"type-opt\">Android Playing Queue</span>: The playing queue is no longer shown as a Bottom Sheet but has been moved into the playing page. Switch to the playing queue by swiping right, or tap the playing queue button."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.13.2.0",
-    "date": "2026-09-11",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">track cover art and track info might not be displayed on the now playing page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">highlighted lyrics lines were not vertically centered on the now playing page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">track quality badges (HQ/SQ/HR) might not be displayed on the statistics page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">clicking the artist did not close the playing page when there was only one artist or album artist</span>.",
-          "Fixed an issue where <span class=\"type-fix\">after navigating to the album details or artist details page, it was not possible to return to the list page by clicking the album or artist menu on the left</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the playing page followed the mouse after clicking on the lyrics</span>.",
-          "Fixed an issue where <span class=\"type-fix\">desktop lyrics did not work</span>."
         ]
       }
     ]

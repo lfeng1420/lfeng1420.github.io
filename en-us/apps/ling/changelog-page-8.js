@@ -2,6 +2,37 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.2.1.0",
+    "date": "2026-05-02",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "Album list / album details page: <span class=\"type-new\">Added option to delete album</span>，only available when the album contains no songs.",
+          "Artist details page <span class=\"type-new\">Added option to delete artist</span>，only available when the artist has no albums and no songs."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "Steam plugin is now <span class=\"type-opt\">enabled by default</span>.",
+          "<span class=\"type-opt\">Tracks shorter than 60 seconds no longer count toward achievements</span> — we want achievements to represent real listening habits."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed <span class=\"type-fix\">a crash on startup caused by strict disc/track number non-overlap requirements when multiple identical albums with the exact same artist list existed</span>.(thanks to <b>@FunkeymonkeyTTR</b>)",
+          "Fixed an issue where <span class=\"type-fix\">tracks excluded by the duration filter could not be re-added after adjusting the filter setting and rescanning</span>.(thanks to <b>@Nomstuff</b>)",
+          "Fixed an issue where <span class=\"type-fix\">artist/album artist properties could contain duplicate identical names</span>.",
+          "Fixed an issue where <span class=\"type-fix\">old cover files were not deleted when updating album or artist artwork</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.1.1.0",
     "date": "2026/05/01",
     "tag": "Alpha",

@@ -2,6 +2,36 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.12.2.0",
+    "date": "2026-07-01",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">跳转栏不透明度</span>：新增跳转栏不透明度设置项（适配浅色/深色主题），路径：<b>设置 -> 用户界面 -> 跳转栏叠加层不透明度</b>"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">跳转栏</span>：移除了边框；跳转时目标字符对应的首个条目将默认显示在列表顶部",
+          "<span class=\"type-opt\">列表滚动</span>：提升了列表滚动的流畅度"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">跳转栏在窗口尺寸较小时被裁剪</span> 的问题",
+          "修复了 <span class=\"type-fix\">跳转栏在某些情况下跳转位置不符合预期</span> 的问题",
+          "修复了 <span class=\"type-fix\">CUE 文件内容未发生变化时扫描仍会产生更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">Windows 下在任务栏上关闭主窗口时应用没有退出</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.0.0",
     "date": "2026-06-27",
     "tag": "Alpha",
@@ -91,46 +121,6 @@ window.CHANGELOG_PAGES[3] = [
           "修复了 <span class=\"type-fix\">播放队列点击歌曲后自动滚动错误导致当前播放歌曲不可见</span> 的问题",
           "修复了 <span class=\"type-fix\">歌曲文件加载失败时仍然显示上一首歌曲封面和歌词</span> 的问题",
           "修复了 <span class=\"type-fix\">保存歌曲元数据时原有歌词丢失</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.9.0.0",
-    "date": "2026-06-05",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">歌曲元数据编辑</span>：支持修改歌曲的封面、标题、艺术家和年份等信息。对歌曲元数据的修改默认将同步写入歌曲文件中，需要注意目前不支持编辑来自 CUE 文件的歌曲元数据。路径：右键点击歌曲 -> 选择<b>编辑元数据</b>",
-          "<span class=\"type-new\">专辑元数据编辑</span>：支持修改专辑的标题、艺术家和年份等信息。可选择将专辑标题、艺术家、年份和封面同步应用到专辑内的所有歌曲（将同步写入对应的歌曲文件），需要注意当专辑内包含来自 CUE 文件的歌曲时不支持编辑专辑元数据。路径：右键点击专辑 -> 选择<b>编辑元数据</b>",
-          "<span class=\"type-new\">全量扫描选项</span>：开启后将重新扫描所有歌曲，以确保歌曲数据为最新状态。路径：<b>设置 -> 音乐库 -> 全量扫描</b>"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">包含文件夹</span>：添加新文件夹时，如果列表中已存在该文件夹的子文件夹，则自动移除这些子文件夹",
-          "<span class=\"type-opt\">CUE 文件解析</span>：移除了流派字段中可能附带的双引号",
-          "<span class=\"type-opt\">页面跳转</span>：在文件夹页面点击文件夹后，页面指示器将停留在文件夹菜单而非歌曲菜单；歌单页面也做了相应的调整",
-          "<span class=\"type-opt\">缩略图生成</span>：统一生成高度为 200 像素的缩略图，不再为歌曲、专辑和艺术家分别生成不同尺寸的缩略图，以减少磁盘空间占用",
-          "<span class=\"type-opt\">艺术家/流派解析</span>：智能识别并保留手动修改的歌曲艺术家、专辑艺术家及流派信息，不再被原始标签覆盖"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">添加歌单对话框过小</span> 的问题",
-          "修复了 <span class=\"type-fix\">专辑页面右键菜单可能引发崩溃</span> 的问题",
-          "修复了 <span class=\"type-fix\">没有歌曲时，点击歌曲页面的<b>曲库</b>按钮跳转后未正确选中<b>设置</b>菜单</span> 的问题",
-          "修复了 <span class=\"type-fix\">编辑专辑元数据时，删除艺术家后保存导致该艺术家被错误删除</span> 的问题",
-          "修复了 <span class=\"type-fix\">在外部修改歌曲元数据后，重新扫描无法更新歌曲信息</span> 的问题",
-          "修复了 <span class=\"type-fix\">在某些情况下，CUE 文件关联的音频文件被意外当作普通歌曲文件添加到曲库</span> 的问题",
-          "修复了 <span class=\"type-fix\">已编辑的专辑或艺术家在符合移除条件时仍无法被移除</span> 的问题",
-          "修复了 <span class=\"type-fix\">拖拽文件夹或多个歌曲文件到歌曲或歌单页面进行扫描后显示的扫描结果不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">首次切换到专辑页面时视图设置未正确应用</span> 的问题"
         ]
       }
     ]

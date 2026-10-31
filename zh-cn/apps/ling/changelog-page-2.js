@@ -2,6 +2,26 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.13.2.0",
+    "date": "2026-09-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">正在播放页面中歌曲封面和歌曲信息可能不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">正在播放页面中歌词行高亮时未垂直居中</span> 的问题",
+          "修复了 <span class=\"type-fix\">统计页面中歌曲质量标识（HQ/SQ/HR）可能不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">当艺术家或专辑艺术家只有一位时，点击艺术家不会关闭播放页面</span> 的问题",
+          "修复了 <span class=\"type-fix\">跳转至专辑详情或艺术家详情页面后，无法通过点击左侧专辑或艺术家菜单返回列表页</span> 的问题",
+          "修复了 <span class=\"type-fix\">点击歌词后播放页面跟随鼠标移动</span> 的问题",
+          "修复了 <span class=\"type-fix\">桌面歌词功能失效</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.13.0.0",
     "date": "2026-09-08",
     "tag": "Alpha",
@@ -90,36 +110,6 @@ window.CHANGELOG_PAGES[2] = [
         "items": [
           "修复了 <span class=\"type-fix\">启动后首次切换到专辑/艺术家页面时视图切换按钮图标可能显示不正确</span> 的问题",
           "修复了 <span class=\"type-fix\">在某些情况下动态频谱显示异常</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.2.0",
-    "date": "2026-07-01",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">跳转栏不透明度</span>：新增跳转栏不透明度设置项（适配浅色/深色主题），路径：<b>设置 -> 用户界面 -> 跳转栏叠加层不透明度</b>"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">跳转栏</span>：移除了边框；跳转时目标字符对应的首个条目将默认显示在列表顶部",
-          "<span class=\"type-opt\">列表滚动</span>：提升了列表滚动的流畅度"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">跳转栏在窗口尺寸较小时被裁剪</span> 的问题",
-          "修复了 <span class=\"type-fix\">跳转栏在某些情况下跳转位置不符合预期</span> 的问题",
-          "修复了 <span class=\"type-fix\">CUE 文件内容未发生变化时扫描仍会产生更新</span> 的问题",
-          "修复了 <span class=\"type-fix\">Windows 下在任务栏上关闭主窗口时应用没有退出</span> 的问题"
         ]
       }
     ]

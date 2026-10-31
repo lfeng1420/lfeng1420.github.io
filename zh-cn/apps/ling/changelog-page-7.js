@@ -2,6 +2,29 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.4.0.0",
+    "date": "2026-05-07",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">歌曲页面文件夹拖拽支持</span>：现在可以直接从文件资源管理器中拖拽包含歌曲的文件夹到歌曲页面，文件夹将被添加并自动开始扫描歌曲",
+          "<span class=\"type-new\">扫描进度对话框</span>：扫描进度现在以独立的对话框形式展示"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">播放队列面板右上角按钮间距过大</span> 的问题",
+          "修复了 <span class=\"type-fix\">英文环境下“图片圆角强度”选项的文本和描述不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">切换语言后插件管理页面及其设置页面上的文本没有同步切换</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.4.0",
     "date": "2026-05-07",
     "tag": "Alpha",
@@ -76,37 +99,6 @@ window.CHANGELOG_PAGES[7] = [
         "type": "fix",
         "items": [
           "修复了 <span class=\"type-fix\">启动应用时，Steam 丰富状态未按插件中设置的格式正确显示</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.2.1.0",
-    "date": "2026-05-02",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "新增 <span class=\"type-new\">专辑列表/专辑详情页删除专辑选项</span>，仅当专辑内无任何歌曲时可用",
-          "新增 <span class=\"type-new\">艺术家详情页删除艺术家选项</span>，仅当艺术家没有任何专辑和歌曲时可用"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "Steam 插件现为<span class=\"type-opt\">默认启用</span>状态",
-          "<span class=\"type-opt\">时长不足 60 秒的歌曲不再计入成就统计</span>——我们希望成就代表真实的听歌习惯"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">因专辑解析流程对碟号/曲目号有严格不重叠要求，导致多张同名专辑且艺术家列表完全相同时启动崩溃</span> 问题（感谢 <b>@FunkeymonkeyTTR</b>）",
-          "修复了 <span class=\"type-fix\">被时长过滤规则排除的歌曲，在调整规则后重新扫描也无法入库</span> 问题（感谢 <b>@Nomstuff</b>）",
-          "修复了 <span class=\"type-fix\">歌曲的艺术家/专辑艺术家属性可能出现重复同名条目</span> 的问题",
-          "修复了 <span class=\"type-fix\">更换专辑或艺术家封面时，旧封面文件残留未清理</span> 的问题"
         ]
       }
     ]
