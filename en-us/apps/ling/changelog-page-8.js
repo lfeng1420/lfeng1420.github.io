@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.3.0.0",
+    "date": "2026-05-03",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Playback controls can now be always visible</span>. Enable this via the <b>\"Settings -> UI\"</b> page using the <b>\"Play control always visible\"</b> toggle.",
+          "<span class=\"type-new\">Added image corner strength control</span>. Expand the <b>\"Image corner strength\"</b> option in <b>\"Settings -> UI\"</b> to independently adjust the corner radius for song covers, album covers, and artist images."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">Steam Rich Presence would not display according to the format set in the Steam plugin when launching the application</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.2.1.0",
     "date": "2026-05-02",
     "tag": "Alpha",

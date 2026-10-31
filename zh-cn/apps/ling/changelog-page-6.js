@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.8.0",
+    "date": "2026-05-15",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">当设置文件无效时应用无法启动</span> 的问题",
+          "修复了 <span class=\"type-fix\">在某些情况下从歌曲封面提取的主色调依然为接近纯白或纯黑色</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.7.0",
     "date": "2026-05-14",
     "tag": "Alpha",
@@ -68,34 +83,6 @@ window.CHANGELOG_PAGES[6] = [
           "<span class=\"type-opt\">新增艺术家页面显示参与创作艺术家开关</span>：控制是否在艺术家页面显示参与创作的艺术家。默认不显示，可在 <b>设置</b> -> <b>用户界面</b> 中找到 <b>在艺术家页面中显示参与创作艺术家</b> 选项以启用",
           "<span class=\"type-opt\">扫描后自动清理</span>：扫描完成后，没有歌曲的专辑、以及无关的艺术家将被自动删除。若对专辑进行过编辑（如修改年份、封面、专辑艺术家等），则该专辑将保留；艺术家同理",
           "<span class=\"type-opt\">导航菜单设置调整</span>：导航菜单设置已移入独立设置界面，路径：<b>设置</b> -> <b>导航菜单</b>"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.1.0",
-    "date": "2026-05-11",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">播放界面动态渐变壁纸</span>：现在可以为播放界面设置动态渐变壁纸，可在 <b>设置</b> → <b>用户界面</b> → <b>播放界面</b> 中找到 <b>壁纸</b> 选项并进行设置"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "对<span class=\"type-opt\">桌面歌词</span>功能进行了多项优化，改善了稳定性和显示效果",
-          "<span class=\"type-opt\">侧边栏中统计菜单的图标</span>已更新"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">向播放队列添加歌曲时，弹出的提示中歌曲数量显示为 0</span> 的问题",
-          "修复了 <span class=\"type-fix\">播放界面中封面图片外层视觉效果被意外裁剪</span> 的问题"
         ]
       }
     ]

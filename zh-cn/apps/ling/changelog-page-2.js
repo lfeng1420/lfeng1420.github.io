@@ -2,6 +2,29 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[2] = [
   {
+    "version": "0.14.0.0",
+    "date": "2026-09-23",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">均衡器</span>：新增 10 段均衡器，内置流行、摇滚、电子等 16 种预设，并支持自定义配置。路径：<b>设置 -> 音频音效</b>",
+          "<span class=\"type-new\">混响</span>：新增混响设置，内置房间、客厅、浴室等 15 种预设，并支持自定义配置。路径：<b>设置 -> 音频音效</b>",
+          "<span class=\"type-new\">歌单导出歌曲文件</span>：歌单右键菜单新增“导出歌曲文件”选项，可将歌单内的所有歌曲文件导出到所选路径（将自动生成以歌单名命名的文件夹）"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">设置页面调整</span>：为所有设置页面添加宽度限制，与 Windows 设置页面保持一致",
+          "<span class=\"type-opt\">Android 播放队列</span>：播放队列不再以底部动作条形式展现，而是移入播放页面，可通过右滑切换至播放队列，或点击播放队列按钮打开"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.13.2.0",
     "date": "2026-09-11",
     "tag": "Alpha",
@@ -83,33 +106,6 @@ window.CHANGELOG_PAGES[2] = [
           "修复了 <span class=\"type-fix\">播放队列弹出层第二次打开时显示异常</span> 的问题",
           "修复了 <span class=\"type-fix\">歌单页面和播放队列弹出层中列表项无法拖拽</span> 的问题",
           "修复了 <span class=\"type-fix\">歌曲、专辑和艺术家等多个页面中多选功能失效</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.12.3.0",
-    "date": "2026-07-06",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">高级设置页面</span>：新增“高级设置”页面，原有的垃圾回收选项已迁移至此页面，并新增“切换页面时触发垃圾回收”选项。路径：<b>设置 -> 高级设置</b>"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">文本调整</span>：移除部分文本中不必要的代词，使表述更加简洁"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">启动后首次切换到专辑/艺术家页面时视图切换按钮图标可能显示不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">在某些情况下动态频谱显示异常</span> 的问题"
         ]
       }
     ]

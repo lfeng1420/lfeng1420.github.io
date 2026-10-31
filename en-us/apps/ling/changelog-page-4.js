@@ -2,6 +2,42 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.10.0.0",
+    "date": "2026-06-09",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">UI Scale Option</span>: You can now adjust the size of interface elements. Path: <b>Settings -> UI</b>",
+          "<span class=\"type-new\">Navigation Bar Expanded Width Setting</span>: You can now adjust the expanded width of the left navigation bar within a range of [100,480]. Path: <b>Settings -> UI</b>",
+          "<span class=\"type-new\">New Language Support</span>: Added support for Traditional Chinese, English(UK), Japanese, Korean, Russian, German, French, Portuguese (Brazil), Spanish, Polish, and Turkish. Translations for these languages may contain errors; feedback is welcome."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Lyric Line Switching</span>: Added fade-in/fade-out effect.",
+          "<span class=\"type-opt\">Lyrics Font Size and Weight Adjustment</span>: Normal and highlighted lyric text now use the same font size and weight."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">artists could not be dragged in the album edit dialog</span>.",
+          "Fixed <span class=\"type-fix\">a potential crash when right-clicking on the album page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the close button became unresponsive after closing the window and reopening it via the taskbar button</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the default icon was not shown when a track had no cover</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the end of a track was being truncated</span>.",
+          "Fixed an issue where <span class=\"type-fix\">auto-scrolling after clicking a track in the playback queue caused the currently playing track to become invisible</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the previous track's cover and lyrics were still displayed when a track file failed to load</span>.",
+          "Fixed an issue where <span class=\"type-fix\">existing lyrics were lost when saving track metadata</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.9.0.0",
     "date": "2026-06-05",
     "tag": "Alpha",
@@ -100,23 +136,6 @@ window.CHANGELOG_PAGES[4] = [
           "Fixed an issue where <span class=\"type-fix\">the duration of some M4A files was incorrect</span>.",
           "Fixed an issue where <span class=\"type-fix\">some M4A files could not be played</span>.",
           "Fixed an issue where <span class=\"type-fix\">some artists were not displayed on the statistics page</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.7.0",
-    "date": "2026-05-20",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed <span class=\"type-fix\">a crash in the resampling process caused by a buffer write out-of-bounds issue</span> (thanks to <b>@FunkeymonkeyTTR</b>).",
-          "Fixed an issue where <span class=\"type-fix\">tracks that no longer existed were displayed incorrectly in the statistics page track list</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the menu icon for \"\"Add to next\"\" was displaying incorrectly</span>.",
-          "Fixed an issue where <span class=\"type-fix\">generated thumbnails could not be read when the album name or artist name contained characters not supported in filenames</span>."
         ]
       }
     ]

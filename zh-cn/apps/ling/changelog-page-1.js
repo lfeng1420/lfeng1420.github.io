@@ -2,6 +2,49 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.16.2.0",
+    "date": "2026-10-31",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">自然过渡淡入淡出</span>：新增“自然过渡”选项，歌曲临近结束时自动应用淡入淡出效果",
+          "<span class=\"type-new\">文件夹/歌单跳转入口</span>：播放控制的更多选项菜单中新增文件夹/歌单跳转入口",
+          "<span class=\"type-new\">Mini 窗口增强</span>：Mini 窗口新增进度条和音量调节按钮",
+          "<span class=\"type-new\">歌单封面自动生成</span>：新增歌单封面自动生成选项。开启后，自动取前四首歌曲的封面拼接为四宫格图片，作为歌单封面",
+          "<span class=\"type-new\">播放队列名称</span>：播放队列弹窗显示队列名称和队列类型图标，便于识别当前播放队列的来源",
+          "<span class=\"type-new\">文件夹字符跳转面板</span>：文件夹页面新增字符跳转面板（按名称排序时可用）",
+          "<span class=\"type-new\">多选数量显示</span>：开启多选后，左上角实时显示已选数量",
+          "<span class=\"type-new\">歌单详情页面样式</span>：歌单详情页面改用专辑详情页面的样式",
+          "<span class=\"type-new\">添加歌曲到多个歌单</span>：支持将歌曲添加到多个歌单，点击“添加到歌单”对话框右侧的多选按钮即可开启多选"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">逐字歌词</span>：刷新间隔调整为 10ms，歌词滚动更顺滑",
+          "<span class=\"type-opt\">频谱峰值指示器</span>：默认回落延迟调整为 1 秒",
+          "<span class=\"type-opt\">对话框</span>：调整部分对话框宽度",
+          "<span class=\"type-opt\">文本</span>：调整部分文本"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">修改后的专辑无法删除</span> 的问题",
+          "修复了 <span class=\"type-fix\">分隔符对话框中列表不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">排除文件夹不显示路径</span> 的问题",
+          "修复了 <span class=\"type-fix\">排除文件夹可添加重复路径</span> 的问题",
+          "修复了 <span class=\"type-fix\">拖动进度条跳转时，淡出结束后出现杂音</span> 的问题",
+          "修复了 <span class=\"type-fix\">部分页面出现内存泄漏</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放队列只有一首歌曲且使用全部循环模式时，歌曲仅播放一次</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.0.0",
     "date": "2026-10-22",
     "tag": "Alpha",
@@ -97,29 +140,6 @@ window.CHANGELOG_PAGES[1] = [
           "修复了 <span class=\"type-fix\">Android 版本在专辑/艺术家详情页面切换横竖屏时没有切换布局</span> 的问题",
           "修复了 <span class=\"type-fix\">统计艺术家页面中艺术家行之间过于紧密</span> 的问题",
           "修复了 <span class=\"type-fix\">在 Android 端显示了用于桌面端的最小化到托盘/任务栏标题选项</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.14.0.0",
-    "date": "2026-09-23",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">均衡器</span>：新增 10 段均衡器，内置流行、摇滚、电子等 16 种预设，并支持自定义配置。路径：<b>设置 -> 音频音效</b>",
-          "<span class=\"type-new\">混响</span>：新增混响设置，内置房间、客厅、浴室等 15 种预设，并支持自定义配置。路径：<b>设置 -> 音频音效</b>",
-          "<span class=\"type-new\">歌单导出歌曲文件</span>：歌单右键菜单新增“导出歌曲文件”选项，可将歌单内的所有歌曲文件导出到所选路径（将自动生成以歌单名命名的文件夹）"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">设置页面调整</span>：为所有设置页面添加宽度限制，与 Windows 设置页面保持一致",
-          "<span class=\"type-opt\">Android 播放队列</span>：播放队列不再以底部动作条形式展现，而是移入播放页面，可通过右滑切换至播放队列，或点击播放队列按钮打开"
         ]
       }
     ]

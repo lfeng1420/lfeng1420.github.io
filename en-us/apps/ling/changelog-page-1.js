@@ -2,6 +2,49 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.16.2.0",
+    "date": "2026-10-31",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Natural fade in/out</span>: Added a \"Natural transition\" option that automatically applies fade in/out when a track is nearing its end",
+          "<span class=\"type-new\">Folder/playlist jump entries</span>: Added folder and playlist jump entries to the more options menu on the playback controls",
+          "<span class=\"type-new\">Mini window enhancements</span>: Added a progress bar and volume adjustment button to the mini window",
+          "<span class=\"type-new\">Automatic playlist cover generation</span>: Added an option to generate playlist covers automatically. When enabled, the covers of the first four tracks are combined into a 2x2 grid image used as the playlist cover",
+          "<span class=\"type-new\">Playing queue name</span>: The playing queue popup now shows the queue name and queue type icon, making it easier to identify the source of the current playing queue",
+          "<span class=\"type-new\">Folder jump bar</span>: Added a character jump bar to the folder page (available when sorted by name)",
+          "<span class=\"type-new\">Selection count</span>: When multi-selection is enabled, the number of selected items is shown in the top-left corner in real time",
+          "<span class=\"type-new\">Playlist details page style</span>: The playlist details page now uses the same style as the album details page",
+          "<span class=\"type-new\">Add to multiple playlists</span>: Tracks can now be added to multiple playlists. Click the multi-select button on the right side of the \"Add to playlist\" dialog to enable multi-selection"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Word-by-word lyrics</span>: Refresh interval changed to 10 ms for smoother lyrics scrolling",
+          "<span class=\"type-opt\">Spectrum peak indicator</span>: Default fall delay changed to 1 second",
+          "<span class=\"type-opt\">Dialogs</span>: Adjusted the width of some dialogs",
+          "<span class=\"type-opt\">Text</span>: Adjusted some text"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">modified albums could not be deleted</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the list was not displayed in the separator dialog</span>.",
+          "Fixed an issue where <span class=\"type-fix\">excluded folders did not show their paths</span>.",
+          "Fixed an issue where <span class=\"type-fix\">duplicate paths could be added to excluded folders</span>.",
+          "Fixed an issue where <span class=\"type-fix\">noise appeared at the end of the fade-out when seeking by dragging the progress bar</span>.",
+          "Fixed an issue where <span class=\"type-fix\">memory leaks occurred on some pages</span>.",
+          "Fixed an issue where <span class=\"type-fix\">a track played only once when the playing queue contained a single track and repeat-all mode was enabled</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.0.0",
     "date": "2026-10-22",
     "tag": "Alpha",
@@ -112,29 +155,6 @@ window.CHANGELOG_PAGES[1] = [
           "Fixed an issue where <span class=\"type-fix\">the Android version did not switch layouts when rotating between portrait and landscape on the album/artist details page</span>.",
           "Fixed an issue where <span class=\"type-fix\">artist rows were too tightly spaced on the artist statistics page</span>.",
           "Fixed an issue where <span class=\"type-fix\">desktop-only minimise to tray/taskbar title options were shown on Android</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.13.0.0",
-    "date": "2026-09-08",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Equalizer</span>: Added a 10-band equalizer with 16 built-in presets including Pop, Rock, and Electronic, along with support for custom configurations. Path: [b]Settings -> Effect[/b].",
-          "<span class=\"type-new\">Reverb</span>: Added reverb settings with 15 built-in presets including Room, Living Room, and Bathroom, along with support for custom configurations. Path: [b]Settings -> Effect[/b].",
-          "<span class=\"type-new\">Export Tracks from Playlist</span>: Added an \"Export track files\" option to the playlist context menu, allowing all tracks in the playlist to be exported to a selected path (a folder named after the playlist will be created automatically)."
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Settings Page Adjustments</span>: Added width limits to all settings pages to align with the Windows settings page.",
-          "<span class=\"type-opt\">Android Playing Queue</span>: The playing queue is no longer shown as a Bottom Sheet but has been moved into the playing page. Switch to the playing queue by swiping right, or tap the playing queue button."
         ]
       }
     ]

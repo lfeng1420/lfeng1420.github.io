@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.5.1.0",
+    "date": "2026-05-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">播放界面动态渐变壁纸</span>：现在可以为播放界面设置动态渐变壁纸，可在 <b>设置</b> → <b>用户界面</b> → <b>播放界面</b> 中找到 <b>壁纸</b> 选项并进行设置"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "对<span class=\"type-opt\">桌面歌词</span>功能进行了多项优化，改善了稳定性和显示效果",
+          "<span class=\"type-opt\">侧边栏中统计菜单的图标</span>已更新"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">向播放队列添加歌曲时，弹出的提示中歌曲数量显示为 0</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放界面中封面图片外层视觉效果被意外裁剪</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.4.0.0",
     "date": "2026-05-07",
     "tag": "Alpha",
@@ -78,27 +106,6 @@ window.CHANGELOG_PAGES[7] = [
         "items": [
           "修复了 <span class=\"type-fix\">日期切换（跨天或跨周）时，“今日”和“本周”的播放时长及播放歌曲数未能正确重置</span> 的问题",
           "修复了 <span class=\"type-fix\">手动设置系统时间时，播放时间统计数据出现异常减少或增加</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.0.0",
-    "date": "2026-05-03",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">播放控制按钮常驻显示</span>：可通过 <b>设置 -> 用户界面</b> 页面中的 <b>播放控制按钮始终可见</b> 开关启用",
-          "<span class=\"type-new\">图片圆角强度独立调节</span>：展开 <b>设置 -> 用户界面</b> 页面中的 <b>图片圆角强度</b> 选项，可分别控制歌曲封面、专辑封面和艺术家图片的圆角程度"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">启动应用时，Steam 丰富状态未按插件中设置的格式正确显示</span> 的问题"
         ]
       }
     ]

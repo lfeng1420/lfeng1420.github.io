@@ -2,6 +2,23 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.7.0",
+    "date": "2026-05-20",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed <span class=\"type-fix\">a crash in the resampling process caused by a buffer write out-of-bounds issue</span> (thanks to <b>@FunkeymonkeyTTR</b>).",
+          "Fixed an issue where <span class=\"type-fix\">tracks that no longer existed were displayed incorrectly in the statistics page track list</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the menu icon for \"\"Add to next\"\" was displaying incorrectly</span>.",
+          "Fixed an issue where <span class=\"type-fix\">generated thumbnails could not be read when the album name or artist name contained characters not supported in filenames</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.4.0",
     "date": "2026-05-19",
     "tag": "Alpha",
@@ -82,21 +99,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "Enabled AOT (Ahead-of-Time compilation), <span class=\"type-opt\">significantly improving application performance and startup speed</span>.",
           "Thanks to AOT, the application size has been <span class=\"type-opt\">reduced bymore than 50%</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.8.0",
-    "date": "2026-05-15",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the application failed to start when the settings file was invalid</span>.",
-          "Fixed an issue where <span class=\"type-fix\">in some cases the dominant color extracted from a track's cover art was still too close to pure white or pure black</span>."
         ]
       }
     ]

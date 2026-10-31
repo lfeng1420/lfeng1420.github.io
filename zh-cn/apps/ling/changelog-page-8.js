@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.3.0.0",
+    "date": "2026-05-03",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">播放控制按钮常驻显示</span>：可通过 <b>设置 -> 用户界面</b> 页面中的 <b>播放控制按钮始终可见</b> 开关启用",
+          "<span class=\"type-new\">图片圆角强度独立调节</span>：展开 <b>设置 -> 用户界面</b> 页面中的 <b>图片圆角强度</b> 选项，可分别控制歌曲封面、专辑封面和艺术家图片的圆角程度"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">启动应用时，Steam 丰富状态未按插件中设置的格式正确显示</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.2.1.0",
     "date": "2026-05-02",
     "tag": "Alpha",
