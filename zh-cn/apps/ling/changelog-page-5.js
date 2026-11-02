@@ -2,6 +2,23 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.7.0",
+    "date": "2026-05-20",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">重采样流程中因缓冲区写入越界而导致的崩溃</span> 的问题 （感谢 <b>@FunkeymonkeyTTR</b>）",
+          "修复了 <span class=\"type-fix\">统计页面的歌曲列表中已不存在的歌曲显示错位</span> 的问题",
+          "修复了 <span class=\"type-fix\">“添加到下一首”菜单图标显示异常</span> 的问题",
+          "修复了 <span class=\"type-fix\">当专辑名或艺术家名包含文件名中不支持的字符时，生成的缩略图无法读取</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.4.0",
     "date": "2026-05-19",
     "tag": "Alpha",
@@ -82,21 +99,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "启用 AOT（预先编译），<span class=\"type-opt\">大幅提升应用性能和启动速度</span>",
           "得益于 AOT，应用体积<span class=\"type-opt\">减小超过 50%</span>"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.8.0",
-    "date": "2026-05-15",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">当设置文件无效时应用无法启动</span> 的问题",
-          "修复了 <span class=\"type-fix\">在某些情况下从歌曲封面提取的主色调依然为接近纯白或纯黑色</span> 的问题"
         ]
       }
     ]

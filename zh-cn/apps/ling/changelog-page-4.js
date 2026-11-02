@@ -2,6 +2,41 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.10.0.0",
+    "date": "2026-06-09",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">UI缩放选项</span>：现在可以调整界面元素的大小。路径：<b>设置 -> 用户界面</b>",
+          "<span class=\"type-new\">导航栏展开宽度设置</span>：现在可以调整左侧导航栏展开时的宽度，可调整范围为[100,480]。路径：<b>设置 -> 用户界面</b>",
+          "<span class=\"type-new\">新增语言支持</span>：新增繁体中文、英语（英国）、日语、韩语、俄语、德语、法语、葡萄牙语（巴西）、西班牙语、波兰语、土耳其语语言支持。这些语言的文本可能存在错误，欢迎反馈"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">歌词行切换</span>：：添加淡入淡出效果",
+          "<span class=\"type-opt\">歌词字体大小和粗细调整</span>普通状态和高亮状态下的歌词文本使用相同的字体大小和粗细"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">专辑编辑对话框中艺术家无法拖拽</span> 的问题",
+          "修复了 <span class=\"type-fix\">关闭窗口后再通过任务栏按钮打开窗口之后关闭按钮无法响应</span> 的问题",
+          "修复了 <span class=\"type-fix\">当歌曲没有封面时不显示默认图标</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌曲末尾被截断</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放队列点击歌曲后自动滚动错误导致当前播放歌曲不可见</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌曲文件加载失败时仍然显示上一首歌曲封面和歌词</span> 的问题",
+          "修复了 <span class=\"type-fix\">保存歌曲元数据时原有歌词丢失</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.9.0.0",
     "date": "2026-06-05",
     "tag": "Alpha",
@@ -100,23 +135,6 @@ window.CHANGELOG_PAGES[4] = [
           "修复了 <span class=\"type-fix\">部分 M4A 文件时长不正确</span> 的问题",
           "修复了 <span class=\"type-fix\">部分 M4A 文件无法播放</span> 的问题",
           "修复了 <span class=\"type-fix\">统计页面中部分艺术家不显示</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.7.0",
-    "date": "2026-05-20",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">重采样流程中因缓冲区写入越界而导致的崩溃</span> 的问题 （感谢 <b>@FunkeymonkeyTTR</b>）",
-          "修复了 <span class=\"type-fix\">统计页面的歌曲列表中已不存在的歌曲显示错位</span> 的问题",
-          "修复了 <span class=\"type-fix\">“添加到下一首”菜单图标显示异常</span> 的问题",
-          "修复了 <span class=\"type-fix\">当专辑名或艺术家名包含文件名中不支持的字符时，生成的缩略图无法读取</span> 的问题"
         ]
       }
     ]

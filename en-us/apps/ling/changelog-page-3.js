@@ -2,6 +2,33 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.12.3.0",
+    "date": "2026-07-06",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Advanced Settings Page</span>: Added a new \"Advanced Settings\" page. The existing garbage collection options have been moved here, and a new \"Trigger garbage collection on page switch\" option has been added. Path: <b>Settings -> Advanced Settings</b>."
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Text Adjustments</span>: Removed unnecessary pronouns in some UI text for more concise phrasing."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">view toggle button icons might not display correctly when first switching to the album/artist page after startup</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the dynamic spectrum displayed abnormally in some cases</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.2.0",
     "date": "2026-07-01",
     "tag": "Alpha",
@@ -86,42 +113,6 @@ window.CHANGELOG_PAGES[3] = [
         "items": [
           "<span class=\"type-new\">Taskbar Playback Control</span>: Hover your mouse over the taskbar icon to access previous track, next track, play, and pause controls — making playback control more convenient.",
           "<span class=\"type-new\">Lyrics Editing</span>: You can now modify and save embedded lyrics for tracks in the track metadata editing dialog."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.10.0.0",
-    "date": "2026-06-09",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">UI Scale Option</span>: You can now adjust the size of interface elements. Path: <b>Settings -> UI</b>",
-          "<span class=\"type-new\">Navigation Bar Expanded Width Setting</span>: You can now adjust the expanded width of the left navigation bar within a range of [100,480]. Path: <b>Settings -> UI</b>",
-          "<span class=\"type-new\">New Language Support</span>: Added support for Traditional Chinese, English(UK), Japanese, Korean, Russian, German, French, Portuguese (Brazil), Spanish, Polish, and Turkish. Translations for these languages may contain errors; feedback is welcome."
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Lyric Line Switching</span>: Added fade-in/fade-out effect.",
-          "<span class=\"type-opt\">Lyrics Font Size and Weight Adjustment</span>: Normal and highlighted lyric text now use the same font size and weight."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">artists could not be dragged in the album edit dialog</span>.",
-          "Fixed <span class=\"type-fix\">a potential crash when right-clicking on the album page</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the close button became unresponsive after closing the window and reopening it via the taskbar button</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the default icon was not shown when a track had no cover</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the end of a track was being truncated</span>.",
-          "Fixed an issue where <span class=\"type-fix\">auto-scrolling after clicking a track in the playback queue caused the currently playing track to become invisible</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the previous track's cover and lyrics were still displayed when a track file failed to load</span>.",
-          "Fixed an issue where <span class=\"type-fix\">existing lyrics were lost when saving track metadata</span>."
         ]
       }
     ]

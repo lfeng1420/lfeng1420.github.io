@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.5.8.0",
+    "date": "2026-05-15",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the application failed to start when the settings file was invalid</span>.",
+          "Fixed an issue where <span class=\"type-fix\">in some cases the dominant color extracted from a track's cover art was still too close to pure white or pure black</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.7.0",
     "date": "2026-05-14",
     "tag": "Alpha",
@@ -69,34 +84,6 @@ window.CHANGELOG_PAGES[6] = [
           "<span class=\"type-opt\">Added \"Show Contributing Artists\" Switch</span>: Control whether to show featured artists on the artist page. Disabled by default. You can find the \"\"Show featured artists on artist page\"\" option in <b>Settings</b> -> <b>UI</b> to enable it.",
           "<span class=\"type-opt\">Auto Cleanup After Scanning</span>: After scanning completes, albums without any tracks and artists without any albums or tracks will be automatically deleted. If an album has been edited (e.g., year, cover, album artist), it will be retained; the same applies to artists.",
           "<span class=\"type-opt\">Navigation Menu Settings Adjustment</span>: Navigation menu settings have been moved to a standalone settings page. Path: <b>Settings</b> -> <b>Navigation Menu</b>"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.1.0",
-    "date": "2026-05-11",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Dynamic Gradient Wallpaper for Playback Interface</span>: You can now set a dynamic gradient wallpaper for the playback interface. Find the <b>Wallpaper</b> option under <b>Settings</b> → <b>UI</b> → <b>Playback Interface</b> to configure it"
-        ]
-      },
-      {
-        "type": "opt",
-        "items": [
-          "Multiple improvements made to<span class=\"type-opt\">the desktop lyrics feature</span>, enhancing stability and display quality",
-          "Updated <span class=\"type-opt\">the icons in the sidebar statistics menu</span>."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">the popup notification displayed 0 as the song count when adding songs to the playback queue</span>.",
-          "Fixed an issue where <span class=\"type-fix\">the outer visual effect of the album cover was being clipped in the playback interface</span>."
         ]
       }
     ]

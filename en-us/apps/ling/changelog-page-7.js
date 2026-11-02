@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.5.1.0",
+    "date": "2026-05-11",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Dynamic Gradient Wallpaper for Playback Interface</span>: You can now set a dynamic gradient wallpaper for the playback interface. Find the <b>Wallpaper</b> option under <b>Settings</b> → <b>UI</b> → <b>Playback Interface</b> to configure it"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "Multiple improvements made to<span class=\"type-opt\">the desktop lyrics feature</span>, enhancing stability and display quality",
+          "Updated <span class=\"type-opt\">the icons in the sidebar statistics menu</span>."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the popup notification displayed 0 as the song count when adding songs to the playback queue</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the outer visual effect of the album cover was being clipped in the playback interface</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.4.0.0",
     "date": "2026-05-07",
     "tag": "Alpha",
@@ -78,27 +106,6 @@ window.CHANGELOG_PAGES[7] = [
         "items": [
           "Fixed an issue where <span class=\"type-fix\">today's and this week's play time and play counts did not reset correctly when crossing a day or week boundary</span>.",
           "Fixed an issue where <span class=\"type-fix\">play time statistics would unexpectedly increase or decrease when manually adjusting the system time</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.0.0",
-    "date": "2026-05-03",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Playback controls can now be always visible</span>. Enable this via the <b>\"Settings -> UI\"</b> page using the <b>\"Play control always visible\"</b> toggle.",
-          "<span class=\"type-new\">Added image corner strength control</span>. Expand the <b>\"Image corner strength\"</b> option in <b>\"Settings -> UI\"</b> to independently adjust the corner radius for song covers, album covers, and artist images."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">Steam Rich Presence would not display according to the format set in the Steam plugin when launching the application</span>."
         ]
       }
     ]
