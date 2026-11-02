@@ -2,6 +2,23 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.8.0",
+    "date": "2026-05-21",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed <span class=\"type-fix\">a crash when playing 16-bit WAV files</span> (thanks to <b>@FunkeymonkeyTTR</b>).",
+          "Fixed an issue where <span class=\"type-fix\">the duration of some M4A files was incorrect</span>.",
+          "Fixed an issue where <span class=\"type-fix\">some M4A files could not be played</span>.",
+          "Fixed an issue where <span class=\"type-fix\">some artists were not displayed on the statistics page</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.7.0",
     "date": "2026-05-20",
     "tag": "Alpha",
@@ -84,21 +101,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "Fixed an issue where <span class=\"type-fix\">the open source licenses page could not be opened</span>.",
           "Fixed an issue where <span class=\"type-fix\">tracks with uppercase file extensions (e.g., .MP3, .FLAC) were not properly recognized</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.6.0.0",
-    "date": "2026-05-16",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "other",
-        "items": [
-          "Enabled AOT (Ahead-of-Time compilation), <span class=\"type-opt\">significantly improving application performance and startup speed</span>.",
-          "Thanks to AOT, the application size has been <span class=\"type-opt\">reduced bymore than 50%</span>."
         ]
       }
     ]

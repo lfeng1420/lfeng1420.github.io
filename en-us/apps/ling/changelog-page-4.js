@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.11.0.0",
+    "date": "2026-06-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Taskbar Playback Control</span>: Hover your mouse over the taskbar icon to access previous track, next track, play, and pause controls — making playback control more convenient.",
+          "<span class=\"type-new\">Lyrics Editing</span>: You can now modify and save embedded lyrics for tracks in the track metadata editing dialog."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.10.0.0",
     "date": "2026-06-09",
     "tag": "Alpha",
@@ -119,23 +134,6 @@ window.CHANGELOG_PAGES[4] = [
         "type": "fix",
         "items": [
           "Fixed an issue where <span class=\"type-fix\">the application failed to start when the settings file was invalid</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.8.0",
-    "date": "2026-05-21",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "Fixed <span class=\"type-fix\">a crash when playing 16-bit WAV files</span> (thanks to <b>@FunkeymonkeyTTR</b>).",
-          "Fixed an issue where <span class=\"type-fix\">the duration of some M4A files was incorrect</span>.",
-          "Fixed an issue where <span class=\"type-fix\">some M4A files could not be played</span>.",
-          "Fixed an issue where <span class=\"type-fix\">some artists were not displayed on the statistics page</span>."
         ]
       }
     ]

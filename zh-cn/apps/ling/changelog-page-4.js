@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[4] = [
   {
+    "version": "0.11.0.0",
+    "date": "2026-06-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">任务栏播放控制</span>：鼠标悬停在任务栏图标上时，可进行上一曲、下一曲、播放和暂停操作，播放控制更加便捷",
+          "<span class=\"type-new\">歌词编辑</span>：现在可以在歌曲元数据编辑对话框中修改并保存歌曲的内嵌歌词"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.10.0.0",
     "date": "2026-06-09",
     "tag": "Alpha",
@@ -118,23 +133,6 @@ window.CHANGELOG_PAGES[4] = [
         "type": "fix",
         "items": [
           "修复了 <span class=\"type-fix\">设置文件无效时应用无法启动</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.7.8.0",
-    "date": "2026-05-21",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">播放采样位深为 16 位的 WAV 文件时崩溃</span> 的问题 （感谢 <b>@FunkeymonkeyTTR</b>）",
-          "修复了 <span class=\"type-fix\">部分 M4A 文件时长不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">部分 M4A 文件无法播放</span> 的问题",
-          "修复了 <span class=\"type-fix\">统计页面中部分艺术家不显示</span> 的问题"
         ]
       }
     ]

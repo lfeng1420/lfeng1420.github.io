@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.12.5.0",
+    "date": "2026-07-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the playing queue popup displayed abnormally when opened for the second time</span>.",
+          "Fixed an issue where <span class=\"type-fix\">list items in the playlist page and playing queue popup could not be dragged</span>.",
+          "Fixed an issue where <span class=\"type-fix\">multi-selection functionality was broken across multiple pages, including tracks, albums, and artists</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.3.0",
     "date": "2026-07-06",
     "tag": "Alpha",
@@ -98,21 +114,6 @@ window.CHANGELOG_PAGES[3] = [
           "Fixed an issue where <span class=\"type-fix\">single-track repeat mode would occasionally stop working</span>.",
           "Fixed an issue where <span class=\"type-fix\">Steam plugin text displayed incorrectly in certain language environments</span>.",
           "Fixed an issue where <span class=\"type-fix\">taskbar thumbnail buttons were not displayed when switching from mini window to main window after startup on Windows</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.11.0.0",
-    "date": "2026-06-12",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">Taskbar Playback Control</span>: Hover your mouse over the taskbar icon to access previous track, next track, play, and pause controls — making playback control more convenient.",
-          "<span class=\"type-new\">Lyrics Editing</span>: You can now modify and save embedded lyrics for tracks in the track metadata editing dialog."
         ]
       }
     ]

@@ -2,6 +2,24 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[7] = [
   {
+    "version": "0.5.4.0",
+    "date": "2026-05-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Album Merging Rule</span>: Before merging albums, the player will check for conflicts in disc numbers or track numbers. If conflicts exist, they will be automatically split into separate albums.",
+          "<span class=\"type-opt\">Default Sorting for Albums/Artists</span>: The default sorting rule has been adjusted to ascending order by name.",
+          "<span class=\"type-opt\">Added \"Show Contributing Artists\" Switch</span>: Control whether to show featured artists on the artist page. Disabled by default. You can find the \"\"Show featured artists on artist page\"\" option in <b>Settings</b> -> <b>UI</b> to enable it.",
+          "<span class=\"type-opt\">Auto Cleanup After Scanning</span>: After scanning completes, albums without any tracks and artists without any albums or tracks will be automatically deleted. If an album has been edited (e.g., year, cover, album artist), it will be retained; the same applies to artists.",
+          "<span class=\"type-opt\">Navigation Menu Settings Adjustment</span>: Navigation menu settings have been moved to a standalone settings page. Path: <b>Settings</b> -> <b>Navigation Menu</b>"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.1.0",
     "date": "2026-05-11",
     "tag": "Alpha",
@@ -85,27 +103,6 @@ window.CHANGELOG_PAGES[7] = [
         "type": "fix",
         "items": [
           "Fixed an issue where <span class=\"type-fix\">krc and qrc format lyrics files could not be loaded or parsed correctly</span>."
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.3.1.0",
-    "date": "2026-05-04",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">Adjusted the icon size on the left side of the progress bar at the top of the stats page</span> for better visual alignment."
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "Fixed an issue where <span class=\"type-fix\">today's and this week's play time and play counts did not reset correctly when crossing a day or week boundary</span>.",
-          "Fixed an issue where <span class=\"type-fix\">play time statistics would unexpectedly increase or decrease when manually adjusting the system time</span>."
         ]
       }
     ]

@@ -2,6 +2,34 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.16.4.0",
+    "date": "2026-11-01",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">歌单排序选项</span>：新增“添加到歌单时间”排序选项，以歌曲添加到歌单的时间作为排序依据"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">文件选择器</span>：恢复使用系统原生文件选择器"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">专辑名或歌单名变更后，播放队列名称未同步更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">在歌单详情页重命名歌单后，页面显示的名称未同步更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">部分 MP3 文件开始播放时出现数秒延迟</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.2.0",
     "date": "2026-10-31",
     "tag": "Alpha",
@@ -102,44 +130,6 @@ window.CHANGELOG_PAGES[1] = [
         "items": [
           "<span class=\"type-new\">淡入淡出</span>：支持播放 / 暂停、跳转和手动切歌场景，每个场景的淡入淡出时长均可单独设置",
           "<span class=\"type-new\">回放增益</span>：根据音频文件中内嵌的 Replay Gain 标签自动调整播放音量，还可根据播放队列自动应用音轨增益（REPLAYGAIN_TRACK_GAIN）或专辑增益（REPLAYGAIN_ALBUM_GAIN）"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.14.3.0",
-    "date": "2026-10-07",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">缺少专辑艺术家时使用艺术家</span>：开启后，当歌曲专辑艺术家缺失时，则自动使用其艺术家作为专辑艺术家",
-          "<span class=\"type-new\">选取专辑艺术家数量</span>：当专辑艺术家缺失时，按各艺术家在该专辑歌曲中的出现次数由高到低排序，选取指定数量作为该专辑的艺术家；设置为 0 时，则选取全部艺术家",
-          "<span class=\"type-new\">歌曲年份不同时生成多张专辑</span>：开启后，若专辑内歌曲的年份不同，将按年份拆分为多张同名专辑",
-          "<span class=\"type-new\">扫描线程数</span>：扫描音乐文件时使用的线程数，数值越大扫描速度越快，但会占用更多 CPU 资源"
-        ]
-      },
-      {
-        "type": "plain",
-        "html": "<b>需要注意，当调整了扫描线程数外的其他选项后，需要进行一次全量扫描（打开全量扫描开关后再点击开始扫描）以刷新音乐库。</b><br/><br/>"
-      },
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">音乐库设置页面</span>：扫描改为按钮，并使用强调前景色",
-          "<span class=\"type-opt\">壁纸设置</span>：壁纸设置现已移至独立的设置页面",
-          "<span class=\"type-opt\">内存占用</span>：进行了一系列调整，降低了一些内存占用，后续仍将持续进行内存优化"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">当播放页面壁纸类型选择主窗口壁纸后切换到播放页面不显示壁纸</span> 的问题",
-          "修复了 <span class=\"type-fix\">Android 版本在专辑/艺术家详情页面切换横竖屏时没有切换布局</span> 的问题",
-          "修复了 <span class=\"type-fix\">统计艺术家页面中艺术家行之间过于紧密</span> 的问题",
-          "修复了 <span class=\"type-fix\">在 Android 端显示了用于桌面端的最小化到托盘/任务栏标题选项</span> 的问题"
         ]
       }
     ]
