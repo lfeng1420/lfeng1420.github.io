@@ -3,6 +3,34 @@
 //   node tools/split-changelog.js en-us/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.16.4.0",
+    "date": "2026-11-01",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Playlist sort option</span>: Added a \"Time added to playlist\" sort option, which sorts tracks by the time they were added to the playlist"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">File picker</span>: Restored the use of the native file picker"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the playing queue name was not updated after the album or playlist name changed</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the displayed name was not updated after renaming a playlist on the playlist details page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">some MP3 files had a delay of several seconds before playback started</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.2.0",
     "date": "2026-10-31",
     "tag": "Alpha",

@@ -2,50 +2,78 @@
 // 添加新版本：在数组开头新增一条，然后运行以下命令重新生成分页文件：
 //   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
-    {
-      "version": "0.16.2.0",
-      "date": "2026-10-31",
-      "tag": "Alpha",
-      "tagClass": "tag-alpha",
-      "categories": [
-        {
-          "type": "new",
-          "items": [
-            "<span class=\"type-new\">自然过渡淡入淡出</span>：新增“自然过渡”选项，歌曲临近结束时自动应用淡入淡出效果",
-            "<span class=\"type-new\">文件夹/歌单跳转入口</span>：播放控制的更多选项菜单中新增文件夹/歌单跳转入口",
-            "<span class=\"type-new\">Mini 窗口增强</span>：Mini 窗口新增进度条和音量调节按钮",
-            "<span class=\"type-new\">歌单封面自动生成</span>：新增歌单封面自动生成选项。开启后，自动取前四首歌曲的封面拼接为四宫格图片，作为歌单封面",
-            "<span class=\"type-new\">播放队列名称</span>：播放队列弹窗显示队列名称和队列类型图标，便于识别当前播放队列的来源",
-            "<span class=\"type-new\">文件夹字符跳转面板</span>：文件夹页面新增字符跳转面板（按名称排序时可用）",
-            "<span class=\"type-new\">多选数量显示</span>：开启多选后，左上角实时显示已选数量",
-            "<span class=\"type-new\">歌单详情页面样式</span>：歌单详情页面改用专辑详情页面的样式",
-            "<span class=\"type-new\">添加歌曲到多个歌单</span>：支持将歌曲添加到多个歌单，点击“添加到歌单”对话框右侧的多选按钮即可开启多选"
-          ]
-        },
-        {
-          "type": "opt",
-          "items": [
-            "<span class=\"type-opt\">逐字歌词</span>：刷新间隔调整为 10ms，歌词滚动更顺滑",
-            "<span class=\"type-opt\">频谱峰值指示器</span>：默认回落延迟调整为 1 秒",
-            "<span class=\"type-opt\">对话框</span>：调整部分对话框宽度",
-            "<span class=\"type-opt\">文本</span>：调整部分文本"
-          ]
-        },
-        {
-          "type": "fix",
-          "items": [
-            "修复了 <span class=\"type-fix\">修改后的专辑无法删除</span> 的问题",
-            "修复了 <span class=\"type-fix\">分隔符对话框中列表不显示</span> 的问题",
-            "修复了 <span class=\"type-fix\">排除文件夹不显示路径</span> 的问题",
-            "修复了 <span class=\"type-fix\">排除文件夹可添加重复路径</span> 的问题",
-            "修复了 <span class=\"type-fix\">拖动进度条跳转时，淡出结束后出现杂音</span> 的问题",
-            "修复了 <span class=\"type-fix\">部分页面出现内存泄漏</span> 的问题",
-            "修复了 <span class=\"type-fix\">播放队列只有一首歌曲且使用全部循环模式时，歌曲仅播放一次</span> 的问题"
-          ]
-        }
-      ]
-    },
-    {
+  {
+    "version": "0.16.4.0",
+    "date": "2026-11-01",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">歌单排序选项</span>：新增“添加到歌单时间”排序选项，以歌曲添加到歌单的时间作为排序依据"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">文件选择器</span>：恢复使用系统原生文件选择器"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">专辑名或歌单名变更后，播放队列名称未同步更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">在歌单详情页重命名歌单后，页面显示的名称未同步更新</span> 的问题",
+          "修复了 <span class=\"type-fix\">部分 MP3 文件开始播放时出现数秒延迟</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.16.2.0",
+    "date": "2026-10-31",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">自然过渡淡入淡出</span>：新增“自然过渡”选项，歌曲临近结束时自动应用淡入淡出效果",
+          "<span class=\"type-new\">文件夹/歌单跳转入口</span>：播放控制的更多选项菜单中新增文件夹/歌单跳转入口",
+          "<span class=\"type-new\">Mini 窗口增强</span>：Mini 窗口新增进度条和音量调节按钮",
+          "<span class=\"type-new\">歌单封面自动生成</span>：新增歌单封面自动生成选项。开启后，自动取前四首歌曲的封面拼接为四宫格图片，作为歌单封面",
+          "<span class=\"type-new\">播放队列名称</span>：播放队列弹窗显示队列名称和队列类型图标，便于识别当前播放队列的来源",
+          "<span class=\"type-new\">文件夹字符跳转面板</span>：文件夹页面新增字符跳转面板（按名称排序时可用）",
+          "<span class=\"type-new\">多选数量显示</span>：开启多选后，左上角实时显示已选数量",
+          "<span class=\"type-new\">歌单详情页面样式</span>：歌单详情页面改用专辑详情页面的样式",
+          "<span class=\"type-new\">添加歌曲到多个歌单</span>：支持将歌曲添加到多个歌单，点击“添加到歌单”对话框右侧的多选按钮即可开启多选"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">逐字歌词</span>：刷新间隔调整为 10ms，歌词滚动更顺滑",
+          "<span class=\"type-opt\">频谱峰值指示器</span>：默认回落延迟调整为 1 秒",
+          "<span class=\"type-opt\">对话框</span>：调整部分对话框宽度",
+          "<span class=\"type-opt\">文本</span>：调整部分文本"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">修改后的专辑无法删除</span> 的问题",
+          "修复了 <span class=\"type-fix\">分隔符对话框中列表不显示</span> 的问题",
+          "修复了 <span class=\"type-fix\">排除文件夹不显示路径</span> 的问题",
+          "修复了 <span class=\"type-fix\">排除文件夹可添加重复路径</span> 的问题",
+          "修复了 <span class=\"type-fix\">拖动进度条跳转时，淡出结束后出现杂音</span> 的问题",
+          "修复了 <span class=\"type-fix\">部分页面出现内存泄漏</span> 的问题",
+          "修复了 <span class=\"type-fix\">播放队列只有一首歌曲且使用全部循环模式时，歌曲仅播放一次</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.0.0",
     "date": "2026-10-22",
     "tag": "Alpha",
