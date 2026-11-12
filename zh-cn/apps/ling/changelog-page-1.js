@@ -2,6 +2,35 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.17.0.0",
+    "date": "2026-11-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">同步与恢复</span>：支持将数据同步至 Steam 和 OneDrive，并在需要时恢复。同步内容包括：专辑（封面及介绍文本）、艺术家（封面及介绍文本）、歌单、收藏列表、播放队列、最近播放列表、统计（不含播放记录）与设置"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">跳转栏</span>：改为左侧单列垂直布局（移动端为右侧单列垂直布局），支持滑动跳转",
+          "<span class=\"type-opt\">歌单页面</span>：将顶部右侧的「新建歌单」和「导入歌单」按钮收至「更多选项」菜单",
+          "<span class=\"type-opt\">滚动歌词</span>：手动滚动歌词后，延迟 2 秒自动滚动到当前行歌词位置",
+          "<span class=\"type-opt\">Android 对话框</span>：横屏时对话框最大宽度限制为屏幕宽度的 60 %"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">歌单编辑对话框内容显示不完整</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.4.0",
     "date": "2026-11-01",
     "tag": "Alpha",
@@ -115,21 +144,6 @@ window.CHANGELOG_PAGES[1] = [
           "修复了 <span class=\"type-fix\">Android 端滑动条高度过小导致难以点击</span> 的问题",
           "修复了 <span class=\"type-fix\">鼠标悬停在播放进度条上时指针闪烁</span> 的问题",
           "修复了 <span class=\"type-fix\">前置衰减模式选项切换时各个选项 UI 大小变化</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.15.0.0",
-    "date": "2026-10-11",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">淡入淡出</span>：支持播放 / 暂停、跳转和手动切歌场景，每个场景的淡入淡出时长均可单独设置",
-          "<span class=\"type-new\">回放增益</span>：根据音频文件中内嵌的 Replay Gain 标签自动调整播放音量，还可根据播放队列自动应用音轨增益（REPLAYGAIN_TRACK_GAIN）或专辑增益（REPLAYGAIN_ALBUM_GAIN）"
         ]
       }
     ]
