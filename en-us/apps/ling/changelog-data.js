@@ -3,6 +3,35 @@
 //   node tools/split-changelog.js en-us/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.17.0.0",
+    "date": "2026-11-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">Sync & Restore</span>: Data can now be synced to Steam and OneDrive, and restored when needed. Synced data includes: albums (covers and descriptions), artists (covers and descriptions), playlists, favorites, playing queue, recently played list, statistics (excluding play history), and settings"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Jump bar</span>: Changed to a single vertical column on the left side (on mobile, on the right side), with swipe-to-jump support",
+          "<span class=\"type-opt\">Playlist page</span>: The buttons for creating and importing playlists in the top-right are now grouped under the more options menu",
+          "<span class=\"type-opt\">Scrolling lyrics</span>: After manually scrolling lyrics, auto-scroll resumes to the current lyric line after a 2-second delay",
+          "<span class=\"type-opt\">Android dialogs</span>: In landscape mode, the maximum width of dialogs is now limited to 60 % of the screen width"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the playlist edit dialog did not display its full content</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.4.0",
     "date": "2026-11-01",
     "tag": "Alpha",

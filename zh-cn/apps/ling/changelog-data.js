@@ -3,6 +3,35 @@
 //   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.17.0.0",
+    "date": "2026-11-12",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "new",
+        "items": [
+          "<span class=\"type-new\">同步与恢复</span>：支持将数据同步至 Steam 和 OneDrive，并在需要时恢复。同步内容包括：专辑（封面及介绍文本）、艺术家（封面及介绍文本）、歌单、收藏列表、播放队列、最近播放列表、统计（不含播放记录）与设置"
+        ]
+      },
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">跳转栏</span>：改为左侧单列垂直布局（移动端为右侧单列垂直布局），支持滑动跳转",
+          "<span class=\"type-opt\">歌单页面</span>：将顶部右侧的「新建歌单」和「导入歌单」按钮收至「更多选项」菜单",
+          "<span class=\"type-opt\">滚动歌词</span>：手动滚动歌词后，延迟 2 秒自动滚动到当前行歌词位置",
+          "<span class=\"type-opt\">Android 对话框</span>：横屏时对话框最大宽度限制为屏幕宽度的 60 %"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">歌单编辑对话框内容显示不完整</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.4.0",
     "date": "2026-11-01",
     "tag": "Alpha",
