@@ -2,6 +2,23 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[5] = [
   {
+    "version": "0.7.8.0",
+    "date": "2026-05-21",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">播放采样位深为 16 位的 WAV 文件时崩溃</span> 的问题 （感谢 <b>@FunkeymonkeyTTR</b>）",
+          "修复了 <span class=\"type-fix\">部分 M4A 文件时长不正确</span> 的问题",
+          "修复了 <span class=\"type-fix\">部分 M4A 文件无法播放</span> 的问题",
+          "修复了 <span class=\"type-fix\">统计页面中部分艺术家不显示</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.7.7.0",
     "date": "2026-05-20",
     "tag": "Alpha",
@@ -84,21 +101,6 @@ window.CHANGELOG_PAGES[5] = [
         "items": [
           "修复了 <span class=\"type-fix\">开源许可页面无法打开</span> 的问题",
           "修复了 <span class=\"type-fix\">当文件后缀为全大写（例如：MP3、FLAC）时，歌曲无法被正常识别</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.6.0.0",
-    "date": "2026-05-16",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "other",
-        "items": [
-          "启用 AOT（预先编译），<span class=\"type-opt\">大幅提升应用性能和启动速度</span>",
-          "得益于 AOT，应用体积<span class=\"type-opt\">减小超过 50%</span>"
         ]
       }
     ]

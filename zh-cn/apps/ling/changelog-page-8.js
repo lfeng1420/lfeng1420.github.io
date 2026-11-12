@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.3.1.0",
+    "date": "2026-05-04",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">统计页面顶部的进度条左侧图标大小已进行调整</span>，界面更加协调"
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">日期切换（跨天或跨周）时，“今日”和“本周”的播放时长及播放歌曲数未能正确重置</span> 的问题",
+          "修复了 <span class=\"type-fix\">手动设置系统时间时，播放时间统计数据出现异常减少或增加</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.0.0",
     "date": "2026-05-03",
     "tag": "Alpha",

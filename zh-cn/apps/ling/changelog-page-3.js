@@ -2,6 +2,22 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[3] = [
   {
+    "version": "0.12.5.0",
+    "date": "2026-07-08",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">播放队列弹出层第二次打开时显示异常</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌单页面和播放队列弹出层中列表项无法拖拽</span> 的问题",
+          "修复了 <span class=\"type-fix\">歌曲、专辑和艺术家等多个页面中多选功能失效</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.12.3.0",
     "date": "2026-07-06",
     "tag": "Alpha",
@@ -98,21 +114,6 @@ window.CHANGELOG_PAGES[3] = [
           "修复了 <span class=\"type-fix\">单曲循环模式偶发中断</span> 的问题",
           "修复了 <span class=\"type-fix\">Steam 插件文本在某些语言环境下显示异常</span> 的问题",
           "修复了 <span class=\"type-fix\">Windows 版本启动后从迷你窗口切换至主窗口时任务栏缩略图按钮未能正常显示</span> 的问题"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.11.0.0",
-    "date": "2026-06-12",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "new",
-        "items": [
-          "<span class=\"type-new\">任务栏播放控制</span>：鼠标悬停在任务栏图标上时，可进行上一曲、下一曲、播放和暂停操作，播放控制更加便捷",
-          "<span class=\"type-new\">歌词编辑</span>：现在可以在歌曲元数据编辑对话框中修改并保存歌曲的内嵌歌词"
         ]
       }
     ]

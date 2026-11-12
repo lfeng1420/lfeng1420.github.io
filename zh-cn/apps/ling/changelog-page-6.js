@@ -2,6 +2,21 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[6] = [
   {
+    "version": "0.6.0.0",
+    "date": "2026-05-16",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "other",
+        "items": [
+          "启用 AOT（预先编译），<span class=\"type-opt\">大幅提升应用性能和启动速度</span>",
+          "得益于 AOT，应用体积<span class=\"type-opt\">减小超过 50%</span>"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.5.8.0",
     "date": "2026-05-15",
     "tag": "Alpha",
@@ -65,24 +80,6 @@ window.CHANGELOG_PAGES[6] = [
         "type": "opt",
         "items": [
           "<span class=\"type-opt\">专辑合并规则调整</span>：新增艺术家严格匹配规则。专辑名相同但艺术家不同的歌曲，将不会合并到同一张专辑中"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.5.4.0",
-    "date": "2026-05-12",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "<span class=\"type-opt\">专辑合并规则</span>：合并专辑前，会检测歌曲之间是否存在碟号或曲目号冲突。若存在冲突，将自动拆分为多张独立专辑",
-          "<span class=\"type-opt\">专辑 / 艺术家默认排序</span>：默认排序规则已调整为按名称升序排列",
-          "<span class=\"type-opt\">新增艺术家页面显示参与创作艺术家开关</span>：控制是否在艺术家页面显示参与创作的艺术家。默认不显示，可在 <b>设置</b> -> <b>用户界面</b> 中找到 <b>在艺术家页面中显示参与创作艺术家</b> 选项以启用",
-          "<span class=\"type-opt\">扫描后自动清理</span>：扫描完成后，没有歌曲的专辑、以及无关的艺术家将被自动删除。若对专辑进行过编辑（如修改年份、封面、专辑艺术家等），则该专辑将保留；艺术家同理",
-          "<span class=\"type-opt\">导航菜单设置调整</span>：导航菜单设置已移入独立设置界面，路径：<b>设置</b> -> <b>导航菜单</b>"
         ]
       }
     ]

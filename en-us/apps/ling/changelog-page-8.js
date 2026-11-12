@@ -2,6 +2,27 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[8] = [
   {
+    "version": "0.3.1.0",
+    "date": "2026-05-04",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "opt",
+        "items": [
+          "<span class=\"type-opt\">Adjusted the icon size on the left side of the progress bar at the top of the stats page</span> for better visual alignment."
+        ]
+      },
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">today's and this week's play time and play counts did not reset correctly when crossing a day or week boundary</span>.",
+          "Fixed an issue where <span class=\"type-fix\">play time statistics would unexpectedly increase or decrease when manually adjusting the system time</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.3.0.0",
     "date": "2026-05-03",
     "tag": "Alpha",
