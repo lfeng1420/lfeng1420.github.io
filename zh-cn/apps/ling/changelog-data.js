@@ -3,6 +3,24 @@
 //   node tools/split-changelog.js zh-cn/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.17.1.0",
+    "date": "2026-11-14",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">全屏状态下顶部仍显示默认标题栏和窗口按钮</span> 的问题",
+          "修复了 <span class=\"type-fix\">编辑歌单时无法设置封面</span> 的问题",
+          "修复了 <span class=\"type-fix\">从歌单页面播放歌单时，歌曲列表未按所选排序选项排列</span> 的问题",
+          "修复了 <span class=\"type-fix\">在主页面按下鼠标 M4 侧键时应用退出</span> 的问题",
+          "修复了 <span class=\"type-fix\">音量弹窗中无法通过点击滚动条调节音量</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.17.0.0",
     "date": "2026-11-12",
     "tag": "Alpha",

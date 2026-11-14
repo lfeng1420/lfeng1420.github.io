@@ -3,6 +3,24 @@
 //   node tools/split-changelog.js en-us/apps/ling/changelog-data.js
 window.CHANGELOG_DATA = [
   {
+    "version": "0.17.1.0",
+    "date": "2026-11-14",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "Fixed an issue where <span class=\"type-fix\">the default title bar and window buttons were still displayed at the top in fullscreen mode</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the cover could not be set when editing a playlist</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the track list was not sorted by the selected sort option when playing a playlist from the playlist page</span>.",
+          "Fixed an issue where <span class=\"type-fix\">pressing the mouse M4 side button on the main page caused the app to exit</span>.",
+          "Fixed an issue where <span class=\"type-fix\">the volume could not be adjusted by clicking the scrollbar in the volume popup</span>."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.17.0.0",
     "date": "2026-11-12",
     "tag": "Alpha",
