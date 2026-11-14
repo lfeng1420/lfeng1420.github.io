@@ -2,6 +2,24 @@
 window.CHANGELOG_PAGES = window.CHANGELOG_PAGES || {};
 window.CHANGELOG_PAGES[1] = [
   {
+    "version": "0.17.1.0",
+    "date": "2026-11-14",
+    "tag": "Alpha",
+    "tagClass": "tag-alpha",
+    "categories": [
+      {
+        "type": "fix",
+        "items": [
+          "修复了 <span class=\"type-fix\">全屏状态下顶部仍显示默认标题栏和窗口按钮</span> 的问题",
+          "修复了 <span class=\"type-fix\">编辑歌单时无法设置封面</span> 的问题",
+          "修复了 <span class=\"type-fix\">从歌单页面播放歌单时，歌曲列表未按所选排序选项排列</span> 的问题",
+          "修复了 <span class=\"type-fix\">在主页面按下鼠标 M4 侧键时应用退出</span> 的问题",
+          "修复了 <span class=\"type-fix\">音量弹窗中无法通过点击滚动条调节音量</span> 的问题"
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.17.0.0",
     "date": "2026-11-12",
     "tag": "Alpha",
@@ -113,37 +131,6 @@ window.CHANGELOG_PAGES[1] = [
           "<span class=\"type-new\">歌词源</span>：支持启用或禁用歌词源（包括内嵌、文件、网络），并可拖拽调整查找顺序，例如优先查找网络歌词",
           "<span class=\"type-new\">网络歌词接口</span>：内置酷狗音乐、网易云音乐和 LRCLIB 三个网络歌词接口，支持自由添加其他网络接口并进行测试",
           "<span class=\"type-new\">网络歌词搜索</span>：点击播放控件最右侧更多选项中的“歌词搜索”按钮即可触发网络歌词搜索，将调用已启用的接口搜索歌词，搜索结果以对话框形式呈现"
-        ]
-      }
-    ]
-  },
-  {
-    "version": "0.15.2.0",
-    "date": "2026-10-12",
-    "tag": "Alpha",
-    "tagClass": "tag-alpha",
-    "categories": [
-      {
-        "type": "opt",
-        "items": [
-          "移除了“专辑封面应用到所有歌曲”必须先修改封面的限制",
-          "文本字重统一使用 DemiBold，并调整了文本输入框样式"
-        ]
-      },
-      {
-        "type": "fix",
-        "items": [
-          "修复了 <span class=\"type-fix\">在专辑右键菜单中点击“添加到队列”时错误替换整个播放队列</span> 的问题",
-          "修复了 <span class=\"type-fix\">歌单重命名后歌单丢失</span> 的问题",
-          "修复了 <span class=\"type-fix\">歌单重命名时错误显示“新建歌单”对话框</span> 的问题",
-          "修复了 <span class=\"type-fix\">歌单导出清单/文件时偶发的选择对话框不显示</span> 的问题",
-          "修复了 <span class=\"type-fix\">文件夹和歌单列表按标题排序时结果错误</span> 的问题",
-          "修复了 <span class=\"type-fix\">开启层级视图时，文件夹右键“播放/添加到歌单”获取歌曲列表不正确</span> 的问题",
-          "修复了 <span class=\"type-fix\">歌曲/专辑编辑元数据后 UI 没有更新</span> 的问题",
-          "修复了 <span class=\"type-fix\">桌面歌词切换到无歌词歌曲时，仍显示上一首歌曲的歌词</span> 的问题",
-          "修复了 <span class=\"type-fix\">Android 端滑动条高度过小导致难以点击</span> 的问题",
-          "修复了 <span class=\"type-fix\">鼠标悬停在播放进度条上时指针闪烁</span> 的问题",
-          "修复了 <span class=\"type-fix\">前置衰减模式选项切换时各个选项 UI 大小变化</span> 的问题"
         ]
       }
     ]
